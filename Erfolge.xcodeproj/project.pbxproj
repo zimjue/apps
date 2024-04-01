@@ -7,22 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85055DC32BA48F5E009B20AF /* WochenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85055DC22BA48F5E009B20AF /* WochenView.swift */; };
+		851FCBE52BA2E9F300B9B92E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851FCBE42BA2E9F300B9B92E /* TextView.swift */; };
+		851FCBE92BA2F25500B9B92E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851FCBE82BA2F25500B9B92E /* LaunchScreen.storyboard */; };
+		85417EE02B95C0730011D830 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85417EDF2B95C0730011D830 /* Model.swift */; };
 		8555AD002B8771E0004A4F6B /* ErfolgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555ACFF2B8771E0004A4F6B /* ErfolgeApp.swift */; };
 		8555AD022B8771E0004A4F6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555AD012B8771E0004A4F6B /* ContentView.swift */; };
-		8555AD042B8771E0004A4F6B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8555AD032B8771E0004A4F6B /* Item.swift */; };
 		8555AD062B8771E2004A4F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8555AD052B8771E2004A4F6B /* Assets.xcassets */; };
 		8555AD092B8771E2004A4F6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8555AD082B8771E2004A4F6B /* Preview Assets.xcassets */; };
+		855A86342BAF5831008278FD /* EinstellungenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855A86332BAF5831008278FD /* EinstellungenView.swift */; };
+		85851FEE2BA37EA000998CE2 /* EinleitungsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85851FED2BA37EA000998CE2 /* EinleitungsView.swift */; };
+		85851FF02BA3850700998CE2 /* FunktionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85851FEF2BA3850700998CE2 /* FunktionsView.swift */; };
+		85936C732BAC300300A0992F /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85936C722BAC300300A0992F /* PDFView.swift */; };
+		85936C752BAC31C300A0992F /* EM-Journal_E.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 85936C742BAC31C300A0992F /* EM-Journal_E.pdf */; };
+		85CE9B542BA8D6B300E9E11B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CE9B532BA8D6B300E9E11B /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85055DC22BA48F5E009B20AF /* WochenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WochenView.swift; sourceTree = "<group>"; };
+		851FCBE42BA2E9F300B9B92E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		851FCBE82BA2F25500B9B92E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85417EDF2B95C0730011D830 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8555ACFC2B8771E0004A4F6B /* Erfolge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Erfolge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8555ACFF2B8771E0004A4F6B /* ErfolgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErfolgeApp.swift; sourceTree = "<group>"; };
 		8555AD012B8771E0004A4F6B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8555AD032B8771E0004A4F6B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8555AD052B8771E2004A4F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8555AD082B8771E2004A4F6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8555AD0A2B8771E2004A4F6B /* Erfolge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Erfolge.entitlements; sourceTree = "<group>"; };
 		8555AD0B2B8771E2004A4F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		855A86332BAF5831008278FD /* EinstellungenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinstellungenView.swift; sourceTree = "<group>"; };
+		85851FED2BA37EA000998CE2 /* EinleitungsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinleitungsView.swift; sourceTree = "<group>"; };
+		85851FEF2BA3850700998CE2 /* FunktionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunktionsView.swift; sourceTree = "<group>"; };
+		85936C722BAC300300A0992F /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
+		85936C742BAC31C300A0992F /* EM-Journal_E.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "EM-Journal_E.pdf"; path = "../../../../../../Users/jurgenzimmer/Desktop/Damian/EM-Journal_E.pdf"; sourceTree = "<group>"; };
+		85CE9B532BA8D6B300E9E11B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +73,18 @@
 		8555ACFE2B8771E0004A4F6B /* Erfolge */ = {
 			isa = PBXGroup;
 			children = (
+				851FCBE82BA2F25500B9B92E /* LaunchScreen.storyboard */,
 				8555ACFF2B8771E0004A4F6B /* ErfolgeApp.swift */,
+				851FCBE42BA2E9F300B9B92E /* TextView.swift */,
+				85CE9B532BA8D6B300E9E11B /* TabBarView.swift */,
+				85936C722BAC300300A0992F /* PDFView.swift */,
+				85936C742BAC31C300A0992F /* EM-Journal_E.pdf */,
+				85851FEF2BA3850700998CE2 /* FunktionsView.swift */,
+				85851FED2BA37EA000998CE2 /* EinleitungsView.swift */,
 				8555AD012B8771E0004A4F6B /* ContentView.swift */,
-				8555AD032B8771E0004A4F6B /* Item.swift */,
+				855A86332BAF5831008278FD /* EinstellungenView.swift */,
+				85055DC22BA48F5E009B20AF /* WochenView.swift */,
+				85417EDF2B95C0730011D830 /* Model.swift */,
 				8555AD052B8771E2004A4F6B /* Assets.xcassets */,
 				8555AD0A2B8771E2004A4F6B /* Erfolge.entitlements */,
 				8555AD0B2B8771E2004A4F6B /* Info.plist */,
@@ -132,7 +159,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851FCBE92BA2F25500B9B92E /* LaunchScreen.storyboard in Resources */,
 				8555AD092B8771E2004A4F6B /* Preview Assets.xcassets in Resources */,
+				85936C752BAC31C300A0992F /* EM-Journal_E.pdf in Resources */,
 				8555AD062B8771E2004A4F6B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,8 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				855A86342BAF5831008278FD /* EinstellungenView.swift in Sources */,
+				85936C732BAC300300A0992F /* PDFView.swift in Sources */,
+				85055DC32BA48F5E009B20AF /* WochenView.swift in Sources */,
+				85851FF02BA3850700998CE2 /* FunktionsView.swift in Sources */,
+				85CE9B542BA8D6B300E9E11B /* TabBarView.swift in Sources */,
+				85851FEE2BA37EA000998CE2 /* EinleitungsView.swift in Sources */,
+				85417EE02B95C0730011D830 /* Model.swift in Sources */,
+				851FCBE52BA2E9F300B9B92E /* TextView.swift in Sources */,
 				8555AD022B8771E0004A4F6B /* ContentView.swift in Sources */,
-				8555AD042B8771E0004A4F6B /* Item.swift in Sources */,
 				8555AD002B8771E0004A4F6B /* ErfolgeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,12 +317,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Erfolge/Preview Content\"";
+				DEVELOPMENT_TEAM = 69E847F5T9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Erfolge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,12 +349,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Erfolge/Preview Content\"";
+				DEVELOPMENT_TEAM = 69E847F5T9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Erfolge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

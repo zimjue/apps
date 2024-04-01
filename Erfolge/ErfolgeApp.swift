@@ -10,9 +10,13 @@ import SwiftData
 
 @main
 struct ErfolgeApp: App {
+   
+ 
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Erfolg.self,
+            Tag.self ,
+            Frage.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +29,9 @@ struct ErfolgeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
+            TabBarView()
+           // TextView()
+                }
         .modelContainer(sharedModelContainer)
     }
 }
