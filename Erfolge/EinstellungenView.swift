@@ -119,25 +119,23 @@ struct EinstellungenView: View {
         }
     }
     
-                       struct FragenRow: View {
-                          
-                           @Bindable var frage: Frage
-                           
-                           var body: some View {
-                               VStack {
-                                   if frage.antwort.isEmpty
-                                   {   }
-                                       else {
-                                           Text(frage.frage)
-                                               .foregroundColor(Color(.blue))
-                                               .bold().font(.title3)
-                                           Text(frage.antwort)
-                                     
-                                       }
-                               }
-                               
-                               }
-                           }
+struct FragenRow: View {
+    @Bindable var frage: Frage
+
+    var body: some View {
+        VStack {
+            if frage.antwort.isEmpty {
+                // intentionally left blank
+            } else {
+                Text(frage.frage)
+                    .foregroundColor(Color(.blue))
+                    .bold()
+                    .font(.title3)
+                Text(frage.antwort)
+            }
+        }
+    }
+}
 }
            
 #Preview {
