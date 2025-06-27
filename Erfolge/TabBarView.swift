@@ -28,7 +28,7 @@ struct TabBarView: View {
             ContentView()
                 .tabItem { Label("Journal", systemImage: "note")}
             EinstellungenView()
-                .tabItem { Label("Einstelllungen", systemImage: "gear")}
+                .tabItem { Label("Einstellungen", systemImage: "gear")}
         }
     }
 }
