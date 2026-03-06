@@ -1,278 +1,351 @@
 <!doctype html>
 <html lang="de">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Apps – Jürgen Zimmer</title>
-<meta name="description" content="iOS Apps von Jürgen Zimmer – persönliche Entwicklung, Reflexion und Klarheit.">
+
+<meta name="description" content="iOS Apps von Jürgen Zimmer – persönliche Entwicklung, Reflexion und Fitness.">
 
 <style>
+
 :root{
-  --bg:#0b1220;
-  --card:#121b2f;
-  --text:#eaf0ff;
-  --muted:#b7c2e1;
-  --accent:#66e3ff;
+--bg:#0b1220;
+--card:#121b2f;
+--text:#eaf0ff;
+--muted:#b7c2e1;
+--accent:#66e3ff;
 }
 
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:
-    radial-gradient(900px 500px at 10% 10%,rgba(102,227,255,.15),transparent 55%),
-    var(--bg);
-  color:var(--text);
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+background:
+radial-gradient(900px 500px at 10% 10%,rgba(102,227,255,.15),transparent 55%),
+var(--bg);
+color:var(--text);
 }
 
 .wrap{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px 60px;
+max-width:1100px;
+margin:auto;
+padding:40px 20px 60px;
 }
 
 .topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-  margin-bottom:40px;
-  flex-wrap:wrap;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+flex-wrap:wrap;
 }
 
 .brand{
-  font-size:18px;
-  font-weight:600;
+font-size:18px;
+font-weight:600;
 }
 
 .lang-switch{
-  display:flex;
-  gap:10px;
+display:flex;
+gap:10px;
 }
 
 .lang-btn{
-  padding:8px 14px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.2);
-  background:transparent;
-  color:var(--text);
-  cursor:pointer;
-  font-weight:600;
+padding:8px 14px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,.2);
+background:transparent;
+color:var(--text);
+cursor:pointer;
+font-weight:600;
 }
 
 .lang-btn.active{
-  background:var(--accent);
-  color:#000;
-  border-color:transparent;
+background:var(--accent);
+color:#000;
+border:none;
 }
 
 header{
-  margin-bottom:50px;
-  text-align:center;
+margin-bottom:50px;
+text-align:center;
 }
 
 h1{
-  font-size:42px;
-  margin:0 0 12px;
+font-size:42px;
+margin:0 0 12px;
 }
 
 .subtitle{
-  color:var(--muted);
-  font-size:18px;
-  max-width:740px;
-  margin:0 auto;
+color:var(--muted);
+font-size:18px;
+max-width:740px;
+margin:auto;
 }
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:28px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:28px;
 }
 
 .card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:28px;
-  transition:.2s;
-  text-align:center;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+border-radius:22px;
+padding:28px;
+text-align:center;
+transition:.2s;
 }
 
 .card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 25px 50px rgba(0,0,0,.4);
+transform:translateY(-4px);
+box-shadow:0 25px 50px rgba(0,0,0,.4);
 }
 
 .app-icon{
-  width:90px;
-  height:90px;
-  border-radius:20px;
-  margin-bottom:16px;
-  object-fit:cover;
+width:90px;
+height:90px;
+border-radius:20px;
+margin-bottom:16px;
 }
 
 .app-title{
-  font-size:22px;
-  font-weight:600;
-  margin-bottom:10px;
+font-size:22px;
+font-weight:600;
+margin-bottom:10px;
 }
 
 .app-desc{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.6;
-  margin-bottom:22px;
+color:var(--muted);
+font-size:15px;
+line-height:1.6;
+margin-bottom:22px;
 }
 
 .buttons{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
+display:flex;
+gap:12px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
 .btn{
-  padding:12px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:600;
+padding:12px 18px;
+border-radius:12px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
 }
 
 .btn.primary{
-  background:var(--accent);
-  color:#000;
+background:var(--accent);
+color:black;
 }
 
 .btn.secondary{
-  border:1px solid rgba(255,255,255,.2);
-  color:var(--text);
+border:1px solid rgba(255,255,255,.2);
+color:var(--text);
 }
 
 footer{
-  margin-top:60px;
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
+margin-top:60px;
+text-align:center;
+font-size:13px;
+color:var(--muted);
 }
 
-.hidden{
-  display:none;
-}
 </style>
+
 </head>
+
 <body>
 
 <div class="wrap">
 
-  <div class="topbar">
-    <div class="brand">Jürgen Zimmler Apps</div>
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLang('de')" id="btn-de">DE</button>
-      <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
-    </div>
-  </div>
+<div class="topbar">
 
-  <header>
-    <h1 id="title">Meine Apps</h1>
-    <div class="subtitle" id="subtitle">
-      Apps für persönliche Entwicklung, Reflexion und Klarheit.
-    </div>
-  </header>
+<div class="brand">
+Jürgen Zimmer Apps
+</div>
 
-  <div class="grid">
+<div class="lang-switch">
+<button class="lang-btn active" onclick="setLang('de')" id="btn-de">DE</button>
+<button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+</div>
 
-    <div class="card">
-      <img class="app-icon" src="assets/erfolgsjournal-icon.png" alt="Erfolgsjournal App Icon">
+</div>
 
-      <div class="app-title">Erfolgsjournal</div>
+<header>
 
-      <div class="app-desc" data-de="Ein ruhiges Journal für tägliche Reflexion, Dankbarkeit und persönliche Entwicklung. Halte deine Erfolge fest und starte klar in den nächsten Tag."
-           data-en="A calm journal for daily reflection, gratitude, and personal growth. Capture your achievements and begin the next day with clarity.">
-        Ein ruhiges Journal für tägliche Reflexion, Dankbarkeit und persönliche Entwicklung. Halte deine Erfolge fest und starte klar in den nächsten Tag.
-      </div>
+<h1 id="title">Meine Apps</h1>
 
-      <div class="buttons">
-        <a class="btn primary" href="https://apps.apple.com" target="_blank" id="store-btn-1">App Store</a>
-        <a class="btn secondary" href="/apps/erfolgsjournal/datenschutz.html" id="privacy-btn-1">Datenschutz</a>
-      </div>
-    </div>
+<div class="subtitle" id="subtitle">
+Apps für persönliche Entwicklung, Reflexion und Fitness.
+</div>
 
-    <div class="card">
-      <img class="app-icon" src="assets/lebensrad-icon.png" alt="Lebensrad App Icon">
+</header>
 
-      <div class="app-title">Lebensrad</div>
+<div class="grid">
 
-      <div class="app-desc" data-de="Reflektiere deine wichtigsten Lebensbereiche und bringe Schritt für Schritt mehr Balance in dein Leben."
-           data-en="Reflect on the most important areas of your life and bring more balance into it step by step.">
-        Reflektiere deine wichtigsten Lebensbereiche und bringe Schritt für Schritt mehr Balance in dein Leben.
-      </div>
+<!-- Erfolgsjournal -->
 
-      <div class="buttons">
-        <a class="btn primary" href="https://apps.apple.com" target="_blank" id="store-btn-2">App Store</a>
-        <a class="btn secondary" href="/apps/lebensrad/datenschutz.html" id="privacy-btn-2">Datenschutz</a>
-      </div>
-    </div>
+<div class="card">
 
-  </div>
+<img class="app-icon" src="assets/erfolgsjournal-icon.png">
 
-  <footer>
-    © <span id="year"></span> Jürgen Zimmer
-  </footer>
+<div class="app-title">Erfolgsjournal</div>
+
+<div class="app-desc"
+data-de="Ein ruhiges Journal für tägliche Reflexion, Dankbarkeit und persönliche Entwicklung."
+data-en="A calm journal for daily reflection, gratitude and personal growth.">
+
+Ein ruhiges Journal für tägliche Reflexion, Dankbarkeit und persönliche Entwicklung.
+
+</div>
+
+<div class="buttons">
+
+<a class="btn primary"
+href="https://apps.apple.com"
+target="_blank">
+App Store
+</a>
+
+<a class="btn secondary"
+href="/apps/erfolgsjournal/datenschutz.html"
+id="privacy1">
+Datenschutz
+</a>
+
+</div>
+
+</div>
+
+
+<!-- Lebensrad -->
+
+<div class="card">
+
+<img class="app-icon" src="assets/lebensrad-icon.png">
+
+<div class="app-title">Lebensrad</div>
+
+<div class="app-desc"
+data-de="Reflektiere deine wichtigsten Lebensbereiche und bringe Schritt für Schritt mehr Balance in dein Leben."
+data-en="Reflect on the most important areas of your life and bring more balance into it step by step.">
+
+Reflektiere deine wichtigsten Lebensbereiche und bringe Schritt für Schritt mehr Balance in dein Leben.
+
+</div>
+
+<div class="buttons">
+
+<a class="btn primary"
+href="https://apps.apple.com"
+target="_blank">
+App Store
+</a>
+
+<a class="btn secondary"
+href="/apps/lebensrad/datenschutz.html"
+id="privacy2">
+Datenschutz
+</a>
+
+</div>
+
+</div>
+
+
+<!-- Fitness Goals -->
+
+<div class="card">
+
+<img class="app-icon" src="assets/fitnessgoals-icon.png">
+
+<div class="app-title">Fitness Goals</div>
+
+<div class="app-desc"
+data-de="Setze klare Fitnessziele, verfolge deine Fortschritte und bleibe motiviert."
+data-en="Set clear fitness goals, track your progress and stay motivated.">
+
+Setze klare Fitnessziele, verfolge deine Fortschritte und bleibe motiviert.
+
+</div>
+
+<div class="buttons">
+
+<a class="btn primary"
+href="https://apps.apple.com"
+target="_blank">
+App Store
+</a>
+
+<a class="btn secondary"
+href="/apps/fitnessgoals/datenschutz.html"
+id="privacy3">
+Datenschutz
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© <span id="year"></span> Jürgen Zimmer
+
+</footer>
 
 </div>
 
 <script>
-const translations = {
-  de: {
-    title: "Meine Apps",
-    subtitle: "Apps für persönliche Entwicklung, Reflexion und Klarheit.",
-    privacy: "Datenschutz",
-    store: "App Store",
-    htmlLang: "de"
-  },
-  en: {
-    title: "My Apps",
-    subtitle: "Apps for personal growth, reflection, and clarity.",
-    privacy: "Privacy",
-    store: "App Store",
-    htmlLang: "en"
-  }
-};
 
-function setLang(lang) {
-  const t = translations[lang];
-
-  document.documentElement.lang = t.htmlLang;
-  document.getElementById("title").textContent = t.title;
-  document.getElementById("subtitle").textContent = t.subtitle;
-
-  document.querySelectorAll(".app-desc").forEach(el => {
-    el.textContent = el.getAttribute(`data-${lang}`);
-  });
-
-  document.getElementById("privacy-btn-1").textContent = t.privacy;
-  document.getElementById("privacy-btn-2").textContent = t.privacy;
-  document.getElementById("store-btn-1").textContent = t.store;
-  document.getElementById("store-btn-2").textContent = t.store;
-
-  document.getElementById("btn-de").classList.toggle("active", lang === "de");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-
-  document.getElementById("privacy-btn-1").href =
-    lang === "de" ? "/apps/erfolgsjournal/datenschutz.html" : "/apps/erfolgsjournal/privacy.html";
-
-  document.getElementById("privacy-btn-2").href =
-    lang === "de" ? "/apps/lebensrad/datenschutz.html" : "/apps/lebensrad/privacy.html";
-
-  localStorage.setItem("siteLang", lang);
+const translations={
+de:{
+title:"Meine Apps",
+subtitle:"Apps für persönliche Entwicklung, Reflexion und Fitness.",
+privacy:"Datenschutz"
+},
+en:{
+title:"My Apps",
+subtitle:"Apps for personal growth, reflection and fitness.",
+privacy:"Privacy"
+}
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+function setLang(lang){
 
-const savedLang = localStorage.getItem("siteLang") || "de";
-setLang(savedLang);
+document.getElementById("title").textContent=translations[lang].title
+document.getElementById("subtitle").textContent=translations[lang].subtitle
+
+document.querySelectorAll(".app-desc").forEach(el=>{
+el.textContent=el.getAttribute("data-"+lang)
+})
+
+document.getElementById("privacy1").textContent=translations[lang].privacy
+document.getElementById("privacy2").textContent=translations[lang].privacy
+document.getElementById("privacy3").textContent=translations[lang].privacy
+
+document.getElementById("btn-de").classList.toggle("active",lang==="de")
+document.getElementById("btn-en").classList.toggle("active",lang==="en")
+
+localStorage.setItem("siteLang",lang)
+
+}
+
+document.getElementById("year").textContent=new Date().getFullYear()
+
+const savedLang=localStorage.getItem("siteLang")||"de"
+setLang(savedLang)
+
 </script>
 
 </body>
