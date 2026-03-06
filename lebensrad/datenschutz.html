@@ -1,357 +1,265 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lebensrad (Life Wheel) – Datenschutz</title>
-  <meta name="description" content="Datenschutzerklärung für Lebensrad (Life Wheel)." />
-  <meta name="theme-color" content="#0b1220" />
 
-  <style>
-    :root {
-      --bg:#0b1220;
-      --card:#121b2f;
-      --txt:#eaf0ff;
-      --muted:#b7c2e1;
-      --accent:#66e3ff;
-      --line:rgba(255,255,255,.12);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    * { box-sizing:border-box; }
+<title>Lebensrad – Datenschutz</title>
 
-    body {
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(102,227,255,.12), transparent 55%),
-        radial-gradient(900px 500px at 90% 40%, rgba(153,102,255,.10), transparent 55%),
-        var(--bg);
-      color:var(--txt);
-    }
+<meta name="theme-color" content="#0b1220">
 
-    .wrap {
-      max-width:900px;
-      margin:0 auto;
-      padding:40px 20px 56px;
-    }
+<style>
 
-    .topbar {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      flex-wrap:wrap;
-      margin-bottom:24px;
-    }
+:root{
+--bg:#0b1220;
+--card:#121b2f;
+--txt:#eaf0ff;
+--muted:#b7c2e1;
+--accent:#66e3ff;
+}
 
-    .brand {
-      font-weight:700;
-      letter-spacing:.2px;
-    }
+*{box-sizing:border-box}
 
-    .lang-switch {
-      display:flex;
-      gap:10px;
-    }
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+background:var(--bg);
+color:var(--txt);
+}
 
-    .lang-btn {
-      padding:8px 14px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.2);
-      background:transparent;
-      color:var(--txt);
-      cursor:pointer;
-      font-weight:600;
-    }
+.wrap{
+max-width:900px;
+margin:auto;
+padding:40px 20px 60px;
+}
 
-    .lang-btn.active {
-      background:var(--accent);
-      color:#000;
-      border-color:transparent;
-    }
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:24px;
+}
 
-    .card {
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:24px;
-      box-shadow:0 20px 50px rgba(0,0,0,.28);
-    }
+.brand{
+font-weight:700;
+}
 
-    h1 {
-      font-size:32px;
-      margin:0 0 12px;
-      line-height:1.15;
-    }
+.lang-switch{
+display:flex;
+gap:10px;
+}
 
-    h2 {
-      margin-top:24px;
-      margin-bottom:8px;
-      font-size:18px;
-      line-height:1.35;
-    }
+.lang-btn{
+padding:8px 14px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,.2);
+background:transparent;
+color:var(--txt);
+cursor:pointer;
+font-weight:600;
+}
 
-    p {
-      color:var(--muted);
-      line-height:1.7;
-      margin:0 0 14px;
-      font-size:15px;
-    }
+.lang-btn.active{
+background:var(--accent);
+color:#000;
+border:none;
+}
 
-    strong {
-      color:var(--txt);
-    }
+.card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+border-radius:18px;
+padding:26px;
+}
 
-    a {
-      color:var(--accent);
-      text-decoration:none;
-    }
+h1{font-size:30px;margin-bottom:12px}
 
-    a:hover {
-      text-decoration:underline;
-    }
+h2{
+margin-top:24px;
+font-size:18px;
+}
 
-    .footer {
-      margin-top:30px;
-      font-size:13px;
-      color:var(--muted);
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
+p{
+color:var(--muted);
+line-height:1.7;
+font-size:15px;
+}
 
-    .sep {
-      height:1px;
-      background:rgba(255,255,255,.1);
-      margin:26px 0;
-      border:0;
-    }
+.footer{
+margin-top:30px;
+font-size:13px;
+color:var(--muted);
+}
 
-    .back-link {
-      display:inline-block;
-      margin-bottom:18px;
-      font-size:14px;
-    }
-  </style>
+.sep{
+height:1px;
+background:rgba(255,255,255,.1);
+margin:24px 0;
+border:0;
+}
+
+a{color:var(--accent);text-decoration:none}
+
+</style>
+
 </head>
 
 <body>
-  <div class="wrap">
 
-    <div class="topbar">
-      <div class="brand">Lebensrad – Life Wheel</div>
+<div class="wrap">
 
-      <div class="lang-switch">
-        <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
-        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
-      </div>
-    </div>
+<div class="topbar">
 
-    <div class="card">
-      <a class="back-link" href="index.html" id="back-link">← Zurück zur App-Seite</a>
+<div class="brand">
+Lebensrad – Life Wheel
+</div>
 
-      <h1 id="title-main">Datenschutz – Lebensrad (Life Wheel)</h1>
+<div class="lang-switch">
+<button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
+<button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
 
-      <p id="intro-1">
-        Der Schutz deiner Daten ist uns wichtig. Die App <strong>Lebensrad (Life Wheel)</strong>
-        dient der persönlichen Reflexion und Bewertung verschiedener Lebensbereiche.
-      </p>
+</div>
 
-      <p id="intro-2">
-        Alle Inhalte werden – sofern nicht ausdrücklich anders angegeben – ausschließlich lokal
-        auf deinem Gerät gespeichert.
-      </p>
+<div class="card">
 
-      <h2 id="h2-1">1. Welche Daten werden verarbeitet?</h2>
-      <p id="p-1">
-        Die App speichert Inhalte, die du selbst eingibst (z. B. Bewertungen, Notizen oder Aufgaben).
-        Diese Daten verbleiben ausschließlich auf deinem Gerät. Es erfolgt keine automatische
-        Übertragung an externe Server.
-      </p>
+<div id="content"></div>
 
-      <h2 id="h2-2">2. Tracking / Analyse / Werbung</h2>
-      <p id="p-2">
-        Es werden keine Tracking-, Analyse- oder Werbedienste verwendet.
-        Es werden keine Nutzerprofile erstellt.
-      </p>
+<div class="footer">
 
-      <h2 id="h2-3">3. Drittanbieter</h2>
-      <p id="p-3">
-        Es werden keine Drittanbieter-Dienste zur Analyse oder Werbung eingesetzt.
-        Eine Weitergabe personenbezogener Daten an Dritte findet nicht statt.
-      </p>
+<p id="updated"></p>
 
-      <h2 id="h2-4">4. In-App-Abonnement (PDF-Export)</h2>
-      <p id="p-4">
-        Die App bietet ein optionales Abonnement für den PDF-Export an.
-        Die Zahlungsabwicklung erfolgt ausschließlich über Apple (App Store).
-        Der Entwickler erhält keinen Zugriff auf Zahlungsdaten wie Kreditkarteninformationen.
-      </p>
-      <p id="p-5">
-        Das Abonnement verlängert sich automatisch, sofern es nicht mindestens 24 Stunden vor Ablauf
-        der aktuellen Laufzeit in den Apple-ID-Einstellungen gekündigt wird.
-        Verwaltung und Kündigung erfolgen über dein Apple-Konto.
-      </p>
+<p>
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">
+Apple Standard EULA
+</a>
+</p>
 
-      <h2 id="h2-5">5. Deine Rechte</h2>
-      <p id="p-6">
-        Da alle Inhalte lokal gespeichert werden, kannst du deine Daten jederzeit in der App löschen
-        oder die App deinstallieren, um sämtliche gespeicherten Inhalte zu entfernen.
-      </p>
+</div>
 
-      <h2 id="h2-6">6. Kontakt</h2>
-      <p id="p-7">
-        Bei Fragen zum Datenschutz kontaktiere bitte:
-        <a href="mailto:juzi7@icloud.com">juzi7@icloud.com</a>
-      </p>
+</div>
 
-      <hr class="sep" />
+</div>
 
-      <h1 id="title-en">Privacy Policy – Life Wheel (Lebensrad)</h1>
+<script>
 
-      <p id="en-1">
-        Your privacy matters. <strong>Life Wheel (Lebensrad)</strong> helps you reflect on and
-        evaluate different life areas.
-      </p>
+const content = {
 
-      <p id="en-2">
-        All content is stored locally on your device unless explicitly stated otherwise.
-      </p>
+de: `
+<h1>Datenschutz – Lebensrad (Life Wheel)</h1>
 
-      <h2 id="en-h2-1">1. What data is processed?</h2>
-      <p id="en-p-1">
-        The app stores content you enter (e.g. ratings, notes, tasks). This data remains on your device.
-        No automatic data transfer to external servers takes place.
-      </p>
+<p>
+Der Schutz deiner Daten ist uns wichtig. Die App <strong>Lebensrad (Life Wheel)</strong>
+dient der persönlichen Reflexion und Bewertung verschiedener Lebensbereiche.
+</p>
 
-      <h2 id="en-h2-2">2. Tracking / Analytics / Ads</h2>
-      <p id="en-p-2">
-        We do not use tracking, analytics, or advertising services.
-        No user profiles are created.
-      </p>
+<p>
+Alle Inhalte werden ausschließlich lokal auf deinem Gerät gespeichert.
+</p>
 
-      <h2 id="en-h2-3">3. Third parties</h2>
-      <p id="en-p-3">
-        The app does not use third-party services for analytics or advertising.
-        No personal data is shared with third parties.
-      </p>
+<h2>1. Welche Daten werden verarbeitet?</h2>
+<p>
+Die App speichert Inhalte, die du selbst eingibst (z.B. Bewertungen oder Notizen).
+Diese Daten verbleiben auf deinem Gerät und werden nicht an externe Server übertragen.
+</p>
 
-      <h2 id="en-h2-4">4. In-App Subscription (PDF Export)</h2>
-      <p id="en-p-4">
-        The app offers an optional subscription for the PDF export feature.
-        Payments are processed exclusively by Apple (App Store).
-        The developer does not receive access to payment information such as credit card data.
-      </p>
-      <p id="en-p-5">
-        The subscription renews automatically unless cancelled at least 24 hours before the end
-        of the current billing period in your Apple ID settings.
-        Subscription management and cancellation are handled through your Apple account.
-      </p>
+<h2>2. Tracking / Analyse / Werbung</h2>
+<p>
+Es werden keine Tracking-, Analyse- oder Werbedienste verwendet.
+</p>
 
-      <h2 id="en-h2-5">5. Your choices</h2>
-      <p id="en-p-6">
-        Since all data is stored locally, you may delete your data at any time within the app
-        or uninstall the app to remove all stored content.
-      </p>
+<h2>3. Drittanbieter</h2>
+<p>
+Es werden keine Drittanbieter-Dienste eingesetzt.
+</p>
 
-      <h2 id="en-h2-6">6. Contact</h2>
-      <p id="en-p-7">
-        If you have questions about privacy, contact:
-        <a href="mailto:juzi7@icloud.com">juzi7@icloud.com</a>
-      </p>
+<h2>4. In-App-Abonnement</h2>
+<p>
+Die App bietet ein optionales Abonnement für den PDF-Export.
+Die Zahlungsabwicklung erfolgt über Apple (App Store).
+</p>
 
-      <div class="footer">
-        <div id="updated-text">Stand / Last updated: 2026</div>
-        <div>
-          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">
-            Apple Standard EULA
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+<h2>5. Deine Rechte</h2>
+<p>
+Du kannst deine Daten jederzeit löschen oder die App deinstallieren.
+</p>
 
-  <script>
-    const translations = {
-      de: {
-        htmlLang: "de",
-        back: "← Zurück zur App-Seite",
-        titleMain: "Datenschutz – Lebensrad (Life Wheel)",
-        intro1: "Der Schutz deiner Daten ist uns wichtig. Die App Lebensrad (Life Wheel) dient der persönlichen Reflexion und Bewertung verschiedener Lebensbereiche.",
-        intro2: "Alle Inhalte werden – sofern nicht ausdrücklich anders angegeben – ausschließlich lokal auf deinem Gerät gespeichert.",
-        h21: "1. Welche Daten werden verarbeitet?",
-        p1: "Die App speichert Inhalte, die du selbst eingibst (z. B. Bewertungen, Notizen oder Aufgaben). Diese Daten verbleiben ausschließlich auf deinem Gerät. Es erfolgt keine automatische Übertragung an externe Server.",
-        h22: "2. Tracking / Analyse / Werbung",
-        p2: "Es werden keine Tracking-, Analyse- oder Werbedienste verwendet. Es werden keine Nutzerprofile erstellt.",
-        h23: "3. Drittanbieter",
-        p3: "Es werden keine Drittanbieter-Dienste zur Analyse oder Werbung eingesetzt. Eine Weitergabe personenbezogener Daten an Dritte findet nicht statt.",
-        h24: "4. In-App-Abonnement (PDF-Export)",
-        p4: "Die App bietet ein optionales Abonnement für den PDF-Export an. Die Zahlungsabwicklung erfolgt ausschließlich über Apple (App Store). Der Entwickler erhält keinen Zugriff auf Zahlungsdaten wie Kreditkarteninformationen.",
-        p5: "Das Abonnement verlängert sich automatisch, sofern es nicht mindestens 24 Stunden vor Ablauf der aktuellen Laufzeit in den Apple-ID-Einstellungen gekündigt wird. Verwaltung und Kündigung erfolgen über dein Apple-Konto.",
-        h25: "5. Deine Rechte",
-        p6: "Da alle Inhalte lokal gespeichert werden, kannst du deine Daten jederzeit in der App löschen oder die App deinstallieren, um sämtliche gespeicherten Inhalte zu entfernen.",
-        h26: "6. Kontakt",
-        p7: "Bei Fragen zum Datenschutz kontaktiere bitte:",
-        updated: "Stand / Last updated: 2026"
-      },
-      en: {
-        htmlLang: "en",
-        back: "← Back to app page",
-        titleMain: "Privacy Policy – Life Wheel (Lebensrad)",
-        intro1: "Your privacy matters. The app Life Wheel (Lebensrad) helps users reflect on and evaluate different areas of life.",
-        intro2: "All content is stored locally on your device unless explicitly stated otherwise.",
-        h21: "1. What data is processed?",
-        p1: "The app stores content you enter yourself, such as ratings, notes, or tasks. This data remains on your device. No automatic transfer to external servers takes place.",
-        h22: "2. Tracking / Analytics / Ads",
-        p2: "We do not use tracking, analytics, or advertising services. No user profiles are created.",
-        h23: "3. Third parties",
-        p3: "The app does not use third-party services for analytics or advertising. No personal data is shared with third parties.",
-        h24: "4. In-App Subscription (PDF Export)",
-        p4: "The app offers an optional subscription for the PDF export feature. Payments are processed exclusively by Apple (App Store). The developer does not receive access to payment information such as credit card data.",
-        p5: "The subscription renews automatically unless cancelled at least 24 hours before the end of the current billing period in your Apple ID settings. Subscription management and cancellation are handled through your Apple account.",
-        h25: "5. Your choices",
-        p6: "Since all data is stored locally, you may delete your data at any time within the app or uninstall the app to remove all stored content.",
-        h26: "6. Contact",
-        p7: "If you have questions about privacy, contact:",
-        updated: "Last updated: 2026"
-      }
-    };
+<h2>6. Kontakt</h2>
+<p>
+Bei Fragen zum Datenschutz kontaktiere bitte:
+<a href="mailto:juzi7@icloud.com">juzi7@icloud.com</a>
+</p>
+`,
 
-    function setLang(lang) {
-      const t = translations[lang];
+en: `
+<h1>Privacy Policy – Life Wheel</h1>
 
-      document.documentElement.lang = t.htmlLang;
-      document.getElementById("back-link").textContent = t.back;
-      document.getElementById("title-main").textContent = t.titleMain;
-      document.getElementById("intro-1").innerHTML = t.intro1.replace("Life Wheel (Lebensrad)", "<strong>Life Wheel (Lebensrad)</strong>").replace("Lebensrad (Life Wheel)", "<strong>Lebensrad (Life Wheel)</strong>");
-      document.getElementById("intro-2").textContent = t.intro2;
-      document.getElementById("h2-1").textContent = t.h21;
-      document.getElementById("p-1").textContent = t.p1;
-      document.getElementById("h2-2").textContent = t.h22;
-      document.getElementById("p-2").textContent = t.p2;
-      document.getElementById("h2-3").textContent = t.h23;
-      document.getElementById("p-3").textContent = t.p3;
-      document.getElementById("h2-4").textContent = t.h24;
-      document.getElementById("p-4").textContent = t.p4;
-      document.getElementById("p-5").textContent = t.p5;
-      document.getElementById("h2-5").textContent = t.h25;
-      document.getElementById("p-6").textContent = t.p6;
-      document.getElementById("h2-6").textContent = t.h26;
+<p>
+Your privacy matters. <strong>Life Wheel</strong> helps you reflect on
+different areas of your life.
+</p>
 
-      document.getElementById("p-7").innerHTML =
-        t.p7 + ' <a href="mailto:juzi7@icloud.com">juzi7@icloud.com</a>';
+<p>
+All content is stored locally on your device.
+</p>
 
-      document.getElementById("updated-text").textContent = t.updated;
+<h2>1. What data is processed?</h2>
+<p>
+The app stores content you enter such as notes or ratings.
+This data remains on your device.
+</p>
 
-      document.getElementById("btn-de").classList.toggle("active", lang === "de");
-      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+<h2>2. Tracking / Analytics / Ads</h2>
+<p>
+No tracking or analytics services are used.
+</p>
 
-      localStorage.setItem("siteLang", lang);
-    }
+<h2>3. Third parties</h2>
+<p>
+No third-party services are used.
+</p>
 
-    const savedLang = localStorage.getItem("siteLang") || "de";
-    setLang(savedLang);
-  </script>
+<h2>4. In-App Subscription</h2>
+<p>
+The app offers an optional subscription for PDF export.
+Payments are processed by Apple.
+</p>
+
+<h2>5. Your choices</h2>
+<p>
+You can delete your data at any time or uninstall the app.
+</p>
+
+<h2>6. Contact</h2>
+<p>
+If you have questions please contact:
+<a href="mailto:juzi7@icloud.com">juzi7@icloud.com</a>
+</p>
+`
+
+}
+
+function setLang(lang){
+
+document.getElementById("content").innerHTML = content[lang]
+
+document.documentElement.lang = lang
+
+document.getElementById("btn-de").classList.toggle("active",lang==="de")
+document.getElementById("btn-en").classList.toggle("active",lang==="en")
+
+document.getElementById("updated").textContent =
+lang==="de" ? "Stand: 2026" : "Last updated: 2026"
+
+localStorage.setItem("lang",lang)
+
+}
+
+const savedLang = localStorage.getItem("lang") || "de"
+setLang(savedLang)
+
+</script>
+
 </body>
 </html>
