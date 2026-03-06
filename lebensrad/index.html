@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lebensrad (Life Wheel) – Balance & Reflection</title>
+  <meta name="description" content="Lebensrad (Life Wheel) hilft dir, deine Lebensbereiche bewusst zu reflektieren, zu bewerten und Schritt für Schritt in Balance zu bringen." />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="apple-itunes-app" content="app-id=6759198208" />
+
+  <style>
+    :root {
+      --bg:#0b1220;
+      --txt:#eaf0ff;
+      --muted:#b7c2e1;
+      --accent:#66e3ff;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+    }
+
+    * { box-sizing:border-box; }
+
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(102,227,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 40%, rgba(153,102,255,.14), transparent 55%),
+        var(--bg);
+      color:var(--txt);
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 18px 56px;
+    }
+
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:32px;
+    }
+
+    .brand {
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .lang-switch {
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .lang-btn {
+      padding:8px 14px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.2);
+      background:transparent;
+      color:var(--txt);
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    .lang-btn.active {
+      background:var(--accent);
+      color:#000;
+      border-color:transparent;
+    }
+
+    .pill {
+      font-size:12px;
+      padding:6px 10px;
+      background:rgba(255,255,255,.08);
+      border-radius:999px;
+      color:var(--muted);
+    }
+
+    .nav-meta {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hero {
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    @media (max-width:860px){
+      .hero{ grid-template-columns:1fr; }
+    }
+
+    h1 {
+      font-size:44px;
+      margin:0 0 12px;
+      line-height:1.05;
+    }
+
+    p {
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      margin:0;
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:0 20px 50px rgba(0,0,0,.3);
+    }
+
+    .cta {
+      margin-top:24px;
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .btn {
+      padding:14px 22px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-block;
+    }
+
+    .btn.primary {
+      background:var(--accent);
+      color:#000;
+    }
+
+    .btn.secondary {
+      border:1px solid rgba(255,255,255,.2);
+      color:var(--txt);
+    }
+
+    .features {
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    @media (max-width:860px){
+      .features{ grid-template-columns:1fr; }
+    }
+
+    .feature-card strong {
+      display:block;
+      margin-bottom:8px;
+      font-size:16px;
+    }
+
+    .feature-card p {
+      font-size:15px;
+    }
+
+    .footer {
+      margin-top:50px;
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .footer a {
+      color:var(--muted);
+      text-decoration:none;
+    }
+
+    .footer a:hover {
+      color:var(--txt);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">Lebensrad – Life Wheel</div>
+
+      <div class="nav-meta">
+        <div class="pill" id="pill-text">iOS • Reflexion</div>
+
+        <div class="lang-switch">
+          <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+
+      <div class="card">
+        <h1 id="hero-title">Dein Leben.<br/>Auf einen Blick.</h1>
+
+        <p id="hero-text">
+          Reflektiere deine wichtigsten Lebensbereiche, erkenne Muster
+          und bringe Schritt für Schritt mehr Balance in dein Leben.
+          Klar. Ruhig. Ohne Overkill.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary"
+             id="store-link-top"
+             href="https://apps.apple.com/de/app/lebensrad-dein-lebenskompass/id6759198208"
+             target="_blank"
+             rel="noopener">
+             Jetzt im App Store laden
+          </a>
+
+          <a class="btn secondary" href="#features" id="features-link">Features</a>
+        </div>
+
+        <div class="features" id="features">
+          <div class="card feature-card">
+            <strong id="f1-title">Lebensbereiche</strong>
+            <p id="f1-text">Körper, Beziehungen, Beruf, Finanzen und mehr individuell anpassbar.</p>
+          </div>
+
+          <div class="card feature-card">
+            <strong id="f2-title">Reflexionsfragen</strong>
+            <p id="f2-text">Tiefgehende Fragen helfen dir, Klarheit zu gewinnen.</p>
+          </div>
+
+          <div class="card feature-card">
+            <strong id="f3-title">Konkrete Schritte</strong>
+            <p id="f3-text">Machbare Aufgaben, damit Erkenntnis zur Veränderung wird.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="../assets/Screenshot.jpeg"
+             alt="Lebensrad App Screenshot"
+             style="width:100%; border-radius:18px; border:1px solid rgba(255,255,255,.12);" />
+
+        <div style="margin-top:20px;">
+          <a href="https://apps.apple.com/de/app/lebensrad-dein-lebenskompass/id6759198208"
+             target="_blank"
+             rel="noopener">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                 alt="Download on the App Store"
+                 style="height:60px;">
+          </a>
+        </div>
+
+        <div id="privacy-note" style="margin-top:20px; font-size:13px; color:var(--muted);">
+          Datenschutz: Keine Weitergabe, keine Tracking-Tools.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Jürgen Zimmer</div>
+      <div>
+        <a href="datenschutz.html" id="privacy-link">Datenschutz</a> ·
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">EULA</a> ·
+        <a href="mailto:juzi7@icloud.com" id="support-link">Support</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const translations = {
+      de: {
+        htmlLang: "de",
+        pill: "iOS • Reflexion",
+        heroTitle: "Dein Leben.<br/>Auf einen Blick.",
+        heroText: "Reflektiere deine wichtigsten Lebensbereiche, erkenne Muster und bringe Schritt für Schritt mehr Balance in dein Leben. Klar. Ruhig. Ohne Overkill.",
+        storeTop: "Jetzt im App Store laden",
+        features: "Features",
+        f1Title: "Lebensbereiche",
+        f1Text: "Körper, Beziehungen, Beruf, Finanzen und mehr individuell anpassbar.",
+        f2Title: "Reflexionsfragen",
+        f2Text: "Tiefgehende Fragen helfen dir, Klarheit zu gewinnen.",
+        f3Title: "Konkrete Schritte",
+        f3Text: "Machbare Aufgaben, damit Erkenntnis zur Veränderung wird.",
+        privacyNote: "Datenschutz: Keine Weitergabe, keine Tracking-Tools.",
+        privacyLink: "Datenschutz",
+        support: "Support"
+      },
+      en: {
+        htmlLang: "en",
+        pill: "iOS • Reflection",
+        heroTitle: "Your life.<br/>At a glance.",
+        heroText: "Reflect on the most important areas of your life, recognize patterns and bring more balance into your life step by step. Clear. Calm. No overkill.",
+        storeTop: "Download on the App Store",
+        features: "Features",
+        f1Title: "Life Areas",
+        f1Text: "Health, relationships, career, finances and more — individually customizable.",
+        f2Title: "Reflection Questions",
+        f2Text: "Thoughtful questions help you gain clarity.",
+        f3Title: "Concrete Steps",
+        f3Text: "Practical actions that turn insight into change.",
+        privacyNote: "Privacy: No sharing, no tracking tools.",
+        privacyLink: "Privacy",
+        support: "Support"
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+
+      document.documentElement.lang = t.htmlLang;
+      document.getElementById("pill-text").textContent = t.pill;
+      document.getElementById("hero-title").innerHTML = t.heroTitle;
+      document.getElementById("hero-text").textContent = t.heroText;
+      document.getElementById("store-link-top").textContent = t.storeTop;
+      document.getElementById("features-link").textContent = t.features;
+      document.getElementById("f1-title").textContent = t.f1Title;
+      document.getElementById("f1-text").textContent = t.f1Text;
+      document.getElementById("f2-title").textContent = t.f2Title;
+      document.getElementById("f2-text").textContent = t.f2Text;
+      document.getElementById("f3-title").textContent = t.f3Title;
+      document.getElementById("f3-text").textContent = t.f3Text;
+      document.getElementById("privacy-note").textContent = t.privacyNote;
+      document.getElementById("privacy-link").textContent = t.privacyLink;
+      document.getElementById("support-link").textContent = t.support;
+
+      document.getElementById("privacy-link").href =
+        lang === "de" ? "datenschutz.html" : "privacy.html";
+
+      document.getElementById("btn-de").classList.toggle("active", lang === "de");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+
+      localStorage.setItem("siteLang", lang);
+    }
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const savedLang = localStorage.getItem("siteLang") || "de";
+    setLang(savedLang);
+  </script>
+</body>
+</html>
