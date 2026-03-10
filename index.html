@@ -9,157 +9,162 @@
 
 <style>
 :root{
-  --bg:#0b1220;
-  --card:#121b2f;
-  --text:#eaf0ff;
-  --muted:#b7c2e1;
-  --accent:#66e3ff;
+--bg:#0b1220;
+--card:#121b2f;
+--text:#eaf0ff;
+--muted:#b7c2e1;
+--accent:#66e3ff;
 }
 
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:
-    radial-gradient(900px 500px at 10% 10%,rgba(102,227,255,.15),transparent 55%),
-    var(--bg);
-  color:var(--text);
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+background:
+radial-gradient(900px 500px at 10% 10%,rgba(102,227,255,.15),transparent 55%),
+var(--bg);
+color:var(--text);
 }
 
 .wrap{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px 60px;
+max-width:1100px;
+margin:auto;
+padding:40px 20px 60px;
 }
 
 .topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:40px;
-  flex-wrap:wrap;
-  gap:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+flex-wrap:wrap;
+gap:16px;
 }
 
 .brand{
-  font-size:18px;
-  font-weight:600;
+font-size:18px;
+font-weight:600;
 }
 
 .lang-switch{
-  display:flex;
-  gap:10px;
+display:flex;
+gap:10px;
 }
 
 .lang-btn{
-  padding:8px 14px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.2);
-  background:transparent;
-  color:var(--text);
-  cursor:pointer;
-  font-weight:600;
+padding:8px 14px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,.2);
+background:transparent;
+color:var(--text);
+cursor:pointer;
+font-weight:600;
 }
 
 .lang-btn.active{
-  background:var(--accent);
-  color:#000;
-  border:none;
+background:var(--accent);
+color:#000;
+border:none;
 }
 
 header{
-  margin-bottom:50px;
-  text-align:center;
+margin-bottom:50px;
+text-align:center;
 }
 
 h1{
-  font-size:42px;
-  margin:0 0 12px;
+font-size:42px;
+margin:0 0 12px;
 }
 
 .subtitle{
-  color:var(--muted);
-  font-size:18px;
-  max-width:740px;
-  margin:auto;
+color:var(--muted);
+font-size:18px;
+max-width:740px;
+margin:auto;
 }
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:28px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:28px;
 }
 
 .card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:28px;
-  text-align:center;
-  transition:.2s;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+border-radius:22px;
+padding:28px;
+text-align:center;
+transition:.2s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+min-height:360px;
 }
 
 .card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 25px 50px rgba(0,0,0,.4);
+transform:translateY(-6px) scale(1.02);
+box-shadow:0 25px 50px rgba(0,0,0,.4);
 }
 
 .app-icon{
-  width:90px;
-  height:90px;
-  border-radius:20px;
-  margin-bottom:16px;
-  object-fit:cover;
+width:96px;
+height:96px;
+border-radius:22px;
+margin-bottom:18px;
+object-fit:cover;
+display:block;
+margin-left:auto;
+margin-right:auto;
+box-shadow:0 6px 18px rgba(0,0,0,.35);
 }
 
 .app-title{
-  font-size:22px;
-  font-weight:600;
-  margin-bottom:10px;
+font-size:22px;
+font-weight:600;
+margin-bottom:10px;
 }
 
 .app-desc{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.6;
-  margin-bottom:22px;
+color:var(--muted);
+font-size:15px;
+line-height:1.6;
+margin-bottom:22px;
 }
 
 .buttons{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
+display:flex;
+gap:12px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:auto;
 }
 
 .btn{
-  padding:12px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:600;
+padding:12px 18px;
+border-radius:12px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
 }
 
 .btn.primary{
-  background:var(--accent);
-  color:black;
+background:var(--accent);
+color:black;
 }
 
 .btn.secondary{
-  border:1px solid rgba(255,255,255,.2);
-  color:var(--text);
-}
-
-.store-badge img{
-  height:46px;
+border:1px solid rgba(255,255,255,.2);
+color:var(--text);
 }
 
 footer{
-  margin-top:60px;
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
+margin-top:60px;
+text-align:center;
+font-size:13px;
+color:var(--muted);
 }
 </style>
 </head>
@@ -190,7 +195,7 @@ Apps für persönliche Entwicklung, Reflexion und Fitness.
 <!-- Erfolgsjournal -->
 <div class="card">
 
-<img class="app-icon" src="erfolgsjournal/assets/Ruhe_am_See.png">
+<img class="app-icon" src="erfolgsjournal/assets/Ruhe_am_See.png" alt="Erfolgsjournal Icon">
 
 <div class="app-title">Erfolgsjournal</div>
 
@@ -208,11 +213,6 @@ id="open1">
 App ansehen
 </a>
 
-<a href="https://apps.apple.com"
-class="store-badge">
-<img src="assets/app-store-badge.svg">
-</a>
-
 <a class="btn secondary"
 href="erfolgsjournal/datenschutz.html"
 id="privacy1">
@@ -226,7 +226,7 @@ Datenschutz
 <!-- Lebensrad -->
 <div class="card">
 
-<img class="app-icon" src="lebensrad/assets/lebensrad.png">
+<img class="app-icon" src="lebensrad/assets/lebensrad.png" alt="Lebensrad Icon">
 
 <div class="app-title">Lebensrad</div>
 
@@ -244,11 +244,6 @@ id="open2">
 App ansehen
 </a>
 
-<a href="https://apps.apple.com"
-class="store-badge">
-<img src="assets/app-store-badge.svg">
-</a>
-
 <a class="btn secondary"
 href="lebensrad/datenschutz.html"
 id="privacy2">
@@ -262,7 +257,7 @@ Datenschutz
 <!-- Fitness Goals -->
 <div class="card">
 
-<img class="app-icon" src="fitnessgoals/assets/Fitnessgoals.jpeg">
+<img class="app-icon" src="fitnessgoals/assets/Fitnessgoals.jpeg" alt="Fitness Goals Icon">
 
 <div class="app-title">Fitness Goals</div>
 
@@ -278,11 +273,6 @@ Setze klare Fitnessziele, verfolge deine Fortschritte und bleibe motiviert.
 href="fitnessgoals/"
 id="open3">
 App ansehen
-</a>
-
-<a href="https://apps.apple.com"
-class="store-badge">
-<img src="assets/app-store-badge.svg">
 </a>
 
 <a class="btn secondary"
