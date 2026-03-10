@@ -15,13 +15,13 @@
 <meta property="og:description" content="Reflektiere deine wichtigsten Lebensbereiche und bringe mehr Balance in dein Leben.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zimjue.github.io/apps/lebensrad/">
-<meta property="og:image" content="https://zimjue.github.io/apps/lebensrad/assets/Lebensrad.png">
+<meta property="og:image" content="https://zimjue.github.io/apps/lebensrad/assets/lebensrad.png">
 <meta property="og:site_name" content="Lebensrad">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lebensrad – Balance & Reflexion">
 <meta name="twitter:description" content="Reflektiere deine wichtigsten Lebensbereiche und bringe mehr Balance in dein Leben.">
-<meta name="twitter:image" content="https://zimjue.github.io/apps/lebensrad/assets/Lebensrad.png">
+<meta name="twitter:image" content="https://zimjue.github.io/apps/lebensrad/assets/lebensrad.png">
 
 <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "operatingSystem":"iOS, iPadOS, macOS",
   "description":"Die Lebensrad App hilft dir, deine Lebensbereiche bewusst zu reflektieren, Balance zu erkennen und dein Leben klarer auszurichten.",
   "url":"https://zimjue.github.io/apps/lebensrad/",
-  "image":"https://zimjue.github.io/apps/lebensrad/assets/Lebensrad.png",
+  "image":"https://zimjue.github.io/apps/lebensrad/assets/lebensrad.png",
   "downloadUrl":"https://apps.apple.com/de/app/lebensrad-dein-lebenskompass/id6759198208",
   "publisher":{
     "@type":"Person",
@@ -78,6 +78,32 @@ a{color:inherit}
   justify-content:space-between;
   align-items:center;
   margin-bottom:36px;
+  gap:16px;
+}
+
+.topbar-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent;
+  color:var(--txt);
+  text-decoration:none;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.back-btn:hover{
+  background:rgba(255,255,255,.06);
 }
 
 .brand{
@@ -401,12 +427,17 @@ p{
 .lang-btn:focus-visible,
 .slide-btn:focus-visible,
 .dot:focus-visible,
-.app-store-badge:focus-visible{
+.app-store-badge:focus-visible,
+.back-btn:focus-visible{
   outline:2px solid var(--accent);
   outline-offset:3px;
 }
 
 @media (max-width:860px){
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
   .hero{
     grid-template-columns:1fr;
     text-align:center;
@@ -440,7 +471,11 @@ p{
 <body>
 <div class="wrap">
   <div class="topbar">
-    <div class="brand" id="brand-title">Lebensrad</div>
+    <div class="topbar-left">
+      <a href="../index.html" class="back-btn" id="back-link">← Alle Apps</a>
+      <div class="brand" id="brand-title">Lebensrad</div>
+    </div>
+
     <div class="lang-switch" aria-label="Sprachauswahl / Language switch">
       <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
       <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
@@ -478,7 +513,7 @@ p{
 
       <div class="hero-image">
         <div class="device-shell">
-          <img id="hero-image" src="assets/Lebensrad.png" alt="Lebensrad Übersicht" class="life-wheel" loading="eager">
+          <img id="hero-image" src="assets/lebensrad.png" alt="Lebensrad Übersicht" class="life-wheel" loading="eager">
         </div>
       </div>
     </section>
@@ -576,7 +611,7 @@ p{
   </main>
 
   <div class="footer">
-    <div>© <span id="y"></span> Jürgen Zimolong</div>
+    <div>© <span id="y"></span> Jürgen Zimmer</div>
     <div><a id="privacy-link" href="datenschutz.html">Datenschutz</a></div>
   </div>
 </div>
@@ -588,6 +623,7 @@ const translations = {
   de: {
     htmlLang: "de",
     brand: "Lebensrad",
+    back: "← Alle Apps",
     title: "Lebensrad – Balance & Reflexion",
     description: "Die Lebensrad App hilft dir, deine Lebensbereiche bewusst zu reflektieren, Balance zu erkennen und dein Leben klarer auszurichten.",
     ogTitle: "Lebensrad – Balance & Reflexion",
@@ -640,6 +676,7 @@ const translations = {
   en: {
     htmlLang: "en",
     brand: "Life Wheel",
+    back: "← All Apps",
     title: "Life Wheel – Balance & Reflection",
     description: "The Life Wheel app helps you reflect on the key areas of your life, see your balance more clearly, and take meaningful action.",
     ogTitle: "Life Wheel – Balance & Reflection",
@@ -787,11 +824,11 @@ function updateStructuredData(t){
     "operatingSystem":"iOS, iPadOS, macOS",
     "description": t.schemaDescription,
     "url":"https://zimjue.github.io/apps/lebensrad/",
-    "image":"https://zimjue.github.io/apps/lebensrad/assets/Lebensrad.png",
+    "image":"https://zimjue.github.io/apps/lebensrad/assets/lebensrad.png",
     "downloadUrl":"https://apps.apple.com/de/app/lebensrad-dein-lebenskompass/id6759198208",
     "publisher":{
       "@type":"Person",
-      "name":"Jürgen Zimolong"
+      "name":"Jürgen Zimmer"
     }
   };
 
@@ -815,6 +852,7 @@ function setLang(lang){
   updateStructuredData(t);
 
   document.getElementById("brand-title").textContent = t.brand;
+  document.getElementById("back-link").textContent = t.back;
   document.getElementById("eyebrow-text").textContent = t.eyebrowText;
   document.getElementById("hero-title").innerHTML = t.heroTitle;
   document.getElementById("hero-text").textContent = t.heroText;
