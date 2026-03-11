@@ -613,7 +613,7 @@ p{
     <div>© <span id="y"></span> Jürgen Zimmer</div>
     <div>
       <a id="privacy-link" href="datenschutz.html">Datenschutz</a> ·
-      <a id="support-link" href="mailto:juzi7@icloud.com">Support</a> ·
+      <a id="support-link" href="../support.html">Support</a> ·
       <a id="eula-link" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">EULA</a>
     </div>
   </div>
@@ -903,6 +903,7 @@ function setLang(lang){
   privacyLink.href = t.privacyHref;
 
   document.getElementById("support-link").textContent = t.support;
+  document.getElementById("support-link").href = "../support.html";
 
   document.getElementById("btn-de").classList.toggle("active", lang === "de");
   document.getElementById("btn-en").classList.toggle("active", lang === "en");
