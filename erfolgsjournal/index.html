@@ -35,7 +35,7 @@
   "downloadUrl":"https://apps.apple.com",
   "publisher":{
     "@type":"Person",
-    "name":"Jürgen Zimolong"
+    "name":"Jürgen Zimmer"
   }
 }
 </script>
@@ -274,6 +274,121 @@ p{
   border:1px solid rgba(102,227,255,.18);
 }
 
+.slider-wrap{
+  position:relative;
+}
+
+.slider{
+  position:relative;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    radial-gradient(500px 200px at 50% 0%,rgba(102,227,255,.08),transparent 60%),
+    rgba(255,255,255,.03);
+  overflow:hidden;
+}
+
+.slider::after{
+  content:"";
+  position:absolute;
+  inset:auto 12% 18px;
+  height:32px;
+  filter:blur(28px);
+  background:rgba(0,0,0,.35);
+  border-radius:999px;
+}
+
+.slide-frame{
+  position:relative;
+  z-index:1;
+  width:min(100%, 360px);
+  padding:14px;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow);
+}
+
+.slide-frame::before{
+  content:"";
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:34%;
+  height:18px;
+  border-radius:0 0 14px 14px;
+  background:rgba(4,8,16,.92);
+  z-index:2;
+}
+
+.app-screenshot{
+  display:block;
+  width:100%;
+  border-radius:24px;
+}
+
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(8,14,27,.72);
+  color:white;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  z-index:3;
+  backdrop-filter:blur(10px);
+}
+
+.slide-btn:hover{background:rgba(12,20,38,.9)}
+.prev{left:18px}
+.next{right:18px}
+
+.slider-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+
+.slide-caption{
+  font-size:15px;
+  color:var(--muted);
+}
+
+.dots{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.22);
+  cursor:pointer;
+  padding:0;
+}
+
+.dot.active{
+  width:28px;
+  border-radius:999px;
+  background:var(--accent);
+}
+
 .cta-card{
   text-align:center;
 }
@@ -309,6 +424,8 @@ p{
 }
 
 .lang-btn:focus-visible,
+.slide-btn:focus-visible,
+.dot:focus-visible,
 .app-store-badge:focus-visible,
 .back-btn:focus-visible{
   outline:2px solid var(--accent);
@@ -331,12 +448,21 @@ p{
     align-items:flex-start;
   }
   .features{grid-template-columns:1fr}
+  .slider{min-height:540px}
 }
 
 @media (max-width:640px){
   .wrap{padding:24px 14px 56px}
   h1{font-size:40px}
   .card{padding:22px}
+  .slider{min-height:470px}
+  .slide-btn{
+    width:42px;
+    height:42px;
+    font-size:24px;
+  }
+  .prev{left:10px}
+  .next{right:10px}
   .app-store-badge img{height:48px}
 }
 </style>
@@ -386,7 +512,7 @@ p{
 
       <div class="hero-image">
         <div class="device-shell">
-          <img id="hero-image" src="assets/Screenshot.jpeg" alt="Erfolgsjournal Vorschau" class="app-preview" loading="eager">
+          <img id="hero-image" src="assets/Ruhe_am_See.png" alt="Erfolgsjournal Vorschau" class="app-preview" loading="eager">
         </div>
       </div>
     </section>
@@ -394,11 +520,29 @@ p{
     <section class="card">
       <div class="section-head">
         <div>
-          <h2 id="features-title">Funktionen</h2>
+          <h2 id="shots-title">App Einblicke</h2>
         </div>
-        <p id="features-text">Ein ruhiges Journal für tägliche Reflexion, Dankbarkeit und einen bewussten Abschluss deines Tages.</p>
+        <p id="shots-text">Ein kurzer Blick in die App: ruhig, klar und auf tägliche Reflexion ausgerichtet.</p>
       </div>
 
+      <div class="slider-wrap" aria-label="Screenshot Karussell">
+        <div class="slider" id="slider" tabindex="0">
+          <button class="slide-btn prev" type="button" onclick="prevSlide()" aria-label="Vorheriger Screenshot">‹</button>
+          <div class="slide-frame">
+            <img id="slider-image" src="assets/screenshot1.png" class="app-screenshot" alt="Erfolgsjournal App Screenshot" loading="eager">
+          </div>
+          <button class="slide-btn next" type="button" onclick="nextSlide()" aria-label="Nächster Screenshot">›</button>
+        </div>
+
+        <div class="slider-meta">
+          <div class="slide-caption" id="slide-caption">Startansicht des Erfolgsjournals</div>
+          <div class="dots" id="dots" aria-label="Screenshot Auswahl"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 id="features-title">Funktionen</h2>
       <div class="features">
         <div class="feature-card">
           <div class="feature-icon" aria-hidden="true">✓</div>
@@ -466,7 +610,7 @@ p{
   </main>
 
   <div class="footer">
-    <div>© <span id="y"></span> Jürgen Zimolong</div>
+    <div>© <span id="y"></span> Jürgen Zimmer</div>
     <div>
       <a id="privacy-link" href="datenschutz.html">Datenschutz</a> ·
       <a id="support-link" href="mailto:juzi7@icloud.com">Support</a> ·
@@ -499,8 +643,19 @@ const translations = {
     storeAria: "Im App Store laden",
     storeBadgeAlt: "Download on the App Store",
     heroImageAlt: "Erfolgsjournal Vorschau",
+    shotsTitle: "App Einblicke",
+    shotsText: "Ein kurzer Blick in die App: ruhig, klar und auf tägliche Reflexion ausgerichtet.",
+    screenshotAlt: "Erfolgsjournal App Screenshot",
+    slidePrevAria: "Vorheriger Screenshot",
+    slideNextAria: "Nächster Screenshot",
+    sliderAria: "Screenshot Karussell",
+    dotsAria: "Screenshot Auswahl",
+    captions: [
+      "Startansicht des Erfolgsjournals",
+      "Dankbarkeit und Reflexion im Überblick",
+      "Tagesabschluss mit Fokus für morgen"
+    ],
     featuresTitle: "Funktionen",
-    featuresText: "Ein ruhiges Journal für tägliche Reflexion, Dankbarkeit und einen bewussten Abschluss deines Tages.",
     f1Title: "Erfolge des Tages",
     f1Text: "Halte fest, was dir gelungen ist – auch kleine Fortschritte zählen.",
     f2Title: "Dankbarkeit",
@@ -542,8 +697,19 @@ const translations = {
     storeAria: "Download on the App Store",
     storeBadgeAlt: "Download on the App Store",
     heroImageAlt: "Success Journal preview",
+    shotsTitle: "App previews",
+    shotsText: "A quick look into the app: calm, clear, and focused on daily reflection.",
+    screenshotAlt: "Success Journal app screenshot",
+    slidePrevAria: "Previous screenshot",
+    slideNextAria: "Next screenshot",
+    sliderAria: "Screenshot carousel",
+    dotsAria: "Screenshot selection",
+    captions: [
+      "Home screen of Success Journal",
+      "Gratitude and reflection overview",
+      "Closing the day with focus for tomorrow"
+    ],
     featuresTitle: "Features",
-    featuresText: "A calm journal for daily reflection, gratitude, and a conscious close to your day.",
     f1Title: "Daily achievements",
     f1Text: "Capture what went well — even small steps count.",
     f2Title: "Gratitude",
@@ -567,6 +733,88 @@ const translations = {
   }
 };
 
+const screenshots = [
+  "assets/screenshot1.png",
+  "assets/screenshot2.png",
+  "assets/screenshot3.png"
+];
+
+let currentSlide = 0;
+let autoPlay = null;
+
+function currentLang(){
+  const savedLang = localStorage.getItem("siteLang");
+  if(savedLang === "de" || savedLang === "en") return savedLang;
+  const browserLang = navigator.language || navigator.userLanguage || "de";
+  return browserLang.toLowerCase().startsWith("de") ? "de" : "en";
+}
+
+function buildDots(){
+  const dots = document.getElementById("dots");
+  dots.innerHTML = "";
+  screenshots.forEach((_, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "dot" + (index === currentSlide ? " active" : "");
+    button.setAttribute("aria-label", `Screenshot ${index + 1}`);
+    button.onclick = () => goToSlide(index);
+    dots.appendChild(button);
+  });
+}
+
+function updateSlideMeta(){
+  const lang = currentLang();
+  const t = translations[lang] || translations.de;
+
+  document.getElementById("slider-image").src = screenshots[currentSlide];
+  document.getElementById("slider-image").alt = t.screenshotAlt;
+  document.getElementById("slide-caption").textContent = t.captions[currentSlide] || "";
+
+  [...document.querySelectorAll(".dot")].forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentSlide);
+    dot.setAttribute("aria-current", index === currentSlide ? "true" : "false");
+  });
+}
+
+function showSlide(){
+  buildDots();
+  updateSlideMeta();
+}
+
+function goToSlide(index){
+  currentSlide = index;
+  updateSlideMeta();
+  restartAutoPlay();
+}
+
+function nextSlide(){
+  currentSlide = (currentSlide + 1) % screenshots.length;
+  updateSlideMeta();
+  restartAutoPlay();
+}
+
+function prevSlide(){
+  currentSlide = (currentSlide - 1 + screenshots.length) % screenshots.length;
+  updateSlideMeta();
+  restartAutoPlay();
+}
+
+function startAutoPlay(){
+  stopAutoPlay();
+  autoPlay = setInterval(() => {
+    currentSlide = (currentSlide + 1) % screenshots.length;
+    updateSlideMeta();
+  }, 4500);
+}
+
+function stopAutoPlay(){
+  if(autoPlay) clearInterval(autoPlay);
+}
+
+function restartAutoPlay(){
+  startAutoPlay();
+}
+
 function updateMetaTag(selector, content){
   const el = document.querySelector(selector);
   if(el) el.setAttribute("content", content);
@@ -585,7 +833,7 @@ function updateStructuredData(t){
     "downloadUrl":"https://apps.apple.com",
     "publisher":{
       "@type":"Person",
-      "name":"Jürgen Zimolong"
+      "name":"Jürgen Zimmer"
     }
   };
 
@@ -621,8 +869,14 @@ function setLang(lang){
   document.getElementById("store-badge-bottom").alt = t.storeBadgeAlt;
   document.getElementById("hero-image").alt = t.heroImageAlt;
 
+  document.getElementById("shots-title").textContent = t.shotsTitle;
+  document.getElementById("shots-text").textContent = t.shotsText;
+  document.getElementById("slider").setAttribute("aria-label", t.sliderAria);
+  document.getElementById("dots").setAttribute("aria-label", t.dotsAria);
+  document.querySelector(".prev").setAttribute("aria-label", t.slidePrevAria);
+  document.querySelector(".next").setAttribute("aria-label", t.slideNextAria);
+
   document.getElementById("features-title").textContent = t.featuresTitle;
-  document.getElementById("features-text").textContent = t.featuresText;
   document.getElementById("f1-title").textContent = t.f1Title;
   document.getElementById("f1-text").textContent = t.f1Text;
   document.getElementById("f2-title").textContent = t.f2Title;
@@ -654,12 +908,41 @@ function setLang(lang){
   document.getElementById("btn-en").classList.toggle("active", lang === "en");
 
   localStorage.setItem("siteLang", lang);
+  updateSlideMeta();
 }
+
+const slider = document.getElementById("slider");
+
+slider.addEventListener("mouseenter", stopAutoPlay);
+slider.addEventListener("mouseleave", startAutoPlay);
+slider.addEventListener("focusin", stopAutoPlay);
+slider.addEventListener("focusout", startAutoPlay);
+
+slider.addEventListener("keydown", (event) => {
+  if(event.key === "ArrowRight") nextSlide();
+  if(event.key === "ArrowLeft") prevSlide();
+});
+
+let touchStartX = 0;
+
+slider.addEventListener("touchstart", (event) => {
+  touchStartX = event.changedTouches[0].clientX;
+}, {passive:true});
+
+slider.addEventListener("touchend", (event) => {
+  const touchEndX = event.changedTouches[0].clientX;
+  const delta = touchEndX - touchStartX;
+  if(Math.abs(delta) > 40){
+    if(delta < 0) nextSlide();
+    else prevSlide();
+  }
+}, {passive:true});
 
 document.getElementById("y").textContent = new Date().getFullYear();
 
-const savedLang = localStorage.getItem("siteLang") || "de";
-setLang(savedLang);
+showSlide();
+setLang(currentLang());
+startAutoPlay();
 </script>
 </body>
 </html>
