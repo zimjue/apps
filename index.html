@@ -300,31 +300,31 @@ Datenschutz
 
 <footer>
 © <span id="year"></span> Jürgen Zimmer<br>
-<a href="support.html" id="supportLink">Support</a>
+<a href="datenschutz.html" id="footerPrivacy">Datenschutz</a> ·
+<a href="support.html" id="supportLink">Support</a> ·
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">EULA</a>
 </footer>
 
 </div>
 
 <script>
-
 const translations = {
-
 de:{
 title:"Meine Apps",
 subtitle:"Apps für persönliche Entwicklung, Reflexion und Fitness.",
 privacy:"Datenschutz",
 open:"App ansehen",
-support:"Support"
+support:"Support",
+footerPrivacy:"Datenschutz"
 },
-
 en:{
 title:"My Apps",
 subtitle:"Apps for personal growth, reflection and fitness.",
 privacy:"Privacy",
 open:"View App",
-support:"Support"
+support:"Support",
+footerPrivacy:"Privacy"
 }
-
 };
 
 function setLang(lang){
@@ -347,33 +347,30 @@ document.getElementById("open2").textContent=translations[lang].open;
 document.getElementById("open3").textContent=translations[lang].open;
 
 document.getElementById("supportLink").textContent=translations[lang].support;
+document.getElementById("footerPrivacy").textContent=translations[lang].footerPrivacy;
 
 if(lang==="de"){
-
 document.getElementById("privacy1").href="erfolgsjournal/datenschutz.html";
 document.getElementById("privacy2").href="lebensrad/datenschutz.html";
 document.getElementById("privacy3").href="fitnessgoals/datenschutz.html";
-
+document.getElementById("footerPrivacy").href="datenschutz.html";
 }else{
-
 document.getElementById("privacy1").href="erfolgsjournal/privacy.html";
 document.getElementById("privacy2").href="lebensrad/privacy.html";
 document.getElementById("privacy3").href="fitnessgoals/privacy.html";
-
+document.getElementById("footerPrivacy").href="privacy.html";
 }
 
 document.getElementById("btn-de").classList.toggle("active",lang==="de");
 document.getElementById("btn-en").classList.toggle("active",lang==="en");
 
 localStorage.setItem("siteLang",lang);
-
 }
 
 document.getElementById("year").textContent=new Date().getFullYear();
 
 const savedLang=localStorage.getItem("siteLang")||"de";
 setLang(savedLang);
-
 </script>
 
 </body>
