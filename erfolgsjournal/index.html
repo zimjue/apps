@@ -1,35 +1,585 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion</title>
-  <meta name="description" content="Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen." />
-  <meta name="theme-color" content="#0b1220" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://zimjue.github.io/apps/erfolgsjournal/" />
+<title>Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion</title>
+<meta name="description" content="Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.">
+<meta name="theme-color" content="#0b1220">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zimjue.github.io/apps/erfolgsjournal/">
 
-  <meta property="og:title" content="Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion" />
-  <meta property="og:description" content="Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://zimjue.github.io/apps/erfolgsjournal/" />
-  <meta property="og:image" content="https://zimjue.github.io/apps/erfolgsjournal/assets/Ruhe_am_See.png" />
-  <meta property="og:site_name" content="Erfolgsjournal" />
+<meta property="og:title" content="Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion">
+<meta property="og:description" content="Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimjue.github.io/apps/erfolgsjournal/">
+<meta property="og:image" content="https://zimjue.github.io/apps/erfolgsjournal/assets/Ruhe_am_See.png">
+<meta property="og:site_name" content="Erfolgsjournal">
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion" />
-  <meta name="twitter:description" content="Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen." />
-  <meta name="twitter:image" content="https://zimjue.github.io/apps/erfolgsjournal/assets/Ruhe_am_See.png" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion">
+<meta name="twitter:description" content="Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.">
+<meta name="twitter:image" content="https://zimjue.github.io/apps/erfolgsjournal/assets/Ruhe_am_See.png">
 
-  <script type="application/ld+json">
-  {
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Erfolgsjournal",
+  "applicationCategory":"LifestyleApplication",
+  "operatingSystem":"iOS, iPadOS, macOS",
+  "description":"Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
+  "url":"https://zimjue.github.io/apps/erfolgsjournal/",
+  "image":"https://zimjue.github.io/apps/erfolgsjournal/assets/Ruhe_am_See.png",
+  "downloadUrl":"https://apps.apple.com",
+  "publisher":{
+    "@type":"Person",
+    "name":"Jürgen Zimolong"
+  }
+}
+</script>
+
+<style>
+:root{
+  --bg:#0b1220;
+  --txt:#eaf0ff;
+  --muted:#b7c2e1;
+  --accent:#66e3ff;
+  --card:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.12);
+  --shadow:0 30px 70px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 600px at 20% 10%,rgba(102,227,255,.18),transparent 55%),
+    radial-gradient(900px 500px at 90% 40%,rgba(153,102,255,.14),transparent 55%),
+    var(--bg);
+  color:var(--txt);
+}
+
+a{color:inherit}
+
+.wrap{
+  max-width:1080px;
+  margin:auto;
+  padding:40px 18px 72px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:36px;
+  gap:16px;
+}
+
+.topbar-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent;
+  color:var(--txt);
+  text-decoration:none;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.back-btn:hover{
+  background:rgba(255,255,255,.06);
+}
+
+.brand{
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.lang-switch{
+  display:flex;
+  gap:10px;
+}
+
+.lang-btn{
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent;
+  color:var(--txt);
+  cursor:pointer;
+  font-weight:700;
+}
+
+.lang-btn.active{
+  background:var(--accent);
+  color:#04121e;
+  border-color:transparent;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:42px;
+  align-items:center;
+  margin-bottom:42px;
+}
+
+.hero-copy{max-width:560px}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.eyebrow-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 18px rgba(102,227,255,.8);
+}
+
+h1{
+  font-size:52px;
+  line-height:1.04;
+  margin:0 0 16px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.65;
+  margin:0;
+}
+
+.hero-actions{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.store-note{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.hero-image{
+  display:flex;
+  justify-content:center;
+}
+
+.device-shell{
+  position:relative;
+  width:min(100%, 360px);
+  padding:14px;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow);
+}
+
+.device-shell::before{
+  content:"";
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:34%;
+  height:18px;
+  border-radius:0 0 14px 14px;
+  background:rgba(4,8,16,.92);
+  z-index:2;
+}
+
+.app-preview{
+  display:block;
+  width:100%;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:30px;
+  margin-top:28px;
+  backdrop-filter:blur(10px);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.section-head h2{
+  margin:0;
+  font-size:28px;
+}
+
+.section-head p{
+  max-width:560px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:20px;
+}
+
+.feature-card{
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:22px;
+}
+
+.feature-icon{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-size:20px;
+  margin-bottom:14px;
+  background:linear-gradient(180deg,rgba(102,227,255,.18),rgba(102,227,255,.06));
+  border:1px solid rgba(102,227,255,.18);
+}
+
+.cta-card{
+  text-align:center;
+}
+
+.footer{
+  margin-top:64px;
+  font-size:13px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.footer a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.footer a:hover{
+  text-decoration:underline;
+}
+
+.app-store-badge{
+  display:inline-block;
+  line-height:0;
+}
+
+.app-store-badge img{
+  height:52px;
+  width:auto;
+  display:block;
+}
+
+.lang-btn:focus-visible,
+.app-store-badge:focus-visible,
+.back-btn:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
+@media (max-width:860px){
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-copy{max-width:none}
+  .hero-actions{justify-content:center}
+  .section-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .features{grid-template-columns:1fr}
+}
+
+@media (max-width:640px){
+  .wrap{padding:24px 14px 56px}
+  h1{font-size:40px}
+  .card{padding:22px}
+  .app-store-badge img{height:48px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="../index.html" class="back-btn" id="back-link">← Alle Apps</a>
+      <div class="brand" id="brand-title">Erfolgsjournal</div>
+    </div>
+
+    <div class="lang-switch" aria-label="Sprachauswahl / Language switch">
+      <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span id="eyebrow-text">Deine tägliche Reflexion</span>
+        </div>
+
+        <h1 id="hero-title">Halte fest,<br>was wirklich zählt.</h1>
+        <p id="hero-text">Erfolgsjournal hilft dir, deinen Tag bewusst abzuschließen: mit Erfolgen, Dankbarkeit, Erkenntnissen und einem klaren Fokus für morgen.</p>
+
+        <div class="hero-actions">
+          <a
+            id="store-link-top"
+            class="app-store-badge"
+            href="https://apps.apple.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Im App Store laden">
+            <img
+              id="store-badge-top"
+              src="../assets/app-store-badge.svg"
+              alt="Download on the App Store">
+          </a>
+
+          <span class="store-note" id="store-note">Für iPhone, iPad, macOS verfügbar</span>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="device-shell">
+          <img id="hero-image" src="assets/Screenshot.jpeg" alt="Erfolgsjournal Vorschau" class="app-preview" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="features-title">Funktionen</h2>
+        </div>
+        <p id="features-text">Ein ruhiges Journal für tägliche Reflexion, Dankbarkeit und einen bewussten Abschluss deines Tages.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">✓</div>
+          <strong id="f1-title">Erfolge des Tages</strong>
+          <p id="f1-text">Halte fest, was dir gelungen ist – auch kleine Fortschritte zählen.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">♡</div>
+          <strong id="f2-title">Dankbarkeit</strong>
+          <p id="f2-text">Richte deine Aufmerksamkeit bewusst auf das Gute in deinem Leben.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">→</div>
+          <strong id="f3-title">Fokus für morgen</strong>
+          <p id="f3-text">Beende den Tag mit Klarheit statt mit offenen Gedankenschleifen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 id="why-title">Warum Erfolgsjournal?</h2>
+      <p id="why-text">Erfolgsjournal hilft dir, den Tag bewusst abzuschließen. Statt nur auf To-dos und Belastung zu schauen, richtest du deinen Fokus auf Erfolge, Dankbarkeit und Klarheit. So entsteht Schritt für Schritt mehr innere Ordnung und ein bewusster Start in den nächsten Tag.</p>
+    </section>
+
+    <section class="card">
+      <h2 id="how-title">So funktioniert es</h2>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">1</div>
+          <strong id="step1-title">1. Den Tag reflektieren</strong>
+          <p id="step1-text">Halte fest, was heute wichtig war und welche Fortschritte du gemacht hast.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">2</div>
+          <strong id="step2-title">2. Dankbarkeit und Erkenntnisse</strong>
+          <p id="step2-text">Richte deinen Blick auf das Gute und lerne aus deinem Tag.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">3</div>
+          <strong id="step3-title">3. Klarheit für morgen</strong>
+          <p id="step3-text">Beende den Tag ruhig und mit einem klaren Fokus für den nächsten Schritt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card cta-card">
+      <h2 id="cta-title">Starte dein tägliches Erfolgsjournal</h2>
+      <p id="cta-text">Lade die App herunter und bringe mehr Bewusstheit, Dankbarkeit und Klarheit in deinen Alltag.</p>
+
+      <div class="hero-actions" style="justify-content:center">
+        <a
+          id="store-link-bottom"
+          class="app-store-badge"
+          href="https://apps.apple.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Im App Store laden">
+          <img
+            id="store-badge-bottom"
+            src="../assets/app-store-badge.svg"
+            alt="Download on the App Store">
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer">
+    <div>© <span id="y"></span> Jürgen Zimolong</div>
+    <div>
+      <a id="privacy-link" href="datenschutz.html">Datenschutz</a> ·
+      <a id="support-link" href="mailto:juzi7@icloud.com">Support</a> ·
+      <a id="eula-link" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">EULA</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+
+const translations = {
+  de: {
+    htmlLang: "de",
+    brand: "Erfolgsjournal",
+    back: "← Alle Apps",
+    title: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
+    description: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
+    ogTitle: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
+    ogDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
+    ogSiteName: "Erfolgsjournal",
+    twitterTitle: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
+    twitterDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
+    schemaName: "Erfolgsjournal",
+    schemaDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
+    eyebrowText: "Deine tägliche Reflexion",
+    heroTitle: "Halte fest,<br>was wirklich zählt.",
+    heroText: "Erfolgsjournal hilft dir, deinen Tag bewusst abzuschließen: mit Erfolgen, Dankbarkeit, Erkenntnissen und einem klaren Fokus für morgen.",
+    storeNote: "Für iPhone, iPad, macOS verfügbar",
+    storeAria: "Im App Store laden",
+    storeBadgeAlt: "Download on the App Store",
+    heroImageAlt: "Erfolgsjournal Vorschau",
+    featuresTitle: "Funktionen",
+    featuresText: "Ein ruhiges Journal für tägliche Reflexion, Dankbarkeit und einen bewussten Abschluss deines Tages.",
+    f1Title: "Erfolge des Tages",
+    f1Text: "Halte fest, was dir gelungen ist – auch kleine Fortschritte zählen.",
+    f2Title: "Dankbarkeit",
+    f2Text: "Richte deine Aufmerksamkeit bewusst auf das Gute in deinem Leben.",
+    f3Title: "Fokus für morgen",
+    f3Text: "Beende den Tag mit Klarheit statt mit offenen Gedankenschleifen.",
+    whyTitle: "Warum Erfolgsjournal?",
+    whyText: "Erfolgsjournal hilft dir, den Tag bewusst abzuschließen. Statt nur auf To-dos und Belastung zu schauen, richtest du deinen Fokus auf Erfolge, Dankbarkeit und Klarheit. So entsteht Schritt für Schritt mehr innere Ordnung und ein bewusster Start in den nächsten Tag.",
+    howTitle: "So funktioniert es",
+    step1Title: "1. Den Tag reflektieren",
+    step1Text: "Halte fest, was heute wichtig war und welche Fortschritte du gemacht hast.",
+    step2Title: "2. Dankbarkeit und Erkenntnisse",
+    step2Text: "Richte deinen Blick auf das Gute und lerne aus deinem Tag.",
+    step3Title: "3. Klarheit für morgen",
+    step3Text: "Beende den Tag ruhig und mit einem klaren Fokus für den nächsten Schritt.",
+    ctaTitle: "Starte dein tägliches Erfolgsjournal",
+    ctaText: "Lade die App herunter und bringe mehr Bewusstheit, Dankbarkeit und Klarheit in deinen Alltag.",
+    privacy: "Datenschutz",
+    privacyHref: "datenschutz.html",
+    support: "Support"
+  },
+  en: {
+    htmlLang: "en",
+    brand: "Success Journal",
+    back: "← All Apps",
+    title: "Success Journal – Clarity, Gratitude & Reflection",
+    description: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
+    ogTitle: "Success Journal – Clarity, Gratitude & Reflection",
+    ogDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
+    ogSiteName: "Success Journal",
+    twitterTitle: "Success Journal – Clarity, Gratitude & Reflection",
+    twitterDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
+    schemaName: "Success Journal",
+    schemaDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
+    eyebrowText: "Your daily reflection",
+    heroTitle: "Capture<br>what really matters.",
+    heroText: "Success Journal helps you close your day with awareness: achievements, gratitude, insights, and a clear focus for tomorrow.",
+    storeNote: "Available for iPhone, iPad, macOS",
+    storeAria: "Download on the App Store",
+    storeBadgeAlt: "Download on the App Store",
+    heroImageAlt: "Success Journal preview",
+    featuresTitle: "Features",
+    featuresText: "A calm journal for daily reflection, gratitude, and a conscious close to your day.",
+    f1Title: "Daily achievements",
+    f1Text: "Capture what went well — even small steps count.",
+    f2Title: "Gratitude",
+    f2Text: "Bring your attention to what is already good in your life.",
+    f3Title: "Focus for tomorrow",
+    f3Text: "End the day with clarity instead of open mental loops.",
+    whyTitle: "Why Success Journal?",
+    whyText: "Success Journal helps you close the day with intention. Instead of focusing only on tasks and pressure, you shift your attention toward achievements, gratitude, and clarity. Step by step, this creates more inner order and a more conscious start to tomorrow.",
+    howTitle: "How it works",
+    step1Title: "1. Reflect on the day",
+    step1Text: "Capture what mattered today and which progress you made.",
+    step2Title: "2. Gratitude and insights",
+    step2Text: "Turn your attention to what was good and learn from your day.",
+    step3Title: "3. Clarity for tomorrow",
+    step3Text: "End the day calmly and with a clear focus on your next step.",
+    ctaTitle: "Start your daily Success Journal",
+    ctaText: "Download the app and bring more awareness, gratitude, and clarity into your daily life.",
+    privacy: "Privacy",
+    privacyHref: "privacy.html",
+    support: "Support"
+  }
+};
+
+function updateMetaTag(selector, content){
+  const el = document.querySelector(selector);
+  if(el) el.setAttribute("content", content);
+}
+
+function updateStructuredData(t){
+  const schema = {
     "@context":"https://schema.org",
     "@type":"SoftwareApplication",
-    "name":"Erfolgsjournal",
+    "name": t.schemaName,
     "applicationCategory":"LifestyleApplication",
     "operatingSystem":"iOS, iPadOS, macOS",
-    "description":"Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
+    "description": t.schemaDescription,
     "url":"https://zimjue.github.io/apps/erfolgsjournal/",
     "image":"https://zimjue.github.io/apps/erfolgsjournal/assets/Ruhe_am_See.png",
     "downloadUrl":"https://apps.apple.com",
@@ -37,569 +587,79 @@
       "@type":"Person",
       "name":"Jürgen Zimolong"
     }
-  }
-  </script>
-
-  <style>
-    :root{
-      --bg:#0b1220;
-      --txt:#eaf0ff;
-      --muted:#b7c2e1;
-      --accent:#66e3ff;
-      --card:rgba(255,255,255,.06);
-      --line:rgba(255,255,255,.12);
-      --shadow:0 30px 70px rgba(0,0,0,.45);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(102,227,255,.18), transparent 55%),
-        radial-gradient(900px 500px at 90% 40%, rgba(153,102,255,.14), transparent 55%),
-        var(--bg);
-      color:var(--txt);
-    }
-
-    a{color:inherit}
-
-    .wrap{
-      max-width:1080px;
-      margin:auto;
-      padding:40px 18px 72px;
-    }
-
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:36px;
-      gap:16px;
-    }
-
-    .topbar-left{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
-    }
-
-    .back-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.18);
-      background:transparent;
-      color:var(--txt);
-      text-decoration:none;
-      font-weight:700;
-      white-space:nowrap;
-    }
-
-    .back-btn:hover{
-      background:rgba(255,255,255,.06);
-    }
-
-    .brand{
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-
-    .lang-switch{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    .lang-btn{
-      padding:8px 14px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.2);
-      background:transparent;
-      color:var(--txt);
-      cursor:pointer;
-      font-weight:700;
-    }
-
-    .lang-btn.active{
-      background:var(--accent);
-      color:#04121e;
-      border-color:transparent;
-    }
-
-    .hero{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
-      align-items:start;
-    }
-
-    h1{
-      font-size:44px;
-      margin:0 0 12px;
-      line-height:1.05;
-    }
-
-    p{
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.6;
-      margin:0;
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:24px;
-      box-shadow:0 20px 50px rgba(0,0,0,.3);
-      backdrop-filter:blur(10px);
-    }
-
-    .kicker{
-      color:rgba(102,227,255,.9);
-      font-weight:700;
-      letter-spacing:.3px;
-      text-transform:uppercase;
-      font-size:12px;
-      margin-bottom:10px;
-    }
-
-    .pill{
-      display:inline-flex;
-      font-size:12px;
-      padding:6px 10px;
-      background:rgba(255,255,255,.08);
-      border-radius:999px;
-      color:var(--muted);
-      margin-bottom:14px;
-    }
-
-    .cta{
-      margin-top:24px;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .btn{
-      padding:14px 22px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:600;
-      display:inline-block;
-    }
-
-    .btn.primary{
-      background:var(--accent);
-      color:#000;
-    }
-
-    .btn.secondary{
-      border:1px solid rgba(255,255,255,.2);
-      color:var(--txt);
-    }
-
-    .features{
-      margin-top:24px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-
-    .feature-card{
-      background:rgba(255,255,255,.035);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;
-      padding:22px;
-    }
-
-    .feature-card strong{
-      display:block;
-      margin-bottom:8px;
-      font-size:16px;
-    }
-
-    .feature-card p{
-      font-size:15px;
-    }
-
-    .small-note{
-      margin-top:14px;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.6;
-    }
-
-    .screenshot-frame{
-      width:100%;
-      min-height:520px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
-      overflow:hidden;
-    }
-
-    .app-screenshot{
-      max-width:100%;
-      max-height:100%;
-      width:auto;
-      height:auto;
-      display:block;
-    }
-
-    .app-store-badge{
-      display:inline-block;
-      line-height:0;
-    }
-
-    .app-store-badge img{
-      height:60px;
-      width:auto;
-      display:block;
-    }
-
-    .legal-wrap{
-      margin-top:20px;
-    }
-
-    .legal-list{
-      margin:14px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    .legal-list a{
-      color:var(--muted);
-      text-decoration:none;
-    }
-
-    .legal-list a:hover{
-      color:var(--txt);
-    }
-
-    .footer{
-      margin-top:50px;
-      font-size:13px;
-      color:var(--muted);
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .footer a{
-      color:var(--muted);
-      text-decoration:none;
-    }
-
-    .footer a:hover{
-      color:var(--txt);
-    }
-
-    .lang-btn:focus-visible,
-    .back-btn:focus-visible,
-    .btn:focus-visible,
-    .app-store-badge:focus-visible{
-      outline:2px solid var(--accent);
-      outline-offset:3px;
-    }
-
-    @media (max-width:860px){
-      .topbar{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .hero{
-        grid-template-columns:1fr;
-      }
-
-      .features{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width:640px){
-      .wrap{padding:24px 14px 56px}
-      h1{font-size:38px}
-      .card{padding:22px}
-      .app-store-badge img{height:52px}
-      .screenshot-frame{min-height:420px}
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-
-    <div class="topbar">
-      <div class="topbar-left">
-        <a class="back-btn" href="../index.html" id="back-link">← Alle Apps</a>
-        <div class="brand" id="brand-title">Erfolgsjournal</div>
-      </div>
-
-      <div class="lang-switch">
-        <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
-        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
-      </div>
-    </div>
-
-    <div class="hero">
-      <div class="card">
-        <div class="pill" id="pill-text">iOS • Reflexion</div>
-
-        <div class="kicker" id="kicker-text">Deine tägliche Reflexion</div>
-
-        <h1 id="hero-title">Halte fest,<br/>was wirklich zählt.</h1>
-
-        <p id="hero-text">
-          Erfolgsjournal hilft dir, deinen Tag bewusst abzuschließen: mit Erfolgen, Dankbarkeit, Erkenntnissen und einem klaren Fokus für morgen.
-        </p>
-
-        <div class="cta">
-          <a class="btn primary"
-             id="store-link-top"
-             href="https://apps.apple.com"
-             target="_blank"
-             rel="noopener noreferrer">
-            Im App Store ansehen
-          </a>
-
-          <a class="btn secondary" href="#features" id="features-link">Features</a>
-        </div>
-
-        <div class="features" id="features">
-          <div class="feature-card">
-            <strong id="f1-title">Erfolge des Tages</strong>
-            <p id="f1-text">Halte fest, was dir gelungen ist – auch kleine Fortschritte zählen.</p>
-          </div>
-
-          <div class="feature-card">
-            <strong id="f2-title">Dankbarkeit</strong>
-            <p id="f2-text">Richte deine Aufmerksamkeit bewusst auf das Gute in deinem Leben.</p>
-          </div>
-
-          <div class="feature-card">
-            <strong id="f3-title">Fokus für morgen</strong>
-            <p id="f3-text">Beende den Tag mit Klarheit statt mit offenen Gedankenschleifen.</p>
-          </div>
-        </div>
-
-        <div class="small-note" id="privacy-note">
-          <strong>Datenschutz:</strong> Deine Einträge bleiben privat und werden nicht zu Werbe- oder Tracking-Zwecken genutzt.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="screenshot-frame">
-          <img
-            src="assets/Screenshot.jpeg"
-            alt="Screenshot der Erfolgsjournal App"
-            class="app-screenshot"
-            id="app-screenshot" />
-        </div>
-
-        <div style="margin-top:20px;">
-          <a href="https://apps.apple.com"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="app-store-badge"
-             aria-label="Im App Store laden">
-            <img
-              id="store-badge-side"
-              src="../assets/app-store-badge.svg"
-              alt="Download on the App Store">
-          </a>
-        </div>
-
-        <div class="legal-wrap">
-          <div class="kicker" id="legal-kicker">Rechtliches</div>
-
-          <ul class="legal-list">
-            <li><a href="datenschutz.html" id="privacy-link-side">Datenschutzerklärung</a></li>
-            <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" id="eula-link-text">Nutzungsbedingungen (EULA)</a></li>
-            <li><span id="support-label">Support:</span> <a href="mailto:juzi7@icloud.com">juzi7@icloud.com</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>© <span id="y"></span> Jürgen Zimmer</div>
-      <div>
-        <a href="datenschutz.html" id="privacy-link-footer">Datenschutz</a> ·
-        <a href="mailto:juzi7@icloud.com" id="support-link">Support</a> ·
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" id="footer-eula">EULA</a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const translations = {
-      de: {
-        htmlLang: "de",
-        brand: "Erfolgsjournal",
-        back: "← Alle Apps",
-        pageTitle: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
-        description: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
-        ogTitle: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
-        ogDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
-        ogSiteName: "Erfolgsjournal",
-        twitterTitle: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
-        twitterDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
-        schemaName: "Erfolgsjournal",
-        schemaDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
-        pill: "iOS • Reflexion",
-        kicker: "Deine tägliche Reflexion",
-        heroTitle: "Halte fest,<br/>was wirklich zählt.",
-        heroText: "Erfolgsjournal hilft dir, deinen Tag bewusst abzuschließen: mit Erfolgen, Dankbarkeit, Erkenntnissen und einem klaren Fokus für morgen.",
-        storeTop: "Im App Store ansehen",
-        features: "Features",
-        f1Title: "Erfolge des Tages",
-        f1Text: "Halte fest, was dir gelungen ist – auch kleine Fortschritte zählen.",
-        f2Title: "Dankbarkeit",
-        f2Text: "Richte deine Aufmerksamkeit bewusst auf das Gute in deinem Leben.",
-        f3Title: "Fokus für morgen",
-        f3Text: "Beende den Tag mit Klarheit statt mit offenen Gedankenschleifen.",
-        privacyNote: "<strong>Datenschutz:</strong> Deine Einträge bleiben privat und werden nicht zu Werbe- oder Tracking-Zwecken genutzt.",
-        legalKicker: "Rechtliches",
-        privacySide: "Datenschutzerklärung",
-        eulaText: "Nutzungsbedingungen (EULA)",
-        supportLabel: "Support:",
-        privacyFooter: "Datenschutz",
-        support: "Support",
-        screenshotAlt: "Screenshot der Erfolgsjournal App",
-        privacyHref: "datenschutz.html",
-        storeBadgeAlt: "Download on the App Store"
-      },
-      en: {
-        htmlLang: "en",
-        brand: "Success Journal",
-        back: "← All Apps",
-        pageTitle: "Success Journal – Clarity, Gratitude & Reflection",
-        description: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
-        ogTitle: "Success Journal – Clarity, Gratitude & Reflection",
-        ogDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
-        ogSiteName: "Success Journal",
-        twitterTitle: "Success Journal – Clarity, Gratitude & Reflection",
-        twitterDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
-        schemaName: "Success Journal",
-        schemaDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
-        pill: "iOS • Reflection",
-        kicker: "Your daily reflection",
-        heroTitle: "Capture<br/>what really matters.",
-        heroText: "Erfolgsjournal helps you close your day with awareness: achievements, gratitude, insights, and a clear focus for tomorrow.",
-        storeTop: "View on the App Store",
-        features: "Features",
-        f1Title: "Daily achievements",
-        f1Text: "Capture what went well — even small steps count.",
-        f2Title: "Gratitude",
-        f2Text: "Bring your attention to what is already good in your life.",
-        f3Title: "Focus for tomorrow",
-        f3Text: "End the day with clarity instead of open mental loops.",
-        privacyNote: "<strong>Privacy:</strong> Your entries stay private and are not used for advertising or tracking.",
-        legalKicker: "Legal",
-        privacySide: "Privacy Policy",
-        eulaText: "Terms of Use (EULA)",
-        supportLabel: "Support:",
-        privacyFooter: "Privacy",
-        support: "Support",
-        screenshotAlt: "Screenshot of the Success Journal app",
-        privacyHref: "privacy.html",
-        storeBadgeAlt: "Download on the App Store"
-      }
-    };
-
-    function updateMetaTag(selector, content){
-      const el = document.querySelector(selector);
-      if(el) el.setAttribute("content", content);
-    }
-
-    function updateStructuredData(t){
-      const schema = {
-        "@context":"https://schema.org",
-        "@type":"SoftwareApplication",
-        "name": t.schemaName,
-        "applicationCategory":"LifestyleApplication",
-        "operatingSystem":"iOS, iPadOS, macOS",
-        "description": t.schemaDescription,
-        "url":"https://zimjue.github.io/apps/erfolgsjournal/",
-        "image":"https://zimjue.github.io/apps/erfolgsjournal/assets/Ruhe_am_See.png",
-        "downloadUrl":"https://apps.apple.com",
-        "publisher":{
-          "@type":"Person",
-          "name":"Jürgen Zimolong"
-        }
-      };
-
-      const script = document.querySelector('script[type="application/ld+json"]');
-      if(script) script.textContent = JSON.stringify(schema);
-    }
-
-    function setLang(lang) {
-      const t = translations[lang] || translations.de;
-
-      document.documentElement.lang = t.htmlLang;
-      document.title = t.pageTitle;
-
-      updateMetaTag('meta[name="description"]', t.description);
-      updateMetaTag('meta[property="og:title"]', t.ogTitle);
-      updateMetaTag('meta[property="og:description"]', t.ogDescription);
-      updateMetaTag('meta[property="og:site_name"]', t.ogSiteName);
-      updateMetaTag('meta[name="twitter:title"]', t.twitterTitle);
-      updateMetaTag('meta[name="twitter:description"]', t.twitterDescription);
-
-      updateStructuredData(t);
-
-      document.getElementById("brand-title").textContent = t.brand;
-      document.getElementById("back-link").textContent = t.back;
-      document.getElementById("pill-text").textContent = t.pill;
-      document.getElementById("kicker-text").textContent = t.kicker;
-      document.getElementById("hero-title").innerHTML = t.heroTitle;
-      document.getElementById("hero-text").textContent = t.heroText;
-      document.getElementById("store-link-top").textContent = t.storeTop;
-      document.getElementById("features-link").textContent = t.features;
-      document.getElementById("f1-title").textContent = t.f1Title;
-      document.getElementById("f1-text").textContent = t.f1Text;
-      document.getElementById("f2-title").textContent = t.f2Title;
-      document.getElementById("f2-text").textContent = t.f2Text;
-      document.getElementById("f3-title").textContent = t.f3Title;
-      document.getElementById("f3-text").textContent = t.f3Text;
-      document.getElementById("privacy-note").innerHTML = t.privacyNote;
-      document.getElementById("legal-kicker").textContent = t.legalKicker;
-      document.getElementById("privacy-link-side").textContent = t.privacySide;
-      document.getElementById("eula-link-text").textContent = t.eulaText;
-      document.getElementById("support-label").textContent = t.supportLabel;
-      document.getElementById("privacy-link-footer").textContent = t.privacyFooter;
-      document.getElementById("support-link").textContent = t.support;
-      document.getElementById("app-screenshot").alt = t.screenshotAlt;
-      document.getElementById("store-badge-side").alt = t.storeBadgeAlt;
-
-      document.getElementById("privacy-link-side").href = t.privacyHref;
-      document.getElementById("privacy-link-footer").href = t.privacyHref;
-
-      document.getElementById("btn-de").classList.toggle("active", lang === "de");
-      document.getElementById("btn-en").classList.toggle("active", lang === "en");
-
-      localStorage.setItem("siteLang", lang);
-    }
-
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    const savedLang = localStorage.getItem("siteLang") || "de";
-    setLang(savedLang);
-  </script>
+  };
+
+  const script = document.querySelector('script[type="application/ld+json"]');
+  if(script) script.textContent = JSON.stringify(schema);
+}
+
+function setLang(lang){
+  const t = translations[lang] || translations.de;
+
+  document.documentElement.lang = t.htmlLang;
+  document.title = t.title;
+
+  updateMetaTag('meta[name="description"]', t.description);
+  updateMetaTag('meta[property="og:title"]', t.ogTitle);
+  updateMetaTag('meta[property="og:description"]', t.ogDescription);
+  updateMetaTag('meta[property="og:site_name"]', t.ogSiteName);
+  updateMetaTag('meta[name="twitter:title"]', t.twitterTitle);
+  updateMetaTag('meta[name="twitter:description"]', t.twitterDescription);
+
+  updateStructuredData(t);
+
+  document.getElementById("brand-title").textContent = t.brand;
+  document.getElementById("back-link").textContent = t.back;
+  document.getElementById("eyebrow-text").textContent = t.eyebrowText;
+  document.getElementById("hero-title").innerHTML = t.heroTitle;
+  document.getElementById("hero-text").textContent = t.heroText;
+  document.getElementById("store-note").textContent = t.storeNote;
+
+  document.getElementById("store-link-top").setAttribute("aria-label", t.storeAria);
+  document.getElementById("store-link-bottom").setAttribute("aria-label", t.storeAria);
+  document.getElementById("store-badge-top").alt = t.storeBadgeAlt;
+  document.getElementById("store-badge-bottom").alt = t.storeBadgeAlt;
+  document.getElementById("hero-image").alt = t.heroImageAlt;
+
+  document.getElementById("features-title").textContent = t.featuresTitle;
+  document.getElementById("features-text").textContent = t.featuresText;
+  document.getElementById("f1-title").textContent = t.f1Title;
+  document.getElementById("f1-text").textContent = t.f1Text;
+  document.getElementById("f2-title").textContent = t.f2Title;
+  document.getElementById("f2-text").textContent = t.f2Text;
+  document.getElementById("f3-title").textContent = t.f3Title;
+  document.getElementById("f3-text").textContent = t.f3Text;
+
+  document.getElementById("why-title").textContent = t.whyTitle;
+  document.getElementById("why-text").textContent = t.whyText;
+
+  document.getElementById("how-title").textContent = t.howTitle;
+  document.getElementById("step1-title").textContent = t.step1Title;
+  document.getElementById("step1-text").textContent = t.step1Text;
+  document.getElementById("step2-title").textContent = t.step2Title;
+  document.getElementById("step2-text").textContent = t.step2Text;
+  document.getElementById("step3-title").textContent = t.step3Title;
+  document.getElementById("step3-text").textContent = t.step3Text;
+
+  document.getElementById("cta-title").textContent = t.ctaTitle;
+  document.getElementById("cta-text").textContent = t.ctaText;
+
+  const privacyLink = document.getElementById("privacy-link");
+  privacyLink.textContent = t.privacy;
+  privacyLink.href = t.privacyHref;
+
+  document.getElementById("support-link").textContent = t.support;
+
+  document.getElementById("btn-de").classList.toggle("active", lang === "de");
+  document.getElementById("btn-en").classList.toggle("active", lang === "en");
+
+  localStorage.setItem("siteLang", lang);
+}
+
+document.getElementById("y").textContent = new Date().getFullYear();
+
+const savedLang = localStorage.getItem("siteLang") || "de";
+setLang(savedLang);
+</script>
 </body>
 </html>
