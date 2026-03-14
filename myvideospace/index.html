@@ -1,16 +1,48 @@
 <!doctype html>
 <html lang="de">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>MyVideoSpace – Organize and Track Your Videos</title>
+<title>MyVideoSpace – Organisiere deine Video Playlists</title>
 
-<meta name="description"
-content="MyVideoSpace helps you organize YouTube videos, create playlists and track how often you watch them.">
+<meta name="description" content="Organisiere YouTube Videos in Playlists und verfolge wie oft du Trainings-, Lern- oder Yogavideos anschaust.">
 
 <meta name="theme-color" content="#0b1220">
+<meta name="apple-itunes-app" content="app-id=XXXXXXXX">
+
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zimjue.github.io/apps/myvideospace/">
+
+<meta property="og:title" content="MyVideoSpace – Organisiere deine Video Playlists">
+<meta property="og:description" content="Organisiere deine Lieblingsvideos, erstelle Playlists und verfolge deine Trainings- und Lernvideos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimjue.github.io/apps/myvideospace/">
+<meta property="og:image" content="https://zimjue.github.io/apps/myvideospace/assets/myvideospace.png">
+<meta property="og:site_name" content="MyVideoSpace">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MyVideoSpace – Organisiere deine Video Playlists">
+<meta name="twitter:description" content="Organisiere deine Lieblingsvideos und verfolge deine Lern- und Trainingsvideos.">
+<meta name="twitter:image" content="https://zimjue.github.io/apps/myvideospace/assets/myvideospace.png">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"SoftwareApplication",
+ "name":"MyVideoSpace",
+ "applicationCategory":"LifestyleApplication",
+ "operatingSystem":"iOS, iPadOS, macOS",
+ "description":"Organisiere YouTube Videos in Playlists und verfolge deine Trainings- und Lernvideos.",
+ "url":"https://zimjue.github.io/apps/myvideospace/",
+ "image":"https://zimjue.github.io/apps/myvideospace/assets/myvideospace.png",
+ "downloadUrl":"https://apps.apple.com/app/idXXXXXXXX",
+ "publisher":{
+   "@type":"Person",
+   "name":"Jürgen Zimmer"
+ }
+}
+</script>
 
 <style>
 
@@ -21,171 +53,146 @@ content="MyVideoSpace helps you organize YouTube videos, create playlists and tr
 --accent:#66e3ff;
 --card:rgba(255,255,255,.06);
 --line:rgba(255,255,255,.12);
+--shadow:0 30px 70px rgba(0,0,0,.45);
 }
 
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 
 body{
 margin:0;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-
 background:
 radial-gradient(1200px 600px at 20% 10%,rgba(102,227,255,.18),transparent 55%),
 radial-gradient(900px 500px at 90% 40%,rgba(153,102,255,.14),transparent 55%),
 var(--bg);
-
 color:var(--txt);
 }
 
 .wrap{
-max-width:980px;
+max-width:1080px;
 margin:auto;
-padding:40px 18px 56px;
-}
-
-.back-link{
-display:inline-block;
-margin-bottom:18px;
-color:var(--muted);
-text-decoration:none;
-font-size:14px;
+padding:40px 18px 72px;
 }
 
 .topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
-margin-bottom:32px;
+margin-bottom:36px;
 }
 
 .brand{
-font-weight:700;
-}
-
-.nav-meta{
-display:flex;
-gap:12px;
-align-items:center;
-}
-
-.pill{
-font-size:12px;
-padding:6px 10px;
-background:rgba(255,255,255,.08);
-border-radius:999px;
-color:var(--muted);
-}
-
-.lang-switch{
-display:flex;
-gap:10px;
-}
-
-.lang-btn{
-padding:8px 14px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,.2);
-background:transparent;
-color:var(--txt);
-cursor:pointer;
-font-weight:600;
-}
-
-.lang-btn.active{
-background:var(--accent);
-color:black;
-border:none;
+font-weight:800;
 }
 
 .hero{
 display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:24px;
-align-items:start;
+grid-template-columns:1.05fr .95fr;
+gap:42px;
+align-items:center;
+margin-bottom:42px;
 }
 
-@media(max-width:860px){
-.hero{grid-template-columns:1fr}
-}
+.hero-copy{max-width:560px}
 
 h1{
-font-size:44px;
-margin:0 0 12px;
+font-size:52px;
+line-height:1.04;
+margin:0 0 16px;
 }
 
 p{
 color:var(--muted);
-line-height:1.6;
+line-height:1.65;
+margin:0;
+}
+
+.hero-actions{
+display:flex;
+gap:14px;
+margin-top:22px;
+}
+
+.device-shell{
+width:min(100%,360px);
+padding:14px;
+border-radius:34px;
+background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+border:1px solid rgba(255,255,255,.14);
+box-shadow:var(--shadow);
+}
+
+.device-shell img{
+width:100%;
+border-radius:24px;
 }
 
 .card{
 background:var(--card);
 border:1px solid var(--line);
-border-radius:20px;
-padding:24px;
-box-shadow:0 20px 50px rgba(0,0,0,.3);
-}
-
-.cta{
-margin-top:24px;
-display:flex;
-gap:16px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:14px 22px;
-border-radius:14px;
-text-decoration:none;
-font-weight:600;
-}
-
-.btn.primary{
-background:var(--accent);
-color:black;
-}
-
-.btn.secondary{
-border:1px solid rgba(255,255,255,.2);
-color:var(--txt);
+border-radius:24px;
+padding:30px;
+margin-top:28px;
 }
 
 .features{
-margin-top:24px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:16px;
+gap:18px;
+margin-top:20px;
 }
 
-@media(max-width:860px){
-.features{grid-template-columns:1fr}
+.feature-card{
+background:rgba(255,255,255,.035);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:22px;
 }
 
-.feature-card strong{
-display:block;
-margin-bottom:8px;
-}
-
-.screenshot-frame{
-width:100%;
-height:520px;
+.slider{
+position:relative;
+min-height:620px;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:18px;
+border-radius:28px;
 border:1px solid rgba(255,255,255,.12);
 background:rgba(255,255,255,.03);
-overflow:hidden;
+}
+
+.slide-frame{
+width:min(100%,360px);
+padding:14px;
+border-radius:34px;
+background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+border:1px solid rgba(255,255,255,.14);
 }
 
 .app-screenshot{
-max-width:100%;
-max-height:100%;
+width:100%;
+border-radius:24px;
 }
 
+.slide-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:48px;
+height:48px;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.16);
+background:rgba(8,14,27,.72);
+color:white;
+font-size:28px;
+cursor:pointer;
+}
+
+.prev{left:18px}
+.next{right:18px}
+
 .footer{
-margin-top:50px;
+margin-top:64px;
 font-size:13px;
 color:var(--muted);
 display:flex;
@@ -205,101 +212,92 @@ text-decoration:none;
 
 <div class="wrap">
 
-<a class="back-link" id="back-link" href="../">← Alle Apps</a>
-
 <div class="topbar">
-
-<div class="brand">
-MyVideoSpace
+<div class="brand">MyVideoSpace</div>
 </div>
 
-<div class="nav-meta">
+<section class="hero">
 
-<div class="pill" id="pill-text">
-iOS • Video Organizer
-</div>
+<div class="hero-copy">
 
-<div class="lang-switch">
-<button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
-<button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
-</div>
+<h1>Deine Videos.<br>Perfekt organisiert.</h1>
 
-</div>
-</div>
-
-<div class="hero">
-
-<div class="card">
-
-<h1 id="hero-title">
-Deine Videos.<br>Perfekt organisiert.
-</h1>
-
-<p id="hero-text">
-Organisiere deine YouTube Videos in Playlists und verfolge wie oft du sie anschaust.
+<p>
+Speichere YouTube Videos in Playlists und verfolge
+wie oft du Trainings-, Lern- oder Yogavideos anschaust.
 </p>
 
-<div class="cta">
+<div class="hero-actions">
 
-<a class="btn primary"
-id="store-link-top"
-href="#"
-target="_blank">
-
-Jetzt im App Store laden
-
-</a>
-
-<a class="btn secondary" id="features-link" href="#features">
-Funktionen
+<a href="https://apps.apple.com/app/idXXXXXXXX">
+<img src="../assets/app-store-badge.svg" height="52">
 </a>
 
 </div>
 
-<div class="features" id="features">
-
-<div class="card feature-card">
-<strong id="f1-title">Playlists</strong>
-<p id="f1-text">Erstelle eigene Playlists für deine Videos.</p>
 </div>
 
-<div class="card feature-card">
-<strong id="f2-title">Tracking</strong>
-<p id="f2-text">Verfolge wie oft du Videos anschaust.</p>
-</div>
+<div class="hero-image">
 
-<div class="card feature-card">
-<strong id="f3-title">Statistiken</strong>
-<p id="f3-text">Analysiere deinen Fortschritt.</p>
+<div class="device-shell">
+<img src="assets/myvideospace.png">
 </div>
 
 </div>
 
+</section>
+
+<section class="card">
+
+<h2>App Einblicke</h2>
+
+<div class="slider">
+
+<button class="slide-btn prev" onclick="prevSlide()">‹</button>
+
+<div class="slide-frame">
+<img id="slider-image" src="assets/screenshot1.png" class="app-screenshot">
 </div>
 
-<div class="card">
+<button class="slide-btn next" onclick="nextSlide()">›</button>
 
-<div class="screenshot-frame">
+</div>
 
-<img src="assets/myvideospace.png"
-class="app-screenshot"
-alt="MyVideoSpace Screenshot">
+</section>
 
+<section class="card">
+
+<h2>Funktionen</h2>
+
+<div class="features">
+
+<div class="feature-card">
+<strong>Playlists</strong>
+<p>Organisiere Videos in strukturierten Playlists.</p>
+</div>
+
+<div class="feature-card">
+<strong>Tracking</strong>
+<p>Verfolge wie oft du Videos anschaust.</p>
+</div>
+
+<div class="feature-card">
+<strong>Dein Video Space</strong>
+<p>Ein Ort für Inspiration und Lernen.</p>
 </div>
 
 </div>
 
-</div>
+</section>
 
 <div class="footer">
 
-<div>
-© <span id="y"></span> Jürgen Zimmer
-</div>
+<div>© <span id="y"></span> Jürgen Zimmer</div>
 
 <div>
-<a href="datenschutz.html" id="privacy-link">Datenschutz</a> ·
-<a href="mailto:juzi7@icloud.com" id="support-link">Support</a>
+<a href="datenschutz.html">Datenschutz</a> ·
+<a href="../support.html">Support</a> ·
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">EULA</a>
 </div>
 
 </div>
@@ -310,65 +308,27 @@ alt="MyVideoSpace Screenshot">
 
 document.getElementById("y").textContent=new Date().getFullYear()
 
-function setLang(lang){
+const screenshots=[
+"assets/screenshot1.png",
+"assets/screenshot2.png",
+"assets/screenshot3.png"
+]
 
-document.documentElement.lang=lang
+let currentSlide=0
 
-if(lang==="en"){
-
-document.getElementById("hero-title").innerHTML="Your videos.<br>Perfectly organized."
-document.getElementById("hero-text").textContent="Organize YouTube videos into playlists and track how often you watch them."
-
-document.getElementById("store-link-top").textContent="Download on the App Store"
-document.getElementById("features-link").textContent="Features"
-
-document.getElementById("pill-text").textContent="iOS • Video Organizer"
-
-document.getElementById("f1-title").textContent="Playlists"
-document.getElementById("f1-text").textContent="Create your own playlists."
-
-document.getElementById("f2-title").textContent="Tracking"
-document.getElementById("f2-text").textContent="Track how often you watch videos."
-
-document.getElementById("f3-title").textContent="Statistics"
-document.getElementById("f3-text").textContent="Analyze your learning progress."
-
-document.getElementById("privacy-link").textContent="Privacy"
-document.getElementById("back-link").textContent="← All Apps"
-
-}else{
-
-document.getElementById("hero-title").innerHTML="Deine Videos.<br>Perfekt organisiert."
-document.getElementById("hero-text").textContent="Organisiere deine YouTube Videos in Playlists und verfolge wie oft du sie anschaust."
-
-document.getElementById("store-link-top").textContent="Jetzt im App Store laden"
-document.getElementById("features-link").textContent="Funktionen"
-
-document.getElementById("pill-text").textContent="iOS • Video Organizer"
-
-document.getElementById("f1-title").textContent="Playlists"
-document.getElementById("f1-text").textContent="Erstelle eigene Playlists."
-
-document.getElementById("f2-title").textContent="Tracking"
-document.getElementById("f2-text").textContent="Verfolge wie oft du Videos anschaust."
-
-document.getElementById("f3-title").textContent="Statistiken"
-document.getElementById("f3-text").textContent="Analysiere deinen Fortschritt."
-
-document.getElementById("privacy-link").textContent="Datenschutz"
-document.getElementById("back-link").textContent="← Alle Apps"
-
+function showSlide(){
+document.getElementById("slider-image").src=screenshots[currentSlide]
 }
 
-document.getElementById("btn-de").classList.toggle("active",lang==="de")
-document.getElementById("btn-en").classList.toggle("active",lang==="en")
-
-localStorage.setItem("siteLang",lang)
-
+function nextSlide(){
+currentSlide=(currentSlide+1)%screenshots.length
+showSlide()
 }
 
-const savedLang=localStorage.getItem("siteLang")||"de"
-setLang(savedLang)
+function prevSlide(){
+currentSlide=(currentSlide-1+screenshots.length)%screenshots.length
+showSlide()
+}
 
 </script>
 
