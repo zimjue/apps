@@ -171,6 +171,29 @@ background:rgba(255,255,255,.06);
 text-decoration:none;
 }
 
+.app-links{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:14px;
+}
+
+.app-mini-link{
+display:inline-flex;
+padding:7px 10px;
+border-radius:10px;
+font-size:13px;
+font-weight:700;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.12);
+color:var(--txt);
+}
+
+.app-mini-link:hover{
+background:rgba(255,255,255,.08);
+text-decoration:none;
+}
+
 .app-name{
 font-weight:700;
 color:var(--txt);
@@ -317,30 +340,50 @@ Viele Antworten findest du direkt auf den App-Seiten oder in den jeweiligen Date
 <h2 class="section-title" data-de="Meine Apps" data-en="My Apps">Meine Apps</h2>
 
 <div class="apps-grid">
-<a class="app-link-card" href="/apps/liquiditypulse/">
+<div class="app-link-card">
 <div class="app-name">LiquidityPulse</div>
 <div class="app-tag" data-de="Makro" data-en="Macro">Makro</div>
-</a>
+<div class="app-links">
+<a class="app-mini-link" href="/apps/liquiditypulse/" data-de="App-Seite" data-en="App Page">App-Seite</a>
+<a class="app-mini-link" href="/apps/liquiditypulse/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+</div>
+</div>
 
-<a class="app-link-card" href="/apps/myvideospace/">
+<div class="app-link-card">
 <div class="app-name">MyVideoSpace</div>
 <div class="app-tag" data-de="Video" data-en="Video">Video</div>
-</a>
+<div class="app-links">
+<a class="app-mini-link" href="/apps/myvideospace/" data-de="App-Seite" data-en="App Page">App-Seite</a>
+<a class="app-mini-link" href="/apps/myvideospace/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+</div>
+</div>
 
-<a class="app-link-card" href="/apps/erfolgsjournal/">
+<div class="app-link-card">
 <div class="app-name">Erfolgsjournal</div>
 <div class="app-tag" data-de="Reflexion" data-en="Reflection">Reflexion</div>
-</a>
+<div class="app-links">
+<a class="app-mini-link" href="/apps/erfolgsjournal/" data-de="App-Seite" data-en="App Page">App-Seite</a>
+<a class="app-mini-link" href="/apps/erfolgsjournal/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+</div>
+</div>
 
-<a class="app-link-card" href="/apps/lebensrad/">
+<div class="app-link-card">
 <div class="app-name">Lebensrad</div>
 <div class="app-tag" data-de="Balance" data-en="Balance">Balance</div>
-</a>
+<div class="app-links">
+<a class="app-mini-link" href="/apps/lebensrad/" data-de="App-Seite" data-en="App Page">App-Seite</a>
+<a class="app-mini-link" href="/apps/lebensrad/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+</div>
+</div>
 
-<a class="app-link-card" href="/apps/fitnessgoals/">
+<div class="app-link-card">
 <div class="app-name">FitnessGoals</div>
 <div class="app-tag" data-de="Fitness" data-en="Fitness">Fitness</div>
-</a>
+<div class="app-links">
+<a class="app-mini-link" href="/apps/fitnessgoals/" data-de="App-Seite" data-en="App Page">App-Seite</a>
+<a class="app-mini-link" href="/apps/fitnessgoals/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+</div>
+</div>
 </div>
 
 </div>

@@ -68,6 +68,46 @@ body{
   padding:26px;
 }
 
+.apps-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+
+.app-link-card{
+  display:block;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  text-decoration:none;
+}
+
+.app-link-card:hover{
+  background:rgba(255,255,255,.06);
+  text-decoration:none;
+}
+
+.app-name{
+  font-weight:700;
+  color:var(--txt);
+  margin-bottom:8px;
+}
+
+.app-tag{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  background:rgba(102,227,255,.1);
+  border:1px solid rgba(102,227,255,.18);
+  color:var(--accent);
+}
+
 h1{
   font-size:30px;
   margin:0 0 12px;
@@ -97,6 +137,12 @@ ul{
 a{
   color:var(--accent);
   text-decoration:none;
+}
+
+@media (max-width:700px){
+  .apps-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -166,13 +212,32 @@ a{
       Dort findest du genauere Informationen zur jeweiligen Datenverarbeitung innerhalb der App.
     </p>
 
-    <ul>
-      <li><a href="liquiditypulse/datenschutz.html">LiquidityPulse – Datenschutz</a></li>
-      <li><a href="erfolgsjournal/datenschutz.html">Erfolgsjournal – Datenschutz</a></li>
-      <li><a href="lebensrad/datenschutz.html">Lebensrad – Datenschutz</a></li>
-      <li><a href="fitnessgoals/datenschutz.html">FitnessGoals – Datenschutz</a></li>
-      <li><a href="myvideospace/datenschutz.html">MyVideoSpace – Datenschutz</a></li>
-    </ul>
+    <div class="apps-grid">
+      <a class="app-link-card" href="liquiditypulse/datenschutz.html">
+        <div class="app-name">LiquidityPulse</div>
+        <div class="app-tag">Makro</div>
+      </a>
+
+      <a class="app-link-card" href="myvideospace/datenschutz.html">
+        <div class="app-name">MyVideoSpace</div>
+        <div class="app-tag">Video</div>
+      </a>
+
+      <a class="app-link-card" href="erfolgsjournal/datenschutz.html">
+        <div class="app-name">Erfolgsjournal</div>
+        <div class="app-tag">Reflexion</div>
+      </a>
+
+      <a class="app-link-card" href="lebensrad/datenschutz.html">
+        <div class="app-name">Lebensrad</div>
+        <div class="app-tag">Balance</div>
+      </a>
+
+      <a class="app-link-card" href="fitnessgoals/datenschutz.html">
+        <div class="app-name">FitnessGoals</div>
+        <div class="app-tag">Fitness</div>
+      </a>
+    </div>
 
     <h2>8. Kontakt</h2>
     <p>
