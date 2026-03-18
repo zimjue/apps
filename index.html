@@ -6,7 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Apps – Jürgen Zimmer</title>
-<meta name="description" content="iOS Apps von Jürgen Zimmer – persönliche Entwicklung, Reflexion, Fitness und Finanzen.">
+<meta name="description" content="Apps by Jürgen Zimmer for personal growth, reflection, fitness, finance, macro insight, and learning.">
+<meta name="theme-color" content="#0b1220">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zimjue.github.io/apps/">
+<meta property="og:title" content="Apps – Jürgen Zimmer">
+<meta property="og:description" content="Apps by Jürgen Zimmer for personal growth, reflection, fitness, finance, macro insight, and learning.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimjue.github.io/apps/">
+<meta property="og:image" content="https://zimjue.github.io/apps/assets/juergen.jpeg">
+<meta property="og:site_name" content="Jürgen Zimmer Apps">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Apps – Jürgen Zimmer">
+<meta name="twitter:description" content="Apps by Jürgen Zimmer for personal growth, reflection, fitness, finance, macro insight, and learning.">
+<meta name="twitter:image" content="https://zimjue.github.io/apps/assets/juergen.jpeg">
 
 <style>
 
@@ -435,6 +448,7 @@ Ich entwickle Apps für persönliche Entwicklung, Gesundheit, Reflexion, Lernen 
 <div class="featured-tags">
 <div class="featured-tag" id="featured-tag">Featured App</div>
 <div class="featured-tag is-new" id="featured-new">Neu</div>
+<div class="featured-tag" id="featured-soon">Coming Soon</div>
 </div>
 
 <h3>LiquidityPulse</h3>
@@ -505,7 +519,7 @@ schnellem Zugriff.
 
 <div class="card">
 
-<img class="app-icon" src="erfolgsjournal/assets/Ruhe_am_See.png">
+<img class="app-icon" src="erfolgsjournal/assets/Ruhe_am_See.png" alt="Erfolgsjournal App Icon">
 
 <div class="app-title">Erfolgsjournal</div>
 
@@ -528,7 +542,7 @@ Ein ruhiges Journal für tägliche Reflexion, Klarheit und persönliche Entwickl
 
 <div class="card">
 
-<img class="app-icon" src="lebensrad/assets/lebensrad.png">
+<img class="app-icon" src="lebensrad/assets/lebensrad.png" alt="Lebensrad App Icon">
 
 <div class="app-title">Lebensrad</div>
 
@@ -551,7 +565,7 @@ Reflektiere deine wichtigsten Lebensbereiche und bringe mehr Balance in deinen A
 
 <div class="card">
 
-<img class="app-icon" src="fitnessgoals/assets/Fitnessgoals.jpeg">
+<img class="app-icon" src="fitnessgoals/assets/Fitnessgoals.jpeg" alt="FitnessGoals App Icon">
 
 <div class="app-title">FitnessGoals</div>
 
@@ -601,6 +615,7 @@ de: {
   devCopy: "Indie iOS Developer aus München.\nIch entwickle Apps für persönliche Entwicklung, Gesundheit, Reflexion, Lernen und Finanzen.",
   featuredTag: "Featured App",
   featuredNew: "Neu",
+  featuredSoon: "Bald im App Store",
   featuredCopy: "Für makro-interessierte Anleger, Marktbeobachter und Bitcoin-orientierte Nutzer:\nLiquidityPulse macht globale Liquidität, Marktstress und Regimewechsel schneller lesbar, damit du Zusammenhänge früher erkennst und klarer einordnen kannst.",
   fp1Title: "Makro-Fokus",
   fp1Copy: "Liquidität, Marktstress und Regimewechsel in einer klaren Arbeitsoberfläche.",
@@ -633,6 +648,7 @@ en: {
   devCopy: "Indie iOS developer from Munich.\nI build apps for personal growth, health, reflection, learning, and finance.",
   featuredTag: "Featured App",
   featuredNew: "New",
+  featuredSoon: "Coming Soon",
   featuredCopy: "For macro-minded investors, market watchers, and Bitcoin-focused users:\nLiquidityPulse makes global liquidity, market stress, and regime shifts easier to read so you can spot relationships earlier and interpret them with more clarity.",
   fp1Title: "Macro Focus",
   fp1Copy: "Liquidity, market stress, and regime shifts in one clear workspace.",
@@ -671,6 +687,7 @@ function setLang(lang){
   document.getElementById("dev-copy").innerHTML = t.devCopy.replace("\n","<br>");
   document.getElementById("featured-tag").textContent = t.featuredTag;
   document.getElementById("featured-new").textContent = t.featuredNew;
+  document.getElementById("featured-soon").textContent = t.featuredSoon;
   document.getElementById("featured-copy").innerHTML = t.featuredCopy.replace("\n","<br>");
   document.getElementById("fp1-title").textContent = t.fp1Title;
   document.getElementById("fp1-copy").textContent = t.fp1Copy;

@@ -8,6 +8,7 @@
 <title>Support – Jürgen Zimmer Apps</title>
 
 <meta name="description" content="Supportseite für die Apps von Jürgen Zimmer. Support and contact for my apps.">
+<meta name="theme-color" content="#0b1220">
 
 <style>
 
@@ -258,6 +259,10 @@ document.querySelectorAll("[data-de]").forEach(el=>{
 el.innerText = el.getAttribute("data-"+lang)
 })
 
+document.querySelectorAll(".privacy-link").forEach(el=>{
+el.href = el.getAttribute("data-"+lang+"-href")
+})
+
 document.documentElement.lang = lang
 document.getElementById("btn-de").classList.toggle("active", lang === "de")
 document.getElementById("btn-en").classList.toggle("active", lang === "en")
@@ -274,7 +279,7 @@ document.getElementById("btn-en").classList.toggle("active", lang === "en")
 
 <div class="topbar">
 <div class="topbar-left">
-<a href="./index.html" class="back-btn">← Alle Apps</a>
+<a href="./index.html" class="back-btn" data-de="← Alle Apps" data-en="← All Apps">← Alle Apps</a>
 </div>
 
 <div class="lang-switch">
@@ -345,7 +350,7 @@ Viele Antworten findest du direkt auf den App-Seiten oder in den jeweiligen Date
 <div class="app-tag" data-de="Makro" data-en="Macro">Makro</div>
 <div class="app-links">
 <a class="app-mini-link" href="/apps/liquiditypulse/" data-de="App-Seite" data-en="App Page">App-Seite</a>
-<a class="app-mini-link" href="/apps/liquiditypulse/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+<a class="app-mini-link privacy-link" href="/apps/liquiditypulse/datenschutz.html" data-de="Datenschutz" data-en="Privacy" data-de-href="/apps/liquiditypulse/datenschutz.html" data-en-href="/apps/liquiditypulse/privacy.html">Datenschutz</a>
 </div>
 </div>
 
@@ -354,7 +359,7 @@ Viele Antworten findest du direkt auf den App-Seiten oder in den jeweiligen Date
 <div class="app-tag" data-de="Video" data-en="Video">Video</div>
 <div class="app-links">
 <a class="app-mini-link" href="/apps/myvideospace/" data-de="App-Seite" data-en="App Page">App-Seite</a>
-<a class="app-mini-link" href="/apps/myvideospace/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+<a class="app-mini-link privacy-link" href="/apps/myvideospace/datenschutz.html" data-de="Datenschutz" data-en="Privacy" data-de-href="/apps/myvideospace/datenschutz.html" data-en-href="/apps/myvideospace/privacy.html">Datenschutz</a>
 </div>
 </div>
 
@@ -363,7 +368,7 @@ Viele Antworten findest du direkt auf den App-Seiten oder in den jeweiligen Date
 <div class="app-tag" data-de="Reflexion" data-en="Reflection">Reflexion</div>
 <div class="app-links">
 <a class="app-mini-link" href="/apps/erfolgsjournal/" data-de="App-Seite" data-en="App Page">App-Seite</a>
-<a class="app-mini-link" href="/apps/erfolgsjournal/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+<a class="app-mini-link privacy-link" href="/apps/erfolgsjournal/datenschutz.html" data-de="Datenschutz" data-en="Privacy" data-de-href="/apps/erfolgsjournal/datenschutz.html" data-en-href="/apps/erfolgsjournal/privacy.html">Datenschutz</a>
 </div>
 </div>
 
@@ -372,7 +377,7 @@ Viele Antworten findest du direkt auf den App-Seiten oder in den jeweiligen Date
 <div class="app-tag" data-de="Balance" data-en="Balance">Balance</div>
 <div class="app-links">
 <a class="app-mini-link" href="/apps/lebensrad/" data-de="App-Seite" data-en="App Page">App-Seite</a>
-<a class="app-mini-link" href="/apps/lebensrad/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+<a class="app-mini-link privacy-link" href="/apps/lebensrad/datenschutz.html" data-de="Datenschutz" data-en="Privacy" data-de-href="/apps/lebensrad/datenschutz.html" data-en-href="/apps/lebensrad/privacy.html">Datenschutz</a>
 </div>
 </div>
 
@@ -381,7 +386,7 @@ Viele Antworten findest du direkt auf den App-Seiten oder in den jeweiligen Date
 <div class="app-tag" data-de="Fitness" data-en="Fitness">Fitness</div>
 <div class="app-links">
 <a class="app-mini-link" href="/apps/fitnessgoals/" data-de="App-Seite" data-en="App Page">App-Seite</a>
-<a class="app-mini-link" href="/apps/fitnessgoals/datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+<a class="app-mini-link privacy-link" href="/apps/fitnessgoals/datenschutz.html" data-de="Datenschutz" data-en="Privacy" data-de-href="/apps/fitnessgoals/datenschutz.html" data-en-href="/apps/fitnessgoals/privacy.html">Datenschutz</a>
 </div>
 </div>
 </div>
