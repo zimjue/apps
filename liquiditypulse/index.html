@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LiquidityPulse – Globale Liquiditaet verstehen</title>
+<meta name="description" content="LiquidityPulse hilft dir, globale Liquiditaet, Marktstress und Makro-Signale in einer klaren Uebersicht zu verfolgen.">
+<meta name="theme-color" content="#09111f">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zimjue.github.io/apps/liquiditypulse/">
+
+<meta property="og:title" content="LiquidityPulse – Globale Liquiditaet verstehen">
+<meta property="og:description" content="Verfolge Liquiditaets-, Makro- und Marktsignale in einer klaren Uebersicht.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimjue.github.io/apps/liquiditypulse/">
+<meta property="og:image" content="https://zimjue.github.io/apps/liquiditypulse/assets/liquiditypulse.png">
+<meta property="og:site_name" content="LiquidityPulse">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LiquidityPulse – Globale Liquiditaet verstehen">
+<meta name="twitter:description" content="Verfolge Liquiditaets-, Makro- und Marktsignale in einer klaren Uebersicht.">
+<meta name="twitter:image" content="https://zimjue.github.io/apps/liquiditypulse/assets/liquiditypulse.png">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"LiquidityPulse",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"iOS, iPadOS",
+  "description":"LiquidityPulse hilft dir, globale Liquiditaet, Marktstress und Makro-Signale in einer klaren Uebersicht zu verfolgen.",
+  "url":"https://zimjue.github.io/apps/liquiditypulse/",
+  "image":"https://zimjue.github.io/apps/liquiditypulse/assets/liquiditypulse.png",
+  "publisher":{
+    "@type":"Person",
+    "name":"Jürgen Zimmer"
+  }
+}
+</script>
+
+<style>
+:root{
+  --bg:#09111f;
+  --txt:#eef4ff;
+  --muted:#a9bbda;
+  --accent:#59f0c2;
+  --card:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.12);
+  --shadow:0 30px 70px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 600px at 20% 10%,rgba(89,240,194,.16),transparent 55%),
+    radial-gradient(900px 500px at 90% 40%,rgba(124,184,255,.15),transparent 55%),
+    var(--bg);
+  color:var(--txt);
+}
+
+a{color:inherit}
+
+.wrap{
+  max-width:1080px;
+  margin:auto;
+  padding:40px 18px 72px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:36px;
+  gap:16px;
+}
+
+.topbar-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent;
+  color:var(--txt);
+  text-decoration:none;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.back-btn:hover{background:rgba(255,255,255,.06)}
+
+.brand{
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.lang-switch{
+  display:flex;
+  gap:10px;
+}
+
+.lang-btn{
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent;
+  color:var(--txt);
+  cursor:pointer;
+  font-weight:700;
+}
+
+.lang-btn.active{
+  background:var(--accent);
+  color:#04121e;
+  border-color:transparent;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:42px;
+  align-items:center;
+  margin-bottom:34px;
+}
+
+.hero-copy{max-width:580px}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.eyebrow-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 18px rgba(89,240,194,.8);
+}
+
+h1{
+  font-size:52px;
+  line-height:1.04;
+  margin:0 0 16px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.65;
+  margin:0;
+}
+
+.hero-actions{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.app-cta,
+.ghost-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:14px 22px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.app-cta{
+  background:linear-gradient(135deg,var(--accent),#83ffd9);
+  color:#04121e;
+}
+
+.ghost-cta{
+  border:1px solid rgba(255,255,255,.16);
+  color:var(--txt);
+  background:rgba(255,255,255,.03);
+}
+
+.store-note{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.app-store-badge{
+  display:inline-block;
+  line-height:0;
+}
+
+.app-store-badge img{
+  height:52px;
+  width:auto;
+  display:block;
+}
+
+.hero-image{
+  display:flex;
+  justify-content:center;
+}
+
+.icon-shell{
+  position:relative;
+  width:min(100%, 360px);
+  padding:20px;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow);
+}
+
+.icon-shell::after{
+  content:"";
+  position:absolute;
+  inset:auto 12% 18px;
+  height:32px;
+  filter:blur(28px);
+  background:rgba(0,0,0,.35);
+  border-radius:999px;
+}
+
+.app-icon{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  border-radius:28px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:30px;
+  margin-top:28px;
+  backdrop-filter:blur(10px);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.section-head h2{
+  margin:0;
+  font-size:28px;
+}
+
+.section-head p{
+  max-width:560px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:20px;
+}
+
+.feature-card,
+.source-card,
+.note-card{
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:22px;
+}
+
+.feature-icon{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-size:20px;
+  margin-bottom:14px;
+  background:linear-gradient(180deg,rgba(89,240,194,.18),rgba(89,240,194,.06));
+  border:1px solid rgba(89,240,194,.18);
+}
+
+.feature-card h3,
+.source-card h3,
+.note-card h3{
+  margin:0 0 10px;
+  font-size:20px;
+}
+
+.slider-wrap{
+  position:relative;
+}
+
+.slider{
+  position:relative;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    radial-gradient(500px 200px at 50% 0%,rgba(89,240,194,.08),transparent 60%),
+    rgba(255,255,255,.03);
+  overflow:hidden;
+}
+
+.slider::after{
+  content:"";
+  position:absolute;
+  inset:auto 12% 18px;
+  height:32px;
+  filter:blur(28px);
+  background:rgba(0,0,0,.35);
+  border-radius:999px;
+}
+
+.slide-frame{
+  position:relative;
+  z-index:1;
+  width:min(100%, 320px);
+  padding:14px;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow);
+}
+
+.slide-frame::before{
+  content:"";
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:34%;
+  height:18px;
+  border-radius:0 0 14px 14px;
+  background:rgba(4,8,16,.92);
+  z-index:2;
+}
+
+.app-screenshot{
+  display:block;
+  width:100%;
+  border-radius:24px;
+}
+
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(8,14,27,.72);
+  color:white;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  z-index:3;
+  backdrop-filter:blur(10px);
+}
+
+.slide-btn:hover{background:rgba(12,20,38,.9)}
+.prev{left:18px}
+.next{right:18px}
+
+.slider-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+
+.slide-caption{
+  font-size:15px;
+  color:var(--muted);
+}
+
+.dots{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.22);
+  cursor:pointer;
+  padding:0;
+}
+
+.dot.active{
+  width:28px;
+  border-radius:999px;
+  background:var(--accent);
+}
+
+.source-grid,
+.note-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.footer{
+  margin-top:64px;
+  font-size:13px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.footer a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.footer a:hover{text-decoration:underline}
+
+.lang-btn:focus-visible,
+.slide-btn:focus-visible,
+.dot:focus-visible,
+.app-store-badge:focus-visible,
+.app-cta:focus-visible,
+.ghost-cta:focus-visible,
+.back-btn:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
+@media (max-width:860px){
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-copy{max-width:none}
+  .hero-actions{justify-content:center}
+  .section-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .features,
+  .source-grid,
+  .note-grid{
+    grid-template-columns:1fr;
+  }
+  .slider{min-height:540px}
+}
+
+@media (max-width:640px){
+  .wrap{padding:24px 14px 56px}
+  h1{font-size:40px}
+  .card{padding:22px}
+  .slider{min-height:470px}
+  .slide-btn{
+    width:42px;
+    height:42px;
+    font-size:24px;
+  }
+  .prev{left:10px}
+  .next{right:10px}
+  .app-store-badge img{height:48px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="../index.html" class="back-btn" id="back-link">← Alle Apps</a>
+      <div class="brand">LiquidityPulse</div>
+    </div>
+
+    <div class="lang-switch" aria-label="Sprachauswahl / Language switch">
+      <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span id="eyebrow-text">Makro, Liquiditaet und Markt im Blick</span>
+        </div>
+
+        <h1 id="hero-title">Verstehe globale Liquiditaet.<br>Einfacher und schneller.</h1>
+        <p id="hero-text">LiquidityPulse buendelt wichtige Liquiditaets-, Markt- und Stresssignale in einer klaren App. So erkennst du Trends, Regimewechsel und historische Zusammenhaenge schneller.</p>
+
+        <div class="hero-actions">
+          <a
+            class="app-store-badge"
+            id="store-link"
+            href="https://apps.apple.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Im App Store laden">
+            <img
+              id="store-badge"
+              src="../assets/app-store-badge.svg"
+              alt="Download on the App Store">
+          </a>
+          <a class="app-cta" href="datenschutz.html" id="primary-cta">Datenschutz ansehen</a>
+          <a class="ghost-cta" href="privacy.html" id="secondary-cta">Privacy Policy</a>
+          <span class="store-note" id="store-note">Bald im App Store. Datenfokus statt Rauschen. Keine Anlageberatung.</span>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="icon-shell">
+          <img src="assets/liquiditypulse.png" alt="LiquidityPulse App Icon" class="app-icon" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="features-title">Was LiquidityPulse zeigt</h2>
+        </div>
+        <p id="features-copy">Die App verdichtet mehrere wichtige Makro- und Marktindikatoren in wenigen klaren Arbeitsbereichen.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">◔</div>
+          <h3 id="feature1-title">Dashboard</h3>
+          <p id="feature1-text">Scanne die wichtigsten Bloecke fuer Liquiditaet, Markt und Stress in einer kompakten Uebersicht.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">≈</div>
+          <h3 id="feature2-title">Charts & Lead/Lag</h3>
+          <p id="feature2-text">Vergleiche Zeitreihen, erkenne historische Vorlauf-Beziehungen und untersuche Signale im Detail.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">↗</div>
+          <h3 id="feature3-title">Regime</h3>
+          <p id="feature3-text">Ein verdichteter Regime-Blick hilft dir, positive, neutrale oder defensive Marktphasen schneller einzuordnen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="screens-title">Einblicke in die App</h2>
+        </div>
+        <p id="screens-copy">Ein kurzer Blick auf die wichtigsten Bereiche von LiquidityPulse.</p>
+      </div>
+
+      <div class="slider-wrap">
+        <div class="slider">
+          <button class="slide-btn prev" type="button" aria-label="Vorheriger Screenshot" onclick="changeSlide(-1)">‹</button>
+
+          <div class="slide-frame">
+            <img id="slide-image" src="assets/screenshot1.png" alt="LiquidityPulse Dashboard" class="app-screenshot" loading="lazy">
+          </div>
+
+          <button class="slide-btn next" type="button" aria-label="Naechster Screenshot" onclick="changeSlide(1)">›</button>
+        </div>
+
+        <div class="slider-meta">
+          <div class="slide-caption" id="slide-caption">Dashboard mit globaler Liquiditaet und Signal-Uebersicht.</div>
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="sources-title">Wichtige Datenquellen</h2>
+        </div>
+        <p id="sources-copy">LiquidityPulse arbeitet mit oeffentlichen Markt- und Makrodaten und ordnet sie in einer lesbaren Form ein.</p>
+      </div>
+
+      <div class="source-grid">
+        <div class="source-card">
+          <h3 id="source1-title">Liquiditaets- und Makrosignale</h3>
+          <p id="source1-text">Unter anderem fliessen M2, Fed-Bilanz, Reverse Repo, Treasury General Account, SOFR, US-10Y-Rendite, Dollar-Index und Credit Spreads in die Auswertung ein.</p>
+        </div>
+
+        <div class="source-card">
+          <h3 id="source2-title">Marktbezug</h3>
+          <p id="source2-text">Zusaetzlich werden Marktindikatoren wie Bitcoin einbezogen, um historische Beziehungen zwischen Liquiditaet, Risikoappetit und Preisentwicklung besser sichtbar zu machen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="notes-title">Wichtige Hinweise</h2>
+        </div>
+        <p id="notes-copy">Die App soll Einordnung erleichtern, nicht Entscheidungen fuer dich treffen.</p>
+      </div>
+
+      <div class="note-grid">
+        <div class="note-card">
+          <h3 id="note1-title">Keine Anlageberatung</h3>
+          <p id="note1-text">LiquidityPulse zeigt historische Daten, Relationen und Signale. Die Inhalte sind als Informations- und Analysehilfe gedacht.</p>
+        </div>
+
+        <div class="note-card">
+          <h3 id="note2-title">Korrelation ist nicht Kausalitaet</h3>
+          <p id="note2-text">Lead/Lag-Ansichten zeigen moegliche zeitliche Beziehungen. Sie sind keine harte Prognose und kein Beweis fuer Ursache-Wirkung.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Jürgen Zimmer</div>
+    <div>
+      <a href="datenschutz.html">Datenschutz</a> ·
+      <a href="privacy.html">Privacy</a> ·
+      <a href="mailto:juzi7@icloud.com">Support</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+const copy = {
+  de: {
+    back: "← Alle Apps",
+    eyebrow: "Makro, Liquiditaet und Markt im Blick",
+    title: "Verstehe globale Liquiditaet.<br>Einfacher und schneller.",
+    text: "LiquidityPulse buendelt wichtige Liquiditaets-, Markt- und Stresssignale in einer klaren App. So erkennst du Trends, Regimewechsel und historische Zusammenhaenge schneller.",
+    primary: "Datenschutz ansehen",
+    secondary: "Privacy Policy",
+    storeNote: "Bald im App Store. Datenfokus statt Rauschen. Keine Anlageberatung.",
+    featuresTitle: "Was LiquidityPulse zeigt",
+    featuresCopy: "Die App verdichtet mehrere wichtige Makro- und Marktindikatoren in wenigen klaren Arbeitsbereichen.",
+    feature1Title: "Dashboard",
+    feature1Text: "Scanne die wichtigsten Bloecke fuer Liquiditaet, Markt und Stress in einer kompakten Uebersicht.",
+    feature2Title: "Charts & Lead/Lag",
+    feature2Text: "Vergleiche Zeitreihen, erkenne historische Vorlauf-Beziehungen und untersuche Signale im Detail.",
+    feature3Title: "Regime",
+    feature3Text: "Ein verdichteter Regime-Blick hilft dir, positive, neutrale oder defensive Marktphasen schneller einzuordnen.",
+    screensTitle: "Einblicke in die App",
+    screensCopy: "Ein kurzer Blick auf die wichtigsten Bereiche von LiquidityPulse.",
+    sourcesTitle: "Wichtige Datenquellen",
+    sourcesCopy: "LiquidityPulse arbeitet mit oeffentlichen Markt- und Makrodaten und ordnet sie in einer lesbaren Form ein.",
+    source1Title: "Liquiditaets- und Makrosignale",
+    source1Text: "Unter anderem fliessen M2, Fed-Bilanz, Reverse Repo, Treasury General Account, SOFR, US-10Y-Rendite, Dollar-Index und Credit Spreads in die Auswertung ein.",
+    source2Title: "Marktbezug",
+    source2Text: "Zusaetzlich werden Marktindikatoren wie Bitcoin einbezogen, um historische Beziehungen zwischen Liquiditaet, Risikoappetit und Preisentwicklung besser sichtbar zu machen.",
+    notesTitle: "Wichtige Hinweise",
+    notesCopy: "Die App soll Einordnung erleichtern, nicht Entscheidungen fuer dich treffen.",
+    note1Title: "Keine Anlageberatung",
+    note1Text: "LiquidityPulse zeigt historische Daten, Relationen und Signale. Die Inhalte sind als Informations- und Analysehilfe gedacht.",
+    note2Title: "Korrelation ist nicht Kausalitaet",
+    note2Text: "Lead/Lag-Ansichten zeigen moegliche zeitliche Beziehungen. Sie sind keine harte Prognose und kein Beweis fuer Ursache-Wirkung."
+  },
+  en: {
+    back: "← All Apps",
+    eyebrow: "Macro, liquidity and market context at a glance",
+    title: "Understand global liquidity.<br>Faster and with more clarity.",
+    text: "LiquidityPulse brings together key liquidity, market, and stress signals in one clear app so you can spot trends, regime shifts, and historical relationships faster.",
+    primary: "View Privacy Policy",
+    secondary: "Datenschutz",
+    storeNote: "Coming soon to the App Store. Focused market context, not noise. Not investment advice.",
+    featuresTitle: "What LiquidityPulse shows",
+    featuresCopy: "The app compresses important macro and market indicators into a few clear working areas.",
+    feature1Title: "Dashboard",
+    feature1Text: "Scan the main liquidity, market, and stress blocks in one compact overview.",
+    feature2Title: "Charts & Lead/Lag",
+    feature2Text: "Compare time series, explore historical lead-lag behavior, and inspect signals in more detail.",
+    feature3Title: "Regime",
+    feature3Text: "A condensed regime view helps you classify supportive, neutral, or defensive market phases faster.",
+    screensTitle: "Inside the app",
+    screensCopy: "A quick look at the most important areas inside LiquidityPulse.",
+    sourcesTitle: "Key data inputs",
+    sourcesCopy: "LiquidityPulse works with public market and macro data and presents them in a readable way.",
+    source1Title: "Liquidity and macro signals",
+    source1Text: "The analysis includes M2, the Fed balance sheet, Reverse Repo, Treasury General Account, SOFR, the US 10Y yield, the dollar index, and credit spreads.",
+    source2Title: "Market context",
+    source2Text: "Market indicators such as Bitcoin are also included to make historical relationships between liquidity, risk appetite, and price action easier to see.",
+    notesTitle: "Important notes",
+    notesCopy: "The app is meant to support interpretation, not make decisions for you.",
+    note1Title: "Not investment advice",
+    note1Text: "LiquidityPulse shows historical data, relationships, and signals. The content is intended for information and analysis support.",
+    note2Title: "Correlation is not causation",
+    note2Text: "Lead-lag views can reveal timing relationships. They are not hard forecasts and not proof of cause and effect."
+  }
+};
+
+const slides = {
+  de: [
+    { src: "assets/screenshot1.png", alt: "LiquidityPulse Dashboard", caption: "Dashboard mit globaler Liquiditaet und Signal-Uebersicht." },
+    { src: "assets/screenshot2.png", alt: "LiquidityPulse Charts", caption: "Charts mit den wichtigsten Liquiditaets- und Makro-Reihen." },
+    { src: "assets/screenshot3.png", alt: "LiquidityPulse Vorlauf-Analyse", caption: "Vorlauf-Analyse fuer historische Lead-Lag-Beziehungen zwischen zwei Reihen." },
+    { src: "assets/screenshot4.png", alt: "LiquidityPulse Regime", caption: "Regime-Ansicht zur Einordnung von Marktphasen und Signalstaerke." },
+    { src: "assets/screenshot5.png", alt: "LiquidityPulse Einstellungen", caption: "Einstellungen fuer Sprache, Zeitraum und verfuegbare Datenquellen." },
+    { src: "assets/screenshot6.png", alt: "LiquidityPulse Guide", caption: "Guide mit Orientierung zur Nutzung, Interpretation und zu wichtigen Hinweisen." }
+  ],
+  en: [
+    { src: "assets/screenshot1.png", alt: "LiquidityPulse dashboard", caption: "Dashboard with global liquidity and signal overview." },
+    { src: "assets/screenshot2.png", alt: "LiquidityPulse charts", caption: "Charts for key liquidity and macro series." },
+    { src: "assets/screenshot3.png", alt: "LiquidityPulse lead lag analysis", caption: "Lead-lag analysis for historical timing relationships between two series." },
+    { src: "assets/screenshot4.png", alt: "LiquidityPulse regime", caption: "Regime view for classifying market phases and signal strength." },
+    { src: "assets/screenshot5.png", alt: "LiquidityPulse settings", caption: "Settings for language, default timeframe, and active data sources." },
+    { src: "assets/screenshot6.png", alt: "LiquidityPulse guide", caption: "Guide with orientation on usage, interpretation, and important notes." }
+  ]
+};
+
+let currentLang = "de";
+let currentSlide = 0;
+
+function renderDots(){
+  const dots = document.getElementById("dots");
+  dots.innerHTML = "";
+  slides[currentLang].forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "dot" + (index === currentSlide ? " active" : "");
+    dot.setAttribute("aria-label", "Screenshot " + (index + 1));
+    dot.onclick = () => showSlide(index);
+    dots.appendChild(dot);
+  });
+}
+
+function showSlide(index){
+  const deck = slides[currentLang];
+  currentSlide = (index + deck.length) % deck.length;
+  const slide = deck[currentSlide];
+  const image = document.getElementById("slide-image");
+  image.src = slide.src;
+  image.alt = slide.alt;
+  document.getElementById("slide-caption").textContent = slide.caption;
+  renderDots();
+}
+
+function changeSlide(direction){
+  showSlide(currentSlide + direction);
+}
+
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang === "en" ? "en" : "de";
+  document.getElementById("btn-de").classList.toggle("active", lang === "de");
+  document.getElementById("btn-en").classList.toggle("active", lang === "en");
+
+  const t = copy[lang];
+  document.getElementById("back-link").textContent = t.back;
+  document.getElementById("eyebrow-text").textContent = t.eyebrow;
+  document.getElementById("hero-title").innerHTML = t.title;
+  document.getElementById("hero-text").textContent = t.text;
+  document.getElementById("primary-cta").textContent = t.primary;
+  document.getElementById("primary-cta").href = lang === "en" ? "privacy.html" : "datenschutz.html";
+  document.getElementById("secondary-cta").textContent = t.secondary;
+  document.getElementById("secondary-cta").href = lang === "en" ? "datenschutz.html" : "privacy.html";
+  document.getElementById("store-note").textContent = t.storeNote;
+  document.getElementById("features-title").textContent = t.featuresTitle;
+  document.getElementById("features-copy").textContent = t.featuresCopy;
+  document.getElementById("feature1-title").textContent = t.feature1Title;
+  document.getElementById("feature1-text").textContent = t.feature1Text;
+  document.getElementById("feature2-title").textContent = t.feature2Title;
+  document.getElementById("feature2-text").textContent = t.feature2Text;
+  document.getElementById("feature3-title").textContent = t.feature3Title;
+  document.getElementById("feature3-text").textContent = t.feature3Text;
+  document.getElementById("screens-title").textContent = t.screensTitle;
+  document.getElementById("screens-copy").textContent = t.screensCopy;
+  document.getElementById("sources-title").textContent = t.sourcesTitle;
+  document.getElementById("sources-copy").textContent = t.sourcesCopy;
+  document.getElementById("source1-title").textContent = t.source1Title;
+  document.getElementById("source1-text").textContent = t.source1Text;
+  document.getElementById("source2-title").textContent = t.source2Title;
+  document.getElementById("source2-text").textContent = t.source2Text;
+  document.getElementById("notes-title").textContent = t.notesTitle;
+  document.getElementById("notes-copy").textContent = t.notesCopy;
+  document.getElementById("note1-title").textContent = t.note1Title;
+  document.getElementById("note1-text").textContent = t.note1Text;
+  document.getElementById("note2-title").textContent = t.note2Title;
+  document.getElementById("note2-text").textContent = t.note2Text;
+  showSlide(currentSlide);
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+showSlide(0);
+</script>
+</body>
+</html>
