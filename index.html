@@ -166,6 +166,20 @@ letter-spacing:.04em;
 text-transform:uppercase;
 }
 
+.featured-tags{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:16px;
+}
+
+.featured-tag.is-new{
+background:rgba(143,247,210,.12);
+border-color:rgba(143,247,210,.24);
+color:#8ff7d2;
+}
+
 .featured p{
 color:var(--muted);
 max-width:640px;
@@ -393,7 +407,10 @@ Ich entwickle Apps für persönliche Entwicklung, Gesundheit, Reflexion, Lernen 
 
 <img src="liquiditypulse/assets/liquiditypulse.png" alt="LiquidityPulse App Icon">
 
+<div class="featured-tags">
 <div class="featured-tag">Featured App</div>
+<div class="featured-tag is-new">Neu</div>
+</div>
 
 <h3>LiquidityPulse</h3>
 
