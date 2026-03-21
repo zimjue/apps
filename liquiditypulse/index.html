@@ -536,8 +536,8 @@ p{
             aria-label="Frühzugang für LiquidityPulse sichern">
             Frühzugang sichern
           </a>
-          <a class="ghost-cta" href="datenschutz.html" id="primary-cta">Datenschutz ansehen</a>
-          <a class="ghost-cta" href="privacy.html" id="secondary-cta">Privacy Policy</a>
+          <a class="ghost-cta" href="datenschutz.html" id="primary-cta">Datenschutz (DE)</a>
+          <a class="ghost-cta" href="privacy.html" id="secondary-cta">Privacy Policy (EN)</a>
           <span class="store-note" id="store-note">Bald im App Store. Sichere dir Frühzugang und erfahre direkt vom Launch. Keine Anlageberatung.</span>
         </div>
       </div>
@@ -650,8 +650,8 @@ p{
   <footer class="footer">
     <div>© <span id="year"></span> Jürgen Zimmer</div>
     <div>
-      <a href="datenschutz.html">Datenschutz</a> ·
-      <a href="privacy.html">Privacy</a> ·
+      <a href="datenschutz.html" id="footer-privacy-de">Datenschutz (DE)</a> ·
+      <a href="privacy.html" id="footer-privacy-en">Privacy (EN)</a> ·
       <a href="../support.html">Support</a>
     </div>
   </footer>
@@ -665,8 +665,8 @@ const copy = {
     title: "Lies Liquidität.<br>Bevor der Markt sie einpreist.",
     text: "LiquidityPulse ist für makro-interessierte Anleger, Marktbeobachter und Bitcoin-orientierte Nutzer. Die App verdichtet Liquiditäts-, Markt- und Stresssignale so, dass du Regimewechsel schneller erkennst und besser einordnen kannst.",
     waitlist: "Frühzugang sichern",
-    primary: "Datenschutz ansehen",
-    secondary: "Privacy Policy",
+    primary: "Datenschutz (DE)",
+    secondary: "Privacy Policy (EN)",
     storeNote: "Bald im App Store. Sichere dir Frühzugang und erfahre direkt vom Launch. Keine Anlageberatung.",
     featuresTitle: "Was LiquidityPulse zeigt",
     featuresCopy: "Statt verstreuter Datenquellen bekommst du hier eine fokussierte Arbeitsoberfläche für Liquidität, Marktstruktur und historische Beziehungen.",
@@ -697,8 +697,8 @@ const copy = {
     title: "Understand global liquidity.<br>Faster and with more clarity.",
     text: "LiquidityPulse brings together key liquidity, market, and stress signals in one clear app so you can spot trends, regime shifts, and historical relationships faster.",
     waitlist: "Get early access",
-    primary: "View Privacy Policy",
-    secondary: "Datenschutz",
+    primary: "Privacy Policy (EN)",
+    secondary: "Datenschutz (DE)",
     storeNote: "Coming soon to the App Store. Get early access and be notified at launch. Not investment advice.",
     featuresTitle: "What LiquidityPulse shows",
     featuresCopy: "The app compresses important macro and market indicators into a few clear working areas.",
@@ -791,6 +791,8 @@ function setLang(lang){
   document.getElementById("primary-cta").href = lang === "en" ? "privacy.html" : "datenschutz.html";
   document.getElementById("secondary-cta").textContent = t.secondary;
   document.getElementById("secondary-cta").href = lang === "en" ? "datenschutz.html" : "privacy.html";
+  document.getElementById("footer-privacy-de").textContent = lang === "en" ? "Datenschutz (DE)" : "Datenschutz (DE)";
+  document.getElementById("footer-privacy-en").textContent = lang === "en" ? "Privacy (EN)" : "Privacy (EN)";
   document.getElementById("store-note").textContent = t.storeNote;
   document.getElementById("features-title").textContent = t.featuresTitle;
   document.getElementById("features-copy").textContent = t.featuresCopy;
