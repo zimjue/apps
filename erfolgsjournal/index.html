@@ -529,7 +529,7 @@ p{
         <div class="slider" id="slider" tabindex="0">
           <button class="slide-btn prev" type="button" onclick="prevSlide()" aria-label="Vorheriger Screenshot">‹</button>
           <div class="slide-frame">
-            <img id="slider-image" src="assets/erfolgsjournal-screenshot-01-1284x2778.png" class="app-screenshot" alt="Erfolgsjournal App Screenshot" loading="eager">
+            <img id="slider-image" src="assets/erfolgsjournal-screenshot-de-01-1284x2778.png" class="app-screenshot" alt="Erfolgsjournal App Screenshot" loading="eager">
           </div>
           <button class="slide-btn next" type="button" onclick="nextSlide()" aria-label="Nächster Screenshot">›</button>
         </div>
@@ -739,14 +739,24 @@ const translations = {
   }
 };
 
-const screenshots = [
-  "assets/erfolgsjournal-screenshot-01-1284x2778.png",
-  "assets/erfolgsjournal-screenshot-02-1284x2778.png",
-  "assets/erfolgsjournal-screenshot-03-1284x2778.png",
-  "assets/erfolgsjournal-screenshot-04-1284x2778.png",
-  "assets/erfolgsjournal-screenshot-05-1284x2778.png",
-  "assets/erfolgsjournal-screenshot-06-1284x2778.png"
-];
+const screenshotsByLang = {
+  de: [
+    "assets/erfolgsjournal-screenshot-de-01-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-de-02-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-de-03-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-de-04-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-de-05-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-de-06-1284x2778.png"
+  ],
+  en: [
+    "assets/erfolgsjournal-screenshot-en-01-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-en-02-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-en-03-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-en-04-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-en-05-1284x2778.png",
+    "assets/erfolgsjournal-screenshot-en-06-1284x2778.png"
+  ]
+};
 
 let currentSlide = 0;
 let autoPlay = null;
@@ -760,6 +770,7 @@ function currentLang(){
 
 function buildDots(){
   const dots = document.getElementById("dots");
+  const screenshots = screenshotsByLang[currentLang()] || screenshotsByLang.de;
   dots.innerHTML = "";
   screenshots.forEach((_, index) => {
     const button = document.createElement("button");
@@ -774,6 +785,9 @@ function buildDots(){
 function updateSlideMeta(){
   const lang = currentLang();
   const t = translations[lang] || translations.de;
+  const screenshots = screenshotsByLang[lang] || screenshotsByLang.de;
+
+  if(currentSlide >= screenshots.length) currentSlide = 0;
 
   document.getElementById("slider-image").src = screenshots[currentSlide];
   document.getElementById("slider-image").alt = t.screenshotAlt;
@@ -797,12 +811,14 @@ function goToSlide(index){
 }
 
 function nextSlide(){
+  const screenshots = screenshotsByLang[currentLang()] || screenshotsByLang.de;
   currentSlide = (currentSlide + 1) % screenshots.length;
   updateSlideMeta();
   restartAutoPlay();
 }
 
 function prevSlide(){
+  const screenshots = screenshotsByLang[currentLang()] || screenshotsByLang.de;
   currentSlide = (currentSlide - 1 + screenshots.length) % screenshots.length;
   updateSlideMeta();
   restartAutoPlay();
@@ -811,6 +827,7 @@ function prevSlide(){
 function startAutoPlay(){
   stopAutoPlay();
   autoPlay = setInterval(() => {
+    const screenshots = screenshotsByLang[currentLang()] || screenshotsByLang.de;
     currentSlide = (currentSlide + 1) % screenshots.length;
     updateSlideMeta();
   }, 4500);
