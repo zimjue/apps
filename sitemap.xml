@@ -4,38 +4,50 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jzapps.app/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/"/>
   </url>
   <url>
     <loc>https://jzapps.app/index-de.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/index-de.html"/>
   </url>
   <url>
+    <loc>https://jzapps.app/services.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/services.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/services-de.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/services-de.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/services.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/services-de.html"/>
+  </url>
+  <url>
     <loc>https://jzapps.app/support.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/support.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/support-de.html"/>
   </url>
   <url>
     <loc>https://jzapps.app/support-de.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/support.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/support-de.html"/>
   </url>
   <url>
     <loc>https://jzapps.app/privacy.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/datenschutz.html"/>
   </url>
   <url>
     <loc>https://jzapps.app/datenschutz.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/datenschutz.html"/>
   </url>
