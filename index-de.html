@@ -603,18 +603,27 @@ margin-top:16px;
 }
 
 .subtle-link{
-color:var(--muted);
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+padding:10px 14px;
+border-radius:999px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.12);
+color:var(--text);
 text-decoration:none;
 font-size:14px;
 line-height:1.5;
-border-bottom:1px solid rgba(255,255,255,.14);
-padding-bottom:2px;
-transition:color .18s ease, border-color .18s ease;
+box-shadow:0 10px 24px rgba(0,0,0,.12);
+transition:color .18s ease, border-color .18s ease, background .18s ease, transform .18s ease;
 }
 
 .subtle-link:hover{
 color:var(--text);
-border-color:rgba(255,255,255,.32);
+border-color:rgba(102,227,255,.24);
+background:rgba(102,227,255,.08);
+transform:translateY(-1px);
 }
 
 .app-store-badge{
@@ -878,7 +887,7 @@ LiquidityPulse macht Liquidität, Marktstress und Regimewechsel im Alltag schnel
 </div>
 
 <div class="featured-links">
-<a class="subtle-link" href="https://liquiditypulse.net" target="_blank" rel="noopener noreferrer" id="featured-website-link">Produktwebsite</a>
+<a class="subtle-link" href="https://liquiditypulse.net" target="_blank" rel="noopener noreferrer" id="featured-website-link">Produktwebsite ↗</a>
 </div>
 
 <div class="featured-store">
@@ -1092,7 +1101,7 @@ de: {
   featuredTag: "Produkt im Fokus",
   featuredNew: "Neu",
   featuredSoon: "Jetzt im App Store",
-  featuredWebsite: "Produktwebsite",
+  featuredWebsite: "Produktwebsite ↗",
   featuredCopy: "Für makro-orientierte Anleger, Marktbeobachter und Bitcoin-interessierte Nutzer:\nLiquidityPulse macht Liquidität, Marktstress und Regimewechsel im Alltag schneller lesbar, damit du Marktlagen klarer einordnen und bessere Entscheidungen treffen kannst.",
   fp1Title: "Für Makro-Anleger",
   fp1Copy: "Gebaut für Menschen, die Liquidität, Risiko und Marktregime als Teil ihres Entscheidungsprozesses verfolgen.",
@@ -1127,7 +1136,7 @@ en: {
   featuredTag: "Featured Product",
   featuredNew: "New",
   featuredSoon: "Now on the App Store",
-  featuredWebsite: "Product Website",
+  featuredWebsite: "Product Website ↗",
   featuredCopy: "For macro-minded investors, market watchers, and Bitcoin-focused users:\nLiquidityPulse turns liquidity, market stress, and regime shifts into a clearer daily read so you can interpret conditions faster and make better-informed decisions.",
   fp1Title: "For Macro Investors",
   fp1Copy: "Built for people who follow liquidity, risk, and market regime changes as part of their process.",
