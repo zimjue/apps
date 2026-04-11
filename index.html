@@ -595,6 +595,29 @@ justify-content:center;
 margin-top:18px;
 }
 
+.featured-links{
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
+margin-top:16px;
+}
+
+.subtle-link{
+color:var(--muted);
+text-decoration:none;
+font-size:14px;
+line-height:1.5;
+border-bottom:1px solid rgba(255,255,255,.14);
+padding-bottom:2px;
+transition:color .18s ease, border-color .18s ease;
+}
+
+.subtle-link:hover{
+color:var(--text);
+border-color:rgba(255,255,255,.32);
+}
+
 .app-store-badge{
 display:inline-block;
 line-height:0;
@@ -725,6 +748,10 @@ padding:22px;
 font-size:28px;
 }
 
+.featured-links{
+gap:12px;
+}
+
 .card{
 min-height:auto;
 }
@@ -849,6 +876,10 @@ LiquidityPulse turns liquidity, market stress, and regime shifts into a clearer 
 <a class="btn primary" href="liquiditypulse/" id="featured-btn-primary">Open App Page</a>
 <a class="btn secondary" href="liquiditypulse/privacy.html" id="featured-btn-secondary">Privacy</a>
 
+</div>
+
+<div class="featured-links">
+<a class="subtle-link" href="https://liquiditypulse.net" target="_blank" rel="noopener noreferrer" id="featured-website-link">Product Website</a>
 </div>
 
 <div class="featured-store">
@@ -1062,6 +1093,7 @@ de: {
   featuredTag: "Produkt im Fokus",
   featuredNew: "Neu",
   featuredSoon: "Jetzt im App Store",
+  featuredWebsite: "Produktwebsite",
   featuredCopy: "Für makro-orientierte Anleger, Marktbeobachter und Bitcoin-interessierte Nutzer:\nLiquidityPulse macht Liquidität, Marktstress und Regimewechsel im Alltag schneller lesbar, damit du Marktlagen klarer einordnen und bessere Entscheidungen treffen kannst.",
   fp1Title: "Für Makro-Anleger",
   fp1Copy: "Gebaut für Menschen, die Liquidität, Risiko und Marktregime als Teil ihres Entscheidungsprozesses verfolgen.",
@@ -1096,6 +1128,7 @@ en: {
   featuredTag: "Featured Product",
   featuredNew: "New",
   featuredSoon: "Now on the App Store",
+  featuredWebsite: "Product Website",
   featuredCopy: "For macro-minded investors, market watchers, and Bitcoin-focused users:\nLiquidityPulse turns liquidity, market stress, and regime shifts into a clearer daily read so you can interpret conditions faster and make better-informed decisions.",
   fp1Title: "For Macro Investors",
   fp1Copy: "Built for people who follow liquidity, risk, and market regime changes as part of their process.",
@@ -1136,6 +1169,7 @@ function setLang(lang){
   document.getElementById("featured-tag").textContent = t.featuredTag;
   document.getElementById("featured-new").textContent = t.featuredNew;
   document.getElementById("featured-soon").textContent = t.featuredSoon;
+  document.getElementById("featured-website-link").textContent = t.featuredWebsite;
   document.getElementById("featured-copy").innerHTML = t.featuredCopy.replace("\n","<br>");
   document.getElementById("fp1-title").textContent = t.fp1Title;
   document.getElementById("fp1-copy").textContent = t.fp1Copy;
