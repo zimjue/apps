@@ -4,14 +4,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jzapps.app/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/"/>
   </url>
   <url>
     <loc>https://jzapps.app/index-de.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/index-de.html"/>
@@ -102,16 +102,30 @@
   </url>
   <url>
     <loc>https://jzapps.app/fitnessgoals/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/fitnessgoals/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/fitnessgoals/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitnessgoals/"/>
   </url>
   <url>
     <loc>https://jzapps.app/fitnessgoals/index-de.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/fitnessgoals/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/fitnessgoals/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitnessgoals/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/wealthpulse/</loc>
+    <lastmod>2026-05-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/wealthpulse/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/wealthpulse/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/wealthpulse/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/wealthpulse/index-de.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/wealthpulse/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/wealthpulse/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/wealthpulse/"/>
   </url>
 </urlset>
