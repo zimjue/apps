@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>WealthPulse – Understand your relationship with money</title>
+<meta name="description" content="WealthPulse helps you discover your money type, structure your finances with the 6-pot system, and build a daily mindset habit.">
+<meta name="theme-color" content="#0a1118">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jzapps.app/wealthpulse/">
+<link rel="alternate" hreflang="en" href="https://jzapps.app/wealthpulse/">
+<link rel="alternate" hreflang="de" href="https://jzapps.app/wealthpulse/index-de.html">
+<link rel="alternate" hreflang="x-default" href="https://jzapps.app/wealthpulse/">
+
+<meta property="og:title" content="WealthPulse – Understand your relationship with money">
+<meta property="og:description" content="Discover your money type, set up your 6-pot system, and build a daily financial mindset habit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jzapps.app/wealthpulse/">
+<meta property="og:image" content="https://jzapps.app/wealthpulse/assets/wealthpulse.png">
+<meta property="og:site_name" content="WealthPulse">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WealthPulse – Understand your relationship with money">
+<meta name="twitter:description" content="Discover your money type, set up your 6-pot system, and build a daily financial mindset habit.">
+<meta name="twitter:image" content="https://jzapps.app/wealthpulse/assets/wealthpulse.png">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"WealthPulse",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"iOS, iPadOS",
+  "description":"WealthPulse helps you discover your money type, structure your finances with the 6-pot system, and build a daily mindset habit.",
+  "url":"https://jzapps.app/wealthpulse/",
+  "image":"https://jzapps.app/wealthpulse/assets/wealthpulse.png",
+  "publisher":{
+    "@type":"Person",
+    "name":"Jürgen Zimmer"
+  }
+}
+</script>
+
+<style>
+:root{
+  --bg:#0a1118;
+  --txt:#eef4ff;
+  --muted:#a9bbd6;
+  --accent:#61b3f7;
+  --card:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.12);
+  --shadow:0 30px 70px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 600px at 20% 10%,rgba(97,179,247,.14),transparent 55%),
+    radial-gradient(900px 500px at 90% 40%,rgba(145,210,255,.10),transparent 55%),
+    var(--bg);
+  color:var(--txt);
+  visibility:hidden;
+}
+
+a{color:inherit}
+
+.wrap{
+  max-width:1080px;
+  margin:auto;
+  padding:40px 18px 72px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:36px;
+  gap:16px;
+}
+
+.topbar-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent;
+  color:var(--txt);
+  text-decoration:none;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.back-btn:hover{background:rgba(255,255,255,.06)}
+
+.brand{
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.lang-switch{
+  display:flex;
+  gap:10px;
+}
+
+.lang-btn{
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);
+  background:transparent;
+  color:var(--txt);
+  cursor:pointer;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.lang-btn.active{
+  background:var(--accent);
+  color:#04121e;
+  border-color:transparent;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:42px;
+  align-items:center;
+  margin-bottom:34px;
+}
+
+.hero-copy{max-width:580px}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.eyebrow-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 18px rgba(97,179,247,.8);
+}
+
+h1{
+  font-size:52px;
+  line-height:1.04;
+  margin:0 0 16px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.65;
+  margin:0;
+}
+
+.hero-actions{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.store-note{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.hero-image{
+  display:flex;
+  justify-content:center;
+}
+
+.icon-shell{
+  position:relative;
+  width:min(100%, 360px);
+  padding:20px;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow);
+}
+
+.icon-shell::after{
+  content:"";
+  position:absolute;
+  inset:auto 12% 18px;
+  height:32px;
+  filter:blur(28px);
+  background:rgba(0,0,0,.35);
+  border-radius:999px;
+}
+
+.app-icon{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  border-radius:28px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:30px;
+  margin-top:28px;
+  backdrop-filter:blur(10px);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.section-head h2{
+  margin:0;
+  font-size:28px;
+}
+
+.section-head p{
+  max-width:560px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:20px;
+}
+
+.feature-card,
+.note-card{
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:22px;
+}
+
+.feature-icon{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-size:20px;
+  margin-bottom:14px;
+  background:linear-gradient(180deg,rgba(97,179,247,.18),rgba(97,179,247,.06));
+  border:1px solid rgba(97,179,247,.18);
+}
+
+.feature-card h3,
+.note-card h3{
+  margin:0 0 10px;
+  font-size:20px;
+}
+
+.note-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.journey-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:20px;
+}
+
+.journey-card{
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:22px;
+}
+
+.journey-card h3{
+  margin:0 0 10px;
+  font-size:18px;
+}
+
+.phase-label{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+
+.footer{
+  margin-top:64px;
+  font-size:13px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.footer a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.footer a:hover{text-decoration:underline}
+
+.lang-btn:focus-visible,
+.back-btn:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
+@media (max-width:860px){
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-copy{max-width:none}
+  .hero-actions{justify-content:center}
+  .section-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .features,
+  .journey-grid,
+  .note-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:640px){
+  .wrap{padding:24px 14px 56px}
+  h1{font-size:40px}
+  .card{padding:22px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="../index.html" class="back-btn" id="back-link">← All Apps</a>
+      <div class="brand">WealthPulse</div>
+    </div>
+
+    <div class="lang-switch" aria-label="Sprachauswahl / Language switch">
+      <a class="lang-btn" id="btn-de" href="index-de.html">DE</a>
+      <a class="lang-btn active" id="btn-en" href="index.html">EN</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span id="eyebrow-text">Money mindset and system in one place</span>
+        </div>
+
+        <h1 id="hero-title">Understand your relationship with money.<br>Build a system that fits you.</h1>
+        <p id="hero-text">WealthPulse helps you discover your money type, set up a clear 6-pot system, and build a daily habit that keeps your financial mindset active — all stored privately on your device.</p>
+
+        <div class="hero-actions">
+          <span class="store-note" id="store-note">Coming soon to the App Store.</span>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="icon-shell">
+          <img src="assets/wealthpulse.png" alt="WealthPulse App Icon" class="app-icon" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="features-title">What WealthPulse helps you with</h2>
+        </div>
+        <p id="features-copy">Three areas that work together: know yourself, structure your money, and build a conscious daily habit.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">◑</div>
+          <h3 id="feature1-title">Money Type</h3>
+          <p id="feature1-text">A short guided assessment reveals how you relate to money — whether you avoid it, protect it, enjoy it, or grow it.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⬡</div>
+          <h3 id="feature2-title">6-Pot System</h3>
+          <p id="feature2-text">Allocate your monthly income across six categories and see at a glance where structure is missing or where you're overextended.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">◎</div>
+          <h3 id="feature3-title">Daily Pulse</h3>
+          <p id="feature3-text">Under 30 seconds: notice how money feels today, make one conscious decision, and log it as a check-in.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="journey-title">Mindset Journey</h2>
+        </div>
+        <p id="journey-copy">A structured 3-phase process to uncover, reframe, and anchor your relationship with money over time.</p>
+      </div>
+
+      <div class="journey-grid">
+        <div class="journey-card">
+          <div class="phase-label" id="phase1-label">Phase 1</div>
+          <h3 id="phase1-title">Know Yourself</h3>
+          <p id="phase1-text">Explore your money associations, beliefs, and emotional patterns to build an honest baseline picture.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="phase-label" id="phase2-label">Phase 2</div>
+          <h3 id="phase2-title">Realign</h3>
+          <p id="phase2-text">Set new reference points, clarify your money purpose, and start reframing the beliefs that hold you back.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="phase-label" id="phase3-label">Phase 3</div>
+          <h3 id="phase3-title">Make It Visible</h3>
+          <p id="phase3-text">Compare before and after. See what has already shifted in your answers, beliefs, and daily decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="notes-title">Privacy by design</h2>
+        </div>
+        <p id="notes-copy">WealthPulse is built to stay on your device — no accounts, no cloud sync, no tracking.</p>
+      </div>
+
+      <div class="note-grid">
+        <div class="note-card">
+          <h3 id="note1-title">Everything stored locally</h3>
+          <p id="note1-text">Check-ins, pots, money type, and beliefs are saved on your device only. No iCloud, no external servers for app content.</p>
+        </div>
+
+        <div class="note-card">
+          <h3 id="note2-title">No analytics or tracking</h3>
+          <p id="note2-text">The app contains no analytics SDKs, no advertising networks, and no tracking of any kind.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Jürgen Zimmer</div>
+    <div>
+      <a href="privacy.html" id="footer-privacy">Privacy Policy</a> ·
+      <a href="../support.html" id="footer-support">Support</a> ·
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" id="footer-eula" target="_blank" rel="noopener noreferrer">EULA</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+const copy = {
+  de: {
+    back: "← Alle Apps",
+    eyebrow: "Geldmindset und System an einem Ort",
+    title: "Verstehe dein Verhältnis zu Geld.<br>Baue ein System, das zu dir passt.",
+    text: "WealthPulse hilft dir, deinen Geldtyp zu entdecken, ein klares 6-Töpfe-System einzurichten und eine tägliche Gewohnheit aufzubauen, die dein Geldmindset aktiv hält — alles lokal auf deinem Gerät gespeichert.",
+    storeNote: "Demnächst im App Store.",
+    featuresTitle: "Womit WealthPulse dir hilft",
+    featuresCopy: "Drei Bereiche, die zusammenwirken: dich selbst kennen, dein Geld strukturieren und eine bewusste Tagesroutine aufbauen.",
+    feature1Title: "Geldtyp",
+    feature1Text: "Eine kurze geführte Einschätzung zeigt, wie du mit Geld umgehst — ob du es vermeidest, schützt, genießt oder vermehrst.",
+    feature2Title: "6-Töpfe-System",
+    feature2Text: "Verteile dein monatliches Einkommen auf sechs Kategorien und sieh auf einen Blick, wo Struktur fehlt oder du überzogen bist.",
+    feature3Title: "Daily Pulse",
+    feature3Text: "Unter 30 Sekunden: wahrnehmen, wie sich Geld heute anfühlt, eine bewusste Entscheidung treffen und als Check-in speichern.",
+    journeyTitle: "Mindset Journey",
+    journeyCopy: "Ein strukturierter 3-Phasen-Prozess, um dein Verhältnis zu Geld aufzudecken, neu auszurichten und dauerhaft zu verankern.",
+    phase1Label: "Phase 1",
+    phase1Title: "Dich selbst kennen",
+    phase1Text: "Erkunde deine Geld-Assoziationen, Glaubenssätze und emotionalen Muster, um ein ehrliches Ausgangsbild zu entwickeln.",
+    phase2Label: "Phase 2",
+    phase2Title: "Neu ausrichten",
+    phase2Text: "Setze neue Bezugspunkte, kläre deinen Geld-Zweck und beginne, die Glaubenssätze umzuformulieren, die dich bremsen.",
+    phase3Label: "Phase 3",
+    phase3Title: "Sichtbar machen",
+    phase3Text: "Vergleiche Vorher und Nachher. Sieh, was sich in deinen Antworten, Glaubenssätzen und täglichen Entscheidungen bereits verschoben hat.",
+    notesTitle: "Privacy by Design",
+    notesCopy: "WealthPulse ist so gebaut, dass alles auf deinem Gerät bleibt — keine Konten, keine Cloud-Synchronisation, kein Tracking.",
+    note1Title: "Alles lokal gespeichert",
+    note1Text: "Check-ins, Töpfe, Geldtyp und Glaubenssätze werden nur auf deinem Gerät gespeichert. Kein iCloud, keine externen Server für App-Inhalte.",
+    note2Title: "Keine Analyse oder Tracking",
+    note2Text: "Die App enthält keine Analytics-SDKs, keine Werbenetzwerke und keinerlei Tracking.",
+    footerPrivacy: "Datenschutz",
+    footerSupport: "Support"
+  },
+  en: {
+    back: "← All Apps",
+    eyebrow: "Money mindset and system in one place",
+    title: "Understand your relationship with money.<br>Build a system that fits you.",
+    text: "WealthPulse helps you discover your money type, set up a clear 6-pot system, and build a daily habit that keeps your financial mindset active — all stored privately on your device.",
+    storeNote: "Coming soon to the App Store.",
+    featuresTitle: "What WealthPulse helps you with",
+    featuresCopy: "Three areas that work together: know yourself, structure your money, and build a conscious daily habit.",
+    feature1Title: "Money Type",
+    feature1Text: "A short guided assessment reveals how you relate to money — whether you avoid it, protect it, enjoy it, or grow it.",
+    feature2Title: "6-Pot System",
+    feature2Text: "Allocate your monthly income across six categories and see at a glance where structure is missing or where you're overextended.",
+    feature3Title: "Daily Pulse",
+    feature3Text: "Under 30 seconds: notice how money feels today, make one conscious decision, and log it as a check-in.",
+    journeyTitle: "Mindset Journey",
+    journeyCopy: "A structured 3-phase process to uncover, reframe, and anchor your relationship with money over time.",
+    phase1Label: "Phase 1",
+    phase1Title: "Know Yourself",
+    phase1Text: "Explore your money associations, beliefs, and emotional patterns to build an honest baseline picture.",
+    phase2Label: "Phase 2",
+    phase2Title: "Realign",
+    phase2Text: "Set new reference points, clarify your money purpose, and start reframing the beliefs that hold you back.",
+    phase3Label: "Phase 3",
+    phase3Title: "Make It Visible",
+    phase3Text: "Compare before and after. See what has already shifted in your answers, beliefs, and daily decisions.",
+    notesTitle: "Privacy by design",
+    notesCopy: "WealthPulse is built to stay on your device — no accounts, no cloud sync, no tracking.",
+    note1Title: "Everything stored locally",
+    note1Text: "Check-ins, pots, money type, and beliefs are saved on your device only. No iCloud, no external servers for app content.",
+    note2Title: "No analytics or tracking",
+    note2Text: "The app contains no analytics SDKs, no advertising networks, and no tracking of any kind.",
+    footerPrivacy: "Privacy Policy",
+    footerSupport: "Support"
+  }
+};
+
+let currentLang = "en";
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang === "en" ? "en" : "de";
+  document.getElementById("btn-de").classList.toggle("active", lang === "de");
+  document.getElementById("btn-en").classList.toggle("active", lang === "en");
+
+  const t = copy[lang];
+  document.getElementById("back-link").textContent = t.back;
+  document.getElementById("eyebrow-text").textContent = t.eyebrow;
+  document.getElementById("hero-title").innerHTML = t.title;
+  document.getElementById("hero-text").textContent = t.text;
+  document.getElementById("store-note").textContent = t.storeNote;
+  document.getElementById("features-title").textContent = t.featuresTitle;
+  document.getElementById("features-copy").textContent = t.featuresCopy;
+  document.getElementById("feature1-title").textContent = t.feature1Title;
+  document.getElementById("feature1-text").textContent = t.feature1Text;
+  document.getElementById("feature2-title").textContent = t.feature2Title;
+  document.getElementById("feature2-text").textContent = t.feature2Text;
+  document.getElementById("feature3-title").textContent = t.feature3Title;
+  document.getElementById("feature3-text").textContent = t.feature3Text;
+  document.getElementById("journey-title").textContent = t.journeyTitle;
+  document.getElementById("journey-copy").textContent = t.journeyCopy;
+  document.getElementById("phase1-label").textContent = t.phase1Label;
+  document.getElementById("phase1-title").textContent = t.phase1Title;
+  document.getElementById("phase1-text").textContent = t.phase1Text;
+  document.getElementById("phase2-label").textContent = t.phase2Label;
+  document.getElementById("phase2-title").textContent = t.phase2Title;
+  document.getElementById("phase2-text").textContent = t.phase2Text;
+  document.getElementById("phase3-label").textContent = t.phase3Label;
+  document.getElementById("phase3-title").textContent = t.phase3Title;
+  document.getElementById("phase3-text").textContent = t.phase3Text;
+  document.getElementById("notes-title").textContent = t.notesTitle;
+  document.getElementById("notes-copy").textContent = t.notesCopy;
+  document.getElementById("note1-title").textContent = t.note1Title;
+  document.getElementById("note1-text").textContent = t.note1Text;
+  document.getElementById("note2-title").textContent = t.note2Title;
+  document.getElementById("note2-text").textContent = t.note2Text;
+  document.getElementById("footer-privacy").textContent = t.footerPrivacy;
+  document.getElementById("footer-privacy").href = lang === "en" ? "privacy.html" : "datenschutz.html";
+  document.getElementById("footer-support").href = lang === "en" ? "../support.html" : "../support-de.html";
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+setLang("en");
+document.body.style.visibility = "visible";
+</script>
+</body>
+</html>

@@ -94,6 +94,12 @@
             "position":5,
             "name":"FitnessGoals",
             "url":"https://jzapps.app/fitnessgoals/"
+          },
+          {
+            "@type":"SoftwareApplication",
+            "position":6,
+            "name":"WealthPulse",
+            "url":"https://jzapps.app/wealthpulse/"
           }
         ]
       }
@@ -1018,6 +1024,29 @@ For people who want training structure without clutter. FitnessGoals helps you s
 </div>
 </div>
 
+<!-- WealthPulse -->
+
+<div class="card">
+
+<img class="app-icon" src="wealthpulse/assets/wealthpulse.png" alt="WealthPulse App Icon">
+
+<div class="app-title">WealthPulse</div>
+
+<div class="app-meta" id="wp-meta">Money Mindset</div>
+
+<div class="app-desc" id="wp-copy">
+For people who want to understand their relationship with money. WealthPulse combines a money type assessment, a 6-pot system, and a daily mindset habit in one private app.
+</div>
+
+<div class="buttons">
+
+<a class="btn primary" href="wealthpulse/" id="wp-btn-primary">Open App Page</a>
+<a class="btn secondary" href="wealthpulse/privacy.html" id="wp-btn-secondary">Privacy</a>
+
+</div>
+
+</div>
+
 </div>
 
 <section class="dev">
@@ -1120,6 +1149,8 @@ de: {
   lrCopy: "Für alle, die einen klareren Blick auf die Bereiche ihres Lebens wollen. Lebensrad hilft dir, Ungleichgewichte früher zu erkennen und bewusstere nächste Schritte zu wählen.",
   fgMeta: "Trainingsfokus",
   fgCopy: "Für Menschen, die Trainingsstruktur ohne unnötige Komplexität wollen. FitnessGoals hilft dir, Ziele zu setzen, dranzubleiben und Momentum aufzubauen.",
+  wpMeta: "Geldmindset",
+  wpCopy: "Für Menschen, die ihr Verhältnis zu Geld verstehen wollen. WealthPulse verbindet Geldtyp-Einschätzung, 6-Töpfe-System und tägliche Mindset-Gewohnheit in einer privaten App.",
   footerPrivacy: "Datenschutz",
   footerImprint: "Impressum",
   made: "Made with ❤️ in Munich"
@@ -1155,6 +1186,8 @@ en: {
   lrCopy: "For anyone who wants a clearer view of the areas shaping wellbeing. Lebensrad helps you spot imbalances early and choose better next steps.",
   fgMeta: "Training Focus",
   fgCopy: "For people who want training structure without clutter. FitnessGoals helps you set targets, stay consistent, and keep momentum over time.",
+  wpMeta: "Money Mindset",
+  wpCopy: "For people who want to understand their relationship with money. WealthPulse combines a money type assessment, a 6-pot system, and a daily mindset habit in one private app.",
   footerPrivacy: "Privacy",
   footerImprint: "Legal Notice",
   made: "Made with ❤️ in Munich"
@@ -1204,6 +1237,10 @@ function setLang(lang){
   document.getElementById("fg-copy").textContent = t.fgCopy;
   document.getElementById("fg-btn-primary").textContent = t.primary;
   document.getElementById("fg-btn-secondary").textContent = t.secondary;
+  document.getElementById("wp-meta").textContent = t.wpMeta;
+  document.getElementById("wp-copy").textContent = t.wpCopy;
+  document.getElementById("wp-btn-primary").textContent = t.primary;
+  document.getElementById("wp-btn-secondary").textContent = t.secondary;
   document.getElementById("footer-privacy").textContent = t.footerPrivacy;
   document.getElementById("footer-imprint").textContent = t.footerImprint;
   document.getElementById("made-copy").textContent = t.made;
@@ -1212,6 +1249,7 @@ function setLang(lang){
   document.getElementById("ej-btn-secondary").href = lang === "en" ? "erfolgsjournal/privacy.html" : "erfolgsjournal/datenschutz.html";
   document.getElementById("lr-btn-secondary").href = lang === "en" ? "lebensrad/privacy.html" : "lebensrad/datenschutz.html";
   document.getElementById("fg-btn-secondary").href = lang === "en" ? "fitnessgoals/privacy.html" : "fitnessgoals/datenschutz.html";
+  document.getElementById("wp-btn-secondary").href = lang === "en" ? "wealthpulse/privacy.html" : "wealthpulse/datenschutz.html";
   document.getElementById("footer-privacy").href = lang === "en" ? "privacy.html" : "datenschutz.html";
   document.getElementById("footer-support").href = lang === "en" ? "support.html" : "support-de.html";
   document.getElementById("footer-imprint").href = lang === "en" ? "imprint.html" : "impressum.html";
