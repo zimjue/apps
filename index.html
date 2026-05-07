@@ -22,6 +22,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jzapps.app/">
 <meta property="og:image" content="https://jzapps.app/assets/juergen.jpeg">
+<meta property="og:image:width" content="1179">
+<meta property="og:image:height" content="1174">
+<meta property="og:image:alt" content="Jürgen Zimmer – Indie iOS Developer">
 <meta property="og:site_name" content="Jürgen Zimmer Apps">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Independent iPhone & iPad Apps | Jürgen Zimmer">
@@ -1104,6 +1107,7 @@ I build my own apps from positioning and UX to native development and App Store 
 
 <a href="privacy.html" id="footer-privacy">Privacy</a> ·
 <a href="support.html" id="footer-support">Support</a> ·
+<a href="services.html" id="footer-services">Collaborations</a> ·
 <a href="imprint.html" id="footer-imprint">Legal Notice</a> ·
 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">EULA</a>
 
@@ -1155,6 +1159,7 @@ de: {
   wpMeta: "Geldmindset",
   wpCopy: "Für Menschen, die ihr Verhältnis zu Geld verstehen wollen. MoneyMind verbindet Geldtyp-Einschätzung, 6-Töpfe-System und tägliche Mindset-Gewohnheit in einer privaten App.",
   footerPrivacy: "Datenschutz",
+  footerServices: "Kollaborationen",
   footerImprint: "Impressum",
   made: "Made with ❤️ in Munich"
 },
@@ -1192,6 +1197,7 @@ en: {
   wpMeta: "Money Mindset",
   wpCopy: "For people who want to understand their relationship with money. MoneyMind combines a money type assessment, a 6-pot system, and a daily mindset habit in one private app.",
   footerPrivacy: "Privacy",
+  footerServices: "Collaborations",
   footerImprint: "Legal Notice",
   made: "Made with ❤️ in Munich"
 }
@@ -1255,6 +1261,8 @@ function setLang(lang){
   document.getElementById("wp-btn-secondary").href = lang === "en" ? "moneymind/privacy.html" : "moneymind/datenschutz.html";
   document.getElementById("footer-privacy").href = lang === "en" ? "privacy.html" : "datenschutz.html";
   document.getElementById("footer-support").href = lang === "en" ? "support.html" : "support-de.html";
+  document.getElementById("footer-services").textContent = t.footerServices;
+  document.getElementById("footer-services").href = lang === "en" ? "services.html" : "services-de.html";
   document.getElementById("footer-imprint").href = lang === "en" ? "imprint.html" : "impressum.html";
 }
 
