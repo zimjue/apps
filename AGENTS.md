@@ -40,7 +40,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 ├── fitnessgoals/
 ├── lebensrad/
 ├── liquiditypulse/
-├── moneymind/
+├── moneymindshift/
 └── myvideospace/
 ```
 
@@ -49,7 +49,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 | App | Unterseite | App Store |
 |---|---|---|
 | LiquidityPulse | /liquiditypulse/ | id6760768700 |
-| MoneyMind | /moneymind/ | in Vorbereitung |
+| MoneyMind | /moneymindshift/ | in Vorbereitung |
 | MyVideoSpace | /myvideospace/ | — |
 | Erfolgsjournal | /erfolgsjournal/ | id6760969693 |
 | Lebensrad | /lebensrad/ | id6759198208 |

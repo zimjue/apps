@@ -115,17 +115,17 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitnessgoals/"/>
   </url>
   <url>
-    <loc>https://jzapps.app/moneymind/</loc>
+    <loc>https://jzapps.app/moneymindshift/</loc>
     <lastmod>2026-05-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/moneymind/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/moneymind/index-de.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/moneymind/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/moneymindshift/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/moneymindshift/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/moneymindshift/"/>
   </url>
   <url>
-    <loc>https://jzapps.app/moneymind/index-de.html</loc>
+    <loc>https://jzapps.app/moneymindshift/index-de.html</loc>
     <lastmod>2026-05-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/moneymind/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/moneymind/index-de.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/moneymind/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/moneymindshift/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/moneymindshift/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/moneymindshift/"/>
   </url>
 </urlset>
