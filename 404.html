@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found | Jürgen Zimmer</title>
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#0b1220">
+<style>
+:root{
+--bg:#0b1220;
+--card:#121b2f;
+--text:#eaf0ff;
+--muted:#b7c2e1;
+--accent:#66e3ff;
+--line:rgba(255,255,255,.1);
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+background:
+radial-gradient(900px 500px at 10% 10%,rgba(102,227,255,.15),transparent 55%),
+radial-gradient(700px 420px at 90% 20%,rgba(255,255,255,.05),transparent 60%),
+var(--bg);
+color:var(--text);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:24px;
+}
+.card{
+max-width:480px;
+width:100%;
+text-align:center;
+background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+border:1px solid var(--line);
+border-radius:32px;
+padding:52px 40px 44px;
+box-shadow:0 24px 60px rgba(0,0,0,.22);
+}
+.code{
+font-size:72px;
+font-weight:800;
+letter-spacing:-.04em;
+color:var(--accent);
+line-height:1;
+margin-bottom:16px;
+}
+h1{
+font-size:22px;
+font-weight:700;
+margin:0 0 12px;
+letter-spacing:-.02em;
+}
+p{
+color:var(--muted);
+font-size:15px;
+line-height:1.7;
+margin:0 0 32px;
+}
+.btn{
+display:inline-block;
+padding:13px 28px;
+border-radius:14px;
+font-size:15px;
+font-weight:700;
+text-decoration:none;
+background:var(--accent);
+color:#04121e;
+transition:opacity .15s;
+}
+.btn:hover{opacity:.85}
+.brand{
+margin-top:36px;
+font-size:13px;
+color:var(--muted);
+opacity:.6;
+letter-spacing:.06em;
+text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="code">404</div>
+  <h1 id="heading">Page not found</h1>
+  <p id="copy">This page doesn't exist or has been moved. Head back to see all apps.</p>
+  <a class="btn" href="/" id="cta">Back to Home</a>
+  <div class="brand">jzapps.app</div>
+</div>
+<script>
+const lang = (navigator.language || "en").startsWith("de") ? "de" : "en";
+if (lang === "de") {
+  document.documentElement.lang = "de";
+  document.title = "Seite nicht gefunden | Jürgen Zimmer";
+  document.getElementById("heading").textContent = "Seite nicht gefunden";
+  document.getElementById("copy").textContent = "Diese Seite existiert nicht oder wurde verschoben. Zurück zur Startseite, um alle Apps zu sehen.";
+  document.getElementById("cta").textContent = "Zur Startseite";
+  document.getElementById("cta").href = "/index-de.html";
+}
+</script>
+</body>
+</html>
