@@ -6,7 +6,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 
 **Website:** [jzapps.app](https://jzapps.app)
 **Zweck:** Portfolio- und Landingpage für JZ Apps — Indie iOS App-Entwicklung von Jürgen Zimmer, München
-**Hosting:** Cloudflare Pages
+**Hosting:** GitHub Pages
 **Repo:** GitHub (dieses Repository)
 
 ## Entwickler
@@ -55,7 +55,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 | Lebensrad | /lebensrad/ | id6759198208 |
 | FitnessGoals | /fitnessgoals/ | — |
 
-LiquidityPulse hat zusätzlich eine eigene Website: liquiditypulse.net (separates Cloudflare Workers Projekt)
+LiquidityPulse hat zusätzlich eine eigene Website: liquiditypulse.net (separates Cloudflare Workers/Cloudflare-Projekt)
 
 ## Zweisprachigkeit
 
@@ -77,7 +77,8 @@ Alle Hauptseiten und App-Unterseiten existieren in EN und DE:
 
 ## Infrastruktur
 
-- **Hosting:** Cloudflare Pages (automatisches Deploy aus diesem Repo)
-- **DNS:** Cloudflare
+- **Hosting:** GitHub Pages (Veröffentlichung über GitHub/Repository)
+- **jzapps.app:** GitHub Pages, nicht Cloudflare Pages
+- **Cloudflare:** nur für LiquidityPulse/liquiditypulse.net relevant
 - **liquiditypulse.net:** separates Cloudflare Workers Projekt (nicht in diesem Repo)
 - **iOS Apps:** lokal entwickelt, nicht in GitHub
