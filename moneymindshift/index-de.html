@@ -322,6 +322,64 @@ p{
   margin-bottom:8px;
 }
 
+.slider-wrap{margin-top:20px}
+.slider{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  justify-content:center;
+}
+.slide-frame{
+  flex:0 0 auto;
+  width:min(100%,280px);
+}
+.app-screenshot{
+  display:block;
+  width:100%;
+  border-radius:22px;
+  box-shadow:0 24px 60px rgba(0,0,0,.55);
+}
+.slide-btn{
+  flex:0 0 auto;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  color:var(--txt);
+  font-size:20px;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  line-height:1;
+}
+.slide-btn:hover{background:rgba(255,255,255,.12)}
+.slider-meta{
+  margin-top:16px;
+  text-align:center;
+}
+.slide-caption{
+  font-size:14px;
+  color:var(--muted);
+  min-height:1.4em;
+}
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:12px;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.2);
+  cursor:pointer;
+  padding:0;
+}
+.dot.active{background:var(--accent)}
+
 .footer{
   margin-top:64px;
   font-size:13px;
@@ -472,6 +530,29 @@ p{
     <section class="card">
       <div class="section-head">
         <div>
+          <h2>So sieht MoneyMindShift im Alltag aus</h2>
+        </div>
+        <p>Ein kurzer Blick auf die wichtigsten Screens — Übersicht, Daily Check-in, Mindset Journey, Töpfe und Einstellungen.</p>
+      </div>
+
+      <div class="slider-wrap">
+        <div class="slider">
+          <button class="slide-btn prev" id="prev-btn" type="button" aria-label="Vorheriger Screenshot">‹</button>
+          <div class="slide-frame">
+            <img id="slide-image" src="assets/screenshot1.png" alt="MoneyMindShift Übersicht" class="app-screenshot" loading="lazy" />
+          </div>
+          <button class="slide-btn next" id="next-btn" type="button" aria-label="Nächster Screenshot">›</button>
+        </div>
+        <div class="slider-meta">
+          <div class="slide-caption" id="slide-caption">Übersicht mit Geldsystem, Mindset Journey und Daily Pulse.</div>
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
           <h2 id="notes-title">Privacy by Design</h2>
         </div>
         <p id="notes-copy">MoneyMindShift ist so gebaut, dass alles auf deinem Gerät bleibt — keine Konten, keine Cloud-Synchronisation, kein Tracking. Käufe werden von Apple abgewickelt.</p>
@@ -507,7 +588,42 @@ p{
 </div>
 
 <script>
+const screenshots = [
+  { src: "assets/screenshot1.png", alt: "MoneyMindShift Übersicht", caption: "Übersicht mit Geldsystem, Mindset Journey und Daily Pulse." },
+  { src: "assets/screenshot2.png", alt: "MoneyMindShift Daily Pulse", caption: "Daily Pulse Check-in: wahrnehmen, wie sich Geld anfühlt, und eine bewusste Entscheidung treffen." },
+  { src: "assets/screenshot3.png", alt: "MoneyMindShift Mindset Journey", caption: "Mindset Journey mit aktuellem Fokus und Geldtyp-Einblick." },
+  { src: "assets/screenshot4.png", alt: "MoneyMindShift Töpfe", caption: "Sechs-Töpfe-System mit Einkommensverteilung und Topfständen auf einen Blick." },
+  { src: "assets/screenshot5.png", alt: "MoneyMindShift Einstellungen", caption: "Einstellungen für Sprache, Erscheinungsbild und Datenschutz." }
+];
+let currentSlide = 0;
+
+function showSlide(index) {
+  currentSlide = (index + screenshots.length) % screenshots.length;
+  const s = screenshots[currentSlide];
+  document.getElementById("slide-image").src = s.src;
+  document.getElementById("slide-image").alt = s.alt;
+  document.getElementById("slide-caption").textContent = s.caption;
+  renderDots();
+}
+
+function renderDots() {
+  const container = document.getElementById("dots");
+  container.innerHTML = "";
+  screenshots.forEach(function(_, i) {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "dot" + (i === currentSlide ? " active" : "");
+    dot.setAttribute("aria-label", "Screenshot " + (i + 1));
+    dot.addEventListener("click", function() { showSlide(i); });
+    container.appendChild(dot);
+  });
+}
+
+document.getElementById("prev-btn").addEventListener("click", function() { showSlide(currentSlide - 1); });
+document.getElementById("next-btn").addEventListener("click", function() { showSlide(currentSlide + 1); });
+
 document.getElementById("year").textContent = new Date().getFullYear();
+showSlide(0);
 document.body.style.visibility = "visible";
 </script>
 </body>

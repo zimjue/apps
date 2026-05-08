@@ -322,6 +322,64 @@ p{
   margin-bottom:8px;
 }
 
+.slider-wrap{margin-top:20px}
+.slider{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  justify-content:center;
+}
+.slide-frame{
+  flex:0 0 auto;
+  width:min(100%,280px);
+}
+.app-screenshot{
+  display:block;
+  width:100%;
+  border-radius:22px;
+  box-shadow:0 24px 60px rgba(0,0,0,.55);
+}
+.slide-btn{
+  flex:0 0 auto;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  color:var(--txt);
+  font-size:20px;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  line-height:1;
+}
+.slide-btn:hover{background:rgba(255,255,255,.12)}
+.slider-meta{
+  margin-top:16px;
+  text-align:center;
+}
+.slide-caption{
+  font-size:14px;
+  color:var(--muted);
+  min-height:1.4em;
+}
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:12px;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.2);
+  cursor:pointer;
+  padding:0;
+}
+.dot.active{background:var(--accent)}
+
 .footer{
   margin-top:64px;
   font-size:13px;
@@ -472,6 +530,29 @@ p{
     <section class="card">
       <div class="section-head">
         <div>
+          <h2 id="screens-title">How MoneyMindShift looks in daily use</h2>
+        </div>
+        <p id="screens-copy">A short look at the core screens — overview, daily check-in, mindset journey, pots, and settings.</p>
+      </div>
+
+      <div class="slider-wrap">
+        <div class="slider">
+          <button class="slide-btn prev" id="prev-btn" type="button" aria-label="Previous screenshot">‹</button>
+          <div class="slide-frame">
+            <img id="slide-image" src="assets/screenshot1.png" alt="MoneyMindShift overview" class="app-screenshot" loading="lazy" />
+          </div>
+          <button class="slide-btn next" id="next-btn" type="button" aria-label="Next screenshot">›</button>
+        </div>
+        <div class="slider-meta">
+          <div class="slide-caption" id="slide-caption">Dashboard overview with money system, mindset journey, and daily pulse.</div>
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
           <h2 id="notes-title">Privacy by design</h2>
         </div>
         <p id="notes-copy">MoneyMindShift is built to stay on your device — no accounts, no cloud sync, no tracking. Purchases are handled by Apple.</p>
@@ -507,6 +588,52 @@ p{
 </div>
 
 <script>
+const screenshots = {
+  de: [
+    { src: "assets/screenshot1.png", alt: "MoneyMindShift Übersicht", caption: "Übersicht mit Geldsystem, Mindset Journey und Daily Pulse." },
+    { src: "assets/screenshot2.png", alt: "MoneyMindShift Daily Pulse", caption: "Daily Pulse Check-in: wahrnehmen, wie sich Geld anfühlt, und eine bewusste Entscheidung treffen." },
+    { src: "assets/screenshot3.png", alt: "MoneyMindShift Mindset Journey", caption: "Mindset Journey mit aktuellem Fokus und Geldtyp-Einblick." },
+    { src: "assets/screenshot4.png", alt: "MoneyMindShift Töpfe", caption: "Sechs-Töpfe-System mit Einkommensverteilung und Topfständen auf einen Blick." },
+    { src: "assets/screenshot5.png", alt: "MoneyMindShift Einstellungen", caption: "Einstellungen für Sprache, Erscheinungsbild und Datenschutz." }
+  ],
+  en: [
+    { src: "assets/screenshot1.png", alt: "MoneyMindShift overview", caption: "Dashboard overview with money system, mindset journey, and daily pulse." },
+    { src: "assets/screenshot2.png", alt: "MoneyMindShift Daily Pulse", caption: "Daily Pulse check-in: notice how money feels today and make one conscious decision." },
+    { src: "assets/screenshot3.png", alt: "MoneyMindShift Mindset Journey", caption: "Mindset journey with current focus and money type insight." },
+    { src: "assets/screenshot4.png", alt: "MoneyMindShift Pots", caption: "Six-pot system showing income allocation and pot balances at a glance." },
+    { src: "assets/screenshot5.png", alt: "MoneyMindShift Settings", caption: "Settings for language, appearance, and privacy." }
+  ]
+};
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  const deck = screenshots[currentLang];
+  currentSlide = (index + deck.length) % deck.length;
+  const slide = deck[currentSlide];
+  document.getElementById("slide-image").src = slide.src;
+  document.getElementById("slide-image").alt = slide.alt;
+  document.getElementById("slide-caption").textContent = slide.caption;
+  renderDots();
+}
+
+function renderDots() {
+  const deck = screenshots[currentLang];
+  const container = document.getElementById("dots");
+  container.innerHTML = "";
+  deck.forEach(function(_, i) {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "dot" + (i === currentSlide ? " active" : "");
+    dot.setAttribute("aria-label", "Screenshot " + (i + 1));
+    dot.addEventListener("click", function() { showSlide(i); });
+    container.appendChild(dot);
+  });
+}
+
+document.getElementById("prev-btn").addEventListener("click", function() { showSlide(currentSlide - 1); });
+document.getElementById("next-btn").addEventListener("click", function() { showSlide(currentSlide + 1); });
+
 const copy = {
   de: {
     back: "← Alle Apps",
@@ -533,6 +660,8 @@ const copy = {
     phase3Label: "Phase 3",
     phase3Title: "Sichtbar machen",
     phase3Text: "Vergleiche Vorher und Nachher und exportiere dein Journey Workbook als strukturiertes PDF, wenn Pro freigeschaltet ist.",
+    screensTitle: "So sieht MoneyMindShift im Alltag aus",
+    screensCopy: "Ein kurzer Blick auf die wichtigsten Screens — Übersicht, Daily Check-in, Mindset Journey, Töpfe und Einstellungen.",
     notesTitle: "Privacy by Design",
     notesCopy: "MoneyMindShift ist so gebaut, dass alles auf deinem Gerät bleibt — keine Konten, keine Cloud-Synchronisation, kein Tracking. Käufe werden von Apple abgewickelt.",
     note1Title: "Alles lokal gespeichert",
@@ -569,6 +698,8 @@ const copy = {
     phase3Label: "Phase 3",
     phase3Title: "Make It Visible",
     phase3Text: "Compare before and after, then export your Journey Workbook as a structured PDF when Pro is unlocked.",
+    screensTitle: "How MoneyMindShift looks in daily use",
+    screensCopy: "A short look at the core screens — overview, daily check-in, mindset journey, pots, and settings.",
     notesTitle: "Privacy by design",
     notesCopy: "MoneyMindShift is built to stay on your device — no accounts, no cloud sync, no tracking. Purchases are handled by Apple.",
     note1Title: "Everything stored locally",
@@ -626,6 +757,10 @@ function setLang(lang) {
   document.getElementById("footer-privacy").textContent = t.footerPrivacy;
   document.getElementById("footer-privacy").href = lang === "en" ? "privacy.html" : "datenschutz.html";
   document.getElementById("footer-support").href = lang === "en" ? "../support.html" : "../support-de.html";
+
+  document.getElementById("screens-title").textContent = t.screensTitle;
+  document.getElementById("screens-copy").textContent = t.screensCopy;
+  showSlide(currentSlide);
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
