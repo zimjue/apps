@@ -630,134 +630,23 @@ p{
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
 
-const translations = {
-  de: {
-    htmlLang: "de",
-    brand: "MyVideoSpace",
-    back: "← Alle Apps",
-    title: "MyVideoSpace - Video organizer for your favorite moments",
-    description: "MyVideoSpace organizes your favorite videos with smart collections, watchlists, quick access and a clean, modern interface.",
-    ogTitle: "MyVideoSpace - Video organizer for your favorite moments",
-    ogDescription: "Organize videos, build collections and keep your watchlist in one clean space.",
-    ogSiteName: "MyVideoSpace",
-    twitterTitle: "MyVideoSpace - Video organizer for your favorite moments",
-    twitterDescription: "Organize videos, build collections and keep your watchlist in one clean space.",
-    schemaName: "MyVideoSpace",
-    schemaDescription: "MyVideoSpace organizes your favorite videos with smart collections, watchlists, quick access and a clean, modern interface.",
-    eyebrowText: "Jetzt im App Store",
-    heroTitle: "Deine Videos.<br>Klar organisiert.",
-    heroText: "MyVideoSpace bringt Lieblingsvideos, Collections, Watchlist und zuletzt gesehene Inhalte in eine moderne App, die Ordnung schafft und dir schnellen Zugriff gibt.",
-    storeNote: "Jetzt im App Store fuer iPhone und iPad",
-    storeAria: "Im App Store laden",
-    storeBadgeAlt: "Download on the App Store",
-    heroImageAlt: "MyVideoSpace Startansicht",
-    shotsTitle: "App Einblicke",
-    shotsText: "Vier Screenshots zeigen Homescreen, Dashboard, Einstellungen mit Pro Features und Infos zur App.",
-    screenshotAlt: "MyVideoSpace Screenshot",
-    slidePrevAria: "Vorheriger Screenshot",
-    slideNextAria: "Nächster Screenshot",
-    sliderAria: "Screenshot Karussell",
-    dotsAria: "Screenshot Auswahl",
-    captions: [
-      "Homescreen und Playlisten",
-      "Dashboard und Auswertungen",
-      "Einstellungen und Pro Features",
-      "Infos zur App"
-    ],
-    featuresTitle: "Funktionen",
-    f1Title: "Collections",
-    f1Text: "Sortiere Videos nach Themen, Projekten, Creatorn oder Stimmung in klare Sammlungen.",
-    f2Title: "Watchlist",
-    f2Text: "Merke dir Videos für später und verliere keine Highlights mehr aus dem Blick.",
-    f3Title: "Quick Access",
-    f3Text: "Finde zuletzt gesehene, gespeicherte und favorisierte Inhalte mit wenigen Taps wieder.",
-    whyTitle: "Warum MyVideoSpace?",
-    whyText: "Viele Video-Links, Listen und gespeicherte Inhalte verteilen sich ueber verschiedene Orte. MyVideoSpace bringt alles in einen klaren, persoenlichen Space zurueck, damit du schneller findest, was du wirklich sehen willst.",
-    howTitle: "So funktioniert es",
-    step1Title: "1. Videos sammeln",
-    step1Text: "Speichere Videos aus deinen Lieblingsquellen an einem zentralen Ort.",
-    step2Title: "2. Clever sortieren",
-    step2Text: "Ordne Inhalte in Collections, Watchlists und persönliche Kategorien ein.",
-    step3Title: "3. Schnell wiederfinden",
-    step3Text: "Starte direkt da, wo du zuletzt aufgehört hast oder entdecke neue Empfehlungen.",
-    ctaTitle: "Jetzt MyVideoSpace laden",
-    ctaText: "Hol dir die App im App Store und mache deine Lieblingsvideos an einem Ort schnell wiederfindbar.",
-    privacy: "Datenschutz",
-    privacyHref: "datenschutz.html",
-    support: "Support",
-    terms: "EULA"
-  },
-  en: {
-    htmlLang: "en",
-    brand: "MyVideoSpace",
-    back: "← All Apps",
-    title: "MyVideoSpace - Video organizer for your favorite moments",
-    description: "MyVideoSpace organizes your favorite videos with smart collections, watchlists, quick access and a clean, modern interface.",
-    ogTitle: "MyVideoSpace - Video organizer for your favorite moments",
-    ogDescription: "Organize videos, build collections and keep your watchlist in one clean space.",
-    ogSiteName: "MyVideoSpace",
-    twitterTitle: "MyVideoSpace - Video organizer for your favorite moments",
-    twitterDescription: "Organize videos, build collections and keep your watchlist in one clean space.",
-    schemaName: "MyVideoSpace",
-    schemaDescription: "MyVideoSpace organizes your favorite videos with smart collections, watchlists, quick access and a clean, modern interface.",
-    eyebrowText: "Now on the App Store",
-    heroTitle: "Your videos.<br>Clearly organized.",
-    heroText: "MyVideoSpace brings favorite videos, collections, your watchlist, and recently viewed content into one modern app built for clarity and quick access.",
-    storeNote: "Now on the App Store for iPhone and iPad",
-    storeAria: "Download on the App Store",
-    storeBadgeAlt: "Download on the App Store",
-    heroImageAlt: "MyVideoSpace home view",
-    shotsTitle: "App previews",
-    shotsText: "Four screenshots show the home screen, dashboard, settings with pro features, and app info.",
-    screenshotAlt: "MyVideoSpace screenshot",
-    slidePrevAria: "Previous screenshot",
-    slideNextAria: "Next screenshot",
-    sliderAria: "Screenshot carousel",
-    dotsAria: "Screenshot selection",
-    captions: [
-      "Home screen and playlists",
-      "Dashboard and insights",
-      "Settings and pro features",
-      "App information"
-    ],
-    featuresTitle: "Features",
-    f1Title: "Collections",
-    f1Text: "Sort videos by topic, project, creator or mood in simple collections.",
-    f2Title: "Watchlist",
-    f2Text: "Save videos for later and keep your highlights in view.",
-    f3Title: "Quick Access",
-    f3Text: "Jump back into recent, saved and favorite content in just a few taps.",
-    whyTitle: "Why MyVideoSpace?",
-    whyText: "Video links, lists, and saved content often end up scattered across different places. MyVideoSpace brings them back into one clean personal space so you can find what matters faster.",
-    howTitle: "How it works",
-    step1Title: "1. Save videos",
-    step1Text: "Collect videos from your favorite sources in one central place.",
-    step2Title: "2. Sort smart",
-    step2Text: "Organize content into collections, watchlists and personal categories.",
-    step3Title: "3. Find it fast",
-    step3Text: "Resume where you left off or discover fresh recommendations.",
-    ctaTitle: "Download MyVideoSpace now",
-    ctaText: "Get the app on the App Store and keep your favorite videos organized in one place.",
-    privacy: "Privacy",
-    privacyHref: "privacy.html",
-    support: "Support",
-    terms: "EULA"
-  }
-};
-
 const screenshots = [
   "assets/screenshot1.png",
   "assets/screenshot2.png",
   "assets/screenshot3.png",
   "assets/screenshot4.png"
 ];
+const screenshotAlt = "MyVideoSpace Screenshot";
+const captions = [
+  "Homescreen und Playlisten",
+  "Dashboard und Auswertungen",
+  "Einstellungen und Pro Features",
+  "Infos zur App"
+];
 
 let currentSlide = 0;
 let autoPlay = null;
 
-function currentLang(){
-  return "de";
-}
 
 function buildDots(){
   const dots = document.getElementById("dots");
@@ -773,12 +662,9 @@ function buildDots(){
 }
 
 function updateSlideMeta(){
-  const lang = currentLang();
-  const t = translations[lang] || translations.de;
-
   document.getElementById("slider-image").src = screenshots[currentSlide];
-  document.getElementById("slider-image").alt = t.screenshotAlt;
-  document.getElementById("slide-caption").textContent = t.captions[currentSlide] || "";
+  document.getElementById("slider-image").alt = screenshotAlt;
+  document.getElementById("slide-caption").textContent = captions[currentSlide] || "";
 
   [...document.querySelectorAll(".dot")].forEach((dot, index) => {
     dot.classList.toggle("active", index === currentSlide);
@@ -825,103 +711,6 @@ function restartAutoPlay(){
   startAutoPlay();
 }
 
-function updateMetaTag(selector, content){
-  const el = document.querySelector(selector);
-  if(el) el.setAttribute("content", content);
-}
-
-function updateStructuredData(t){
-  const schema = {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name": t.schemaName,
-    "applicationCategory":"EntertainmentApplication",
-    "operatingSystem":"iOS, Android, Web",
-    "description": t.schemaDescription,
-    "url":"https://jzapps.app/myvideospace/index-de.html",
-    "image":"https://jzapps.app/myvideospace/assets/myvideospace.png",
-    "publisher":{
-      "@type":"Person",
-      "name":"Jürgen Zimmer"
-    }
-  };
-
-  const script = document.querySelector('script[type="application/ld+json"]');
-  if(script) script.textContent = JSON.stringify(schema);
-}
-
-function setLang(lang){
-  const t = translations[lang] || translations.de;
-
-  document.documentElement.lang = t.htmlLang;
-  document.title = t.title;
-
-  updateMetaTag('meta[name="description"]', t.description);
-  updateMetaTag('meta[property="og:title"]', t.ogTitle);
-  updateMetaTag('meta[property="og:description"]', t.ogDescription);
-  updateMetaTag('meta[property="og:site_name"]', t.ogSiteName);
-  updateMetaTag('meta[name="twitter:title"]', t.twitterTitle);
-  updateMetaTag('meta[name="twitter:description"]', t.twitterDescription);
-
-  updateStructuredData(t);
-
-  document.getElementById("brand-title").textContent = t.brand;
-  document.getElementById("back-link").textContent = t.back;
-  document.getElementById("eyebrow-text").textContent = t.eyebrowText;
-  document.getElementById("hero-title").innerHTML = t.heroTitle;
-  document.getElementById("hero-text").textContent = t.heroText;
-  document.getElementById("store-note").textContent = t.storeNote;
-
-  document.getElementById("store-link-top").setAttribute("aria-label", t.storeAria);
-  document.getElementById("store-link-bottom").setAttribute("aria-label", t.storeAria);
-  document.getElementById("store-badge-top").alt = t.storeBadgeAlt;
-  document.getElementById("store-badge-bottom").alt = t.storeBadgeAlt;
-  document.getElementById("hero-image").alt = t.heroImageAlt;
-
-  document.getElementById("shots-title").textContent = t.shotsTitle;
-  document.getElementById("shots-text").textContent = t.shotsText;
-  document.getElementById("slider").setAttribute("aria-label", t.sliderAria);
-  document.getElementById("dots").setAttribute("aria-label", t.dotsAria);
-  document.querySelector(".prev").setAttribute("aria-label", t.slidePrevAria);
-  document.querySelector(".next").setAttribute("aria-label", t.slideNextAria);
-
-  document.getElementById("features-title").textContent = t.featuresTitle;
-  document.getElementById("f1-title").textContent = t.f1Title;
-  document.getElementById("f1-text").textContent = t.f1Text;
-  document.getElementById("f2-title").textContent = t.f2Title;
-  document.getElementById("f2-text").textContent = t.f2Text;
-  document.getElementById("f3-title").textContent = t.f3Title;
-  document.getElementById("f3-text").textContent = t.f3Text;
-
-  document.getElementById("why-title").textContent = t.whyTitle;
-  document.getElementById("why-text").textContent = t.whyText;
-
-  document.getElementById("how-title").textContent = t.howTitle;
-  document.getElementById("step1-title").textContent = t.step1Title;
-  document.getElementById("step1-text").textContent = t.step1Text;
-  document.getElementById("step2-title").textContent = t.step2Title;
-  document.getElementById("step2-text").textContent = t.step2Text;
-  document.getElementById("step3-title").textContent = t.step3Title;
-  document.getElementById("step3-text").textContent = t.step3Text;
-
-  document.getElementById("cta-title").textContent = t.ctaTitle;
-  document.getElementById("cta-text").textContent = t.ctaText;
-
-  const privacyLink = document.getElementById("privacy-link");
-  privacyLink.textContent = t.privacy;
-  privacyLink.href = t.privacyHref;
-
-  document.getElementById("support-link").textContent = t.support;
-  document.getElementById("support-link").href = lang === "en" ? "../support.html" : "../support-de.html";
-  document.getElementById("eula-link").textContent = t.terms;
-
-  document.getElementById("btn-de").classList.toggle("active", lang === "de");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-
-  localStorage.setItem("siteLang", lang);
-  updateSlideMeta();
-}
-
 const slider = document.getElementById("slider");
 
 slider.addEventListener("mouseenter", stopAutoPlay);
@@ -950,7 +739,6 @@ slider.addEventListener("touchend", (event) => {
 }, {passive:true});
 
 showSlide();
-setLang(currentLang());
 startAutoPlay();
 </script>
 </body>
