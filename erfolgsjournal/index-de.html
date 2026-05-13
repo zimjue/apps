@@ -632,152 +632,30 @@ p{
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
 
-const translations = {
-  de: {
-    htmlLang: "de",
-    brand: "Erfolgsjournal",
-    back: "← Alle Apps",
-    title: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
-    description: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
-    ogTitle: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
-    ogDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
-    ogSiteName: "Erfolgsjournal",
-    twitterTitle: "Erfolgsjournal – Klarheit, Dankbarkeit & Reflexion",
-    twitterDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
-    schemaName: "Erfolgsjournal",
-    schemaDescription: "Erfolgsjournal hilft dir, deinen Tag bewusst zu reflektieren, Erfolge festzuhalten und mit Klarheit in den nächsten Tag zu gehen.",
-    eyebrowText: "Deine tägliche Reflexion",
-    heroTitle: "Halte fest,<br>was wirklich zählt.",
-    heroText: "Erfolgsjournal hilft dir, deinen Tag bewusst abzuschließen: mit Erfolgen, Dankbarkeit, Erkenntnissen und einem klaren Fokus für morgen.",
-    storeNote: "Für iPhone, iPad, macOS verfügbar",
-    storeAria: "Im App Store laden",
-    storeBadgeAlt: "Download on the App Store",
-    heroImageAlt: "Erfolgsjournal Vorschau",
-    shotsTitle: "App Einblicke",
-    shotsText: "Ein kurzer Blick in die App: ruhig, klar und auf tägliche Reflexion ausgerichtet.",
-    screenshotAlt: "Erfolgsjournal App Screenshot",
-    slidePrevAria: "Vorheriger Screenshot",
-    slideNextAria: "Nächster Screenshot",
-    sliderAria: "Screenshot Karussell",
-    dotsAria: "Screenshot Auswahl",
-    captions: [
-      "Startansicht des Erfolgsjournals",
-      "Tagesreflexion und Einblicke im Überblick",
-      "Dankbarkeit bewusst festhalten",
-      "Erkenntnisse des Tages sammeln",
-      "Klarheit und Fokus für morgen",
-      "Ruhiger Tagesabschluss in der App"
-    ],
-    featuresTitle: "Funktionen",
-    f1Title: "Erfolge des Tages",
-    f1Text: "Halte fest, was dir gelungen ist – auch kleine Fortschritte zählen.",
-    f2Title: "Dankbarkeit",
-    f2Text: "Richte deine Aufmerksamkeit bewusst auf das Gute in deinem Leben.",
-    f3Title: "Fokus für morgen",
-    f3Text: "Beende den Tag mit Klarheit statt mit offenen Gedankenschleifen.",
-    whyTitle: "Warum Erfolgsjournal?",
-    whyText: "Erfolgsjournal hilft dir, den Tag bewusst abzuschließen. Statt nur auf To-dos und Belastung zu schauen, richtest du deinen Fokus auf Erfolge, Dankbarkeit und Klarheit. So entsteht Schritt für Schritt mehr innere Ordnung und ein bewusster Start in den nächsten Tag.",
-    howTitle: "So funktioniert es",
-    step1Title: "1. Den Tag reflektieren",
-    step1Text: "Halte fest, was heute wichtig war und welche Fortschritte du gemacht hast.",
-    step2Title: "2. Dankbarkeit und Erkenntnisse",
-    step2Text: "Richte deinen Blick auf das Gute und lerne aus deinem Tag.",
-    step3Title: "3. Klarheit für morgen",
-    step3Text: "Beende den Tag ruhig und mit einem klaren Fokus für den nächsten Schritt.",
-    ctaTitle: "Starte dein tägliches Erfolgsjournal",
-    ctaText: "Lade die App herunter und bringe mehr Bewusstheit, Dankbarkeit und Klarheit in deinen Alltag.",
-    privacy: "Datenschutz",
-    privacyHref: "datenschutz.html",
-    support: "Support"
-  },
-  en: {
-    htmlLang: "en",
-    brand: "Success Journal",
-    back: "← All Apps",
-    title: "Success Journal – Clarity, Gratitude & Reflection",
-    description: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
-    ogTitle: "Success Journal – Clarity, Gratitude & Reflection",
-    ogDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
-    ogSiteName: "Success Journal",
-    twitterTitle: "Success Journal – Clarity, Gratitude & Reflection",
-    twitterDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
-    schemaName: "Success Journal",
-    schemaDescription: "Success Journal helps you reflect on your day, capture achievements, and move into tomorrow with more clarity.",
-    eyebrowText: "Your daily reflection",
-    heroTitle: "Capture<br>what really matters.",
-    heroText: "Success Journal helps you close your day with awareness: achievements, gratitude, insights, and a clear focus for tomorrow.",
-    storeNote: "Available for iPhone, iPad, macOS",
-    storeAria: "Download on the App Store",
-    storeBadgeAlt: "Download on the App Store",
-    heroImageAlt: "Success Journal preview",
-    shotsTitle: "App previews",
-    shotsText: "A quick look into the app: calm, clear, and focused on daily reflection.",
-    screenshotAlt: "Success Journal app screenshot",
-    slidePrevAria: "Previous screenshot",
-    slideNextAria: "Next screenshot",
-    sliderAria: "Screenshot carousel",
-    dotsAria: "Screenshot selection",
-    captions: [
-      "Home screen of Success Journal",
-      "Daily reflection and insights at a glance",
-      "Capture gratitude with intention",
-      "Collect insights from your day",
-      "Clarity and focus for tomorrow",
-      "A calm end to the day in the app"
-    ],
-    featuresTitle: "Features",
-    f1Title: "Daily achievements",
-    f1Text: "Capture what went well — even small steps count.",
-    f2Title: "Gratitude",
-    f2Text: "Bring your attention to what is already good in your life.",
-    f3Title: "Focus for tomorrow",
-    f3Text: "End the day with clarity instead of open mental loops.",
-    whyTitle: "Why Success Journal?",
-    whyText: "Success Journal helps you close the day with intention. Instead of focusing only on tasks and pressure, you shift your attention toward achievements, gratitude, and clarity. Step by step, this creates more inner order and a more conscious start to tomorrow.",
-    howTitle: "How it works",
-    step1Title: "1. Reflect on the day",
-    step1Text: "Capture what mattered today and which progress you made.",
-    step2Title: "2. Gratitude and insights",
-    step2Text: "Turn your attention to what was good and learn from your day.",
-    step3Title: "3. Clarity for tomorrow",
-    step3Text: "End the day calmly and with a clear focus on your next step.",
-    ctaTitle: "Start your daily Success Journal",
-    ctaText: "Download the app and bring more awareness, gratitude, and clarity into your daily life.",
-    privacy: "Privacy",
-    privacyHref: "privacy.html",
-    support: "Support"
-  }
-};
-
-const screenshotsByLang = {
-  de: [
-    "assets/erfolgsjournal-screenshot-de-01-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-de-02-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-de-03-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-de-04-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-de-05-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-de-06-1284x2778.png"
-  ],
-  en: [
-    "assets/erfolgsjournal-screenshot-en-01-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-en-02-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-en-03-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-en-04-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-en-05-1284x2778.png",
-    "assets/erfolgsjournal-screenshot-en-06-1284x2778.png"
-  ]
-};
+const screenshots = [
+  "assets/erfolgsjournal-screenshot-de-01-1284x2778.png",
+  "assets/erfolgsjournal-screenshot-de-02-1284x2778.png",
+  "assets/erfolgsjournal-screenshot-de-03-1284x2778.png",
+  "assets/erfolgsjournal-screenshot-de-04-1284x2778.png",
+  "assets/erfolgsjournal-screenshot-de-05-1284x2778.png",
+  "assets/erfolgsjournal-screenshot-de-06-1284x2778.png"
+];
+const screenshotAlt = "Erfolgsjournal App Screenshot";
+const captions = [
+  "Startansicht des Erfolgsjournals",
+  "Tagesreflexion und Einblicke im Überblick",
+  "Dankbarkeit bewusst festhalten",
+  "Erkenntnisse des Tages sammeln",
+  "Klarheit und Fokus für morgen",
+  "Ruhiger Tagesabschluss in der App"
+];
 
 let currentSlide = 0;
 let autoPlay = null;
 
-function currentLang(){
-  return "de";
-}
 
 function buildDots(){
   const dots = document.getElementById("dots");
-  const screenshots = screenshotsByLang[currentLang()] || screenshotsByLang.de;
   dots.innerHTML = "";
   screenshots.forEach((_, index) => {
     const button = document.createElement("button");
@@ -790,15 +668,11 @@ function buildDots(){
 }
 
 function updateSlideMeta(){
-  const lang = currentLang();
-  const t = translations[lang] || translations.de;
-  const screenshots = screenshotsByLang[lang] || screenshotsByLang.de;
-
   if(currentSlide >= screenshots.length) currentSlide = 0;
 
   document.getElementById("slider-image").src = screenshots[currentSlide];
-  document.getElementById("slider-image").alt = t.screenshotAlt;
-  document.getElementById("slide-caption").textContent = t.captions[currentSlide] || "";
+  document.getElementById("slider-image").alt = screenshotAlt;
+  document.getElementById("slide-caption").textContent = captions[currentSlide] || "";
 
   [...document.querySelectorAll(".dot")].forEach((dot, index) => {
     dot.classList.toggle("active", index === currentSlide);
@@ -818,14 +692,12 @@ function goToSlide(index){
 }
 
 function nextSlide(){
-  const screenshots = screenshotsByLang[currentLang()] || screenshotsByLang.de;
   currentSlide = (currentSlide + 1) % screenshots.length;
   updateSlideMeta();
   restartAutoPlay();
 }
 
 function prevSlide(){
-  const screenshots = screenshotsByLang[currentLang()] || screenshotsByLang.de;
   currentSlide = (currentSlide - 1 + screenshots.length) % screenshots.length;
   updateSlideMeta();
   restartAutoPlay();
@@ -834,7 +706,6 @@ function prevSlide(){
 function startAutoPlay(){
   stopAutoPlay();
   autoPlay = setInterval(() => {
-    const screenshots = screenshotsByLang[currentLang()] || screenshotsByLang.de;
     currentSlide = (currentSlide + 1) % screenshots.length;
     updateSlideMeta();
   }, 4500);
@@ -846,103 +717,6 @@ function stopAutoPlay(){
 
 function restartAutoPlay(){
   startAutoPlay();
-}
-
-function updateMetaTag(selector, content){
-  const el = document.querySelector(selector);
-  if(el) el.setAttribute("content", content);
-}
-
-function updateStructuredData(t){
-  const schema = {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name": t.schemaName,
-    "applicationCategory":"LifestyleApplication",
-    "operatingSystem":"iOS, iPadOS, macOS",
-    "description": t.schemaDescription,
-    "url":"https://jzapps.app/erfolgsjournal/index-de.html",
-    "image":"https://jzapps.app/erfolgsjournal/assets/Journal.png",
-    "downloadUrl":"https://apps.apple.com/de/app/erfolge/id6760969693",
-    "publisher":{
-      "@type":"Person",
-      "name":"Jürgen Zimmer"
-    }
-  };
-
-  const script = document.querySelector('script[type="application/ld+json"]');
-  if(script) script.textContent = JSON.stringify(schema);
-}
-
-function setLang(lang){
-  const t = translations[lang] || translations.de;
-
-  document.documentElement.lang = t.htmlLang;
-  document.title = t.title;
-
-  updateMetaTag('meta[name="description"]', t.description);
-  updateMetaTag('meta[property="og:title"]', t.ogTitle);
-  updateMetaTag('meta[property="og:description"]', t.ogDescription);
-  updateMetaTag('meta[property="og:site_name"]', t.ogSiteName);
-  updateMetaTag('meta[name="twitter:title"]', t.twitterTitle);
-  updateMetaTag('meta[name="twitter:description"]', t.twitterDescription);
-
-  updateStructuredData(t);
-
-  document.getElementById("brand-title").textContent = t.brand;
-  document.getElementById("back-link").textContent = t.back;
-  document.getElementById("eyebrow-text").textContent = t.eyebrowText;
-  document.getElementById("hero-title").innerHTML = t.heroTitle;
-  document.getElementById("hero-text").textContent = t.heroText;
-  document.getElementById("store-note").textContent = t.storeNote;
-
-  document.getElementById("store-link-top").setAttribute("aria-label", t.storeAria);
-  document.getElementById("store-link-bottom").setAttribute("aria-label", t.storeAria);
-  document.getElementById("store-badge-top").alt = t.storeBadgeAlt;
-  document.getElementById("store-badge-bottom").alt = t.storeBadgeAlt;
-  document.getElementById("hero-image").alt = t.heroImageAlt;
-
-  document.getElementById("shots-title").textContent = t.shotsTitle;
-  document.getElementById("shots-text").textContent = t.shotsText;
-  document.getElementById("slider").setAttribute("aria-label", t.sliderAria);
-  document.getElementById("dots").setAttribute("aria-label", t.dotsAria);
-  document.querySelector(".prev").setAttribute("aria-label", t.slidePrevAria);
-  document.querySelector(".next").setAttribute("aria-label", t.slideNextAria);
-
-  document.getElementById("features-title").textContent = t.featuresTitle;
-  document.getElementById("f1-title").textContent = t.f1Title;
-  document.getElementById("f1-text").textContent = t.f1Text;
-  document.getElementById("f2-title").textContent = t.f2Title;
-  document.getElementById("f2-text").textContent = t.f2Text;
-  document.getElementById("f3-title").textContent = t.f3Title;
-  document.getElementById("f3-text").textContent = t.f3Text;
-
-  document.getElementById("why-title").textContent = t.whyTitle;
-  document.getElementById("why-text").textContent = t.whyText;
-
-  document.getElementById("how-title").textContent = t.howTitle;
-  document.getElementById("step1-title").textContent = t.step1Title;
-  document.getElementById("step1-text").textContent = t.step1Text;
-  document.getElementById("step2-title").textContent = t.step2Title;
-  document.getElementById("step2-text").textContent = t.step2Text;
-  document.getElementById("step3-title").textContent = t.step3Title;
-  document.getElementById("step3-text").textContent = t.step3Text;
-
-  document.getElementById("cta-title").textContent = t.ctaTitle;
-  document.getElementById("cta-text").textContent = t.ctaText;
-
-  const privacyLink = document.getElementById("privacy-link");
-  privacyLink.textContent = t.privacy;
-  privacyLink.href = t.privacyHref;
-
-  document.getElementById("support-link").textContent = t.support;
-  document.getElementById("support-link").href = lang === "en" ? "../support.html" : "../support-de.html";
-
-  document.getElementById("btn-de").classList.toggle("active", lang === "de");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-
-  localStorage.setItem("siteLang", lang);
-  updateSlideMeta();
 }
 
 const slider = document.getElementById("slider");
@@ -972,10 +746,7 @@ slider.addEventListener("touchend", (event) => {
   }
 }, {passive:true});
 
-document.getElementById("y").textContent = new Date().getFullYear();
-
 showSlide();
-setLang(currentLang());
 startAutoPlay();
 </script>
 </body>
