@@ -72,7 +72,6 @@ body{
     radial-gradient(900px 500px at 90% 40%,rgba(153,102,255,.14),transparent 55%),
     var(--bg);
   color:var(--txt);
-  visibility:hidden;
 }
 
 a{color:inherit}
@@ -633,129 +632,21 @@ p{
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
 
-const translations = {
-  de: {
-    htmlLang: "de",
-    brand: "FitnessGoals",
-    back: "← Alle Apps",
-    title: "FitnessGoals – Ziele setzen, Fortschritt sehen",
-    description: "FitnessGoals hilft dir, klare Fitnessziele zu setzen, Fortschritte zu verfolgen und mit Fokus dranzubleiben.",
-    ogTitle: "FitnessGoals – Ziele setzen, Fortschritt sehen",
-    ogDescription: "FitnessGoals hilft dir, klare Fitnessziele zu setzen, Fortschritte zu verfolgen und mit Fokus dranzubleiben.",
-    ogSiteName: "FitnessGoals",
-    twitterTitle: "FitnessGoals – Ziele setzen, Fortschritt sehen",
-    twitterDescription: "FitnessGoals hilft dir, klare Fitnessziele zu setzen, Fortschritte zu verfolgen und mit Fokus dranzubleiben.",
-    schemaName: "FitnessGoals",
-    schemaDescription: "FitnessGoals hilft dir, klare Fitnessziele zu setzen, Fortschritte zu verfolgen und mit Fokus dranzubleiben.",
-    eyebrowText: "Dein Training mit Fokus",
-    heroTitle: "Setze Ziele.<br>Bleib dran.",
-    heroText: "FitnessGoals hilft dir, klare Ziele zu definieren, Fortschritte sichtbar zu machen und motiviert an deiner Entwicklung dranzubleiben.",
-    storeNote: "Für iPhone, iPad, macOS verfügbar",
-    storeAria: "Im App Store laden",
-    storeBadgeAlt: "Download on the App Store",
-    heroImageAlt: "FitnessGoals Vorschau",
-    shotsTitle: "App Einblicke",
-    shotsText: "Ein kurzer Blick in die App: klar, motivierend und auf deinen Trainingsfortschritt ausgerichtet.",
-    screenshotAlt: "FitnessGoals App Screenshot",
-    slidePrevAria: "Vorheriger Screenshot",
-    slideNextAria: "Nächster Screenshot",
-    sliderAria: "Screenshot Karussell",
-    dotsAria: "Screenshot Auswahl",
-    captions: [
-      "Startansicht von FitnessGoals",
-      "Ziele und Fortschritte im Überblick",
-      "Motivation durch sichtbare Entwicklung"
-    ],
-    featuresTitle: "Funktionen",
-    f1Title: "Ziele definieren",
-    f1Text: "Lege klare Fitnessziele fest, die zu deinem Alltag und deinem Training passen.",
-    f2Title: "Fortschritt verfolgen",
-    f2Text: "Sieh auf einen Blick, wie du dich entwickelst und wo du dranbleibst.",
-    f3Title: "Motivation behalten",
-    f3Text: "Bleib fokussiert, indem deine Entwicklung sichtbar und greifbar wird.",
-    whyTitle: "Warum FitnessGoals?",
-    whyText: "FitnessGoals hilft dir, Fitness nicht nur vorzunehmen, sondern wirklich umzusetzen. Klare Ziele, sichtbare Fortschritte und ein strukturierter Überblick machen es leichter, konsequent dranzubleiben und Training in deinen Alltag zu integrieren.",
-    howTitle: "So funktioniert es",
-    step1Title: "1. Ziele festlegen",
-    step1Text: "Definiere, was du erreichen möchtest – realistisch, klar und messbar.",
-    step2Title: "2. Fortschritt beobachten",
-    step2Text: "Verfolge, wie sich dein Training entwickelt und welche Schritte du schon geschafft hast.",
-    step3Title: "3. Kontinuität aufbauen",
-    step3Text: "Nutze deinen Fortschritt als Motivation, um langfristig dranzubleiben.",
-    ctaTitle: "Starte mit deinen Fitnesszielen",
-    ctaText: "Lade die App herunter und bringe mehr Struktur, Motivation und Klarheit in dein Training.",
-    privacy: "Datenschutz",
-    privacyHref: "datenschutz.html",
-    support: "Support"
-  },
-  en: {
-    htmlLang: "en",
-    brand: "FitnessGoals",
-    back: "← All Apps",
-    title: "FitnessGoals – Set goals, see progress",
-    description: "FitnessGoals helps you set clear fitness goals, track progress, and stay focused over time.",
-    ogTitle: "FitnessGoals – Set goals, see progress",
-    ogDescription: "FitnessGoals helps you set clear fitness goals, track progress, and stay focused over time.",
-    ogSiteName: "FitnessGoals",
-    twitterTitle: "FitnessGoals – Set goals, see progress",
-    twitterDescription: "FitnessGoals helps you set clear fitness goals, track progress, and stay focused over time.",
-    schemaName: "FitnessGoals",
-    schemaDescription: "FitnessGoals helps you set clear fitness goals, track progress, and stay focused over time.",
-    eyebrowText: "Your training with focus",
-    heroTitle: "Set goals.<br>Stay on track.",
-    heroText: "FitnessGoals helps you define clear goals, make progress visible, and stay motivated throughout your development.",
-    storeNote: "Available for iPhone, iPad, macOS",
-    storeAria: "Download on the App Store",
-    storeBadgeAlt: "Download on the App Store",
-    heroImageAlt: "FitnessGoals preview",
-    shotsTitle: "App previews",
-    shotsText: "A quick look into the app: clear, motivating, and focused on your training progress.",
-    screenshotAlt: "FitnessGoals app screenshot",
-    slidePrevAria: "Previous screenshot",
-    slideNextAria: "Next screenshot",
-    sliderAria: "Screenshot carousel",
-    dotsAria: "Screenshot selection",
-    captions: [
-      "Home screen of FitnessGoals",
-      "Goals and progress at a glance",
-      "Motivation through visible development"
-    ],
-    featuresTitle: "Features",
-    f1Title: "Define goals",
-    f1Text: "Set clear fitness goals that match your daily life and training.",
-    f2Title: "Track progress",
-    f2Text: "See at a glance how you are developing and where you stay consistent.",
-    f3Title: "Keep motivation",
-    f3Text: "Stay focused by making your development visible and tangible.",
-    whyTitle: "Why FitnessGoals?",
-    whyText: "FitnessGoals helps you turn fitness from intention into action. Clear goals, visible progress, and a structured overview make it easier to stay consistent and integrate training into your daily life.",
-    howTitle: "How it works",
-    step1Title: "1. Set your goals",
-    step1Text: "Define what you want to achieve — realistic, clear, and measurable.",
-    step2Title: "2. Watch your progress",
-    step2Text: "Track how your training develops and which steps you have already achieved.",
-    step3Title: "3. Build consistency",
-    step3Text: "Use your progress as motivation to stay committed over time.",
-    ctaTitle: "Start with your fitness goals",
-    ctaText: "Download the app and bring more structure, motivation, and clarity into your training.",
-    privacy: "Privacy",
-    privacyHref: "privacy.html",
-    support: "Support"
-  }
-};
-
 const screenshots = [
   "assets/screenshot1.png",
   "assets/screenshot2.png",
   "assets/screenshot3.png"
 ];
+const screenshotAlt = "FitnessGoals app screenshot";
+const captions = [
+  "Home screen of FitnessGoals",
+  "Goals and progress at a glance",
+  "Motivation through visible development"
+];
 
 let currentSlide = 0;
 let autoPlay = null;
 
-function currentLang(){
-  return "en";
-}
 
 function buildDots(){
   const dots = document.getElementById("dots");
@@ -771,12 +662,9 @@ function buildDots(){
 }
 
 function updateSlideMeta(){
-  const lang = currentLang();
-  const t = translations[lang] || translations.de;
-
   document.getElementById("slider-image").src = screenshots[currentSlide];
-  document.getElementById("slider-image").alt = t.screenshotAlt;
-  document.getElementById("slide-caption").textContent = t.captions[currentSlide] || "";
+  document.getElementById("slider-image").alt = screenshotAlt;
+  document.getElementById("slide-caption").textContent = captions[currentSlide] || "";
 
   [...document.querySelectorAll(".dot")].forEach((dot, index) => {
     dot.classList.toggle("active", index === currentSlide);
@@ -823,103 +711,6 @@ function restartAutoPlay(){
   startAutoPlay();
 }
 
-function updateMetaTag(selector, content){
-  const el = document.querySelector(selector);
-  if(el) el.setAttribute("content", content);
-}
-
-function updateStructuredData(t){
-  const schema = {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name": t.schemaName,
-    "applicationCategory":"HealthApplication",
-    "operatingSystem":"iOS, iPadOS, macOS",
-    "description": t.schemaDescription,
-    "url":"https://jzapps.app/fitnessgoals/",
-    "image":"https://jzapps.app/fitnessgoals/assets/Fitnessgoals.jpeg",
-    "downloadUrl":"https://apps.apple.com/de/app/fitnessgoals/id6757391456",
-    "publisher":{
-      "@type":"Person",
-      "name":"Jürgen Zimmer"
-    }
-  };
-
-  const script = document.querySelector('script[type="application/ld+json"]');
-  if(script) script.textContent = JSON.stringify(schema);
-}
-
-function setLang(lang){
-  const t = translations[lang] || translations.de;
-
-  document.documentElement.lang = t.htmlLang;
-  document.title = t.title;
-
-  updateMetaTag('meta[name="description"]', t.description);
-  updateMetaTag('meta[property="og:title"]', t.ogTitle);
-  updateMetaTag('meta[property="og:description"]', t.ogDescription);
-  updateMetaTag('meta[property="og:site_name"]', t.ogSiteName);
-  updateMetaTag('meta[name="twitter:title"]', t.twitterTitle);
-  updateMetaTag('meta[name="twitter:description"]', t.twitterDescription);
-
-  updateStructuredData(t);
-
-  document.getElementById("brand-title").textContent = t.brand;
-  document.getElementById("back-link").textContent = t.back;
-  document.getElementById("eyebrow-text").textContent = t.eyebrowText;
-  document.getElementById("hero-title").innerHTML = t.heroTitle;
-  document.getElementById("hero-text").textContent = t.heroText;
-  document.getElementById("store-note").textContent = t.storeNote;
-
-  document.getElementById("store-link-top").setAttribute("aria-label", t.storeAria);
-  document.getElementById("store-link-bottom").setAttribute("aria-label", t.storeAria);
-  document.getElementById("store-badge-top").alt = t.storeBadgeAlt;
-  document.getElementById("store-badge-bottom").alt = t.storeBadgeAlt;
-  document.getElementById("hero-image").alt = t.heroImageAlt;
-
-  document.getElementById("shots-title").textContent = t.shotsTitle;
-  document.getElementById("shots-text").textContent = t.shotsText;
-  document.getElementById("slider").setAttribute("aria-label", t.sliderAria);
-  document.getElementById("dots").setAttribute("aria-label", t.dotsAria);
-  document.querySelector(".prev").setAttribute("aria-label", t.slidePrevAria);
-  document.querySelector(".next").setAttribute("aria-label", t.slideNextAria);
-
-  document.getElementById("features-title").textContent = t.featuresTitle;
-  document.getElementById("f1-title").textContent = t.f1Title;
-  document.getElementById("f1-text").textContent = t.f1Text;
-  document.getElementById("f2-title").textContent = t.f2Title;
-  document.getElementById("f2-text").textContent = t.f2Text;
-  document.getElementById("f3-title").textContent = t.f3Title;
-  document.getElementById("f3-text").textContent = t.f3Text;
-
-  document.getElementById("why-title").textContent = t.whyTitle;
-  document.getElementById("why-text").textContent = t.whyText;
-
-  document.getElementById("how-title").textContent = t.howTitle;
-  document.getElementById("step1-title").textContent = t.step1Title;
-  document.getElementById("step1-text").textContent = t.step1Text;
-  document.getElementById("step2-title").textContent = t.step2Title;
-  document.getElementById("step2-text").textContent = t.step2Text;
-  document.getElementById("step3-title").textContent = t.step3Title;
-  document.getElementById("step3-text").textContent = t.step3Text;
-
-  document.getElementById("cta-title").textContent = t.ctaTitle;
-  document.getElementById("cta-text").textContent = t.ctaText;
-
-  const privacyLink = document.getElementById("privacy-link");
-  privacyLink.textContent = t.privacy;
-  privacyLink.href = t.privacyHref;
-
-  document.getElementById("support-link").textContent = t.support;
-  document.getElementById("support-link").href = lang === "en" ? "../support.html" : "../support-de.html";
-
-  document.getElementById("btn-de").classList.toggle("active", lang === "de");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-
-  localStorage.setItem("siteLang", lang);
-  updateSlideMeta();
-}
-
 const slider = document.getElementById("slider");
 
 slider.addEventListener("mouseenter", stopAutoPlay);
@@ -948,9 +739,7 @@ slider.addEventListener("touchend", (event) => {
 }, {passive:true});
 
 showSlide();
-setLang(currentLang());
 startAutoPlay();
-document.body.style.visibility = "visible";
 </script>
 </body>
 </html>
