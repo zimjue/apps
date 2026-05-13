@@ -42,6 +42,7 @@
   "description":"MoneyMindShift helps you understand your money patterns, use a 6-pot system, build a daily money habit, and continue with an optional Pro mindset journey and PDF workbook.",
   "url":"https://jzapps.app/moneymindshift/",
   "image":"https://jzapps.app/moneymindshift/assets/moneymind.png",
+  "downloadUrl":"https://apps.apple.com/de/app/moneymindshift/id6767275029",
   "publisher":{
     "@type":"Person",
     "name":"Jürgen Zimmer"
@@ -188,6 +189,23 @@ p{
   align-items:center;
   flex-wrap:wrap;
   margin-top:22px;
+}
+
+.app-store-badge{
+  display:inline-flex;
+  align-items:center;
+  transition:transform .18s ease, opacity .18s ease;
+}
+
+.app-store-badge:hover{
+  transform:translateY(-1px);
+  opacity:.92;
+}
+
+.app-store-badge img{
+  display:block;
+  height:48px;
+  width:auto;
 }
 
 .store-note{
@@ -457,7 +475,10 @@ p{
         <p id="hero-text">MoneyMindShift helps you discover your money type, set up a clear 6-pot system, and build a daily habit that keeps your financial mindset active. Phase 1 is included; the optional Pro upgrade unlocks Phase 2 and 3 plus a structured PDF workbook.</p>
 
         <div class="hero-actions">
-          <span class="store-note" id="store-note">Coming soon to the App Store. Optional Pro upgrade planned.</span>
+          <a class="app-store-badge" href="https://apps.apple.com/de/app/moneymindshift/id6767275029" aria-label="Download MoneyMindShift on the App Store" target="_blank" rel="noopener noreferrer">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" loading="lazy">
+          </a>
+          <span class="store-note" id="store-note">Now available on the App Store. Optional Pro upgrade planned.</span>
         </div>
       </div>
 
