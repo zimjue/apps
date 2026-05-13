@@ -71,7 +71,6 @@ body{
     radial-gradient(900px 500px at 90% 40%,rgba(145,210,255,.10),transparent 55%),
     var(--bg);
   color:var(--txt);
-  visibility:hidden;
 }
 
 a{color:inherit}
@@ -588,29 +587,19 @@ p{
 </div>
 
 <script>
-const screenshots = {
-  de: [
-    { src: "assets/screenshot1.png", alt: "MoneyMindShift Übersicht", caption: "Übersicht mit Geldsystem, Mindset Journey und Daily Pulse." },
-    { src: "assets/screenshot2.png", alt: "MoneyMindShift Daily Pulse", caption: "Daily Pulse Check-in: wahrnehmen, wie sich Geld anfühlt, und eine bewusste Entscheidung treffen." },
-    { src: "assets/screenshot3.png", alt: "MoneyMindShift Mindset Journey", caption: "Mindset Journey mit aktuellem Fokus und Geldtyp-Einblick." },
-    { src: "assets/screenshot4.png", alt: "MoneyMindShift Töpfe", caption: "Sechs-Töpfe-System mit Einkommensverteilung und Topfständen auf einen Blick." },
-    { src: "assets/screenshot5.png", alt: "MoneyMindShift Einstellungen", caption: "Einstellungen für Sprache, Erscheinungsbild und Datenschutz." }
-  ],
-  en: [
-    { src: "assets/screenshot1.png", alt: "MoneyMindShift overview", caption: "Dashboard overview with money system, mindset journey, and daily pulse." },
-    { src: "assets/screenshot2.png", alt: "MoneyMindShift Daily Pulse", caption: "Daily Pulse check-in: notice how money feels today and make one conscious decision." },
-    { src: "assets/screenshot3.png", alt: "MoneyMindShift Mindset Journey", caption: "Mindset journey with current focus and money type insight." },
-    { src: "assets/screenshot4.png", alt: "MoneyMindShift Pots", caption: "Six-pot system showing income allocation and pot balances at a glance." },
-    { src: "assets/screenshot5.png", alt: "MoneyMindShift Settings", caption: "Settings for language, appearance, and privacy." }
-  ]
-};
+const screenshots = [
+  { src: "assets/screenshot1.png", alt: "MoneyMindShift overview", caption: "Dashboard overview with money system, mindset journey, and daily pulse." },
+  { src: "assets/screenshot2.png", alt: "MoneyMindShift Daily Pulse", caption: "Daily Pulse check-in: notice how money feels today and make one conscious decision." },
+  { src: "assets/screenshot3.png", alt: "MoneyMindShift Mindset Journey", caption: "Mindset journey with current focus and money type insight." },
+  { src: "assets/screenshot4.png", alt: "MoneyMindShift Pots", caption: "Six-pot system showing income allocation and pot balances at a glance." },
+  { src: "assets/screenshot5.png", alt: "MoneyMindShift Settings", caption: "Settings for language, appearance, and privacy." }
+];
 
 let currentSlide = 0;
 
 function showSlide(index) {
-  const deck = screenshots[currentLang];
-  currentSlide = (index + deck.length) % deck.length;
-  const slide = deck[currentSlide];
+  currentSlide = (index + screenshots.length) % screenshots.length;
+  const slide = screenshots[currentSlide];
   document.getElementById("slide-image").src = slide.src;
   document.getElementById("slide-image").alt = slide.alt;
   document.getElementById("slide-caption").textContent = slide.caption;
@@ -618,10 +607,9 @@ function showSlide(index) {
 }
 
 function renderDots() {
-  const deck = screenshots[currentLang];
   const container = document.getElementById("dots");
   container.innerHTML = "";
-  deck.forEach(function(_, i) {
+  screenshots.forEach(function(_, i) {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = "dot" + (i === currentSlide ? " active" : "");
@@ -634,138 +622,8 @@ function renderDots() {
 document.getElementById("prev-btn").addEventListener("click", function() { showSlide(currentSlide - 1); });
 document.getElementById("next-btn").addEventListener("click", function() { showSlide(currentSlide + 1); });
 
-const copy = {
-  de: {
-    back: "← Alle Apps",
-    eyebrow: "Geldmindset und System an einem Ort",
-    title: "Verstehe dein Verhältnis zu Geld.<br>Baue ein System, das zu dir passt.",
-    text: "MoneyMindShift hilft dir, deinen Geldtyp zu entdecken, ein klares 6-Töpfe-System einzurichten und eine tägliche Gewohnheit aufzubauen, die dein Geldmindset aktiv hält. Phase 1 ist enthalten; das optionale Pro-Upgrade schaltet Phase 2 und 3 plus ein strukturiertes PDF-Workbook frei.",
-    storeNote: "Demnächst im App Store. Optionales Pro-Upgrade geplant.",
-    featuresTitle: "Womit MoneyMindShift dir hilft",
-    featuresCopy: "Starte mit Geldtyp und täglichem System, und gehe mit der optionalen Pro-Journey samt Workbook-Export tiefer.",
-    feature1Title: "Geldtyp",
-    feature1Text: "Eine kurze geführte Einschätzung zeigt, wie du mit Geld umgehst — ob du es vermeidest, schützt, genießt oder vermehrst.",
-    feature2Title: "6-Töpfe-System",
-    feature2Text: "Verteile dein monatliches Einkommen auf sechs Kategorien und sieh auf einen Blick, wo Struktur fehlt oder du überzogen bist.",
-    feature3Title: "Daily Pulse",
-    feature3Text: "Unter 30 Sekunden: wahrnehmen, wie sich Geld heute anfühlt, eine bewusste Entscheidung treffen und als Check-in speichern.",
-    journeyTitle: "Mindset Journey",
-    journeyCopy: "Ein strukturierter 3-Phasen-Prozess, um dein Verhältnis zu Geld aufzudecken, neu auszurichten und dauerhaft zu verankern. Phase 1 ist enthalten; Phase 2 und 3 gehören zu Pro.",
-    phase1Label: "Phase 1",
-    phase1Title: "Dich selbst kennen",
-    phase1Text: "Erkunde deine Geld-Assoziationen, Glaubenssätze und emotionalen Muster, um ein ehrliches Ausgangsbild zu entwickeln.",
-    phase2Label: "Phase 2",
-    phase2Title: "Neu ausrichten",
-    phase2Text: "Setze neue Bezugspunkte, kläre deinen Geld-Zweck und beginne, die Glaubenssätze umzuformulieren, die dich bremsen.",
-    phase3Label: "Phase 3",
-    phase3Title: "Sichtbar machen",
-    phase3Text: "Vergleiche Vorher und Nachher und exportiere dein Journey Workbook als strukturiertes PDF, wenn Pro freigeschaltet ist.",
-    screensTitle: "So sieht MoneyMindShift im Alltag aus",
-    screensCopy: "Ein kurzer Blick auf die wichtigsten Screens — Übersicht, Daily Check-in, Mindset Journey, Töpfe und Einstellungen.",
-    notesTitle: "Privacy by Design",
-    notesCopy: "MoneyMindShift ist so gebaut, dass alles auf deinem Gerät bleibt — keine Konten, keine Cloud-Synchronisation, kein Tracking. Käufe werden von Apple abgewickelt.",
-    note1Title: "Alles lokal gespeichert",
-    note1Text: "Check-ins, Töpfe, Geldtyp, Glaubenssätze und Workbook-Inhalte werden nur auf deinem Gerät gespeichert. Kein iCloud, keine externen Server für App-Inhalte.",
-    note2Title: "Keine Analyse oder Tracking",
-    note2Text: "Die App enthält keine Analytics-SDKs, keine Werbenetzwerke und keinerlei Tracking. Exporte werden nur erstellt, wenn du sie bewusst auslöst.",
-    note3Title: "Pro über Apple",
-    note3Text: "Das optionale Pro-Upgrade läuft über Apples StoreKit-Kaufsystem. MoneyMindShift erhält keine Zahlungsdaten.",
-    footerPrivacy: "Datenschutz",
-    footerSupport: "Support"
-  },
-  en: {
-    back: "← All Apps",
-    eyebrow: "Money mindset and system in one place",
-    title: "Understand your relationship with money.<br>Build a system that fits you.",
-    text: "MoneyMindShift helps you discover your money type, set up a clear 6-pot system, and build a daily habit that keeps your financial mindset active. Phase 1 is included; the optional Pro upgrade unlocks Phase 2 and 3 plus a structured PDF workbook.",
-    storeNote: "Coming soon to the App Store. Optional Pro upgrade planned.",
-    featuresTitle: "What MoneyMindShift helps you with",
-    featuresCopy: "Start with your money type and daily system, then go deeper with the optional Pro journey and workbook export.",
-    feature1Title: "Money Type",
-    feature1Text: "A short guided assessment reveals how you relate to money — whether you avoid it, protect it, enjoy it, or grow it.",
-    feature2Title: "6-Pot System",
-    feature2Text: "Allocate your monthly income across six categories and see at a glance where structure is missing or where you're overextended.",
-    feature3Title: "Daily Pulse",
-    feature3Text: "Under 30 seconds: notice how money feels today, make one conscious decision, and log it as a check-in.",
-    journeyTitle: "Mindset Journey",
-    journeyCopy: "A structured 3-phase process to uncover, reframe, and anchor your relationship with money over time. Phase 1 is included; Phase 2 and 3 are part of Pro.",
-    phase1Label: "Phase 1",
-    phase1Title: "Know Yourself",
-    phase1Text: "Explore your money associations, beliefs, and emotional patterns to build an honest baseline picture.",
-    phase2Label: "Phase 2",
-    phase2Title: "Realign",
-    phase2Text: "Set new reference points, clarify your money purpose, and start reframing the beliefs that hold you back.",
-    phase3Label: "Phase 3",
-    phase3Title: "Make It Visible",
-    phase3Text: "Compare before and after, then export your Journey Workbook as a structured PDF when Pro is unlocked.",
-    screensTitle: "How MoneyMindShift looks in daily use",
-    screensCopy: "A short look at the core screens — overview, daily check-in, mindset journey, pots, and settings.",
-    notesTitle: "Privacy by design",
-    notesCopy: "MoneyMindShift is built to stay on your device — no accounts, no cloud sync, no tracking. Purchases are handled by Apple.",
-    note1Title: "Everything stored locally",
-    note1Text: "Check-ins, pots, money type, beliefs, and workbook content are saved on your device only. No iCloud, no external servers for app content.",
-    note2Title: "No analytics or tracking",
-    note2Text: "The app contains no analytics SDKs, no advertising networks, and no tracking of any kind. Exports are created only when you choose them.",
-    note3Title: "Pro handled by Apple",
-    note3Text: "The optional Pro upgrade uses Apple's StoreKit purchase system. MoneyMindShift does not receive your payment details.",
-    footerPrivacy: "Privacy Policy",
-    footerSupport: "Support"
-  }
-};
-
-let currentLang = "en";
-
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang === "en" ? "en" : "de";
-  document.getElementById("btn-de").classList.toggle("active", lang === "de");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-
-  const t = copy[lang];
-  document.getElementById("back-link").textContent = t.back;
-  document.getElementById("eyebrow-text").textContent = t.eyebrow;
-  document.getElementById("hero-title").innerHTML = t.title;
-  document.getElementById("hero-text").textContent = t.text;
-  document.getElementById("store-note").textContent = t.storeNote;
-  document.getElementById("features-title").textContent = t.featuresTitle;
-  document.getElementById("features-copy").textContent = t.featuresCopy;
-  document.getElementById("feature1-title").textContent = t.feature1Title;
-  document.getElementById("feature1-text").textContent = t.feature1Text;
-  document.getElementById("feature2-title").textContent = t.feature2Title;
-  document.getElementById("feature2-text").textContent = t.feature2Text;
-  document.getElementById("feature3-title").textContent = t.feature3Title;
-  document.getElementById("feature3-text").textContent = t.feature3Text;
-  document.getElementById("journey-title").textContent = t.journeyTitle;
-  document.getElementById("journey-copy").textContent = t.journeyCopy;
-  document.getElementById("phase1-label").textContent = t.phase1Label;
-  document.getElementById("phase1-title").textContent = t.phase1Title;
-  document.getElementById("phase1-text").textContent = t.phase1Text;
-  document.getElementById("phase2-label").textContent = t.phase2Label;
-  document.getElementById("phase2-title").textContent = t.phase2Title;
-  document.getElementById("phase2-text").textContent = t.phase2Text;
-  document.getElementById("phase3-label").textContent = t.phase3Label;
-  document.getElementById("phase3-title").textContent = t.phase3Title;
-  document.getElementById("phase3-text").textContent = t.phase3Text;
-  document.getElementById("notes-title").textContent = t.notesTitle;
-  document.getElementById("notes-copy").textContent = t.notesCopy;
-  document.getElementById("note1-title").textContent = t.note1Title;
-  document.getElementById("note1-text").textContent = t.note1Text;
-  document.getElementById("note2-title").textContent = t.note2Title;
-  document.getElementById("note2-text").textContent = t.note2Text;
-  document.getElementById("note3-title").textContent = t.note3Title;
-  document.getElementById("note3-text").textContent = t.note3Text;
-  document.getElementById("footer-privacy").textContent = t.footerPrivacy;
-  document.getElementById("footer-privacy").href = lang === "en" ? "privacy.html" : "datenschutz.html";
-  document.getElementById("footer-support").href = lang === "en" ? "../support.html" : "../support-de.html";
-
-  document.getElementById("screens-title").textContent = t.screensTitle;
-  document.getElementById("screens-copy").textContent = t.screensCopy;
-  showSlide(currentSlide);
-}
-
 document.getElementById("year").textContent = new Date().getFullYear();
-setLang("en");
-document.body.style.visibility = "visible";
+showSlide(0);
 </script>
 </body>
 </html>
