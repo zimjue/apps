@@ -666,97 +666,44 @@ p{
 </div>
 
 <script>
-const copy = {
-  de: {
-    back: "← Alle Apps",
-    eyebrow: "Für Makro, Märkte und Bitcoin-Kontext",
-    title: "Lies Liquidität.<br>Bevor der Markt sie einpreist.",
-    text: "LiquidityPulse ist für makro-interessierte Anleger, Marktbeobachter und Bitcoin-orientierte Nutzer. Die App verdichtet Liquiditäts-, Markt- und Stresssignale so, dass du Regimewechsel schneller erkennst und besser einordnen kannst.",
-    waitlist: "Im App Store laden",
-    primary: "Datenschutz",
-    storeNote: "Jetzt im App Store verfuegbar. Keine Anlageberatung.",
-    featuresTitle: "Was LiquidityPulse zeigt",
-    featuresCopy: "Statt verstreuter Datenquellen bekommst du hier eine fokussierte Arbeitsoberfläche für Liquidität, Marktstruktur und historische Beziehungen.",
-    feature1Title: "Dashboard",
-    feature1Text: "Scanne die wichtigsten Blöcke für Liquidität, Markt und Stress in wenigen Sekunden statt durch mehrere Quellen zu springen.",
-    feature2Title: "Charts & Lead/Lag",
-    feature2Text: "Vergleiche Zeitreihen, erkenne historische Vorlauf-Beziehungen und prüfe Signale dort, wo sie wirklich relevant werden.",
-    feature3Title: "Regime",
-    feature3Text: "Ein verdichteter Regime-Blick hilft dir, unterstützende, neutrale oder defensive Marktphasen schneller zu erkennen.",
-    screensTitle: "Einblicke in die App",
-    screensCopy: "So sieht die App im Alltag aus: fokussiert, lesbar und auf schnelle Einordnung gebaut.",
-    sourcesTitle: "Wichtige Datenquellen",
-    sourcesCopy: "LiquidityPulse kombiniert öffentliche Markt- und Makrodaten zu einer kompakten Sicht auf Liquidität und Risiko.",
-    source1Title: "Liquiditäts- und Makrosignale",
-    source1Text: "Unter anderem fließen M2, Fed-Bilanz, Reverse Repo, Treasury General Account, SOFR, US-10Y-Rendite, Dollar-Index und Credit Spreads in die Auswertung ein.",
-    source2Title: "Marktbezug",
-    source2Text: "Zusätzlich werden Marktindikatoren wie Bitcoin einbezogen, um historische Beziehungen zwischen Liquidität, Risikoappetit und Preisentwicklung besser sichtbar zu machen.",
-    notesTitle: "Wichtige Hinweise",
-    notesCopy: "Die App hilft dir beim Denken und Einordnen, nicht beim blinden Folgen eines Signals.",
-    note1Title: "Keine Anlageberatung",
-    note1Text: "LiquidityPulse zeigt historische Daten, Relationen und Signale. Die Inhalte sind als Informations- und Analysehilfe gedacht.",
-    note2Title: "Korrelation ist nicht Kausalität",
-    note2Text: "Lead/Lag-Ansichten zeigen mögliche zeitliche Beziehungen. Sie sind keine harte Prognose und kein Beweis für Ursache-Wirkung."
+const slides = [
+  {
+    "src": "assets/screenshot1.png",
+    "alt": "LiquidityPulse Dashboard",
+    "caption": "Dashboard mit globaler Liquidität und Signal-Übersicht."
   },
-  en: {
-    back: "← All Apps",
-    eyebrow: "Macro, liquidity and market context at a glance",
-    title: "Understand global liquidity.<br>Faster and with more clarity.",
-    text: "LiquidityPulse brings together key liquidity, market, and stress signals in one clear app so you can spot trends, regime shifts, and historical relationships faster.",
-    waitlist: "Download on the App Store",
-    primary: "Privacy Policy",
-    storeNote: "Now available on the App Store. Not investment advice.",
-    featuresTitle: "What LiquidityPulse shows",
-    featuresCopy: "The app compresses important macro and market indicators into a few clear working areas.",
-    feature1Title: "Dashboard",
-    feature1Text: "Scan the main liquidity, market, and stress blocks in one compact overview.",
-    feature2Title: "Charts & Lead/Lag",
-    feature2Text: "Compare time series, explore historical lead-lag behavior, and inspect signals in more detail.",
-    feature3Title: "Regime",
-    feature3Text: "A condensed regime view helps you classify supportive, neutral, or defensive market phases faster.",
-    screensTitle: "Inside the app",
-    screensCopy: "A quick look at the most important areas inside LiquidityPulse.",
-    sourcesTitle: "Key data inputs",
-    sourcesCopy: "LiquidityPulse works with public market and macro data and presents them in a readable way.",
-    source1Title: "Liquidity and macro signals",
-    source1Text: "The analysis includes M2, the Fed balance sheet, Reverse Repo, Treasury General Account, SOFR, the US 10Y yield, the dollar index, and credit spreads.",
-    source2Title: "Market context",
-    source2Text: "Market indicators such as Bitcoin are also included to make historical relationships between liquidity, risk appetite, and price action easier to see.",
-    notesTitle: "Important notes",
-    notesCopy: "The app is meant to support interpretation, not make decisions for you.",
-    note1Title: "Not investment advice",
-    note1Text: "LiquidityPulse shows historical data, relationships, and signals. The content is intended for information and analysis support.",
-    note2Title: "Correlation is not causation",
-    note2Text: "Lead-lag views can reveal timing relationships. They are not hard forecasts and not proof of cause and effect."
+  {
+    "src": "assets/screenshot2.png",
+    "alt": "LiquidityPulse Charts",
+    "caption": "Charts mit den wichtigsten Liquiditäts- und Makro-Reihen."
+  },
+  {
+    "src": "assets/screenshot3.png",
+    "alt": "LiquidityPulse Vorlauf-Analyse",
+    "caption": "Vorlauf-Analyse für historische Lead-Lag-Beziehungen zwischen zwei Reihen."
+  },
+  {
+    "src": "assets/screenshot4.png",
+    "alt": "LiquidityPulse Regime",
+    "caption": "Regime-Ansicht zur Einordnung von Marktphasen und Signalstärke."
+  },
+  {
+    "src": "assets/screenshot5.png",
+    "alt": "LiquidityPulse Einstellungen",
+    "caption": "Einstellungen für Sprache, Zeitraum und verfügbare Datenquellen."
+  },
+  {
+    "src": "assets/screenshot6.png",
+    "alt": "LiquidityPulse Guide",
+    "caption": "Guide mit Orientierung zur Nutzung, Interpretation und zu wichtigen Hinweisen."
   }
-};
-
-const slides = {
-  de: [
-    { src: "assets/screenshot1.png", alt: "LiquidityPulse Dashboard", caption: "Dashboard mit globaler Liquidität und Signal-Übersicht." },
-    { src: "assets/screenshot2.png", alt: "LiquidityPulse Charts", caption: "Charts mit den wichtigsten Liquiditäts- und Makro-Reihen." },
-    { src: "assets/screenshot3.png", alt: "LiquidityPulse Vorlauf-Analyse", caption: "Vorlauf-Analyse für historische Lead-Lag-Beziehungen zwischen zwei Reihen." },
-    { src: "assets/screenshot4.png", alt: "LiquidityPulse Regime", caption: "Regime-Ansicht zur Einordnung von Marktphasen und Signalstärke." },
-    { src: "assets/screenshot5.png", alt: "LiquidityPulse Einstellungen", caption: "Einstellungen für Sprache, Zeitraum und verfügbare Datenquellen." },
-    { src: "assets/screenshot6.png", alt: "LiquidityPulse Guide", caption: "Guide mit Orientierung zur Nutzung, Interpretation und zu wichtigen Hinweisen." }
-  ],
-  en: [
-    { src: "assets/screenshot1.png", alt: "LiquidityPulse dashboard", caption: "Dashboard with global liquidity and signal overview." },
-    { src: "assets/screenshot2.png", alt: "LiquidityPulse charts", caption: "Charts for key liquidity and macro series." },
-    { src: "assets/screenshot3.png", alt: "LiquidityPulse lead lag analysis", caption: "Lead-lag analysis for historical timing relationships between two series." },
-    { src: "assets/screenshot4.png", alt: "LiquidityPulse regime", caption: "Regime view for classifying market phases and signal strength." },
-    { src: "assets/screenshot5.png", alt: "LiquidityPulse settings", caption: "Settings for language, default timeframe, and active data sources." },
-    { src: "assets/screenshot6.png", alt: "LiquidityPulse guide", caption: "Guide with orientation on usage, interpretation, and important notes." }
-  ]
-};
-
-let currentLang = "de";
+];
 let currentSlide = 0;
 
 function renderDots(){
   const dots = document.getElementById("dots");
   dots.innerHTML = "";
-  slides[currentLang].forEach((_, index) => {
+  slides.forEach((_, index) => {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = "dot" + (index === currentSlide ? " active" : "");
@@ -767,9 +714,8 @@ function renderDots(){
 }
 
 function showSlide(index){
-  const deck = slides[currentLang];
-  currentSlide = (index + deck.length) % deck.length;
-  const slide = deck[currentSlide];
+  currentSlide = (index + slides.length) % slides.length;
+  const slide = slides[currentSlide];
   const image = document.getElementById("slide-image");
   image.src = slide.src;
   image.alt = slide.alt;
@@ -781,49 +727,8 @@ function changeSlide(direction){
   showSlide(currentSlide + direction);
 }
 
-function setLang(lang){
-  currentLang = lang;
-  document.documentElement.lang = lang === "en" ? "en" : "de";
-  document.getElementById("btn-de").classList.toggle("active", lang === "de");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-
-  const t = copy[lang];
-  document.getElementById("back-link").textContent = t.back;
-  document.getElementById("eyebrow-text").textContent = t.eyebrow;
-  document.getElementById("hero-title").innerHTML = t.title;
-  document.getElementById("hero-text").textContent = t.text;
-  document.getElementById("footer-privacy").textContent = t.primary;
-  document.getElementById("footer-privacy").href = lang === "en" ? "privacy.html" : "datenschutz.html";
-  document.getElementById("footer-support").href = lang === "en" ? "../support.html" : "../support-de.html";
-  document.getElementById("store-note").textContent = t.storeNote;
-  document.getElementById("features-title").textContent = t.featuresTitle;
-  document.getElementById("features-copy").textContent = t.featuresCopy;
-  document.getElementById("feature1-title").textContent = t.feature1Title;
-  document.getElementById("feature1-text").textContent = t.feature1Text;
-  document.getElementById("feature2-title").textContent = t.feature2Title;
-  document.getElementById("feature2-text").textContent = t.feature2Text;
-  document.getElementById("feature3-title").textContent = t.feature3Title;
-  document.getElementById("feature3-text").textContent = t.feature3Text;
-  document.getElementById("screens-title").textContent = t.screensTitle;
-  document.getElementById("screens-copy").textContent = t.screensCopy;
-  document.getElementById("sources-title").textContent = t.sourcesTitle;
-  document.getElementById("sources-copy").textContent = t.sourcesCopy;
-  document.getElementById("source1-title").textContent = t.source1Title;
-  document.getElementById("source1-text").textContent = t.source1Text;
-  document.getElementById("source2-title").textContent = t.source2Title;
-  document.getElementById("source2-text").textContent = t.source2Text;
-  document.getElementById("notes-title").textContent = t.notesTitle;
-  document.getElementById("notes-copy").textContent = t.notesCopy;
-  document.getElementById("note1-title").textContent = t.note1Title;
-  document.getElementById("note1-text").textContent = t.note1Text;
-  document.getElementById("note2-title").textContent = t.note2Title;
-  document.getElementById("note2-text").textContent = t.note2Text;
-  showSlide(currentSlide);
-}
-
 document.getElementById("year").textContent = new Date().getFullYear();
 showSlide(0);
-setLang(currentLang);
 </script>
 </body>
 </html>
