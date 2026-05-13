@@ -73,7 +73,6 @@ body{
     radial-gradient(900px 500px at 90% 40%,rgba(153,102,255,.14),transparent 55%),
     var(--bg);
   color:var(--txt);
-  visibility:hidden;
 }
 
 a{color:inherit}
@@ -634,132 +633,22 @@ p{
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
 
-const translations = {
-  de: {
-    htmlLang: "de",
-    brand: "Lebensrad",
-    back: "← Alle Apps",
-    title: "Lebensrad – Reflexion, Werte & Ziele",
-    description: "Die Lebensrad App hilft dir, Lebensbereiche zu reflektieren, Werte zu klären, deinen Nordstern zu formulieren und Erkenntnisse in Ziele und Reviews zu übersetzen.",
-    ogTitle: "Lebensrad – Reflexion, Werte & Ziele",
-    ogDescription: "Reflektiere Lebensbereiche, kläre deine Werte und übersetze Erkenntnisse in Ziele und Reviews.",
-    ogSiteName: "Lebensrad",
-    twitterTitle: "Lebensrad – Reflexion, Werte & Ziele",
-    twitterDescription: "Reflektiere Lebensbereiche, kläre deine Werte und übersetze Erkenntnisse in Ziele und Reviews.",
-    schemaName: "Lebensrad",
-    schemaDescription: "Die Lebensrad App hilft dir, Lebensbereiche zu reflektieren, Werte zu klären, deinen Nordstern zu formulieren und Erkenntnisse in Ziele und Reviews zu übersetzen.",
-    eyebrowText: "Reflexion, Werte, Ziele und Reviews",
-    heroTitle: "Dein Leben, deine Werte und nächste Schritte.<br>Auf einen Blick.",
-    heroText: "Reflektiere Lebensbereiche, kläre deine Werte und übersetze Erkenntnisse in Ziele und Reviews.",
-    storeNote: "Für iPhone und iPad verfügbar",
-    storeAria: "Im App Store laden",
-    storeBadgeAlt: "Download on the App Store",
-    heroImageAlt: "Lebensrad Übersicht",
-    shotsTitle: "App Einblicke",
-    shotsText: "Dark-Mode-Einblicke in die aktuelle App: Lebensrad, Werte-Kompass, Bereichsziele und Monats-, Quartals- sowie Jahresreview.",
-    screenshotAlt: "Lebensrad App Screenshot",
-    slidePrevAria: "Vorheriger Screenshot",
-    slideNextAria: "Nächster Screenshot",
-    sliderAria: "Screenshot Karussell",
-    dotsAria: "Screenshot Auswahl",
-    captions: [
-      "Lebensrad-Übersicht mit aktuellen Fokusbereichen",
-      "Werte-Kompass und persönlicher Nordstern",
-      "Bereichsziele und Reflexionen",
-      "Monats-, Quartals- und Jahresreview"
-    ],
-    featuresTitle: "Funktionen",
-    f1Title: "Lebensrad",
-    f1Text: "Bewerte zentrale Lebensbereiche und sieh, wo Balance oder Spannung sichtbar wird.",
-    f2Title: "Werte-Kompass",
-    f2Text: "Priorisiere Werte, formuliere deinen Nordstern und verbinde Richtung mit Alltag.",
-    f3Title: "Reviews und nächste Schritte",
-    f3Text: "Monatliche, vierteljährliche und jährliche Reviews helfen dir, Muster zu erkennen und deine Richtung lebendig zu halten.",
-    whyTitle: "Warum Lebensrad?",
-    whyText: "Lebensrad ist für Menschen, die mehr wollen als eine Momentaufnahme. Die App verbindet Lebensbereiche mit Werten, Zielen, Reflexion und Reviews – alles bleibt privat auf deinem Gerät, kein Login, kein Tracking.",
-    howTitle: "So funktioniert es",
-    step1Title: "1. Bereiche bewerten",
-    step1Text: "Bewerte die Bereiche, die dein aktuelles Wohlbefinden prägen.",
-    step2Title: "2. Werte klären",
-    step2Text: "Wähle Werte und formuliere deinen persönlichen Nordstern.",
-    step3Title: "3. Review und Ausrichtung",
-    step3Text: "Monatliche, vierteljährliche und jährliche Reviews halten deine Richtung lebendig.",
-    ctaTitle: "Starte mit deinem Rad und baue deinen Kompass",
-    ctaText: "Lade Lebensrad herunter und verbinde Reflexion, Werte und nächste Schritte in einer privaten App – vollständig lokal auf deinem Gerät.",
-    privacy: "Datenschutz",
-    privacyHref: "datenschutz.html",
-    support: "Support"
-  },
-  en: {
-    htmlLang: "en",
-    brand: "Life Wheel",
-    back: "← All Apps",
-    title: "Life Wheel – Reflection, Values & Goals",
-    description: "The Life Wheel app helps you reflect on life areas, clarify values, write a personal north star, and turn insights into meaningful goals and reviews.",
-    ogTitle: "Life Wheel – Reflection, Values & Goals",
-    ogDescription: "Reflect on life areas, values, goals, and reviews with the Life Wheel app.",
-    ogSiteName: "Life Wheel",
-    twitterTitle: "Life Wheel – Reflection, Values & Goals",
-    twitterDescription: "Reflect on life areas, values, goals, and reviews with the Life Wheel app.",
-    schemaName: "Life Wheel",
-    schemaDescription: "The Life Wheel app helps you reflect on life areas, clarify values, write a personal north star, and turn insights into meaningful goals and reviews.",
-    eyebrowText: "Reflection, values, goals, and reviews",
-    heroTitle: "Your life, values, and next steps.<br>At a glance.",
-    heroText: "Reflect on your life areas, clarify your values, and turn insight into goals and reviews.",
-    storeNote: "Available for iPhone and iPad",
-    storeAria: "Download on the App Store",
-    storeBadgeAlt: "Download on the App Store",
-    heroImageAlt: "Life Wheel overview",
-    shotsTitle: "App previews",
-    shotsText: "Dark mode previews: life wheel, values compass, area goals, and monthly, quarterly, and yearly reviews.",
-    screenshotAlt: "Life Wheel app screenshot",
-    slidePrevAria: "Previous screenshot",
-    slideNextAria: "Next screenshot",
-    sliderAria: "Screenshot carousel",
-    dotsAria: "Screenshot selection",
-    captions: [
-      "Life wheel overview with current focus areas",
-      "Values compass and personal north star",
-      "Area goals and reflections",
-      "Monthly, quarterly, and yearly reviews"
-    ],
-    featuresTitle: "Features",
-    f1Title: "Life wheel",
-    f1Text: "Rate key life areas and see where balance or tension is visible.",
-    f2Title: "Values compass",
-    f2Text: "Prioritize values, write your north star, and connect direction with daily choices.",
-    f3Title: "Reviews and next steps",
-    f3Text: "Monthly, quarterly, and yearly reviews help you notice patterns and keep your direction alive.",
-    whyTitle: "Why Life Wheel?",
-    whyText: "Life Wheel is for people who want more than a score. It connects life areas, values, goals, and reviews in one private app — everything stays on your device, no login, no tracking.",
-    howTitle: "How it works",
-    step1Title: "1. Rate your areas",
-    step1Text: "Rate the areas that shape your current wellbeing.",
-    step2Title: "2. Clarify values",
-    step2Text: "Choose values and shape a personal north star.",
-    step3Title: "3. Review and adjust",
-    step3Text: "Monthly, quarterly, and yearly reviews keep your direction alive.",
-    ctaTitle: "Start with your wheel, then build your compass",
-    ctaText: "Download Life Wheel and connect reflection, values, and next steps — fully private, everything stays on your device.",
-    privacy: "Privacy",
-    privacyHref: "privacy.html",
-    support: "Support"
-  }
-};
-
 const screenshots = [
   "assets/screenshot1.png",
   "assets/screenshot2.png",
   "assets/screenshot3.png",
   "assets/screenshot4.png"
 ];
+const screenshotAlt = "Life Wheel app screenshot";
+const captions = [
+  "Life wheel overview with current focus areas",
+  "Values compass and personal north star",
+  "Area goals and reflections",
+  "Monthly, quarterly, and yearly reviews"
+];
 
 let currentSlide = 0;
 let autoPlay = null;
-
-function currentLang(){
-  return "en";
-}
 
 function buildDots(){
   const dots = document.getElementById("dots");
@@ -775,12 +664,9 @@ function buildDots(){
 }
 
 function updateSlideMeta(){
-  const lang = currentLang();
-  const t = translations[lang] || translations.de;
-
   document.getElementById("slider-image").src = screenshots[currentSlide];
-  document.getElementById("slider-image").alt = t.screenshotAlt;
-  document.getElementById("slide-caption").textContent = t.captions[currentSlide] || "";
+  document.getElementById("slider-image").alt = screenshotAlt;
+  document.getElementById("slide-caption").textContent = captions[currentSlide] || "";
 
   [...document.querySelectorAll(".dot")].forEach((dot, index) => {
     dot.classList.toggle("active", index === currentSlide);
@@ -827,103 +713,6 @@ function restartAutoPlay(){
   startAutoPlay();
 }
 
-function updateMetaTag(selector, content){
-  const el = document.querySelector(selector);
-  if(el) el.setAttribute("content", content);
-}
-
-function updateStructuredData(t){
-  const schema = {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name": t.schemaName,
-    "applicationCategory":"LifestyleApplication",
-    "operatingSystem":"iOS, iPadOS",
-    "description": t.schemaDescription,
-    "url":"https://jzapps.app/lebensrad/",
-    "image":"https://jzapps.app/lebensrad/assets/lebensrad.png",
-    "downloadUrl":"https://apps.apple.com/de/app/lebensrad-dein-lebenskompass/id6759198208",
-    "publisher":{
-      "@type":"Person",
-      "name":"Jürgen Zimmer"
-    }
-  };
-
-  const script = document.querySelector('script[type="application/ld+json"]');
-  if(script) script.textContent = JSON.stringify(schema);
-}
-
-function setLang(lang){
-  const t = translations[lang] || translations.de;
-
-  document.documentElement.lang = t.htmlLang;
-  document.title = t.title;
-
-  updateMetaTag('meta[name="description"]', t.description);
-  updateMetaTag('meta[property="og:title"]', t.ogTitle);
-  updateMetaTag('meta[property="og:description"]', t.ogDescription);
-  updateMetaTag('meta[property="og:site_name"]', t.ogSiteName);
-  updateMetaTag('meta[name="twitter:title"]', t.twitterTitle);
-  updateMetaTag('meta[name="twitter:description"]', t.twitterDescription);
-
-  updateStructuredData(t);
-
-  document.getElementById("brand-title").textContent = t.brand;
-  document.getElementById("back-link").textContent = t.back;
-  document.getElementById("eyebrow-text").textContent = t.eyebrowText;
-  document.getElementById("hero-title").innerHTML = t.heroTitle;
-  document.getElementById("hero-text").textContent = t.heroText;
-  document.getElementById("store-note").textContent = t.storeNote;
-
-  document.getElementById("store-link-top").setAttribute("aria-label", t.storeAria);
-  document.getElementById("store-link-bottom").setAttribute("aria-label", t.storeAria);
-  document.getElementById("store-badge-top").alt = t.storeBadgeAlt;
-  document.getElementById("store-badge-bottom").alt = t.storeBadgeAlt;
-  document.getElementById("hero-image").alt = t.heroImageAlt;
-
-  document.getElementById("shots-title").textContent = t.shotsTitle;
-  document.getElementById("shots-text").textContent = t.shotsText;
-  document.getElementById("slider").setAttribute("aria-label", t.sliderAria);
-  document.getElementById("dots").setAttribute("aria-label", t.dotsAria);
-  document.querySelector(".prev").setAttribute("aria-label", t.slidePrevAria);
-  document.querySelector(".next").setAttribute("aria-label", t.slideNextAria);
-
-  document.getElementById("features-title").textContent = t.featuresTitle;
-  document.getElementById("f1-title").textContent = t.f1Title;
-  document.getElementById("f1-text").textContent = t.f1Text;
-  document.getElementById("f2-title").textContent = t.f2Title;
-  document.getElementById("f2-text").textContent = t.f2Text;
-  document.getElementById("f3-title").textContent = t.f3Title;
-  document.getElementById("f3-text").textContent = t.f3Text;
-
-  document.getElementById("why-title").textContent = t.whyTitle;
-  document.getElementById("why-text").textContent = t.whyText;
-
-  document.getElementById("how-title").textContent = t.howTitle;
-  document.getElementById("step1-title").textContent = t.step1Title;
-  document.getElementById("step1-text").textContent = t.step1Text;
-  document.getElementById("step2-title").textContent = t.step2Title;
-  document.getElementById("step2-text").textContent = t.step2Text;
-  document.getElementById("step3-title").textContent = t.step3Title;
-  document.getElementById("step3-text").textContent = t.step3Text;
-
-  document.getElementById("cta-title").textContent = t.ctaTitle;
-  document.getElementById("cta-text").textContent = t.ctaText;
-
-  const privacyLink = document.getElementById("privacy-link");
-  privacyLink.textContent = t.privacy;
-  privacyLink.href = t.privacyHref;
-
-  document.getElementById("support-link").textContent = t.support;
-  document.getElementById("support-link").href = lang === "en" ? "../support.html" : "../support-de.html";
-
-  document.getElementById("btn-de").classList.toggle("active", lang === "de");
-  document.getElementById("btn-en").classList.toggle("active", lang === "en");
-
-  localStorage.setItem("siteLang", lang);
-  updateSlideMeta();
-}
-
 const slider = document.getElementById("slider");
 
 slider.addEventListener("mouseenter", stopAutoPlay);
@@ -952,9 +741,7 @@ slider.addEventListener("touchend", (event) => {
 }, {passive:true});
 
 showSlide();
-setLang(currentLang());
 startAutoPlay();
-document.body.style.visibility = "visible";
 </script>
 </body>
 </html>
