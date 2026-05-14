@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DepotPilot – Preview für den IBKR Trading Tracker</title>
+<meta name="description" content="DepotPilot ist ein iPhone- und iPad-Tracker für IBKR-Portfolios, Trading-Journal, Marktmodell und Scanner. Diese Seite ist eine frühe Preview mit Interessenliste.">
+<meta name="theme-color" content="#08111b">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jzapps.app/depotpilot/index-de.html">
+<link rel="alternate" hreflang="de" href="https://jzapps.app/depotpilot/index-de.html">
+<link rel="alternate" hreflang="en" href="https://jzapps.app/depotpilot/">
+<link rel="alternate" hreflang="x-default" href="https://jzapps.app/depotpilot/">
+
+<meta property="og:title" content="DepotPilot – Preview für den IBKR Trading Tracker">
+<meta property="og:description" content="Frühe Preview von DepotPilot: Portfolio, Journal, Marktmodell, Scanner und Stop-Loss-Fokus in einer iOS-App.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jzapps.app/depotpilot/index-de.html">
+<meta property="og:image" content="https://jzapps.app/depotpilot/assets/depotpilot.png">
+<meta property="og:site_name" content="DepotPilot">
+<meta property="og:locale" content="de_DE">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DepotPilot – Preview für den IBKR Trading Tracker">
+<meta name="twitter:description" content="Frühe Preview von DepotPilot mit Interessenliste für Marktbeobachter und aktive IBKR-Nutzer.">
+<meta name="twitter:image" content="https://jzapps.app/depotpilot/assets/depotpilot.png">
+
+<style>
+:root{
+  --bg:#08111b;
+  --txt:#eef5ff;
+  --muted:#a8bad2;
+  --line:rgba(255,255,255,.12);
+  --card:rgba(255,255,255,.06);
+  --green:#27AE60;
+  --yellow:#F39C12;
+  --red:#E74C3C;
+  --glow:0 28px 60px rgba(0,0,0,.42);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--txt);
+  background:
+    radial-gradient(900px 500px at 15% 8%,rgba(39,174,96,.16),transparent 55%),
+    radial-gradient(900px 500px at 85% 18%,rgba(243,156,18,.12),transparent 55%),
+    linear-gradient(180deg,#08111b,#0b1522 55%,#08111b);
+}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:40px 18px 72px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:34px}
+.topbar-left{display:flex;align-items:center;gap:14px}
+.back-btn,.lang-btn,.cta,.ghost,.tally-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700}
+.back-btn,.lang-btn{padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:transparent}
+.lang-switch{display:flex;gap:10px}
+.lang-btn.active{background:#eef5ff;color:#08111b;border-color:transparent}
+.brand{font-weight:800}
+.hero{display:grid;grid-template-columns:1.06fr .94fr;gap:42px;align-items:center;margin-bottom:36px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:14px;margin-bottom:18px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 18px rgba(39,174,96,.75)}
+h1{font-size:54px;line-height:1.03;margin:0 0 16px}
+p{margin:0;color:var(--muted);line-height:1.68}
+.hero-copy{max-width:620px}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+.cta,.ghost,.tally-btn{min-height:52px;padding:14px 22px;border-radius:14px}
+.cta{background:linear-gradient(135deg,#27AE60,#7be2a0);color:#07131c}
+.ghost{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)}
+.hero-note{margin-top:14px;font-size:14px}
+.visual-shell{position:relative;padding:22px;border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);box-shadow:var(--glow)}
+.visual-shell::after{content:"";position:absolute;inset:auto 12% 18px;height:28px;filter:blur(28px);background:rgba(0,0,0,.34);border-radius:999px}
+.app-icon{position:relative;z-index:1;display:block;width:min(100%,360px);margin:auto;border-radius:28px}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 36px}
+.badge{padding:18px;border-radius:20px;background:var(--card);border:1px solid var(--line)}
+.badge-title{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+.badge strong{display:block;font-size:22px;margin-bottom:6px}
+.section{margin-top:26px}
+.section h2{font-size:32px;line-height:1.12;margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.card{padding:22px;border-radius:24px;background:var(--card);border:1px solid var(--line);box-shadow:var(--glow)}
+.card h3{margin:0 0 10px;font-size:24px}
+.list{display:grid;gap:12px;margin-top:14px}
+.list-item{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.ampel{width:11px;height:11px;border-radius:50%;margin-top:8px}
+.green{background:var(--green)}
+.yellow{background:var(--yellow)}
+.red{background:var(--red)}
+.tally-box{margin-top:22px;padding:24px;border-radius:24px;border:1px dashed rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+.tally-box h3{margin:0 0 10px;font-size:24px}
+.tally-note{font-size:14px;margin-top:10px}
+.footer{margin-top:42px;font-size:14px;color:var(--muted)}
+@media (max-width:900px){
+  .hero,.grid,.badges{grid-template-columns:1fr}
+  h1{font-size:40px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="back-btn" href="../index-de.html">← Zur Apps-Übersicht</a>
+      <div class="brand">DepotPilot</div>
+    </div>
+    <div class="lang-switch" aria-label="Sprachauswahl">
+      <a class="lang-btn active" href="index-de.html">DE</a>
+      <a class="lang-btn" href="index.html">EN</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span>Frühe Preview · iPhone & iPad</div>
+      <h1>DepotPilot bringt Portfolio, Journal und Marktmodell in einen klaren Trading-Arbeitsfluss.</h1>
+      <p>
+        DepotPilot ist als fokussierter IBKR Trading Tracker gedacht: mit Portfolio-Überblick, Trade Journal,
+        Stop-Loss-Fokus, Markt-Ampeln und einem Scanner für regelbasierte Setups. Diese Seite ist eine erste Web-Preview,
+        während die App weiter entwickelt wird.
+      </p>
+      <div class="actions">
+        <a class="cta" href="#interesse">Interesse vormerken</a>
+        <a class="ghost" href="#funktionen">Preview ansehen</a>
+      </div>
+      <p class="hero-note">Noch nicht im App Store. Inhalte und Umfang können sich bis zum Release verändern.</p>
+    </div>
+    <div class="visual-shell">
+      <img class="app-icon" src="assets/depotpilot.png" alt="DepotPilot App Icon">
+    </div>
+  </section>
+
+  <section class="badges">
+    <div class="badge">
+      <div class="badge-title">Portfolio</div>
+      <strong>IBKR Fokus</strong>
+      <span>Positionen, P&L, Währungen und Journal-Kontext in einem Bildschirm.</span>
+    </div>
+    <div class="badge">
+      <div class="badge-title">Regelwerk</div>
+      <strong>Markt + Scanner</strong>
+      <span>Marktmodell, Ampeln und ein strukturierter SVT-A-Workflow.</span>
+    </div>
+    <div class="badge">
+      <div class="badge-title">Arbeitsfluss</div>
+      <strong>Journal zuerst</strong>
+      <span>Trades, Stop-Loss und Beobachtungen bleiben an einer Stelle pflegbar.</span>
+    </div>
+  </section>
+
+  <section class="section" id="funktionen">
+    <h2>Was die Preview schon zeigen soll</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Für aktive IBKR-Nutzer</h3>
+        <div class="list">
+          <div class="list-item"><span class="ampel green"></span><div>Portfolio mit Aktien, Optionen und Risiko-Hinweisen.</div></div>
+          <div class="list-item"><span class="ampel yellow"></span><div>Trade Journal mit Strategie, Stop-Loss und Kontextdaten.</div></div>
+          <div class="list-item"><span class="ampel red"></span><div>Stop-Loss-Logik und disziplinierter Blick auf offene Risiken.</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Für den täglichen Entscheidungsprozess</h3>
+        <div class="list">
+          <div class="list-item"><span class="ampel green"></span><div>Markt-Tab mit Trend-, VIX- und MMFI-Ampeln.</div></div>
+          <div class="list-item"><span class="ampel yellow"></span><div>Scanner als strukturierter Prüfbereich für Setups und Ausschlüsse.</div></div>
+          <div class="list-item"><span class="ampel red"></span><div>Klare Trennung zwischen universeller App und persönlichem Regelwerk.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="interesse">
+    <div class="tally-box">
+      <h3>Interesse an DepotPilot?</h3>
+      <p>
+        Hier kann später ein echtes Tally-Formular eingebettet oder verlinkt werden, um Interessenten für die Beta,
+        TestFlight oder den Release zu sammeln.
+      </p>
+      <div class="actions" style="margin-top:18px">
+        <a class="tally-btn cta" href="https://tally.so/r/PLACEHOLDER" target="_blank" rel="noopener noreferrer">Tally-Platzhalter öffnen</a>
+        <a class="ghost" href="mailto:juzi7@icloud.com?subject=DepotPilot%20Interesse">Per E-Mail Interesse senden</a>
+      </div>
+      <p class="tally-note">Tally-Link aktuell als Platzhalter: `https://tally.so/r/PLACEHOLDER`</p>
+    </div>
+  </section>
+
+  <p class="footer">
+    DepotPilot ist aktuell in Entwicklung. Diese Preview dient als erste öffentliche Produktvorschau für Website und Interessentenliste.
+  </p>
+</div>
+</body>
+</html>
