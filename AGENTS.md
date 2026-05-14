@@ -82,3 +82,17 @@ Alle Hauptseiten und App-Unterseiten existieren in EN und DE:
 - **Cloudflare:** nur für LiquidityPulse/liquiditypulse.net relevant
 - **liquiditypulse.net:** separates Cloudflare Workers Projekt (nicht in diesem Repo)
 - **iOS Apps:** lokal entwickelt, nicht in GitHub
+
+## Screenshots aktualisieren
+
+Screenshots für App-Unterseiten (z.B. `/liquiditypulse/assets/`) werden über Fastlane erzeugt
+und manuell in dieses Repo kopiert:
+
+1. Screenshots aufnehmen: `bundle exec fastlane appstore_assets` im App-Projekt
+2. Bilder aus `fastlane/screenshots/en-US/` in den `assets/`-Ordner der Unterseite kopieren
+3. Auf 660px Breite skalieren: `sips --resampleWidth 660 screenshot.png`
+4. HTML-Slides in `index.html` und `index-de.html` anpassen
+5. `git add`, `git commit`, `git push` → GitHub Pages veröffentlicht automatisch
+
+**Cache-Hinweis:** Nach dem Push Bilder im Browser mit Cmd+Shift+R neu laden.
+GitHub Pages hat einen eigenen CDN-Cache — Cloudflare ist für jzapps.app nicht im Einsatz.
