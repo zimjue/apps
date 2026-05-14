@@ -89,10 +89,29 @@ Screenshots für App-Unterseiten (z.B. `/liquiditypulse/assets/`) werden über F
 und manuell in dieses Repo kopiert:
 
 1. Screenshots aufnehmen: `bundle exec fastlane appstore_assets` im App-Projekt
-2. Bilder aus `fastlane/screenshots/en-US/` in den `assets/`-Ordner der Unterseite kopieren
-3. Auf 660px Breite skalieren: `sips --resampleWidth 660 screenshot.png`
-4. HTML-Slides in `index.html` und `index-de.html` anpassen
-5. `git add`, `git commit`, `git push` → GitHub Pages veröffentlicht automatisch
+2. **Englische Seite** (`index.html`): Bilder aus `fastlane/screenshots/en-US/` kopieren → `screenshot1.png` … `screenshot5.png`
+3. **Deutsche Seite** (`index-de.html`): Bilder aus `fastlane/screenshots/de-DE/` kopieren → `screenshot1-de.png` … `screenshot5-de.png`
+4. Alle Bilder auf 660px Breite skalieren: `sips --resampleWidth 660 screenshot.png`
+5. HTML-Slides in `index.html` und `index-de.html` bei Bedarf anpassen (Captions, Reihenfolge)
+6. `git add`, `git commit`, `git push` → GitHub Pages veröffentlicht automatisch
+
+### Screenshot-Dateikonvention (LiquidityPulse)
+
+| Datei | Sprache | Inhalt |
+|---|---|---|
+| `screenshot1.png` | EN | Dashboard |
+| `screenshot2.png` | EN | Regime |
+| `screenshot3.png` | EN | Sektor-Rotation |
+| `screenshot4.png` | EN | Charts |
+| `screenshot5.png` | EN | Lead/Lag |
+| `screenshot1-de.png` | DE | Dashboard |
+| `screenshot2-de.png` | DE | Regime |
+| `screenshot3-de.png` | DE | Sektor-Rotation |
+| `screenshot4-de.png` | DE | Charts |
+| `screenshot5-de.png` | DE | Lead/Lag |
+
+Die Reihenfolge entspricht der Tab-Reihenfolge in der App.
+Auflösung: 660×1434 px (iPhone 17 Pro Max, Dark Mode, iOS 26.2).
 
 **Cache-Hinweis:** Nach dem Push Bilder im Browser mit Cmd+Shift+R neu laden.
 GitHub Pages hat einen eigenen CDN-Cache — Cloudflare ist für jzapps.app nicht im Einsatz.
