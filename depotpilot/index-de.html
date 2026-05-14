@@ -71,9 +71,45 @@ p{margin:0;color:var(--muted);line-height:1.68}
 .cta{background:linear-gradient(135deg,#27AE60,#7be2a0);color:#07131c}
 .ghost{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)}
 .hero-note{margin-top:14px;font-size:14px}
-.visual-shell{position:relative;padding:22px;border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);box-shadow:var(--glow)}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.hero-chip{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:14px;color:#dce9fb}
+.visual-shell{position:relative;padding:24px;border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);box-shadow:var(--glow)}
 .visual-shell::after{content:"";position:absolute;inset:auto 12% 18px;height:28px;filter:blur(28px);background:rgba(0,0,0,.34);border-radius:999px}
-.app-icon{position:relative;z-index:1;display:block;width:min(100%,360px);margin:auto;border-radius:28px}
+.phone-stage{position:relative;z-index:1}
+.mini-float{position:absolute;top:-10px;right:-6px;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(12px);font-size:13px;color:#eef5ff}
+.phone{width:min(100%,380px);margin:auto;padding:14px;border-radius:38px;background:linear-gradient(180deg,#1a2434,#0e1622);border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 44px rgba(0,0,0,.45)}
+.phone-top{display:flex;justify-content:center;margin-bottom:12px}
+.phone-notch{width:120px;height:26px;border-radius:999px;background:#0b1118}
+.screen{padding:14px;border-radius:26px;background:
+  radial-gradient(500px 260px at 20% 0%,rgba(39,174,96,.18),transparent 55%),
+  radial-gradient(400px 220px at 100% 12%,rgba(243,156,18,.14),transparent 55%),
+  #0b1320;
+  border:1px solid rgba(255,255,255,.06)
+}
+.screen-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.screen-title{font-size:18px;font-weight:800}
+.screen-sync{font-size:12px;color:var(--muted)}
+.screen-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.summary-box{padding:12px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.summary-label{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.summary-value{font-size:18px;font-weight:800;color:var(--txt)}
+.summary-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.screen-stack{display:grid;gap:10px}
+.mock-card{padding:14px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.mock-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.mock-symbol{font-size:16px;font-weight:800}
+.mock-copy{font-size:12px;color:var(--muted);margin-top:4px}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.mini-pill{padding:6px 9px;border-radius:999px;font-size:11px;font-weight:700}
+.mini-pill.green{background:rgba(39,174,96,.18);color:#9cf0be}
+.mini-pill.yellow{background:rgba(243,156,18,.18);color:#ffd58b}
+.mini-pill.red{background:rgba(231,76,60,.18);color:#ffafa6}
+.mini-pill.neutral{background:rgba(255,255,255,.08);color:#d8e4f4}
+.market-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.market-box{padding:10px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);text-align:center}
+.market-name{font-size:11px;color:var(--muted);margin-bottom:6px}
+.market-state{font-size:13px;font-weight:800}
+.app-icon{display:block;width:78px;height:78px;border-radius:20px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
 .badges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 36px}
 .badge{padding:18px;border-radius:20px;background:var(--card);border:1px solid var(--line)}
 .badge-title{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
@@ -91,11 +127,11 @@ p{margin:0;color:var(--muted);line-height:1.68}
 .red{background:var(--red)}
 .tally-box{margin-top:22px;padding:24px;border-radius:24px;border:1px dashed rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
 .tally-box h3{margin:0 0 10px;font-size:24px}
-.tally-note{font-size:14px;margin-top:10px}
 .footer{margin-top:42px;font-size:14px;color:var(--muted)}
 @media (max-width:900px){
   .hero,.grid,.badges{grid-template-columns:1fr}
   h1{font-size:40px}
+  .mini-float{position:static;margin-bottom:12px;display:inline-flex}
 }
 </style>
 </head>
@@ -115,20 +151,92 @@ p{margin:0;color:var(--muted);line-height:1.68}
   <section class="hero">
     <div class="hero-copy">
       <div class="eyebrow"><span class="dot"></span>Frühe Preview · iPhone & iPad</div>
-      <h1>DepotPilot bringt Portfolio, Journal und Marktmodell in einen klaren Trading-Arbeitsfluss.</h1>
+      <h1>DepotPilot ist für aktive IBKR-Anleger gedacht, die Portfolio, Journal und Marktmodell in einer App führen wollen.</h1>
       <p>
-        DepotPilot ist als fokussierter IBKR Trading Tracker gedacht: mit Portfolio-Überblick, Trade Journal,
-        Stop-Loss-Fokus, Markt-Ampeln und einem Scanner für regelbasierte Setups. Diese Seite ist eine erste Web-Preview,
-        während die App weiter entwickelt wird.
+        Statt zwischen Broker, Notizen und Marktlisten zu springen, bündelt DepotPilot den täglichen Trading-Arbeitsfluss:
+        Portfolio-Überblick, Journal, Risiko-Hinweise, Markt-Ampeln und Scanner in einer fokussierten iPhone- und iPad-App.
       </p>
+      <div class="hero-chips">
+        <div class="hero-chip">Portfolio + Journal</div>
+        <div class="hero-chip">Marktmodell mit Ampeln</div>
+        <div class="hero-chip">Scanner für Setups</div>
+        <div class="hero-chip">Stop-Loss-Fokus</div>
+      </div>
       <div class="actions">
-        <a class="cta" href="#interesse">Interesse vormerken</a>
+        <a class="cta" href="#interesse">TestFlight-Interesse vormerken</a>
         <a class="ghost" href="#funktionen">Preview ansehen</a>
       </div>
-      <p class="hero-note">Noch nicht im App Store. Inhalte und Umfang können sich bis zum Release verändern.</p>
+      <p class="hero-note">In Entwicklung. Noch nicht im App Store. Umfang und UI können sich bis zum Release noch verändern.</p>
     </div>
     <div class="visual-shell">
-      <img class="app-icon" src="assets/depotpilot.png" alt="DepotPilot App Icon">
+      <div class="phone-stage">
+        <div class="mini-float">Coming Soon · Beta-Liste offen</div>
+        <div class="phone">
+          <div class="phone-top">
+            <div class="phone-notch"></div>
+          </div>
+          <div class="screen">
+            <div class="screen-header">
+              <div class="screen-title">DepotPilot</div>
+              <div class="screen-sync">Heute · 16:10</div>
+            </div>
+            <div class="screen-summary">
+              <div class="summary-box">
+                <div class="summary-label">Portfolio</div>
+                <div class="summary-value">€84.240</div>
+                <div class="summary-sub">Unreal. P&amp;L +€2.180</div>
+              </div>
+              <div class="summary-box">
+                <div class="summary-label">Marktmodell</div>
+                <div class="summary-value">2 / 3</div>
+                <div class="summary-sub">Trend frei · VIX im Fokus</div>
+              </div>
+            </div>
+            <div class="screen-stack">
+              <div class="mock-card">
+                <div class="mock-head">
+                  <div>
+                    <div class="mock-symbol">NVDA</div>
+                    <div class="mock-copy">Strategie S1a · Journal verknüpft</div>
+                  </div>
+                  <img class="app-icon" src="assets/depotpilot.png" alt="DepotPilot App Icon">
+                </div>
+                <div class="pill-row">
+                  <div class="mini-pill green">Stop ok</div>
+                  <div class="mini-pill yellow">DTE 21</div>
+                  <div class="mini-pill neutral">Entry 842,50 $</div>
+                </div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-symbol">Markt heute</div>
+                <div class="market-strip">
+                  <div class="market-box">
+                    <div class="market-name">Trend</div>
+                    <div class="market-state" style="color:#9cf0be">Grün</div>
+                  </div>
+                  <div class="market-box">
+                    <div class="market-name">VIX</div>
+                    <div class="market-state" style="color:#ffd58b">Gelb</div>
+                  </div>
+                  <div class="market-box">
+                    <div class="market-name">MMFI</div>
+                    <div class="market-state" style="color:#9cf0be">Grün</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-symbol">Scanner</div>
+                <div class="mock-copy">SVT-A Check für ein neues Setup</div>
+                <div class="pill-row">
+                  <div class="mini-pill green">4 Filter frei</div>
+                  <div class="mini-pill yellow">Signal fehlt</div>
+                  <div class="mini-pill neutral">Watchlist aktiv</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -176,8 +284,7 @@ p{margin:0;color:var(--muted);line-height:1.68}
     <div class="tally-box">
       <h3>Interesse an DepotPilot?</h3>
       <p>
-        Hier kann später ein echtes Tally-Formular eingebettet oder verlinkt werden, um Interessenten für die Beta,
-        TestFlight oder den Release zu sammeln.
+        Wenn dich DepotPilot interessiert, kannst du dich hier für frühe Updates, Beta-Infos oder eine mögliche TestFlight-Runde eintragen.
       </p>
       <div class="actions" style="margin-top:18px">
         <a class="tally-btn cta" href="https://tally.so/r/1AEg8W" target="_blank" rel="noopener noreferrer">Zur Interessentenliste</a>
