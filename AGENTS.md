@@ -78,8 +78,7 @@ Alle Hauptseiten und App-Unterseiten existieren in EN und DE:
 
 - **Hosting:** GitHub Pages — Veröffentlichung automatisch bei `git push origin main`
 - **Remote:** `git@github-zimjue:zimjue/apps.git` (SSH-Alias `github-zimjue` in `~/.ssh/config`)
-- **Domain `jzapps.app`:** registriert bei **IONOS**, DNS über **Cloudflare** (kein Cloudflare Pages/Workers)
-- **Cloudflare (DNS):** `jzapps.app` nutzt Cloudflare nur für DNS — kein Cloudflare Pages/Workers
+- **Domain `jzapps.app`:** registriert bei **IONOS**, DNS bei **IONOS** (Nameserver: ui-dns.org/de/biz/com) — kein Cloudflare
 - **Cloudflare (Workers/Hosting):** `liquiditypulse.net` läuft vollständig über Cloudflare Workers — separates Projekt, nicht in diesem Repo
 - **iOS Apps:** lokal entwickelt, nicht in GitHub
 
@@ -114,4 +113,4 @@ Die Reihenfolge entspricht der Tab-Reihenfolge in der App.
 Auflösung: 660×1434 px (iPhone 17 Pro Max, Dark Mode, iOS 26.2).
 
 **Cache-Hinweis:** Nach dem Push Bilder im Browser mit Cmd+Shift+R neu laden.
-GitHub Pages hat einen eigenen CDN-Cache — Cloudflare Workers/Pages ist für jzapps.app nicht im Einsatz (nur DNS).
+GitHub Pages hat einen eigenen CDN-Cache — Cloudflare ist für jzapps.app nicht im Einsatz (weder DNS noch Pages/Workers).
