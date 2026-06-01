@@ -12,8 +12,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 ## Entwickler
 
 **Jürgen Zimmer** — Indie iOS-Entwickler (Nebenprojekt neben Hauptberuf als IT-Architekt bei BMW)
-**Kontakt:** juzi7@icloud.com
-**Support:** support@jzapps.app
+**Kontakt & Support:** support@jzapps.app
 
 ## Repo-Struktur
 
