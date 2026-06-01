@@ -78,7 +78,7 @@ Alle Hauptseiten und App-Unterseiten existieren in EN und DE:
 
 - **Hosting:** GitHub Pages — Veröffentlichung automatisch bei `git push origin main`
 - **Remote:** `git@github-zimjue:zimjue/apps.git` (SSH-Alias `github-zimjue` in `~/.ssh/config`)
-- **jzapps.app:** GitHub Pages, nicht Cloudflare Pages
+- **Domain `jzapps.app`:** registriert bei **IONOS**, DNS über **Cloudflare** (kein Cloudflare Pages/Workers)
 - **Cloudflare (DNS):** `jzapps.app` nutzt Cloudflare nur für DNS — kein Cloudflare Pages/Workers
 - **Cloudflare (Workers/Hosting):** `liquiditypulse.net` läuft vollständig über Cloudflare Workers — separates Projekt, nicht in diesem Repo
 - **iOS Apps:** lokal entwickelt, nicht in GitHub
