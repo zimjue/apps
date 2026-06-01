@@ -6,8 +6,8 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 
 **Website:** [jzapps.app](https://jzapps.app)
 **Zweck:** Portfolio- und Landingpage für JZ Apps — Indie iOS App-Entwicklung von Jürgen Zimmer, München
-**Hosting:** GitHub Pages
-**Repo:** GitHub (dieses Repository)
+**Hosting:** GitHub Pages (automatische Veröffentlichung bei `git push origin main`)
+**Repo:** `git@github-zimjue:zimjue/apps.git` (Push-Alias: `github-zimjue`)
 
 ## Entwickler
 
@@ -76,9 +76,10 @@ Alle Hauptseiten und App-Unterseiten existieren in EN und DE:
 
 ## Infrastruktur
 
-- **Hosting:** GitHub Pages (Veröffentlichung über GitHub/Repository)
+- **Hosting:** GitHub Pages — Veröffentlichung automatisch bei `git push origin main`
+- **Remote:** `git@github-zimjue:zimjue/apps.git` (SSH-Alias `github-zimjue` in `~/.ssh/config`)
 - **jzapps.app:** GitHub Pages, nicht Cloudflare Pages
-- **Cloudflare:** nur für LiquidityPulse/liquiditypulse.net relevant
+- **Cloudflare:** nur für DNS von `jzapps.app` sowie `liquiditypulse.net` relevant
 - **liquiditypulse.net:** separates Cloudflare Workers Projekt (nicht in diesem Repo)
 - **iOS Apps:** lokal entwickelt, nicht in GitHub
 
