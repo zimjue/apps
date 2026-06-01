@@ -715,25 +715,3 @@ grid-template-columns:1fr;
   .newsletter-cta-inner { flex-direction: column; align-items: flex-start; }
   .newsletter-cta-btn { width: 100%; text-align: center; }
 }
-
-/* ── Hero Newsletter Link ── */
-.hero-newsletter {
-  margin-top: 16px;
-}
-
-.hero-newsletter-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
-  opacity: .85;
-  text-decoration: none;
-  transition: opacity .15s;
-}
-
-.hero-newsletter-link:hover {
-  opacity: 1;
-  text-decoration: none;
-}
