@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter – JZ Apps</title>
+<meta name="description" content="Erhalte exklusive Updates zu neuen Funktionen, App-Starts und zukünftigen Projekten von JZ Apps.">
+<meta name="theme-color" content="#0b1220">
+<link rel="canonical" href="https://jzapps.app/newsletter.html">
+<style>
+:root {
+  --bg: #0b1220;
+  --txt: #eaf0ff;
+  --muted: #b7c2e1;
+  --accent: #66e3ff;
+  --card: rgba(255,255,255,0.05);
+  --line: rgba(255,255,255,.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(900px 500px at 10% 10%, rgba(102,227,255,.12), transparent 55%), var(--bg);
+  color: var(--txt);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Skip Link ── */
+.skip-link {
+  position: absolute; top: -40px; left: 0;
+  padding: 8px 16px; background: var(--accent); color: #04121e;
+  font-weight: 700; border-radius: 0 0 8px 0; z-index: 100; transition: top .1s;
+}
+.skip-link:focus { top: 0; }
+
+/* ── Layout ── */
+.container {
+  max-width: 680px;
+  margin: auto;
+  padding: 40px 20px 60px;
+}
+
+/* ── Topbar ── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  color: var(--txt);
+  font-weight: 700;
+  font-size: 14px;
+  transition: background .15s;
+}
+.back-btn:hover { background: rgba(255,255,255,.06); text-decoration: none; }
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(102,227,255,.1);
+  border: 1px solid rgba(102,227,255,.2);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 800;
+  margin: 0 0 16px;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+
+.hero p {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── Benefits ── */
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 32px 0 40px;
+  text-align: left;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--txt);
+}
+
+.benefit-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Formular-Card ── */
+.form-card {
+  background: linear-gradient(160deg, rgba(102,227,255,.07), rgba(255,255,255,.04));
+  border: 1px solid rgba(102,227,255,.18);
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+}
+
+.form-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.form-card .sub {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+/* iframe wrapper: verhindert Overflow auf kleinen Screens */
+.iframe-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.iframe-wrap iframe {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 12px;
+}
+
+.no-spam {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: 56px;
+  font-size: 14px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .form-card { padding: 24px 16px; }
+  .hero h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+
+<div class="container">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <a href="./index-de.html" class="back-btn">← Alle Apps</a>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero" id="main-content">
+    <div class="hero-eyebrow">✉ Newsletter</div>
+    <h1>Immer als Erste:r informiert.</h1>
+    <p>Erhalte exklusive Updates zu neuen Funktionen, App-Starts und zukünftigen Projekten von JZ Apps.</p>
+  </div>
+
+  <!-- Benefits -->
+  <div class="benefits">
+    <div class="benefit">
+      <span class="benefit-icon">🚀</span>
+      <span>Neue App-Veröffentlichungen — vor allen anderen</span>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">🧪</span>
+      <span>Beta-Tests und früher Zugang zu neuen Features</span>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">⭐</span>
+      <span>Exklusive Funktionen und Insider-Updates</span>
+    </div>
+    <div class="benefit">
+      <span class="benefit-icon">🎁</span>
+      <span>Sonderaktionen für Early Adopter</span>
+    </div>
+  </div>
+
+  <!-- Formular -->
+  <div class="form-card">
+    <h2>Jetzt anmelden</h2>
+    <p class="sub">Einfach E-Mail-Adresse eintragen — fertig.</p>
+    <div class="iframe-wrap">
+      <iframe
+        height="305"
+        src="https://82dbe2d8.sibforms.com/v2/serve/MUIFAGI3pRDY4Q2t4r-7qTk3Zg2e8lXasfhDDU8NqsGXL2GSE3y09OMLbEGr9P0x2fl9bknmKVlZXjaeHk8NaZyzJwHARxWW8jWWpBh2T266yqkYoGFWiRdBql78idE2ZIYubINcp-ga9uePQTs4No3m0j6YMDs7ZXkrD4GEjv7XUtCZj97TbLfdWwXqj_Wvp7mot9MKO_bOmaW_SQ=="
+        scrolling="auto"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="no-spam">Kein Spam. Du kannst dich jederzeit wieder abmelden.</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>© <span id="year"></span> Jürgen Zimmer</span>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="impressum.html">Impressum</a>
+  </div>
+
+</div>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
