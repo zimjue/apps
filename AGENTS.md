@@ -54,7 +54,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 | Lebensrad | /lebensrad/ | id6759198208 |
 | FitnessGoals | /fitnessgoals/ | — |
 
-LiquidityPulse hat zusätzlich eine eigene Website: liquiditypulse.net (separates Cloudflare Workers/Cloudflare-Projekt)
+LiquidityPulse hat zusätzlich eine eigene Website: liquiditypulse.net — gehostet und betrieben über **Cloudflare Workers** (separates Projekt, nicht in diesem Repo)
 
 ## Zweisprachigkeit
 
@@ -79,8 +79,8 @@ Alle Hauptseiten und App-Unterseiten existieren in EN und DE:
 - **Hosting:** GitHub Pages — Veröffentlichung automatisch bei `git push origin main`
 - **Remote:** `git@github-zimjue:zimjue/apps.git` (SSH-Alias `github-zimjue` in `~/.ssh/config`)
 - **jzapps.app:** GitHub Pages, nicht Cloudflare Pages
-- **Cloudflare:** nur für DNS von `jzapps.app` sowie `liquiditypulse.net` relevant
-- **liquiditypulse.net:** separates Cloudflare Workers Projekt (nicht in diesem Repo)
+- **Cloudflare (DNS):** `jzapps.app` nutzt Cloudflare nur für DNS — kein Cloudflare Pages/Workers
+- **Cloudflare (Workers/Hosting):** `liquiditypulse.net` läuft vollständig über Cloudflare Workers — separates Projekt, nicht in diesem Repo
 - **iOS Apps:** lokal entwickelt, nicht in GitHub
 
 ## Screenshots aktualisieren
@@ -114,4 +114,4 @@ Die Reihenfolge entspricht der Tab-Reihenfolge in der App.
 Auflösung: 660×1434 px (iPhone 17 Pro Max, Dark Mode, iOS 26.2).
 
 **Cache-Hinweis:** Nach dem Push Bilder im Browser mit Cmd+Shift+R neu laden.
-GitHub Pages hat einen eigenen CDN-Cache — Cloudflare ist für jzapps.app nicht im Einsatz.
+GitHub Pages hat einen eigenen CDN-Cache — Cloudflare Workers/Pages ist für jzapps.app nicht im Einsatz (nur DNS).
