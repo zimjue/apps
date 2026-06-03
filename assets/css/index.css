@@ -616,25 +616,50 @@ text-align:center;
 /* APP CATEGORIES */
 
 .app-category{
-margin-top:44px;
+margin-top:50px;
 }
 
 .app-category + .app-category{
-margin-top:52px;
+margin-top:58px;
 }
 
 .app-category-label{
-display:inline-block;
-margin-bottom:18px;
-padding:6px 10px;
+display:flex;
+align-items:center;
+gap:14px;
+width:100%;
+margin-bottom:22px;
+color:var(--text);
+font-size:20px;
+font-weight:750;
+letter-spacing:0;
+line-height:1.2;
+text-transform:none;
+}
+
+.app-category-label::before{
+content:attr(data-index);
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-width:34px;
+height:24px;
 border-radius:999px;
 background:rgba(102,227,255,.08);
 border:1px solid rgba(102,227,255,.18);
 color:var(--accent);
-font-size:12px;
-font-weight:700;
+font-size:11px;
+font-weight:800;
 letter-spacing:.08em;
-text-transform:uppercase;
+line-height:1;
+}
+
+.app-category-label::after{
+content:"";
+height:1px;
+flex:1;
+min-width:32px;
+background:linear-gradient(90deg,rgba(102,227,255,.28),rgba(255,255,255,.08),transparent);
 }
 
 /* GRID */
@@ -891,6 +916,20 @@ padding:22px;
 .featured h2,
 .section-intro h2{
 font-size:28px;
+}
+
+.app-category{
+margin-top:38px;
+}
+
+.app-category + .app-category{
+margin-top:44px;
+}
+
+.app-category-label{
+gap:10px;
+margin-bottom:16px;
+font-size:18px;
 }
 
 .featured-links{
