@@ -148,9 +148,42 @@
 <a href="services.html">Collaboration</a>
 <a href="support.html">Support</a>
 </nav>
+<div class="topbar-right">
 <div class="lang-switch" aria-label="Sprachauswahl / Language switch">
 <a class="lang-btn" id="btn-de" href="index-de.html">DE</a>
 <a class="lang-btn active" id="btn-en" href="index.html">EN</a>
+</div>
+<button class="burger-btn" id="burger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+<div class="mobile-nav-topbar">
+<div class="mobile-nav-brand">JZ Apps</div>
+<button class="burger-btn is-open" id="burger-close" aria-label="Close navigation menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+<nav class="mobile-nav-links" aria-label="Mobile navigation">
+<a href="#apps-section">Apps</a>
+<div class="mobile-nav-group-label">App Pages</div>
+<a class="mobile-app-link" href="liquiditypulse/">LiquidityPulse</a>
+<a class="mobile-app-link" href="moneymindshift/">MoneyMindShift</a>
+<a class="mobile-app-link" href="depotpilot/">DepotPilot</a>
+<a class="mobile-app-link" href="erfolgsjournal/">Success Journal</a>
+<a class="mobile-app-link" href="lebensrad/">Life Wheel</a>
+<a class="mobile-app-link" href="fitnessgoals/">FitnessGoals</a>
+<a class="mobile-app-link" href="myvideospace/">MyVideoSpace</a>
+<a href="about.html">About</a>
+<a href="services.html">Collaboration</a>
+<a href="support.html">Support</a>
+</nav>
+<div class="mobile-nav-footer">
+<a class="lang-btn" href="index-de.html">DE</a>
+<a class="lang-btn active" href="index.html">EN</a>
 </div>
 </div>
 
@@ -435,6 +468,42 @@ Independent personal projects. No affiliation with or representation of any empl
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Burger Menu
+(function(){
+  const btn = document.getElementById("burger-btn");
+  const closeBtn = document.getElementById("burger-close");
+  const nav = document.getElementById("mobile-nav");
+
+  function open(){
+    nav.classList.add("is-open");
+    nav.setAttribute("aria-hidden","false");
+    btn.classList.add("is-open");
+    btn.setAttribute("aria-expanded","true");
+    document.body.style.overflow="hidden";
+  }
+
+  function close(){
+    nav.classList.remove("is-open");
+    nav.setAttribute("aria-hidden","true");
+    btn.classList.remove("is-open");
+    btn.setAttribute("aria-expanded","false");
+    document.body.style.overflow="";
+  }
+
+  btn.addEventListener("click", open);
+  closeBtn.addEventListener("click", close);
+
+  // ESC key
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape") close();
+  });
+
+  // Close on link click
+  nav.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", close);
+  });
+})();
 </script>
 
 </body>
