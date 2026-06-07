@@ -438,6 +438,79 @@ p{
   background:var(--accent);
 }
 
+.video-section{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:42px;
+  align-items:center;
+}
+
+.video-copy h2{
+  font-size:28px;
+  margin:0 0 14px;
+}
+
+.video-bullets{
+  list-style:none;
+  padding:0;
+  margin:20px 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.video-bullets li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.video-bullets li::before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 12px rgba(89,240,194,.6);
+  flex-shrink:0;
+}
+
+.video-phone-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.video-phone{
+  position:relative;
+  width:260px;
+  padding:14px;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow);
+}
+
+.video-phone::before{
+  content:"";
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:34%;
+  height:18px;
+  border-radius:0 0 14px 14px;
+  background:rgba(4,8,16,.92);
+  z-index:2;
+}
+
+.video-phone video{
+  display:block;
+  width:100%;
+  border-radius:24px;
+}
+
 .source-grid,
 .note-grid{
   display:grid;
@@ -494,6 +567,11 @@ p{
     grid-template-columns:1fr;
   }
   .slider{min-height:540px}
+  .video-section{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .video-bullets li{justify-content:center}
 }
 
 @media (max-width:640px){
@@ -582,6 +660,27 @@ p{
           <div class="feature-icon">↗</div>
           <h3 id="feature3-title">Regime</h3>
           <p id="feature3-text">A condensed regime view helps you classify supportive, neutral, or defensive market phases faster.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="video-section">
+        <div class="video-copy">
+          <h2>See it in action</h2>
+          <p>Watch how LiquidityPulse turns complex macro and liquidity data into clear, actionable context — in under a minute.</p>
+          <ul class="video-bullets">
+            <li>Global liquidity signals at a glance</li>
+            <li>Regime classification in seconds</li>
+            <li>Sector rotation and lead-lag made visible</li>
+          </ul>
+        </div>
+        <div class="video-phone-wrap">
+          <div class="video-phone">
+            <video autoplay muted loop playsinline>
+              <source src="assets/liquiditypulse-erklaervideo-en.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </section>
