@@ -56,6 +56,26 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 
 LiquidityPulse hat zusätzlich eine eigene Website: liquiditypulse.net — gehostet und betrieben über **Cloudflare Workers** (separates Projekt, nicht in diesem Repo)
 
+### LiquidityPulse – URL-Übersicht
+
+| Zweck | URL | Hinweis |
+|---|---|---|
+| Landingpage (DE) | `jzapps.app/liquiditypulse/index-de.html` | GitHub Pages |
+| Landingpage (EN) | `jzapps.app/liquiditypulse/index.html` | GitHub Pages |
+| Datenschutz (DE) | `jzapps.app/liquiditypulse/datenschutz.html` | App Store + App verwenden diese URL |
+| Datenschutz (EN) | `jzapps.app/liquiditypulse/privacy.html` | App Store + App verwenden diese URL |
+| Live-Dashboard | `liquiditypulse.net` | Cloudflare Workers/Pages |
+| API (Datenproxy) | `liquiditypulse.net/v1/*` | Cloudflare Worker, KV-Cache |
+| iOS-App-Seite | `liquiditypulse.net/ios/` | Cloudflare Pages |
+| Datenschutz iOS (DE) | `liquiditypulse.net/ios/datenschutz.html` | nur auf liquiditypulse.net |
+| Datenschutz iOS (EN) | `liquiditypulse.net/ios/privacy.html` | nur auf liquiditypulse.net |
+
+**Maßgebliche Datenschutz-URLs für App Store und App:**
+- App Store Beschreibung DE: `https://jzapps.app/liquiditypulse/datenschutz.html`
+- App Store Beschreibung EN: `https://jzapps.app/liquiditypulse/privacy.html`
+- Paywall (App, DE): `https://jzapps.app/liquiditypulse/datenschutz.html`
+- Paywall (App, EN): `https://jzapps.app/liquiditypulse/privacy.html`
+
 ## Zweisprachigkeit
 
 Alle Hauptseiten und App-Unterseiten existieren in EN und DE:
