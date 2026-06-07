@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8">
-<script>if(navigator.language&&navigator.language.startsWith('de')&&!sessionStorage.getItem('lang-redirect')){sessionStorage.setItem('lang-redirect','1');location.replace('/index-de.html');}</script>
+<script>if(!localStorage.getItem('lang-chosen')&&navigator.language&&navigator.language.startsWith('de')){location.replace('/index-de.html');}</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
