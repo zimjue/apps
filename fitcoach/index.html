@@ -13,6 +13,7 @@
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://jzapps.app/fitcoach/">
 <link rel="alternate" hreflang="en" href="https://jzapps.app/fitcoach/">
+<link rel="alternate" hreflang="de" href="https://jzapps.app/fitcoach/index-de.html">
 <link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitcoach/">
 
 <meta property="og:title" content="FitCoach – Your AI Fitness Coach">
@@ -76,6 +77,9 @@ a{color:var(--accent);text-decoration:none}
 .back-btn:hover{background:rgba(255,255,255,.06)}
 
 .brand{font-weight:800;font-size:18px;letter-spacing:.2px}
+.lang-switch{display:flex;gap:8px}
+.lang-btn{padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:var(--txt);font-size:13px;font-weight:700}
+.lang-btn.active{background:var(--accent);color:#04121e;border-color:transparent}
 
 .hero{
   text-align:center;
@@ -207,9 +211,14 @@ h2{margin:0 0 14px;font-size:22px}
   <div class="topbar">
     <a href="../index.html" class="back-btn">← All Apps</a>
     <div class="brand">FitCoach</div>
+    <div class="lang-switch">
+      <a class="lang-btn" href="index-de.html">DE</a>
+      <a class="lang-btn active" href="index.html">EN</a>
+    </div>
   </div>
 
   <div class="hero">
+    <img src="assets/fitcoach.png" alt="FitCoach App Icon" style="width:96px;height:96px;border-radius:22px;margin-bottom:22px;box-shadow:0 18px 50px rgba(0,0,0,.35)" loading="eager">
     <div class="eyebrow">
       <span class="eyebrow-dot"></span>
       <span>AI-powered fitness coaching</span>
@@ -244,7 +253,7 @@ h2{margin:0 0 14px;font-size:22px}
       <div class="feature-card">
         <div class="feature-icon">❤️</div>
         <strong>Apple Health</strong>
-        <p>Read-only access to your health data. Raw data never leaves your device.</p>
+        <p>Read-only HealthKit access. Raw records stay on your device; selected summaries are processed securely for AI.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔒</div>

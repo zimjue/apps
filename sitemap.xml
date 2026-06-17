@@ -128,4 +128,18 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/moneymindshift/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/moneymindshift/"/>
   </url>
+  <url>
+    <loc>https://jzapps.app/fitcoach/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/fitcoach/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/fitcoach/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitcoach/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/fitcoach/index-de.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/fitcoach/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/fitcoach/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitcoach/"/>
+  </url>
 </urlset>
