@@ -7,8 +7,8 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>VitaCore AI – AI Fitness Coach</title>
-<meta name="description" content="VitaCore AI analyzes your Apple Health data and creates personalized training plans, nutrition tips, and AI coaching — tailored to your goals.">
+<title>VitaCore AI - AI Fitness Coach</title>
+<meta name="description" content="VitaCore AI analyzes your Apple Health data and creates personalized training plans, nutrition tips, daily insights, and AI coaching.">
 <meta name="theme-color" content="#0b1220">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://jzapps.app/vitacore/">
@@ -16,11 +16,38 @@
 <link rel="alternate" hreflang="de" href="https://jzapps.app/vitacore/index-de.html">
 <link rel="alternate" hreflang="x-default" href="https://jzapps.app/vitacore/">
 
-<meta property="og:title" content="VitaCore AI – AI Fitness Coach">
-<meta property="og:description" content="VitaCore AI analyzes your Apple Health data and creates personalized training plans, nutrition tips, and AI coaching — tailored to your goals.">
+<meta property="og:title" content="VitaCore AI - AI Fitness Coach">
+<meta property="og:description" content="Training plans, nutrition tips, daily insights, and AI coaching based on Apple Health summaries.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jzapps.app/vitacore/">
+<meta property="og:image" content="https://jzapps.app/vitacore/assets/vitacore.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:alt" content="VitaCore AI App Icon">
 <meta property="og:site_name" content="VitaCore AI">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VitaCore AI - AI Fitness Coach">
+<meta name="twitter:description" content="Personalized fitness coaching powered by your Apple Health summaries.">
+<meta name="twitter:image" content="https://jzapps.app/vitacore/assets/vitacore.png">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"VitaCore AI",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"iOS",
+  "description":"VitaCore AI analyzes Apple Health summaries and creates personalized training plans, nutrition tips, daily insights, and AI coaching.",
+  "url":"https://jzapps.app/vitacore/",
+  "image":"https://jzapps.app/vitacore/assets/vitacore.png",
+  "publisher":{
+    "@type":"Person",
+    "name":"Jürgen Zimmer"
+  }
+}
+</script>
 
 <style>
 :root{
@@ -28,8 +55,12 @@
   --txt:#eaf0ff;
   --muted:#b7c2e1;
   --accent:#66e3ff;
+  --green:#39d98a;
+  --coral:#ff7a72;
+  --violet:#a78bfa;
   --card:rgba(255,255,255,.06);
   --line:rgba(255,255,255,.12);
+  --shadow:0 30px 70px rgba(0,0,0,.45);
 }
 
 *{box-sizing:border-box}
@@ -39,64 +70,93 @@ body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   background:
-    radial-gradient(1200px 600px at 20% 10%,rgba(102,227,255,.15),transparent 55%),
-    radial-gradient(900px 500px at 85% 35%,rgba(57,217,138,.10),transparent 55%),
+    radial-gradient(1200px 600px at 20% 10%,rgba(102,227,255,.18),transparent 55%),
+    radial-gradient(900px 500px at 90% 36%,rgba(57,217,138,.14),transparent 55%),
+    radial-gradient(700px 460px at 48% 96%,rgba(255,122,114,.10),transparent 60%),
     var(--bg);
   color:var(--txt);
 }
 
-a{color:var(--accent);text-decoration:none}
+a{color:inherit}
 
 .wrap{
-  max-width:900px;
+  max-width:1080px;
   margin:auto;
-  padding:40px 20px 72px;
+  padding:40px 18px 72px;
 }
 
 .topbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:48px;
+  margin-bottom:36px;
   gap:16px;
 }
 
-.back-btn{
+.topbar-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.back-btn,.lang-btn,.cta,.ghost,.support-link{
   display:inline-flex;
   align-items:center;
-  gap:8px;
+  justify-content:center;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.back-btn,.lang-btn{
   padding:8px 14px;
   border-radius:10px;
   border:1px solid rgba(255,255,255,.18);
   background:transparent;
   color:var(--txt);
-  text-decoration:none;
-  font-weight:700;
+  white-space:nowrap;
 }
 
-.back-btn:hover{background:rgba(255,255,255,.06)}
+.back-btn:hover,.lang-btn:hover{background:rgba(255,255,255,.06)}
 
-.brand{font-weight:800;font-size:18px;letter-spacing:.2px}
-.lang-switch{display:flex;gap:8px}
-.lang-btn{padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:var(--txt);font-size:13px;font-weight:700}
-.lang-btn.active{background:var(--accent);color:#04121e;border-color:transparent}
+.brand{
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.lang-switch{
+  display:flex;
+  gap:10px;
+}
+
+.lang-btn.active{
+  background:var(--accent);
+  color:#04121e;
+  border-color:transparent;
+}
 
 .hero{
-  text-align:center;
-  padding:48px 0 36px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:42px;
+  align-items:center;
+  margin-bottom:42px;
 }
+
+.hero-copy{max-width:580px;min-width:0}
+.hero-image{min-width:0}
 
 .eyebrow{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding:8px 14px;
+  padding:8px 12px;
   border-radius:999px;
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.08);
   color:var(--muted);
   font-size:14px;
-  margin-bottom:22px;
+  margin-bottom:18px;
 }
 
 .eyebrow-dot{
@@ -109,84 +169,260 @@ a{color:var(--accent);text-decoration:none}
 
 h1{
   font-size:52px;
-  line-height:1.06;
-  margin:0 0 18px;
+  line-height:1.04;
+  margin:0 0 16px;
 }
 
-.hero p{
+p{
   color:var(--muted);
-  font-size:18px;
   line-height:1.65;
-  max-width:580px;
-  margin:0 auto 32px;
+  margin:0;
+}
+
+.hero-actions{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.cta,.ghost{
+  min-height:52px;
+  padding:14px 22px;
+  border-radius:14px;
+}
+
+.cta{
+  background:linear-gradient(135deg,var(--accent),var(--green));
+  color:#04121e;
+}
+
+.ghost{
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.03);
+}
+
+.store-note{
+  margin-top:14px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.hero-image{
+  display:flex;
+  justify-content:center;
+}
+
+.device-shell{
+  position:relative;
+  width:100%;
+  max-width:380px;
+  padding:14px;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow);
+}
+
+.device-shell::before{
+  content:"";
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:34%;
+  height:18px;
+  border-radius:0 0 14px 14px;
+  background:rgba(4,8,16,.92);
+  z-index:2;
+}
+
+.phone-screen{
+  min-height:610px;
+  padding:46px 18px 18px;
+  border-radius:24px;
+  background:
+    radial-gradient(460px 240px at 18% 0%,rgba(102,227,255,.18),transparent 58%),
+    radial-gradient(420px 240px at 100% 16%,rgba(57,217,138,.14),transparent 55%),
+    #10192a;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.screen-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.screen-title{
+  font-size:19px;
+  font-weight:800;
+}
+
+.app-icon{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  box-shadow:0 12px 28px rgba(0,0,0,.35);
+}
+
+.metric-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.metric,.mock-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:14px;
+}
+
+.metric-label{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+
+.metric-value{
+  font-size:20px;
+  font-weight:800;
+}
+
+.metric-sub,.mock-copy{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+  margin-top:4px;
+}
+
+.screen-stack{
+  display:grid;
+  gap:10px;
+}
+
+.mock-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:start;
+}
+
+.mock-title{
+  font-size:16px;
+  font-weight:800;
+}
+
+.status-pill{
+  padding:6px 9px;
+  border-radius:999px;
+  background:rgba(57,217,138,.16);
+  color:#9cf0be;
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.chip-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+
+.chip{
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  color:#dce9fb;
+  font-size:12px;
+  font-weight:700;
 }
 
 .card{
   background:var(--card);
   border:1px solid var(--line);
-  border-radius:20px;
-  padding:28px;
-  margin-top:24px;
+  border-radius:24px;
+  padding:30px;
+  margin-top:28px;
+  backdrop-filter:blur(10px);
 }
 
-h2{margin:0 0 14px;font-size:22px}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.section-head h2,.card h2{
+  margin:0;
+  font-size:28px;
+}
+
+.section-head p{
+  max-width:560px;
+}
 
 .features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:16px;
+  gap:18px;
   margin-top:20px;
 }
 
 .feature-card{
   background:rgba(255,255,255,.035);
   border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
-  padding:20px;
+  border-radius:20px;
+  padding:22px;
 }
 
 .feature-icon{
-  width:40px;
-  height:40px;
-  border-radius:12px;
+  width:44px;
+  height:44px;
+  border-radius:14px;
   display:grid;
   place-items:center;
-  font-size:18px;
-  margin-bottom:12px;
+  font-size:20px;
+  margin-bottom:14px;
   background:linear-gradient(180deg,rgba(102,227,255,.18),rgba(102,227,255,.06));
   border:1px solid rgba(102,227,255,.18);
 }
 
-.feature-card strong{display:block;margin-bottom:6px}
-.feature-card p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+.feature-card strong{
+  display:block;
+  margin-bottom:8px;
+}
+
+.feature-card p{
+  font-size:14px;
+}
 
 .support-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:28px;
-  margin-top:24px;
+  text-align:center;
 }
-
-.support-card p{color:var(--muted);line-height:1.65;margin:0 0 16px}
 
 .support-link{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 18px;
-  border-radius:10px;
-  background:rgba(102,227,255,.1);
-  border:1px solid rgba(102,227,255,.2);
+  margin-top:18px;
+  min-height:48px;
+  padding:12px 20px;
+  border-radius:14px;
+  background:rgba(102,227,255,.10);
+  border:1px solid rgba(102,227,255,.22);
   color:var(--accent);
-  font-weight:600;
-  font-size:15px;
 }
 
-.support-link:hover{background:rgba(102,227,255,.16)}
-
 .footer{
-  margin-top:56px;
+  margin-top:64px;
   font-size:13px;
   color:var(--muted);
   display:flex;
@@ -195,79 +431,187 @@ h2{margin:0 0 14px;font-size:22px}
   flex-wrap:wrap;
 }
 
-.footer a{color:var(--muted)}
+.footer a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
 .footer a:hover{text-decoration:underline}
 
-@media(max-width:640px){
-  h1{font-size:38px}
+.back-btn:focus-visible,
+.lang-btn:focus-visible,
+.cta:focus-visible,
+.ghost:focus-visible,
+.support-link:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
+@media (max-width:860px){
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero{
+    grid-template-columns:minmax(0,1fr);
+    text-align:center;
+  }
+  .hero-copy{max-width:100%;min-width:0}
+  .hero-actions{justify-content:center}
+  .section-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
   .features{grid-template-columns:1fr}
-  .wrap{padding:24px 16px 56px}
+}
+
+@media (max-width:640px){
+  .wrap{padding:24px 14px 56px;overflow:hidden}
+  h1{font-size:34px;overflow-wrap:anywhere}
+  .card{padding:22px}
+  .phone-screen{min-height:540px}
+  .hero,.hero-copy,.hero-image{width:100%;max-width:100%;min-width:0}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .cta,.ghost{width:100%;max-width:280px;margin:0 auto}
+  .device-shell{max-width:calc(100vw - 56px)}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-
   <div class="topbar">
-    <a href="../index.html" class="back-btn">← All Apps</a>
-    <div class="brand">VitaCore AI</div>
-    <div class="lang-switch">
+    <div class="topbar-left">
+      <a href="../index.html" class="back-btn">← All Apps</a>
+      <div class="brand">VitaCore AI</div>
+    </div>
+
+    <div class="lang-switch" aria-label="Language switch">
       <a class="lang-btn" href="index-de.html">DE</a>
       <a class="lang-btn active" href="index.html">EN</a>
     </div>
   </div>
 
-  <div class="hero">
-    <img src="assets/vitacore.png" alt="VitaCore AI App Icon" style="width:96px;height:96px;border-radius:22px;margin-bottom:22px;box-shadow:0 18px 50px rgba(0,0,0,.35)" loading="eager">
-    <div class="eyebrow">
-      <span class="eyebrow-dot"></span>
-      <span>AI-powered fitness coaching</span>
-    </div>
-    <h1>VitaCore AI</h1>
-    <p>Train smarter every day. VitaCore AI analyzes your Apple Health data and creates personalized training plans, nutrition tips, and AI coaching — tailored to your goals and your body.</p>
-  </div>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>AI-powered fitness coaching</span>
+        </div>
 
-  <div class="card">
-    <h2>Features</h2>
-    <div class="features">
-      <div class="feature-card">
-        <div class="feature-icon">🏋️</div>
-        <strong>7-Day Training Plan</strong>
-        <p>A personalized plan generated daily from your Apple Health data and training history.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🥗</div>
-        <strong>Nutrition Tips</strong>
-        <p>Daily nutrition guidance adapted to your activity level and goals.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">✦</div>
-        <strong>AI Coach</strong>
-        <p>Chat with your personal AI coach — ask questions, get insights, stay motivated.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <strong>Daily Analysis</strong>
-        <p>A daily health snapshot with trends across steps, sleep, heart rate, and more.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">❤️</div>
-        <strong>Apple Health</strong>
-        <p>Read-only HealthKit access. Raw records stay on your device; selected summaries are processed securely for AI.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <strong>Privacy-First</strong>
-        <p>No analytics, no tracking. Your data stays on your device or is processed securely for AI.</p>
-      </div>
-    </div>
-  </div>
+        <h1>VitaCore AI.<br>Your personal<br>fitness coach.</h1>
+        <p>Get daily training plans, nutrition tips, health insights, and an AI coach that adapts to your goals, activity, recovery, and body metrics.</p>
 
-  <div class="support-card">
-    <h2>Support</h2>
-    <p>Questions, feedback, or issues? We are happy to help.</p>
-    <a class="support-link" href="mailto:support@jzapps.app?subject=VitaCore%20AI%20Support">support@jzapps.app</a>
-  </div>
+        <div class="hero-actions">
+          <a class="cta" href="mailto:support@jzapps.app?subject=VitaCore%20AI%20Support">Contact support</a>
+          <a class="ghost" href="#features">See features</a>
+        </div>
+        <p class="store-note">Pre-release. Not on the App Store yet. Built for iPhone and iPad with read-only Apple Health access.</p>
+      </div>
+
+      <div class="hero-image">
+        <div class="device-shell">
+          <div class="phone-screen">
+            <div class="screen-header">
+              <div>
+                <div class="screen-title">VitaCore AI</div>
+                <div class="metric-sub">Today · Health summary ready</div>
+              </div>
+              <img class="app-icon" src="assets/vitacore.png" alt="VitaCore AI App Icon" loading="eager">
+            </div>
+
+            <div class="metric-grid">
+              <div class="metric">
+                <div class="metric-label">Readiness</div>
+                <div class="metric-value">Good</div>
+                <div class="metric-sub">Sleep and activity balanced</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Plan</div>
+                <div class="metric-value">7 days</div>
+                <div class="metric-sub">Adjusted daily</div>
+              </div>
+            </div>
+
+            <div class="screen-stack">
+              <div class="mock-card">
+                <div class="mock-head">
+                  <div>
+                    <div class="mock-title">Today's training</div>
+                    <div class="mock-copy">Zone 2 run · mobility · hamstring focus</div>
+                  </div>
+                  <div class="status-pill">Ready</div>
+                </div>
+                <div class="chip-row">
+                  <div class="chip">VO2 max</div>
+                  <div class="chip">Recovery</div>
+                  <div class="chip">Flexibility</div>
+                </div>
+              </div>
+
+              <div class="mock-card">
+                <div class="mock-title">AI insight</div>
+                <div class="mock-copy">Your steps are high enough for a lighter strength day. Keep intensity controlled and protect recovery.</div>
+              </div>
+
+              <div class="mock-card">
+                <div class="mock-title">Coach chat</div>
+                <div class="mock-copy">Ask what to train today, how to adapt your plan, or how nutrition should support your current goal.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="features">
+      <div class="section-head">
+        <div>
+          <h2>Features</h2>
+        </div>
+        <p>VitaCore AI combines training, nutrition, recovery, and body composition in one focused coaching flow.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">◎</div>
+          <strong>7-day training plan</strong>
+          <p>A personalized plan generated from Apple Health summaries, your goals, and your training history.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">✦</div>
+          <strong>AI coach chat</strong>
+          <p>Ask questions, adapt workouts, and get coaching context based on your current data.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">♡</div>
+          <strong>Daily insights</strong>
+          <p>Understand steps, sleep, heart signals, body metrics, workouts, and VO2 max trends.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">▣</div>
+          <strong>Nutrition tips</strong>
+          <p>Daily guidance that supports fat loss, endurance, strength, and recovery goals.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌁</div>
+          <strong>Goal focus</strong>
+          <p>Choose goals such as reducing belly fat, improving hamstring flexibility, endurance, or strength.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌾</div>
+          <strong>Privacy-first</strong>
+          <p>HealthKit access is read-only. Raw Apple Health records stay on your device.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card support-card">
+      <h2>Support</h2>
+      <p>Questions, feedback, or issues? We are happy to help.</p>
+      <a class="support-link" href="mailto:support@jzapps.app?subject=VitaCore%20AI%20Support">support@jzapps.app</a>
+    </section>
+  </main>
 
   <div class="footer">
     <div>© <span id="y"></span> Jürgen Zimmer</div>
@@ -278,7 +622,6 @@ h2{margin:0 0 14px;font-size:22px}
       <a href="../index.html">JZ Apps</a>
     </div>
   </div>
-
 </div>
 <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>

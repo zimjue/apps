@@ -37,7 +37,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 ├── assets/                 ← Bilder, SVG
 ├── erfolgsjournal/         ← App-Landingpage
 ├── fitnessgoals/
-├── fitcoach/
+├── vitacore/
 ├── lebensrad/
 ├── liquiditypulse/
 ├── moneymindshift/
@@ -54,7 +54,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 | Erfolgsjournal | /erfolgsjournal/ | id6760969693 |
 | Lebensrad | /lebensrad/ | id6759198208 |
 | FitnessGoals | /fitnessgoals/ | — |
-| FitCoach | /fitcoach/ | Pre-Release |
+| VitaCore AI | /vitacore/ | Pre-Release |
 
 LiquidityPulse hat zusätzlich eine eigene Website: liquiditypulse.net — gehostet und betrieben über **Cloudflare Workers** (separates Projekt, nicht in diesem Repo)
 
