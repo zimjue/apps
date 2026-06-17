@@ -4,14 +4,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jzapps.app/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/"/>
   </url>
   <url>
     <loc>https://jzapps.app/index-de.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/index-de.html"/>
@@ -57,6 +57,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/liquiditypulse/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/liquiditypulse/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/liquiditypulse/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/depotpilot/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/depotpilot/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/depotpilot/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/depotpilot/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/depotpilot/index-de.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/depotpilot/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/depotpilot/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/depotpilot/"/>
   </url>
   <url>
     <loc>https://jzapps.app/myvideospace/</loc>
