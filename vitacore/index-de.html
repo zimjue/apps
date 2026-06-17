@@ -216,8 +216,7 @@ p{
 
 .device-shell{
   position:relative;
-  width:100%;
-  max-width:380px;
+  width:min(100%, 360px);
   padding:14px;
   border-radius:34px;
   background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
@@ -236,114 +235,6 @@ p{
   border-radius:0 0 14px 14px;
   background:rgba(4,8,16,.92);
   z-index:2;
-}
-
-.phone-screen{
-  min-height:610px;
-  padding:46px 18px 18px;
-  border-radius:24px;
-  background:
-    radial-gradient(460px 240px at 18% 0%,rgba(102,227,255,.18),transparent 58%),
-    radial-gradient(420px 240px at 100% 16%,rgba(57,217,138,.14),transparent 55%),
-    #10192a;
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.screen-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:18px;
-}
-
-.screen-title{
-  font-size:19px;
-  font-weight:800;
-}
-
-.app-icon{
-  width:70px;
-  height:70px;
-  border-radius:18px;
-  box-shadow:0 12px 28px rgba(0,0,0,.35);
-}
-
-.metric-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
-  margin-bottom:12px;
-}
-
-.metric,.mock-card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
-  padding:14px;
-}
-
-.metric-label{
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  color:var(--muted);
-  margin-bottom:6px;
-}
-
-.metric-value{
-  font-size:20px;
-  font-weight:800;
-}
-
-.metric-sub,.mock-copy{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
-  margin-top:4px;
-}
-
-.screen-stack{
-  display:grid;
-  gap:10px;
-}
-
-.mock-head{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  align-items:start;
-}
-
-.mock-title{
-  font-size:16px;
-  font-weight:800;
-}
-
-.status-pill{
-  padding:6px 9px;
-  border-radius:999px;
-  background:rgba(57,217,138,.16);
-  color:#9cf0be;
-  font-size:11px;
-  font-weight:800;
-  white-space:nowrap;
-}
-
-.chip-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:12px;
-}
-
-.chip{
-  padding:7px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.08);
-  color:#dce9fb;
-  font-size:12px;
-  font-weight:700;
 }
 
 .card{
@@ -407,6 +298,121 @@ p{
   font-size:14px;
 }
 
+.slider-wrap{
+  position:relative;
+}
+
+.slider{
+  position:relative;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    radial-gradient(500px 200px at 50% 0%,rgba(102,227,255,.08),transparent 60%),
+    rgba(255,255,255,.03);
+  overflow:hidden;
+}
+
+.slider::after{
+  content:"";
+  position:absolute;
+  inset:auto 12% 18px;
+  height:32px;
+  filter:blur(28px);
+  background:rgba(0,0,0,.35);
+  border-radius:999px;
+}
+
+.slide-frame{
+  position:relative;
+  z-index:1;
+  width:min(100%, 360px);
+  padding:14px;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--shadow);
+}
+
+.slide-frame::before{
+  content:"";
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:34%;
+  height:18px;
+  border-radius:0 0 14px 14px;
+  background:rgba(4,8,16,.92);
+  z-index:2;
+}
+
+.app-screenshot{
+  display:block;
+  width:100%;
+  border-radius:24px;
+}
+
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(8,14,27,.72);
+  color:white;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  z-index:3;
+  backdrop-filter:blur(10px);
+}
+
+.slide-btn:hover{background:rgba(12,20,38,.9)}
+.prev{left:18px}
+.next{right:18px}
+
+.slider-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+
+.slide-caption{
+  font-size:15px;
+  color:var(--muted);
+}
+
+.dots{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.22);
+  cursor:pointer;
+  padding:0;
+}
+
+.dot.active{
+  width:28px;
+  border-radius:999px;
+  background:var(--accent);
+}
+
 .support-card{
   text-align:center;
 }
@@ -440,6 +446,8 @@ p{
 
 .back-btn:focus-visible,
 .lang-btn:focus-visible,
+.slide-btn:focus-visible,
+.dot:focus-visible,
 .cta:focus-visible,
 .ghost:focus-visible,
 .support-link:focus-visible{
@@ -463,17 +471,25 @@ p{
     align-items:flex-start;
   }
   .features{grid-template-columns:1fr}
+  .slider{min-height:540px}
 }
 
 @media (max-width:640px){
   .wrap{padding:24px 14px 56px;overflow:hidden}
-  h1{font-size:34px;overflow-wrap:anywhere}
+  h1{font-size:32px;overflow-wrap:anywhere}
   .card{padding:22px}
-  .phone-screen{min-height:540px}
+  .slider{min-height:470px}
+  .slide-btn{
+    width:42px;
+    height:42px;
+    font-size:24px;
+  }
+  .prev{left:10px}
+  .next{right:10px}
   .hero,.hero-copy,.hero-image{width:100%;max-width:100%;min-width:0}
   .hero-actions{flex-direction:column;align-items:stretch}
   .cta,.ghost{width:100%;max-width:280px;margin:0 auto}
-  .device-shell{max-width:calc(100vw - 56px)}
+  .device-shell{width:min(100%, calc(100vw - 56px))}
 }
 </style>
 </head>
@@ -511,55 +527,31 @@ p{
 
       <div class="hero-image">
         <div class="device-shell">
-          <div class="phone-screen">
-            <div class="screen-header">
-              <div>
-                <div class="screen-title">VitaCore AI</div>
-                <div class="metric-sub">Heute · Health-Zusammenfassung bereit</div>
-              </div>
-              <img class="app-icon" src="assets/vitacore.png" alt="VitaCore AI App Icon" loading="eager">
-            </div>
+          <img class="app-screenshot" src="assets/screenshot1-de.png" alt="VitaCore AI App Screenshot" loading="eager">
+        </div>
+      </div>
+    </section>
 
-            <div class="metric-grid">
-              <div class="metric">
-                <div class="metric-label">Tagesform</div>
-                <div class="metric-value">Gut</div>
-                <div class="metric-sub">Schlaf und Aktivität im Gleichgewicht</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Plan</div>
-                <div class="metric-value">7 Tage</div>
-                <div class="metric-sub">Täglich angepasst</div>
-              </div>
-            </div>
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2 id="shots-title">App Einblicke</h2>
+        </div>
+        <p id="shots-text">Dark-Mode-Einblicke in VitaCore AI: Übersicht, Trainingsplan, Ernährung, Coach und Verlauf.</p>
+      </div>
 
-            <div class="screen-stack">
-              <div class="mock-card">
-                <div class="mock-head">
-                  <div>
-                    <div class="mock-title">Training heute</div>
-                    <div class="mock-copy">Zone-2-Lauf · Mobility · Fokus Hamstrings</div>
-                  </div>
-                  <div class="status-pill">Bereit</div>
-                </div>
-                <div class="chip-row">
-                  <div class="chip">VO2max</div>
-                  <div class="chip">Erholung</div>
-                  <div class="chip">Flexibilität</div>
-                </div>
-              </div>
-
-              <div class="mock-card">
-                <div class="mock-title">KI-Auswertung</div>
-                <div class="mock-copy">Deine Schritte reichen für einen leichteren Krafttag. Halte die Intensität kontrolliert und schütze die Erholung.</div>
-              </div>
-
-              <div class="mock-card">
-                <div class="mock-title">Coach-Chat</div>
-                <div class="mock-copy">Frage, was du heute trainieren solltest, wie du den Plan anpasst oder wie Ernährung dein aktuelles Ziel unterstützt.</div>
-              </div>
-            </div>
+      <div class="slider-wrap" aria-label="Screenshot Karussell">
+        <div class="slider" id="slider" tabindex="0">
+          <button class="slide-btn prev" type="button" onclick="prevSlide()" aria-label="Vorheriger Screenshot">&lsaquo;</button>
+          <div class="slide-frame">
+            <img id="slider-image" src="assets/screenshot1-de.png" class="app-screenshot" alt="VitaCore AI App Screenshot" loading="eager">
           </div>
+          <button class="slide-btn next" type="button" onclick="nextSlide()" aria-label="Nächster Screenshot">&rsaquo;</button>
+        </div>
+
+        <div class="slider-meta">
+          <div class="slide-caption" id="slide-caption">Übersicht mit Health-Daten, Zielen und Tagesfokus</div>
+          <div class="dots" id="dots" aria-label="Screenshot Auswahl"></div>
         </div>
       </div>
     </section>
@@ -623,6 +615,119 @@ p{
     </div>
   </div>
 </div>
-<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+
+const screenshots = [
+  "assets/screenshot1-de.png",
+  "assets/screenshot2-de.png",
+  "assets/screenshot3-de.png",
+  "assets/screenshot4-de.png",
+  "assets/screenshot5-de.png"
+];
+const screenshotAlt = "VitaCore AI App Screenshot";
+const captions = [
+  "Übersicht mit Health-Daten, Zielen und Tagesfokus",
+  "7-Tage-Trainingsplan mit konkreten Einheiten",
+  "Ernährung mit Food-Kontext und Coach-Tipps",
+  "KI-Coach mit persönlichem Trainingskontext",
+  "Verlauf mit Auswertungen und Trends"
+];
+
+let currentSlide = 0;
+let autoPlay = null;
+
+function buildDots(){
+  const dots = document.getElementById("dots");
+  dots.innerHTML = "";
+  screenshots.forEach((_, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "dot" + (index === currentSlide ? " active" : "");
+    button.setAttribute("aria-label", `Screenshot ${index + 1}`);
+    button.onclick = () => goToSlide(index);
+    dots.appendChild(button);
+  });
+}
+
+function updateSlideMeta(){
+  document.getElementById("slider-image").src = screenshots[currentSlide];
+  document.getElementById("slider-image").alt = screenshotAlt;
+  document.getElementById("slide-caption").textContent = captions[currentSlide] || "";
+
+  [...document.querySelectorAll(".dot")].forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentSlide);
+    dot.setAttribute("aria-current", index === currentSlide ? "true" : "false");
+  });
+}
+
+function showSlide(){
+  buildDots();
+  updateSlideMeta();
+}
+
+function goToSlide(index){
+  currentSlide = index;
+  updateSlideMeta();
+  restartAutoPlay();
+}
+
+function nextSlide(){
+  currentSlide = (currentSlide + 1) % screenshots.length;
+  updateSlideMeta();
+  restartAutoPlay();
+}
+
+function prevSlide(){
+  currentSlide = (currentSlide - 1 + screenshots.length) % screenshots.length;
+  updateSlideMeta();
+  restartAutoPlay();
+}
+
+function startAutoPlay(){
+  stopAutoPlay();
+  autoPlay = setInterval(() => {
+    currentSlide = (currentSlide + 1) % screenshots.length;
+    updateSlideMeta();
+  }, 4500);
+}
+
+function stopAutoPlay(){
+  if(autoPlay) clearInterval(autoPlay);
+}
+
+function restartAutoPlay(){
+  startAutoPlay();
+}
+
+const slider = document.getElementById("slider");
+
+slider.addEventListener("mouseenter", stopAutoPlay);
+slider.addEventListener("mouseleave", startAutoPlay);
+slider.addEventListener("focusin", stopAutoPlay);
+slider.addEventListener("focusout", startAutoPlay);
+
+slider.addEventListener("keydown", (event) => {
+  if(event.key === "ArrowRight") nextSlide();
+  if(event.key === "ArrowLeft") prevSlide();
+});
+
+let touchStartX = 0;
+
+slider.addEventListener("touchstart", (event) => {
+  touchStartX = event.changedTouches[0].clientX;
+}, {passive:true});
+
+slider.addEventListener("touchend", (event) => {
+  const touchEndX = event.changedTouches[0].clientX;
+  const delta = touchEndX - touchStartX;
+  if(Math.abs(delta) > 40){
+    delta < 0 ? nextSlide() : prevSlide();
+  }
+}, {passive:true});
+
+showSlide();
+startAutoPlay();
+</script>
 </body>
 </html>
