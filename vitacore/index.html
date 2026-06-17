@@ -100,7 +100,7 @@ a{color:inherit}
   min-width:0;
 }
 
-.back-btn,.lang-btn,.cta,.ghost,.support-link{
+.back-btn,.lang-btn,.cta,.ghost{
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -420,18 +420,8 @@ p{
   background:var(--accent);
 }
 
-.support-card{
+.cta-card{
   text-align:center;
-}
-
-.support-link{
-  margin-top:18px;
-  min-height:48px;
-  padding:12px 20px;
-  border-radius:14px;
-  background:rgba(102,227,255,.10);
-  border:1px solid rgba(102,227,255,.22);
-  color:var(--accent);
 }
 
 .footer{
@@ -456,8 +446,7 @@ p{
 .slide-btn:focus-visible,
 .dot:focus-visible,
 .cta:focus-visible,
-.ghost:focus-visible,
-.support-link:focus-visible{
+.ghost:focus-visible{
   outline:2px solid var(--accent);
   outline-offset:3px;
 }
@@ -526,7 +515,7 @@ p{
         <p>Get daily training plans, nutrition tips, health insights, and an AI coach that adapts to your goals, activity, recovery, and body metrics.</p>
 
         <div class="hero-actions">
-          <a class="cta" href="mailto:support@jzapps.app?subject=VitaCore%20AI%20Support">Contact support</a>
+          <a class="cta" href="../support.html">Contact support</a>
           <a class="ghost" href="#features">See features</a>
         </div>
         <p class="store-note">Pre-release. Not on the App Store yet. Built for iPhone and iPad with read-only Apple Health access.</p>
@@ -605,20 +594,22 @@ p{
       </div>
     </section>
 
-    <section class="card support-card">
-      <h2>Support</h2>
-      <p>Questions, feedback, or issues? We are happy to help.</p>
-      <a class="support-link" href="mailto:support@jzapps.app?subject=VitaCore%20AI%20Support">support@jzapps.app</a>
+    <section class="card cta-card">
+      <h2 id="cta-title">Questions about VitaCore AI?</h2>
+      <p id="cta-text">Open the central support page for contact, privacy, and help with jzapps apps.</p>
+
+      <div class="hero-actions" style="justify-content:center">
+        <a class="cta" href="../support.html">Open support</a>
+      </div>
     </section>
   </main>
 
   <div class="footer">
     <div>© <span id="y"></span> Jürgen Zimmer</div>
     <div>
-      <a href="privacy.html">Privacy Policy</a> ·
-      <a href="datenschutz.html">Datenschutz</a> ·
-      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">EULA</a> ·
-      <a href="../index.html">JZ Apps</a>
+      <a id="privacy-link" href="privacy.html">Privacy</a> · <a href="../newsletter.html">Newsletter</a> ·
+      <a id="support-link" href="../support.html">Support</a> ·
+      <a id="eula-link" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">EULA</a>
     </div>
   </div>
 </div>
