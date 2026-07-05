@@ -862,6 +862,12 @@ transform:translateY(-1px);
 .app-store-badge{
 display:inline-block;
 line-height:0;
+transition:transform .18s ease, opacity .18s ease;
+}
+
+.app-store-badge:hover{
+transform:translateY(-1px);
+opacity:.92;
 }
 
 .app-store-badge img{
@@ -969,6 +975,10 @@ grid-template-columns:1fr;
 .hero-actions{
 flex-direction:column;
 align-items:stretch;
+}
+
+.buttons .app-store-badge{
+align-self:center;
 }
 
 .btn{
