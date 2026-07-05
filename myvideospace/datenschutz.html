@@ -106,6 +106,41 @@ a{
   color:var(--accent);
   text-decoration:none;
 }
+.app-hero{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin:18px 0 26px;
+  padding:16px 18px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(255,255,255,.45);
+}
+.app-hero img{
+  width:56px;
+  height:56px;
+  border-radius:16px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.app-hero-meta{
+  margin:0 0 4px;
+  font-size:.74rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.app-hero h2{
+  margin:0 0 4px;
+  font-size:1.05rem;
+}
+.app-hero p{
+  margin:0;
+  color:var(--muted);
+  font-size:.96rem;
+  line-height:1.45;
+}
 </style>
 </head>
 
@@ -121,6 +156,15 @@ a{
 <div class="card">
 
 <h1>Datenschutz – MyVideoSpace</h1>
+
+<div class="app-hero">
+  <img src="assets/myvideospace.png" alt="MyVideoSpace App-Icon">
+  <div>
+    <p class="app-hero-meta">Datenschutz im Überblick</p>
+    <h2>Deine Videobibliothek bleibt persönlich, mit optionaler iCloud-Synchronisation.</h2>
+    <p>Die meisten Daten bleiben auf dem Gerät und werden nur bei aktivierter iCloud synchronisiert.</p>
+  </div>
+</div>
 
 <p>
 Der Schutz deiner persönlichen Daten ist uns wichtig. Die App <strong>MyVideoSpace</strong>

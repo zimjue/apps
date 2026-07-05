@@ -97,19 +97,53 @@ padding-left:20px;
 }
 
 .footer{
-margin-top:30px;
-font-size:13px;
-color:var(--muted);
+  margin-top:30px;
+  font-size:13px;
+  color:var(--muted);
 }
 
+a{color:var(--accent);text-decoration:none}
+.app-hero{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin:18px 0 26px;
+  padding:16px 18px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(255,255,255,.45);
+}
+.app-hero img{
+  width:56px;
+  height:56px;
+  border-radius:16px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.app-hero-meta{
+  margin:0 0 4px;
+  font-size:.74rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.app-hero h2{
+  margin:0 0 4px;
+  font-size:1.05rem;
+}
+.app-hero p{
+  margin:0;
+  color:var(--muted);
+  font-size:.96rem;
+  line-height:1.45;
+}
 .sep{
 height:1px;
 background:rgba(255,255,255,.1);
 margin:24px 0;
 border:0;
 }
-
-a{color:var(--accent);text-decoration:none}
 </style>
 
 </head>
@@ -126,6 +160,15 @@ a{color:var(--accent);text-decoration:none}
 <div class="card">
 
 <h1>Privacy Policy – Life Wheel</h1>
+
+<div class="app-hero">
+  <img src="assets/Screenshot.jpeg" alt="Life Wheel App Icon">
+  <div>
+    <p class="app-hero-meta">Privacy Snapshot</p>
+    <h2>Reflection stays local and intentionally simple.</h2>
+    <p>Notes and ratings remain on your device and are not sent to external servers.</p>
+  </div>
+</div>
 
 <p>
 Your privacy is important. The <strong>Life Wheel</strong> app helps you reflect on
