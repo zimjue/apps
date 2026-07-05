@@ -512,7 +512,7 @@ p{
             aria-label="Im App Store laden">
             <img
               id="store-badge-top"
-              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/de-de?size=250x83"
+              src="../assets/app-store-badge.svg"
               alt="Laden im App Store">
           </a>
 
@@ -530,12 +530,12 @@ p{
     <section class="card">
       <div class="section-head">
         <div>
-          <h2 id="shots-title">App Einblicke</h2>
+          <h2 id="shots-title">App-Einblicke</h2>
         </div>
         <p id="shots-text">Ein kurzer Blick in die App: klar, motivierend und auf deinen Trainingsfortschritt ausgerichtet.</p>
       </div>
 
-      <div class="slider-wrap" aria-label="Screenshot Karussell">
+      <div class="slider-wrap" aria-label="Screenshot-Karussell">
         <div class="slider" id="slider" tabindex="0">
           <button class="slide-btn prev" type="button" onclick="prevSlide()" aria-label="Vorheriger Screenshot">‹</button>
           <div class="slide-frame">
@@ -546,7 +546,7 @@ p{
 
         <div class="slider-meta">
           <div class="slide-caption" id="slide-caption">Startansicht von FitnessGoals</div>
-          <div class="dots" id="dots" aria-label="Screenshot Auswahl"></div>
+          <div class="dots" id="dots" aria-label="Screenshot-Auswahl"></div>
         </div>
       </div>
     </section>
@@ -575,6 +575,33 @@ p{
     <section class="card">
       <h2 id="why-title">Warum FitnessGoals?</h2>
       <p id="why-text">FitnessGoals hilft dir, Fitness nicht nur vorzunehmen, sondern wirklich umzusetzen. Klare Ziele, sichtbare Fortschritte und ein strukturierter Überblick machen es leichter, konsequent dranzubleiben und Training in deinen Alltag zu integrieren.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2>Datenschutz und Health-Daten</h2>
+        </div>
+        <p>FitnessGoals nutzt Apple Health nur mit deiner Erlaubnis und bleibt auf deine Ziele fokussiert.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">✓</div>
+          <strong>Health-Zugriff nur mit Erlaubnis</strong>
+          <p>Die App liest Schritte und Trainings aus Apple Health erst, nachdem du den Zugriff erlaubt hast.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌂</div>
+          <strong>Kein App-Server-Sync</strong>
+          <p>Deine Ziele und Fortschritte sind für dein Gerät gedacht. FitnessGoals sendet deine Health-Daten nicht an einen JZ Apps Server.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">◎</div>
+          <strong>Du behältst Kontrolle</strong>
+          <p>Du kannst Health-Berechtigungen jederzeit in den iOS-Einstellungen prüfen oder entziehen.</p>
+        </div>
+      </div>
     </section>
 
     <section class="card">
@@ -612,7 +639,7 @@ p{
           aria-label="Im App Store laden">
           <img
             id="store-badge-bottom"
-            src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/de-de?size=250x83"
+            src="../assets/app-store-badge.svg"
             alt="Laden im App Store">
         </a>
       </div>
@@ -633,15 +660,11 @@ p{
 document.getElementById("y").textContent = new Date().getFullYear();
 
 const screenshots = [
-  "assets/screenshot1.png",
-  "assets/screenshot2.png",
-  "assets/screenshot3.png"
+  "assets/screenshot1.png"
 ];
 const screenshotAlt = "FitnessGoals App Screenshot";
 const captions = [
-  "Startansicht von FitnessGoals",
-  "Ziele und Fortschritte im Überblick",
-  "Motivation durch sichtbare Entwicklung"
+  "Startansicht von FitnessGoals"
 ];
 
 let currentSlide = 0;

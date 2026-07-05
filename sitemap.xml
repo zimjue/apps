@@ -4,17 +4,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jzapps.app/</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/"/>
   </url>
   <url>
     <loc>https://jzapps.app/index-de.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/index-de.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/about.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/about-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/about.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/about-de.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/about-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/about.html"/>
   </url>
   <url>
     <loc>https://jzapps.app/services.html</loc>
@@ -45,6 +59,48 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/support.html"/>
   </url>
   <url>
+    <loc>https://jzapps.app/newsletter.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/newsletter.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/newsletter-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/newsletter.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/newsletter-de.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/newsletter.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/newsletter-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/newsletter.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/privacy.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/datenschutz.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/imprint.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/imprint.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/imprint.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/impressum.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/imprint.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/imprint.html"/>
+  </url>
+  <url>
     <loc>https://jzapps.app/liquiditypulse/</loc>
     <lastmod>2026-05-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/liquiditypulse/"/>
@@ -57,6 +113,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/liquiditypulse/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/liquiditypulse/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/liquiditypulse/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/liquiditypulse/privacy.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/liquiditypulse/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/liquiditypulse/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/liquiditypulse/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/liquiditypulse/datenschutz.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/liquiditypulse/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/liquiditypulse/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/liquiditypulse/privacy.html"/>
   </url>
   <url>
     <loc>https://jzapps.app/depotpilot/</loc>
@@ -87,6 +157,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/myvideospace/"/>
   </url>
   <url>
+    <loc>https://jzapps.app/myvideospace/privacy.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/myvideospace/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/myvideospace/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/myvideospace/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/myvideospace/datenschutz.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/myvideospace/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/myvideospace/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/myvideospace/privacy.html"/>
+  </url>
+  <url>
     <loc>https://jzapps.app/erfolgsjournal/</loc>
     <lastmod>2026-05-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/erfolgsjournal/"/>
@@ -99,6 +183,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/erfolgsjournal/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/erfolgsjournal/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/erfolgsjournal/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/erfolgsjournal/privacy.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/erfolgsjournal/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/erfolgsjournal/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/erfolgsjournal/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/erfolgsjournal/datenschutz.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/erfolgsjournal/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/erfolgsjournal/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/erfolgsjournal/privacy.html"/>
   </url>
   <url>
     <loc>https://jzapps.app/lebensrad/</loc>
@@ -115,18 +213,46 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/lebensrad/"/>
   </url>
   <url>
-    <loc>https://jzapps.app/fitnessgoals/</loc>
+    <loc>https://jzapps.app/lebensrad/privacy.html</loc>
     <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/lebensrad/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/lebensrad/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/lebensrad/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/lebensrad/datenschutz.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/lebensrad/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/lebensrad/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/lebensrad/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/fitnessgoals/</loc>
+    <lastmod>2026-07-05</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/fitnessgoals/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/fitnessgoals/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitnessgoals/"/>
   </url>
   <url>
     <loc>https://jzapps.app/fitnessgoals/index-de.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/fitnessgoals/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/fitnessgoals/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitnessgoals/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/fitnessgoals/privacy.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/fitnessgoals/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/fitnessgoals/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitnessgoals/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/fitnessgoals/datenschutz.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/fitnessgoals/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/fitnessgoals/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/fitnessgoals/privacy.html"/>
   </url>
   <url>
     <loc>https://jzapps.app/moneymindshift/</loc>
@@ -143,17 +269,45 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/moneymindshift/"/>
   </url>
   <url>
+    <loc>https://jzapps.app/moneymindshift/privacy.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/moneymindshift/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/moneymindshift/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/moneymindshift/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/moneymindshift/datenschutz.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/moneymindshift/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/moneymindshift/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/moneymindshift/privacy.html"/>
+  </url>
+  <url>
     <loc>https://jzapps.app/vitacore/</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/vitacore/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/vitacore/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/vitacore/"/>
   </url>
   <url>
     <loc>https://jzapps.app/vitacore/index-de.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/vitacore/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/vitacore/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/vitacore/"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/vitacore/privacy.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/vitacore/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/vitacore/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/vitacore/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://jzapps.app/vitacore/datenschutz.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jzapps.app/vitacore/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://jzapps.app/vitacore/datenschutz.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jzapps.app/vitacore/privacy.html"/>
   </url>
 </urlset>

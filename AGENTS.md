@@ -35,6 +35,7 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 ├── sitemap.xml
 ├── robots.txt
 ├── assets/                 ← Bilder, SVG
+├── depotpilot/             ← App-Preview
 ├── erfolgsjournal/         ← App-Landingpage
 ├── fitnessgoals/
 ├── vitacore/
@@ -49,12 +50,23 @@ Diese Datei wird von Codex automatisch gelesen und beschreibt Struktur, Kontext 
 | App | Unterseite | App Store |
 |---|---|---|
 | LiquidityPulse | /liquiditypulse/ | id6760768700 |
-| MoneyMind | /moneymindshift/ | in Vorbereitung |
-| MyVideoSpace | /myvideospace/ | — |
+| MoneyMindShift | /moneymindshift/ | id6767275029 |
+| DepotPilot | /depotpilot/ | Preview / Interessenliste |
+| MyVideoSpace | /myvideospace/ | id6760615103 |
 | Erfolgsjournal | /erfolgsjournal/ | id6760969693 |
 | Lebensrad | /lebensrad/ | id6759198208 |
-| FitnessGoals | /fitnessgoals/ | — |
-| VitaCore AI | /vitacore/ | Pre-Release |
+| FitnessGoals | /fitnessgoals/ | id6757391456 |
+| VitaCore AI | /vitacore/ | Preview |
+
+Lokaler App-Stand aus den Xcode-Projekten:
+- LiquidityPulse: Version 2.1, Bundle-ID `de.jzapps.liquiditypulse`
+- MoneyMindShift: Version 1.0, Bundle-ID `de.jzapps.moneymind`
+- DepotPilot: Version 1.0, Bundle-ID `de.jzapps.depotpilot`, Preview/Interessentenliste
+- MyVideoSpace: Version 2.1, Bundle-ID `JZ.MyVideoSpace`
+- Erfolgsjournal: Version 1.0, Bundle-ID `de.jzapps.erfolgsjournal`
+- Lebensrad: Version 1.4, Bundle-ID `de.jzapps.lebensrad`
+- FitnessGoals: Version 1.3, Bundle-ID `JZ.FitnessGoals`
+- VitaCore AI: Version 1.0, Bundle-ID `de.jzapps.vitacore`, Preview
 
 LiquidityPulse hat zusätzlich eine eigene Website: liquiditypulse.net — gehostet und betrieben über **Cloudflare Workers** (separates Projekt, nicht in diesem Repo)
 
