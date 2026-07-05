@@ -145,7 +145,8 @@ a{color:var(--accent);text-decoration:none}
     <p>Die App verarbeitet folgende Daten:</p>
     <ul>
       <li>Apple Health-Daten (nur lesend): Schritte, aktive Energie, Trainingsminuten, Herzfrequenzvariabilität, Ruhepuls, VO₂max, Körpermasse, Körperfettanteil, Magermasse, Körpergröße, Taillenumfang, Workouts, Schlaf, Alter und biologisches Geschlecht</li>
-      <li>Von dir eingegebene Profilinformationen: Trainingsziele, Aktivitäten, Verletzungen, Equipment, Ernährungsnotizen</li>
+      <li>Von dir eingegebene Profilinformationen: Trainingsziele, Mitgliedschaften, Equipment, Aktivitäten, Verletzungen, Nahrungsergänzung, sportlicher Hintergrund, regelmäßige Termine, Reise-/Urlaubsmodus, Ernährungsnotizen</li>
+      <li>Optional von dir im Coach-Chat eingegebene Nachrichten und hochgeladene Fotos</li>
       <li>App-Einstellungen: Sprache, Erscheinungsbild, Coaching-Programme</li>
     </ul>
 
@@ -165,38 +166,50 @@ a{color:var(--accent);text-decoration:none}
     <h2>5. Externe Dienste – KI-Coaching</h2>
     <p>
       Für die KI-Coaching-Funktionen (Trainingsplan, Ernährungstipp, Auswertung, Coach-Chat)
-      werden ausgewählte, aggregierte Kontextdaten an die Anthropic-API übertragen.
+      werden ausgewählte Kontextdaten an die Anthropic-API übertragen.
       Die Übertragung erfolgt über einen Cloudflare-Worker-Proxy
       (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Datenschutz</a>).
     </p>
     <p>
-      Übertragene Inhalte können Zusammenfassungen wie Durchschnittswerte für Schritte, Schlaf,
-      Herzrate oder Trainingsgewohnheiten sowie dein eingegebenes Profil (Ziele, Aktivitäten)
-      und Ernährungsnotizen umfassen. Es werden keine rohen HealthKit-Originaldaten übertragen.
-      Die Verarbeitung durch Anthropic erfolgt gemäß deren
-      <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Datenschutzrichtlinie</a>.
+      Übertragene Inhalte können umfassen: aus Apple Health abgeleitete Werte (z. B.
+      Durchschnittswerte für Schritte, Schlaf und Trainingsgewohnheiten sowie aktuelle
+      Werte für Gewicht, Körperfettanteil, Taillenumfang, Ruhepuls, Herzfrequenzvariabilität
+      und VO₂max), dein eingegebenes Profil (u. a. Ziele, Aktivitäten, Verletzungen,
+      Nahrungsergänzung, Mitgliedschaften, Reise-/Urlaubsmodus) sowie deine Ernährungsnotizen.
+      Im Coach-Chat werden zusätzlich deine Chat-Nachrichten und optional von dir
+      ausgewählte Fotos übertragen. Es werden keine rohen HealthKit-Messreihen übertragen,
+      sondern nur daraus abgeleitete Werte. Die Verarbeitung durch Anthropic erfolgt gemäß
+      deren <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Datenschutzrichtlinie</a>.
     </p>
 
-    <h2>6. Analytics, Tracking und Werbung</h2>
+    <h2>6. Spracheingabe</h2>
+    <p>
+      Wenn du Fragen oder Essensnotizen per Diktat eingibst, nutzt die App die
+      Spracherkennung von Apple (Speech-Framework). Je nach Gerät und Sprache kann
+      die Verarbeitung auf dem Gerät oder über Apple-Server erfolgen. Es gelten
+      ergänzend die <a href="https://www.apple.com/de/privacy/" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen von Apple</a>.
+    </p>
+
+    <h2>7. Analytics, Tracking und Werbung</h2>
     <p>
       Die App verwendet keine Analytics-Dienste, kein Tracking und keine Werbenetzwerke.
     </p>
 
-    <h2>7. In-App-Käufe und Abonnements</h2>
+    <h2>8. In-App-Käufe und Abonnements</h2>
     <p>
       Sofern die App kostenpflichtige Funktionen oder Abonnements anbietet,
       erfolgt die Abwicklung ausschließlich über Apple. Zahlungsdaten wie
       Kreditkartennummern erhält die App nicht.
     </p>
 
-    <h2>8. Apple-Dienste</h2>
+    <h2>9. Apple-Dienste</h2>
     <p>
       Für den App-Betrieb können Apple-Dienste (z. B. App Store, In-App-Käufe)
       genutzt werden. Es gelten ergänzend die
       <a href="https://www.apple.com/de/privacy/" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen von Apple</a>.
     </p>
 
-    <h2>9. Deine Rechte</h2>
+    <h2>10. Deine Rechte</h2>
     <p>Du hast insbesondere das Recht auf:</p>
     <ul>
       <li>Auskunft über gespeicherte personenbezogene Daten</li>
@@ -210,27 +223,27 @@ a{color:var(--accent);text-decoration:none}
       direkt in der App löschen oder durch Deinstallation der App entfernen.
     </p>
 
-    <h2>10. Datensicherheit</h2>
+    <h2>11. Datensicherheit</h2>
     <p>
       Die Übertragung an externe Dienste erfolgt verschlüsselt (HTTPS/TLS).
       Die Sicherheit deiner lokalen Daten hängt zusätzlich von den
       Sicherheitseinstellungen deines Geräts ab.
     </p>
 
-    <h2>11. Änderungen dieser Erklärung</h2>
+    <h2>12. Änderungen dieser Erklärung</h2>
     <p>
       Diese Datenschutzerklärung kann angepasst werden, wenn sich Funktionen
       der App oder rechtliche Anforderungen ändern.
     </p>
 
-    <h2>12. Kontakt</h2>
+    <h2>13. Kontakt</h2>
     <p>
       Bei Fragen zum Datenschutz:
       <a href="mailto:support@jzapps.app">support@jzapps.app</a>
     </p>
 
     <div class="footer">
-      <p>Stand: Juni 2026</p>
+      <p>Stand: Juli 2026</p>
       <p>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">
           Apple Standard EULA

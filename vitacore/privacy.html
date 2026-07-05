@@ -145,7 +145,8 @@ a{color:var(--accent);text-decoration:none}
     <p>The app processes the following data:</p>
     <ul>
       <li>Apple Health data (read-only): steps, active energy, exercise minutes, heart rate variability, resting heart rate, VO₂max, body mass, body fat percentage, lean body mass, height, waist circumference, workouts, sleep, age, and biological sex</li>
-      <li>Profile information you enter: training goals, activities, injuries, equipment, food notes</li>
+      <li>Profile information you enter: training goals, memberships, equipment, activities, injuries, supplements, sports background, regular schedule, travel/vacation mode, food notes</li>
+      <li>Messages and optional photos you enter in the coach chat</li>
       <li>App settings: language, appearance, coaching programs</li>
     </ul>
 
@@ -165,37 +166,50 @@ a{color:var(--accent);text-decoration:none}
     <h2>5. External Services – AI Coaching</h2>
     <p>
       For AI coaching features (training plan, nutrition tip, daily analysis, coach chat),
-      selected and aggregated context data is transmitted to the Anthropic API.
+      selected context data is transmitted to the Anthropic API.
       Transmission is routed through a Cloudflare Worker proxy
       (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a>).
     </p>
     <p>
-      Transmitted content may include summaries such as average step counts, sleep, heart rate,
-      or workout habits, as well as your entered profile (goals, activities) and food notes.
-      Raw HealthKit records are not transmitted.
-      Anthropic processes this data in accordance with their
-      <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+      Transmitted content may include: values derived from Apple Health (e.g. average
+      step counts, sleep, and workout habits, as well as current values for weight,
+      body fat percentage, waist circumference, resting heart rate, heart rate
+      variability, and VO₂max), your entered profile (including goals, activities,
+      injuries, supplements, memberships, and travel/vacation mode), and your food
+      notes. In the coach chat, your chat messages and any photos you choose to
+      attach are also transmitted. Raw HealthKit sample data is not transmitted,
+      only values derived from it. Anthropic processes this data in accordance
+      with their <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
     </p>
 
-    <h2>6. Analytics, Tracking, and Advertising</h2>
+    <h2>6. Voice Input</h2>
+    <p>
+      When you dictate questions or food notes, the app uses Apple's speech
+      recognition (Speech framework). Depending on device and language, processing
+      may happen on-device or on Apple's servers. Apple's
+      <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      applies additionally.
+    </p>
+
+    <h2>7. Analytics, Tracking, and Advertising</h2>
     <p>
       The app does not use analytics services, tracking, or advertising networks.
     </p>
 
-    <h2>7. In-App Purchases and Subscriptions</h2>
+    <h2>8. In-App Purchases and Subscriptions</h2>
     <p>
       If the app offers paid features or subscriptions, purchases are processed
       exclusively by Apple. The app does not receive payment data such as credit card numbers.
     </p>
 
-    <h2>8. Apple Services</h2>
+    <h2>9. Apple Services</h2>
     <p>
       The app may use Apple services (e.g. App Store, in-app purchases).
       Apple's <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
       applies additionally.
     </p>
 
-    <h2>9. Your Rights</h2>
+    <h2>10. Your Rights</h2>
     <p>You have the right to:</p>
     <ul>
       <li>Access your personal data</li>
@@ -209,25 +223,25 @@ a{color:var(--accent);text-decoration:none}
       in the app or by uninstalling the app.
     </p>
 
-    <h2>10. Data Security</h2>
+    <h2>11. Data Security</h2>
     <p>
       Data transmitted to external services is encrypted (HTTPS/TLS).
       The security of your local data also depends on your device's security settings.
     </p>
 
-    <h2>11. Changes to This Policy</h2>
+    <h2>12. Changes to This Policy</h2>
     <p>
       This privacy policy may be updated if the app's features or legal requirements change.
     </p>
 
-    <h2>12. Contact</h2>
+    <h2>13. Contact</h2>
     <p>
       For privacy questions:
       <a href="mailto:support@jzapps.app">support@jzapps.app</a>
     </p>
 
     <div class="footer">
-      <p>Effective date: June 2026</p>
+      <p>Effective date: July 2026</p>
       <p>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">
           Apple Standard EULA
