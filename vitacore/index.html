@@ -209,6 +209,23 @@ p{
   color:var(--muted);
 }
 
+.app-store-badge{
+  display:inline-flex;
+  align-items:center;
+  transition:transform .18s ease, opacity .18s ease;
+}
+
+.app-store-badge:hover{
+  transform:translateY(-1px);
+  opacity:.92;
+}
+
+.app-store-badge img{
+  display:block;
+  height:48px;
+  width:auto;
+}
+
 .hero-image{
   display:flex;
   justify-content:center;
@@ -511,10 +528,12 @@ p{
         <p>Your personal fitness coach based on your Apple Health data and training history: practical next steps for training, nutrition, and recovery.</p>
 
         <div class="hero-actions">
-          <a class="cta" href="#screenshots">See preview</a>
+          <a class="app-store-badge" href="https://apps.apple.com/de/app/vitacore-ai/id6781178346" aria-label="Download VitaCore AI on the App Store" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/app-store-badge.svg" alt="Download on the App Store" loading="lazy">
+          </a>
           <a class="ghost" href="#features">See features</a>
         </div>
-        <p class="store-note">Pre-release. Built for iPhone and iPad with read-only Apple Health access and adjustable fitness goals.</p>
+        <p class="store-note">Now available on the App Store. Built for iPhone and iPad with read-only Apple Health access and adjustable fitness goals.</p>
       </div>
 
       <div class="hero-image">
