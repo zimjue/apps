@@ -661,12 +661,12 @@ letter-spacing:-.02em;
 }
 
 .recommend-title .recommend-icon{
-width:58px;
-height:58px;
+width:66px;
+height:66px;
 flex:0 0 auto;
-border-radius:14px;
+border-radius:16px;
 object-fit:cover;
-box-shadow:0 12px 26px rgba(0,0,0,.34);
+box-shadow:0 14px 30px rgba(0,0,0,.36);
 }
 
 .recommend-copy p{
