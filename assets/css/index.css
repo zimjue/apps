@@ -573,6 +573,118 @@ letter-spacing:.08em;
 text-transform:uppercase;
 }
 
+/* RECOMMENDED APPS */
+
+.recommended-grid{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:22px;
+margin:0 0 62px;
+}
+
+.recommend-card{
+display:flex;
+flex-direction:column;
+min-width:0;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.12);
+border-radius:24px;
+background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.032));
+box-shadow:var(--shadow);
+}
+
+.recommend-card-primary{
+border-color:rgba(102,227,255,.22);
+background:
+linear-gradient(180deg,rgba(102,227,255,.085),rgba(255,255,255,.035)),
+linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.032));
+}
+
+.recommend-media{
+position:relative;
+min-height:250px;
+display:flex;
+align-items:flex-end;
+justify-content:center;
+padding:26px 22px 0;
+background:
+radial-gradient(420px 180px at 50% 16%,rgba(102,227,255,.14),transparent 72%),
+rgba(255,255,255,.025);
+}
+
+.recommend-icon{
+position:absolute;
+top:24px;
+left:24px;
+width:66px;
+height:66px;
+border-radius:16px;
+object-fit:cover;
+box-shadow:0 12px 28px rgba(0,0,0,.32);
+}
+
+.recommend-shot{
+width:min(100%,178px);
+max-height:230px;
+object-fit:cover;
+object-position:top;
+border-radius:24px 24px 0 0;
+border:1px solid rgba(255,255,255,.14);
+border-bottom:0;
+box-shadow:0 24px 50px rgba(0,0,0,.35);
+}
+
+.recommend-copy{
+display:flex;
+flex:1;
+flex-direction:column;
+padding:24px;
+text-align:left;
+}
+
+.recommend-tag{
+display:inline-flex;
+align-self:flex-start;
+padding:6px 10px;
+margin-bottom:14px;
+border-radius:999px;
+border:1px solid rgba(102,227,255,.16);
+background:rgba(102,227,255,.07);
+color:var(--accent);
+font-size:12px;
+font-weight:800;
+letter-spacing:.06em;
+text-transform:uppercase;
+}
+
+.recommend-copy h2{
+margin:0 0 10px;
+font-size:28px;
+letter-spacing:-.02em;
+}
+
+.recommend-copy p{
+margin:0 0 16px;
+color:var(--muted);
+font-size:15px;
+line-height:1.68;
+}
+
+.recommend-proof{
+margin:0 0 22px;
+padding-top:14px;
+border-top:1px solid rgba(255,255,255,.1);
+color:#d9f7ff;
+font-size:13px;
+font-weight:700;
+line-height:1.55;
+}
+
+.recommend-copy .buttons{
+justify-content:flex-start;
+margin-top:auto;
+}
+
 .info-grid,
 .services-grid{
 display:grid;
@@ -964,6 +1076,26 @@ font-size:17px;
 
 .trust{
 grid-template-columns:1fr;
+}
+
+.recommended-grid{
+grid-template-columns:1fr;
+}
+
+.recommend-media{
+min-height:220px;
+}
+
+.recommend-copy{
+text-align:center;
+}
+
+.recommend-tag{
+align-self:center;
+}
+
+.recommend-copy .buttons{
+justify-content:center;
 }
 
 .info-grid,

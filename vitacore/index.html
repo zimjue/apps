@@ -209,6 +209,33 @@ p{
   color:var(--muted);
 }
 
+.value-strip{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin:-14px 0 42px;
+}
+
+.value-pill{
+  padding:16px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.045);
+}
+
+.value-pill strong{
+  display:block;
+  margin-bottom:6px;
+  color:var(--txt);
+}
+
+.value-pill span{
+  display:block;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
 .app-store-badge{
   display:inline-flex;
   align-items:center;
@@ -486,6 +513,7 @@ p{
     align-items:flex-start;
   }
   .features{grid-template-columns:1fr}
+  .value-strip{grid-template-columns:1fr}
   .slider{min-height:540px}
 }
 
@@ -530,8 +558,8 @@ p{
           <span>Your personal fitness coach</span>
         </div>
 
-        <h1>VitaCore AI.<br>A clear plan<br>for today.</h1>
-        <p>Your personal fitness coach based on your Apple Health data and training history: practical next steps for training, nutrition, and recovery.</p>
+        <h1>VitaCore AI turns your Apple Health data into a clear plan for today.</h1>
+        <p>See what training, nutrition, and recovery need next. VitaCore AI uses selected Health summaries, your goals, and your training history to give you practical next steps.</p>
 
         <div class="hero-actions">
           <a class="app-store-badge" href="https://apps.apple.com/de/app/vitacore-ai/id6781178346" aria-label="Download VitaCore AI on the App Store" target="_blank" rel="noopener noreferrer">
@@ -539,13 +567,28 @@ p{
           </a>
           <a class="ghost" href="#features">See features</a>
         </div>
-        <p class="store-note">Now available on the App Store. Built for iPhone and iPad with read-only Apple Health access and adjustable fitness goals.</p>
+        <p class="store-note">Start free. Premium unlocks AI coach, 7-day plan, and personal recommendations. HealthKit access is read-only.</p>
       </div>
 
       <div class="hero-image">
         <div class="device-shell">
           <img id="hero-image" src="assets/screenshot1.png" alt="VitaCore AI dashboard screenshot" class="app-preview" loading="eager">
         </div>
+      </div>
+    </section>
+
+    <section class="value-strip" aria-label="VitaCore AI benefits">
+      <div class="value-pill">
+        <strong>Start free</strong>
+        <span>Health overview, goals, and first orientation without a barrier.</span>
+      </div>
+      <div class="value-pill">
+        <strong>Premium for more depth</strong>
+        <span>AI coach, 7-day plan, and personal recommendations based on your context.</span>
+      </div>
+      <div class="value-pill">
+        <strong>Transparent with Health data</strong>
+        <span>Read-only access, selected summaries, and clear data explanations.</span>
       </div>
     </section>
 

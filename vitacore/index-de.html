@@ -209,6 +209,33 @@ p{
   color:var(--muted);
 }
 
+.value-strip{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin:-14px 0 42px;
+}
+
+.value-pill{
+  padding:16px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.045);
+}
+
+.value-pill strong{
+  display:block;
+  margin-bottom:6px;
+  color:var(--txt);
+}
+
+.value-pill span{
+  display:block;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
 .app-store-badge{
   display:inline-flex;
   align-items:center;
@@ -486,6 +513,7 @@ p{
     align-items:flex-start;
   }
   .features{grid-template-columns:1fr}
+  .value-strip{grid-template-columns:1fr}
   .slider{min-height:540px}
 }
 
@@ -530,22 +558,37 @@ p{
           <span>Persönlicher Fitness-Coach</span>
         </div>
 
-        <h1>VitaCore AI.<br>Dein klarer Plan<br>für heute.</h1>
-        <p>Dein persönlicher Fitness-Coach auf Basis deiner Apple Health-Daten und Trainingshistorie: konkrete nächste Schritte für Training, Ernährung und Erholung.</p>
+        <h1>VitaCore AI macht aus deinen Apple Health-Daten einen klaren Plan für heute.</h1>
+        <p>Sieh, was Training, Ernährung und Erholung jetzt brauchen. VitaCore AI nutzt ausgewählte Health-Zusammenfassungen, deine Ziele und deine Trainingshistorie, um dir konkrete nächste Schritte zu geben.</p>
 
         <div class="hero-actions">
           <a class="app-store-badge" href="https://apps.apple.com/de/app/vitacore-ai/id6781178346" aria-label="VitaCore AI im App Store laden" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/app-store-badge.svg" alt="Laden im App Store" loading="lazy">
+            <img src="../assets/app-store-badge-de.svg" alt="Im App Store laden" loading="lazy">
           </a>
           <a class="ghost" href="#features">Funktionen ansehen</a>
         </div>
-        <p class="store-note">Jetzt im App Store verfügbar. Entwickelt für iPhone und iPad mit rein lesendem Apple Health-Zugriff und anpassbaren Fitnesszielen.</p>
+        <p class="store-note">Kostenlos starten. Premium schaltet KI-Coach, 7-Tage-Plan und persönliche Empfehlungen frei. HealthKit-Zugriff ist rein lesend.</p>
       </div>
 
       <div class="hero-image">
         <div class="device-shell">
           <img id="hero-image" src="assets/screenshot1-de.png" alt="VitaCore AI Dashboard Screenshot" class="app-preview" loading="eager">
         </div>
+      </div>
+    </section>
+
+    <section class="value-strip" aria-label="VitaCore AI Vorteile">
+      <div class="value-pill">
+        <strong>Kostenlos starten</strong>
+        <span>Health-Überblick, Ziele und erste Orientierung ohne Einstiegshürde.</span>
+      </div>
+      <div class="value-pill">
+        <strong>Premium für mehr Tiefe</strong>
+        <span>KI-Coach, 7-Tage-Plan und persönliche Empfehlungen auf Basis deines Kontexts.</span>
+      </div>
+      <div class="value-pill">
+        <strong>Transparent mit Health-Daten</strong>
+        <span>Rein lesender Zugriff, ausgewählte Zusammenfassungen und klare Datenhinweise.</span>
       </div>
     </section>
 

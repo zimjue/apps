@@ -218,6 +218,33 @@ p{
   color:var(--muted);
 }
 
+.value-strip{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin:-10px 0 36px;
+}
+
+.value-pill{
+  padding:16px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.045);
+}
+
+.value-pill strong{
+  display:block;
+  margin-bottom:6px;
+  color:var(--txt);
+}
+
+.value-pill span{
+  display:block;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
 .app-store-badge{
   display:inline-block;
   line-height:0;
@@ -678,6 +705,7 @@ p{
   }
   .features,
   .source-grid,
+  .value-strip,
   .note-grid{
     grid-template-columns:1fr;
   }
@@ -727,8 +755,8 @@ p{
           <span id="eyebrow-text">Macro, liquidity and market context at a glance</span>
         </div>
 
-        <h1 id="hero-title">Understand global liquidity.<br>Faster and with more clarity.</h1>
-        <p id="hero-text">LiquidityPulse brings together key liquidity, market, and stress signals in one clear app so you can spot trends, regime shifts, and historical relationships faster.</p>
+        <h1 id="hero-title">Read liquidity before it becomes obvious in the market.</h1>
+        <p id="hero-text">LiquidityPulse brings liquidity, market stress, Bitcoin context, and regime signals into one calm analysis app for investors and market watchers who want to understand whether conditions are more supportive or defensive.</p>
 
         <div class="hero-actions">
           <a
@@ -739,7 +767,7 @@ p{
             aria-label="Download LiquidityPulse on the App Store">
             <img src="../assets/app-store-badge.svg" alt="Download on the App Store" loading="eager">
           </a>
-          <span class="store-note" id="store-note">Now available on the App Store. Not investment advice.</span>
+          <span class="store-note" id="store-note">Now available on the App Store. Not investment advice. No broker connection.</span>
         </div>
       </div>
 
@@ -747,6 +775,21 @@ p{
         <div class="icon-shell">
           <img src="assets/liquiditypulse.png" alt="LiquidityPulse App Icon" class="app-icon" loading="eager">
         </div>
+      </div>
+    </section>
+
+    <section class="value-strip" aria-label="LiquidityPulse trust and value">
+      <div class="value-pill">
+        <strong>Market context, not signals</strong>
+        <span>The app helps interpret liquidity, risk, and regime without giving buy or sell instructions.</span>
+      </div>
+      <div class="value-pill">
+        <strong>No broker connection</strong>
+        <span>LiquidityPulse does not place trades, manage portfolios, or ask for brokerage credentials.</span>
+      </div>
+      <div class="value-pill">
+        <strong>Premium for deeper analysis</strong>
+        <span>For users who want to track macro data, historical relationships, and market stress more often and in more depth.</span>
       </div>
     </section>
 
