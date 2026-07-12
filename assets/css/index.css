@@ -615,7 +615,7 @@ rgba(255,255,255,.025);
 .recommend-icon{
 position:absolute;
 top:24px;
-left:14px;
+right:14px;
 width:72px;
 height:72px;
 border-radius:16px;
