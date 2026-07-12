@@ -612,19 +612,6 @@ radial-gradient(420px 180px at 50% 16%,rgba(102,227,255,.14),transparent 72%),
 rgba(255,255,255,.025);
 }
 
-.recommend-icon{
-position:absolute;
-top:16px;
-right:16px;
-z-index:3;
-width:84px;
-height:84px;
-border-radius:20px;
-object-fit:cover;
-border:5px solid rgba(11,18,32,.9);
-box-shadow:0 18px 38px rgba(0,0,0,.42);
-}
-
 .recommend-shot{
 width:min(100%,178px);
 max-height:230px;
@@ -659,10 +646,27 @@ letter-spacing:.06em;
 text-transform:uppercase;
 }
 
-.recommend-copy h2{
+.recommend-title{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
 margin:0 0 10px;
+}
+
+.recommend-title h2{
+margin:0;
 font-size:28px;
 letter-spacing:-.02em;
+}
+
+.recommend-title .recommend-icon{
+width:58px;
+height:58px;
+flex:0 0 auto;
+border-radius:14px;
+object-fit:cover;
+box-shadow:0 12px 26px rgba(0,0,0,.34);
 }
 
 .recommend-copy p{
@@ -1094,6 +1098,10 @@ text-align:center;
 
 .recommend-tag{
 align-self:center;
+}
+
+.recommend-title{
+justify-content:center;
 }
 
 .recommend-copy .buttons{
