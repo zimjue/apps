@@ -190,6 +190,12 @@ a{
       insbesondere über einen FRED-bezogenen Datenproxy sowie über CoinGecko für
       Bitcoin-Marktdaten.
     </p>
+    <p>
+      Der Datenproxy ist ein von uns betriebener Dienst unter <code>liquiditypulse.net</code>
+      auf Infrastruktur von Cloudflare. Er bereitet öffentliche Marktdaten auf (unter anderem
+      FRED-Zeitreihen und Bitcoin-ETF-Flüsse) und hält sie kurzzeitig zwischen. CoinGecko wird
+      für Bitcoin-Marktdaten direkt von deinem Gerät aus abgefragt.
+    </p>
 
     <h2>4. Welche technischen Daten können dabei anfallen?</h2>
     <p>
@@ -208,6 +214,16 @@ a{
       Eigene Inhalte oder Einstellungen der App werden grundsätzlich lokal auf deinem
       Gerät gespeichert, soweit die App solche Informationen überhaupt speichert.
       Es werden keine eigenen externen Server zur Speicherung persönlicher Inhalte betrieben.
+    </p>
+    <p>
+      <strong>Pro-Abo:</strong> Für die Pro-Details des Bitcoin Liquidity Score sendet die App
+      einen von Apple signierten Nachweis deines aktiven Abos (eine signierte StoreKit-Transaktion)
+      an unseren Datenproxy. Der Server prüft damit die Signatur, das Produkt und die Gültigkeit des Abos,
+      um die Pro-Daten freizugeben. Der Nachweis enthält keine Zahlungsdaten und keine Klarnamen.
+    </p>
+    <p>
+      <strong>Mitteilungen:</strong> Hinweise auf Regimewechsel werden lokal auf deinem Gerät
+      erzeugt und nur angezeigt, wenn du Mitteilungen erlaubt hast.
     </p>
 
     <h2>6. Tracking, Analyse und Werbung</h2>
@@ -272,7 +288,7 @@ a{
     </p>
 
     <div class="footer">
-      <p>Stand: März 2026</p>
+      <p>Stand: Oktober 2026</p>
       <p>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">
           Apple Standard EULA
