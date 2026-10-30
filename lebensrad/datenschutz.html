@@ -158,8 +158,8 @@ a{color:var(--accent);text-decoration:none}
       <img src="assets/lebensrad.png" alt="Lebensrad App-Icon">
       <div>
         <p class="app-hero-meta">Datenschutz im Überblick</p>
-        <h2>Reflexion bleibt lokal und bewusst einfach.</h2>
-        <p>Deine Eingaben werden auf dem Gerät gespeichert und nicht an externe Server gesendet.</p>
+        <h2>Reflexion bleibt lokal – das KI-Gespräch ist optional.</h2>
+        <p>Deine Einträge werden auf dem Gerät gespeichert. Nur wenn du das optionale KI-Gespräch im Kompass ausdrücklich bestätigst, werden die Texte dieses Gesprächs an einen KI-Dienst gesendet.</p>
       </div>
     </div>
 
@@ -186,6 +186,7 @@ a{color:var(--accent);text-decoration:none}
     <p>
       Deine Daten werden lokal auf deinem Gerät gespeichert.
       Die App synchronisiert deine Inhalte derzeit nicht über iCloud oder andere externe Server.
+      Eine Ausnahme ist das optionale KI-Gespräch (siehe Abschnitt 6).
     </p>
 
     <h2>4. Apple-Dienste</h2>
@@ -204,8 +205,27 @@ a{color:var(--accent);text-decoration:none}
     <h2>6. Drittanbieter</h2>
     <p>
       Es werden keine Drittanbieter-Werbe- oder Analyse-SDKs eingesetzt.
-      Soweit technisch erforderlich, können ausschließlich Dienste von Apple
+      Soweit technisch erforderlich, können Dienste von Apple
       genutzt werden, etwa für In-App-Käufe.
+    </p>
+
+    <h3>KI-Gespräch im Kompass (optional, Premium)</h3>
+    <p>
+      Wenn du im Kompass das KI-Gespräch („Meinen Nordstern finden“) nutzt, werden die
+      Texte dieses Gesprächs (deine Antworten und der bisherige Gesprächsverlauf) an die
+      Anthropic-API (Claude, Anthropic PBC, USA) gesendet. Die Übertragung läuft verschlüsselt
+      über einen Cloudflare-Worker, der den API-Schlüssel schützt. Weitere Inhalte der App
+      (Bewertungen, Reflexionen, Ziele) werden dabei nicht übertragen. Die Antworten sind
+      KI-generiert und ersetzen keine Therapie oder Beratung.
+    </p>
+    <p>
+      Die Funktion startet erst, nachdem du in der App ausdrücklich zugestimmt hast
+      (Art. 6 Abs. 1 lit. a DSGVO). Du kannst die Einwilligung jederzeit mit Wirkung für die
+      Zukunft widerrufen, per E-Mail an <a href="mailto:support@jzapps.app">support@jzapps.app</a>
+      oder durch Löschen der App-Daten. Der Gesprächsverlauf wird nicht dauerhaft in der App gespeichert; lokal abgelegt wird nur der am Ende formulierte Nordstern.
+      Wir betreiben keine eigene Datenbank für diese Inhalte; ob Anthropic oder Cloudflare
+      technisch bedingt Verbindungsdaten verarbeiten, richtet sich nach deren
+      Datenschutzbestimmungen.
     </p>
 
     <h2>7. In-App-Käufe und Abonnements</h2>
@@ -260,7 +280,7 @@ a{color:var(--accent);text-decoration:none}
     </p>
 
     <div class="footer">
-      <p>Stand: März 2026</p>
+      <p>Stand: Oktober 2026</p>
 
       <p>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">
