@@ -534,6 +534,19 @@ p{
   .cta,.ghost{width:100%;max-width:280px;margin:0 auto}
   .device-shell{width:min(100%, calc(100vw - 56px))}
 }
+
+  /* Status: App derzeit pausiert */
+  .paused-banner{
+    margin:0 0 22px;
+    padding:14px 18px;
+    border-radius:14px;
+    background:rgba(255,194,102,.12);
+    border:1px solid rgba(255,194,102,.45);
+    color:#ffd9a0;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .paused-banner strong{color:#ffc266}
 </style>
 </head>
 <body>
@@ -551,6 +564,7 @@ p{
   </div>
 
   <main>
+    <div class="paused-banner" role="status"><strong>Currently paused.</strong> VitaCore AI is temporarily not available on the App Store. This page stays online for information.</div>
     <section class="hero">
       <div class="hero-copy">
         <div class="eyebrow">
@@ -562,12 +576,8 @@ p{
         <p>See what training, nutrition, and recovery need next. VitaCore AI uses selected Health summaries, your goals, and your training history to give you practical next steps.</p>
 
         <div class="hero-actions">
-          <a class="app-store-badge" href="https://apps.apple.com/de/app/vitacore-ai/id6781178346" aria-label="Download VitaCore AI on the App Store" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/app-store-badge.svg" alt="Download on the App Store" loading="lazy">
-          </a>
           <a class="ghost" href="#features">See features</a>
         </div>
-        <p class="store-note">Start free. Premium unlocks AI coach, 7-day plan, and personal recommendations. HealthKit access is read-only.</p>
       </div>
 
       <div class="hero-image">

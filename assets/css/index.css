@@ -1225,3 +1225,58 @@ display:flex;
   .newsletter-cta-inner { flex-direction: column; align-items: flex-start; }
   .newsletter-cta-btn { width: 100%; text-align: center; }
 }
+
+/* Status: App derzeit pausiert */
+.status-paused{
+display:inline-flex;
+align-items:center;
+padding:5px 10px;
+border-radius:999px;
+margin-bottom:12px;
+font-size:12px;
+font-weight:700;
+letter-spacing:.04em;
+text-transform:uppercase;
+background:rgba(255,194,102,.12);
+border:1px solid rgba(255,194,102,.45);
+color:#ffc266;
+}
+
+.paused-note{
+margin:0 0 12px;
+font-size:14px;
+color:var(--muted);
+}
+
+/* Einzelne empfohlene App: zentriert, Bild links, Text rechts */
+.recommended-grid:has(> .recommend-card:only-child){
+grid-template-columns:minmax(0,880px);
+justify-content:center;
+}
+
+@media (min-width:900px){
+.recommended-grid > .recommend-card:only-child{
+flex-direction:row;
+}
+.recommended-grid > .recommend-card:only-child .recommend-media{
+flex:0 0 42%;
+}
+.recommended-grid > .recommend-card:only-child .recommend-copy{
+flex:1;
+justify-content:center;
+}
+}
+
+/* Pausiert-Badge und Hinweis in den App-Karten */
+.card .status-paused{
+align-self:center;
+width:fit-content;
+margin-left:auto;
+margin-right:auto;
+}
+
+.buttons .paused-note{
+flex:0 0 100%;
+width:100%;
+text-align:center;
+}

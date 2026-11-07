@@ -43,7 +43,6 @@
   "description":"The Life Wheel app helps you reflect on life areas, clarify values, write a personal North Star, and turn insights into meaningful goals and reviews.",
   "url":"https://jzapps.app/lebensrad/",
   "image":"https://jzapps.app/lebensrad/assets/lebensrad.png",
-  "downloadUrl":"https://apps.apple.com/de/app/lebensrad-dein-lebenskompass/id6759198208",
   "publisher":{
     "@type":"Person",
     "name":"Jürgen Zimmer"
@@ -499,6 +498,19 @@ p{
 .video-modal-inner video{display:block;width:100%;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.7)}
 .video-modal-unmute{position:absolute;bottom:18px;right:14px;background:rgba(8,14,27,.78);border:1px solid rgba(255,255,255,.2);border-radius:50%;width:38px;height:38px;color:#fff;font-size:16px;cursor:pointer;display:grid;place-items:center;z-index:4}
 @media (max-width:860px){.video-section{flex-direction:column;align-items:center}.video-phone-wrap,.video-phone{width:200px}}
+
+  /* Status: App derzeit pausiert */
+  .paused-banner{
+    margin:0 0 22px;
+    padding:14px 18px;
+    border-radius:14px;
+    background:rgba(255,194,102,.12);
+    border:1px solid rgba(255,194,102,.45);
+    color:#ffd9a0;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .paused-banner strong{color:#ffc266}
 </style>
 </head>
 <body>
@@ -516,6 +528,7 @@ p{
   </div>
 
   <main>
+    <div class="paused-banner" role="status"><strong>Currently paused.</strong> Life Wheel is temporarily not available on the App Store. This page stays online for information.</div>
     <section class="hero">
       <div class="hero-copy">
         <div class="eyebrow">
@@ -527,20 +540,8 @@ p{
         <p id="hero-text">Reflect on your life areas, clarify your values, and turn insight into goals and reviews.</p>
 
         <div class="hero-actions">
-          <a
-            id="store-link-top"
-            class="app-store-badge"
-            href="https://apps.apple.com/de/app/lebensrad-dein-lebenskompass/id6759198208"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download on the App Store">
-            <img
-              id="store-badge-top"
-              src="../assets/app-store-badge.svg"
-              alt="Download on the App Store">
-          </a>
 
-          <span class="store-note" id="store-note">Available for iPhone and iPad</span>
+          <span class="store-note" id="store-note">Currently paused – not available on the App Store</span>
         </div>
       </div>
 
@@ -694,22 +695,10 @@ p{
     </section>
 
     <section class="card cta-card">
-      <h2 id="cta-title">Start with your wheel, then build your compass</h2>
-      <p id="cta-text">Download Life Wheel and connect reflection, values, and next steps in one private app.</p>
+      <h2 id="cta-title">Life Wheel is currently paused</h2>
+      <p id="cta-text">Life Wheel is temporarily not available on the App Store.</p>
 
       <div class="hero-actions" style="justify-content:center">
-        <a
-          id="store-link-bottom"
-          class="app-store-badge"
-          href="https://apps.apple.com/de/app/lebensrad-dein-lebenskompass/id6759198208"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Download on the App Store">
-          <img
-            id="store-badge-bottom"
-            src="../assets/app-store-badge.svg"
-            alt="Download on the App Store">
-        </a>
       </div>
     </section>
   </main>

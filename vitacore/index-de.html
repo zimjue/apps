@@ -534,6 +534,19 @@ p{
   .cta,.ghost{width:100%;max-width:280px;margin:0 auto}
   .device-shell{width:min(100%, calc(100vw - 56px))}
 }
+
+  /* Status: App derzeit pausiert */
+  .paused-banner{
+    margin:0 0 22px;
+    padding:14px 18px;
+    border-radius:14px;
+    background:rgba(255,194,102,.12);
+    border:1px solid rgba(255,194,102,.45);
+    color:#ffd9a0;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .paused-banner strong{color:#ffc266}
 </style>
 </head>
 <body>
@@ -551,6 +564,7 @@ p{
   </div>
 
   <main>
+    <div class="paused-banner" role="status"><strong>Derzeit pausiert.</strong> VitaCore AI ist vorübergehend nicht im App Store verfügbar. Diese Seite bleibt zur Information online.</div>
     <section class="hero">
       <div class="hero-copy">
         <div class="eyebrow">
@@ -562,12 +576,8 @@ p{
         <p>Sieh, was Training, Ernährung und Erholung jetzt brauchen. VitaCore AI nutzt ausgewählte Health-Zusammenfassungen, deine Ziele und deine Trainingshistorie, um dir konkrete nächste Schritte zu geben.</p>
 
         <div class="hero-actions">
-          <a class="app-store-badge" href="https://apps.apple.com/de/app/vitacore-ai/id6781178346" aria-label="VitaCore AI im App Store laden" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/app-store-badge-de.svg" alt="Im App Store laden" loading="lazy">
-          </a>
           <a class="ghost" href="#features">Funktionen ansehen</a>
         </div>
-        <p class="store-note">Kostenlos starten. Premium schaltet KI-Coach, 7-Tage-Plan und persönliche Empfehlungen frei. HealthKit-Zugriff ist rein lesend.</p>
       </div>
 
       <div class="hero-image">
